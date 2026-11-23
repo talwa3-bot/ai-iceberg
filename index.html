@@ -302,31 +302,58 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 .nextbox .v{font-size:48px}
 .tools .tb{unicode-bidi:isolate;white-space:nowrap}
 
+
 /* ---------- intro (slide 3) ---------- */
-.s-intro{background:var(--cream);color:var(--ink)}
-.s-intro .intro-logo{position:absolute;top:48px;left:100px;width:200px;height:auto;border-radius:16px;box-shadow:0 10px 28px rgba(20,40,90,.16);z-index:2}
-.s-intro .intro-copy{position:absolute;right:90px;top:150px;width:1040px;z-index:1}
-.s-intro .kicker{color:var(--terra)}
-.s-intro h2{font-size:84px;font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-top:10px;max-width:1040px}
-.s-intro .iname{font-size:34px;font-weight:800;color:var(--terra);margin-top:16px}
-.s-intro .chips{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;margin-top:44px}
-.s-intro .ichip{background:#fff;border-radius:22px;padding:22px 26px;font-size:25px;font-weight:700;line-height:1.35;color:var(--ink);box-shadow:0 12px 30px rgba(120,60,30,.10);border-right:6px solid var(--terra)}
-.s-intro .why{margin-top:46px;font-size:30px;line-height:1.45;color:#4a3329;max-width:1000px;font-weight:500}
-.s-intro .eilat{margin-top:18px;font-size:22px;line-height:1.4;color:var(--muted);font-weight:600}
-.s-intro .intro-photo{position:absolute;left:100px;top:268px;width:500px;height:500px;border-radius:40px;overflow:hidden;box-shadow:0 22px 50px rgba(120,60,30,.16);background:#e8e4de;z-index:1}
-.s-intro .intro-photo img{width:500px;height:500px;display:block;object-fit:contain}
-.s-intro.anim .intro-photo{opacity:0;animation:rise .6s .05s ease forwards}
-.s-intro.anim .intro-logo{opacity:0;animation:rise .5s .1s ease forwards}
-.s-intro.anim .intro-copy .kicker{opacity:0;animation:rise .5s .15s ease forwards}
-.s-intro.anim .intro-copy h2{opacity:0;animation:rise .55s .22s ease forwards}
-.s-intro.anim .iname{opacity:0;animation:rise .5s .3s ease forwards}
-.s-intro.anim .ichip{opacity:0;animation:rise .5s ease forwards}
-.s-intro.anim .ichip:nth-child(1){animation-delay:.38s}
-.s-intro.anim .ichip:nth-child(2){animation-delay:.46s}
-.s-intro.anim .ichip:nth-child(3){animation-delay:.54s}
-.s-intro.anim .ichip:nth-child(4){animation-delay:.62s}
-.s-intro.anim .why{opacity:0;animation:rise .5s .72s ease forwards}
-.s-intro.anim .eilat{opacity:0;animation:rise .5s .82s ease forwards}
+.s-intro{background:radial-gradient(1100px 720px at 88% -8%,#163aa8 0%,transparent 58%),radial-gradient(900px 600px at -8% 110%,#0c246e 0%,transparent 55%),linear-gradient(165deg,#0b2a8a 0%,#0a1a5c 48%,#061038 100%);color:#fff}
+.s-intro .circuit-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.s-intro .intro-stage{position:absolute;inset:0;perspective:1500px;perspective-origin:46% 42%;transform-style:preserve-3d;z-index:1}
+.s-intro .intro-floor{position:absolute;left:-15%;right:-15%;bottom:-14%;height:480px;background-image:linear-gradient(rgba(139,211,255,.38) 1px,transparent 1px),linear-gradient(90deg,rgba(139,211,255,.38) 1px,transparent 1px);background-size:72px 72px;transform:rotateX(72deg) translateZ(-80px);transform-origin:center top;mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 55%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 55%,transparent 100%);pointer-events:none;opacity:.4;z-index:0}
+.s-intro .intro-logo{position:absolute;top:36px;left:88px;width:188px;height:auto;border-radius:16px;border:1px solid rgba(139,211,255,.35);box-shadow:0 14px 36px rgba(0,0,0,.4),0 0 28px rgba(80,180,255,.18);z-index:3}
+.s-intro .photo-tilt{position:absolute;left:70px;top:240px;width:540px;height:540px;transform-style:preserve-3d;z-index:2;transform:rotateY(var(--mx,0deg)) rotateX(var(--my,0deg));transition:transform .35s ease-out}
+.s-intro .photo-glow{position:absolute;left:18px;top:22px;width:480px;height:480px;border-radius:40px;background:radial-gradient(circle at 40% 30%,rgba(139,211,255,.4),rgba(11,42,138,.0) 70%);transform:translateZ(-40px);filter:blur(18px);pointer-events:none}
+
+.s-intro .photo-card{--rest:rotateY(18deg) rotateX(7deg) translateZ(72px);position:relative;width:480px;padding:14px;border-radius:36px;background:linear-gradient(165deg,rgba(255,255,255,.16),rgba(11,42,138,.28) 45%,rgba(6,16,56,.45));border:1px solid rgba(139,211,255,.5);box-shadow:0 44px 80px rgba(0,0,0,.55),0 14px 28px rgba(0,0,0,.4),0 0 64px rgba(139,211,255,.32),inset 0 1px 0 rgba(255,255,255,.22),inset -16px 0 28px -18px rgba(139,211,255,.28);transform:var(--rest);transform-style:preserve-3d}
+.s-intro .photo-card img{width:452px;height:452px;border-radius:26px;display:block;object-fit:contain;background:#1a2744}
+.s-intro .intro-copy{position:absolute;right:78px;top:86px;width:1140px;z-index:2;transform:translateZ(20px)}
+.s-intro .kicker{color:#8BD3FF}
+.s-intro h2{font-size:76px;font-weight:900;line-height:1.04;letter-spacing:-1.4px;margin-top:8px;color:#fff}
+.s-intro .iname{font-size:32px;font-weight:800;color:#8BD3FF;margin-top:12px}
+.s-intro .irole{font-size:23px;font-weight:500;color:#D4E6FF;margin-top:8px}
+.s-intro .icards{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;margin-top:28px;transform-style:preserve-3d}
+.s-intro .icard{--rest:rotateY(-8deg) translateZ(28px);background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1px solid rgba(139,211,255,.26);border-radius:22px;padding:20px 24px 18px;box-shadow:0 22px 44px rgba(0,0,0,.32),0 0 24px rgba(139,211,255,.1),inset 0 1px 0 rgba(255,255,255,.12);transform:var(--rest);min-height:168px}
+.s-intro .icard:nth-child(1){--rest:rotateY(-11deg) translateZ(52px)}
+.s-intro .icard:nth-child(2){--rest:rotateY(-5deg) translateZ(22px)}
+.s-intro .icard:nth-child(3){--rest:rotateY(-10deg) translateZ(40px)}
+.s-intro .icard:nth-child(4){--rest:rotateY(-4deg) translateZ(14px)}
+.s-intro .icard-k{font-size:15px;font-weight:800;letter-spacing:.8px;color:#8BD3FF;margin-bottom:6px}
+.s-intro .icard-t{font-size:24px;font-weight:800;line-height:1.25;color:#fff}
+.s-intro .icard p{font-size:19px;line-height:1.4;color:#D4E6FF;margin-top:8px;font-weight:500}
+.s-intro .icard .tagline{display:block;direction:ltr;unicode-bidi:isolate;text-align:left;font-size:17px;line-height:1.4;color:#D4E6FF;margin-top:8px;font-weight:500}
+.s-intro .icard .note{display:block;margin-top:6px;font-size:16px;color:#A9C4EA;font-weight:600}
+.s-intro .iwhy{margin-top:20px;font-size:24px;line-height:1.4;color:#fff;font-weight:600;background:linear-gradient(180deg,rgba(139,211,255,.14),rgba(139,211,255,.05));border:1px solid rgba(139,211,255,.28);border-radius:20px;padding:16px 24px;box-shadow:0 14px 32px rgba(0,0,0,.25);--rest:translateZ(24px);transform:var(--rest)}
+.s-intro .foot{color:#A9C4EA;z-index:3}
+.s-intro .foot .pg{color:#8BD3FF}
+@keyframes depth-in{from{opacity:0;transform:translateZ(-220px) translateY(36px) scale(.94)}to{opacity:1;transform:var(--rest)}}
+@keyframes copy-in{from{opacity:0;transform:translateZ(-80px) translateY(18px)}to{opacity:1;transform:translateZ(20px)}}
+.s-intro.anim .intro-logo{opacity:0;animation:rise .55s .05s ease forwards}
+.s-intro.anim .photo-card{opacity:0;animation:depth-in .85s .12s cubic-bezier(.2,.75,.2,1) forwards}
+.s-intro.anim .intro-copy h2,.s-intro.anim .iname,.s-intro.anim .irole,.s-intro.anim .kicker{opacity:0;animation:rise .55s ease forwards}
+.s-intro.anim .kicker{animation-delay:.18s}
+.s-intro.anim .intro-copy h2{animation-delay:.26s}
+.s-intro.anim .iname{animation-delay:.34s}
+.s-intro.anim .irole{animation-delay:.4s}
+.s-intro.anim .icard{opacity:0;animation:depth-in .7s cubic-bezier(.2,.75,.2,1) forwards}
+.s-intro.anim .icard:nth-child(1){animation-delay:.46s}
+.s-intro.anim .icard:nth-child(2){animation-delay:.56s}
+.s-intro.anim .icard:nth-child(3){animation-delay:.66s}
+.s-intro.anim .icard:nth-child(4){animation-delay:.76s}
+.s-intro.anim .iwhy{opacity:0;animation:depth-in .65s .88s cubic-bezier(.2,.75,.2,1) forwards}
+@media (prefers-reduced-motion:reduce){
+  .s-intro.anim .intro-logo,.s-intro.anim .photo-card,.s-intro.anim .intro-copy h2,.s-intro.anim .iname,.s-intro.anim .irole,.s-intro.anim .kicker,.s-intro.anim .icard,.s-intro.anim .iwhy{animation:none!important;opacity:1!important}
+  .s-intro.anim .photo-card,.s-intro.anim .icard,.s-intro.anim .iwhy{transform:var(--rest)!important}
+  .s-intro .photo-tilt{transition:none!important;transform:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -441,23 +468,78 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 
 <!-- 3 INTRO -->
 <section class="slide s-intro" data-title="הצגה עצמית">
-  <img class="intro-logo" src="assets/ai_finance_logo.jpg" alt="AI Finance" width="200" height="156">
-  <div class="intro-photo"><img src="assets/tal-portrait.png" alt="רו״ח טל ולנשטין" width="500" height="500"></div>
-  <div class="intro-copy">
-    <div class="kicker">הצגה עצמית</div>
-    <h2>נעים מאוד, אני טל</h2>
-    <div class="iname">רו״ח טל ולנשטין</div>
-    <div class="chips">
-      <div class="ichip">רו״ח ודירקטורית מוסמכת</div>
-      <div class="ichip">בוגרת <span class="ltr">Big 4</span> · משרד רואי חשבון</div>
-      <div class="ichip">מייסדת שותפה, <span class="ltr">AI Finance</span></div>
-      <div class="ichip">מייסדת קהילת ״חשבת השכר החדשה״</div>
+  <svg class="circuit-bg" viewBox="0 0 1920 1080" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <filter id="cg-intro" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="1.2" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <g fill="none" stroke="#7EC8FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".42" filter="url(#cg-intro)">
+      <path d="M0 160 H160 V80 H300 V40"/>
+      <path d="M0 240 H110 V360 H230 V430 H320"/>
+      <path d="M40 520 H140 V620 H60 V720"/>
+      <path d="M0 900 H180 V980 H300"/>
+      <path d="M1920 140 H1760 V60 H1620"/>
+      <path d="M1920 260 H1800 V380 H1680 V460"/>
+      <path d="M1920 820 H1780 V940 H1640 V1020"/>
+      <path d="M1920 980 H1700"/>
+      <path d="M240 0 V90 H360 V160"/>
+      <path d="M1680 0 V70 H1560 V130"/>
+      <path d="M80 1080 V1000 H200"/>
+      <path d="M1840 1080 V1000"/>
+    </g>
+    <g fill="#7EC8FF" opacity=".55">
+      <circle cx="160" cy="160" r="3.2"/><circle cx="300" cy="80" r="3.2"/><circle cx="110" cy="240" r="3.2"/>
+      <circle cx="230" cy="360" r="3.2"/><circle cx="320" cy="430" r="3.2"/><circle cx="140" cy="520" r="3.2"/>
+      <circle cx="140" cy="620" r="3.2"/><circle cx="180" cy="900" r="3.2"/><circle cx="300" cy="980" r="3.2"/>
+      <circle cx="1760" cy="140" r="3.2"/><circle cx="1620" cy="60" r="3.2"/><circle cx="1800" cy="260" r="3.2"/>
+      <circle cx="1680" cy="380" r="3.2"/><circle cx="1780" cy="820" r="3.2"/><circle cx="1640" cy="940" r="3.2"/>
+      <circle cx="360" cy="90" r="3.2"/><circle cx="1560" cy="70" r="3.2"/><circle cx="200" cy="1000" r="3.2"/>
+    </g>
+  </svg>
+  <div class="intro-stage">
+    <div class="intro-floor" aria-hidden="true"></div>
+    <img class="intro-logo" src="assets/ai_finance_logo.jpg" alt="AI Finance" width="188" height="146">
+    <div class="photo-tilt">
+      <div class="photo-glow" aria-hidden="true"></div>
+      <div class="photo-card">
+        <img src="assets/tal-portrait.png" alt="רו״ח טל ולנשטין" width="500" height="500">
+      </div>
     </div>
-    <p class="why">אני כאן כדי לתרגם את כלי ה‑AI לפרקטיקה פשוטה של מחלקת כספים.</p>
-    <p class="eilat">נובמבר 2026 · כנס חשבי השכר הבכירים של לשכת רואי החשבון, אילת</p>
+    <div class="intro-copy">
+      <div class="kicker">הצגה עצמית</div>
+      <h2>נעים מאוד, אני טל</h2>
+      <div class="iname">רו״ח טל ולנשטין</div>
+      <p class="irole">פיננסים, נתונים ובינה מלאכותית</p>
+      <div class="icards">
+        <article class="icard">
+          <div class="icard-k">המקצוע</div>
+          <div class="icard-t">רו״ח ודירקטורית מוסמכת</div>
+          <p>יוצאת <span class="ltr">Big 4</span> · משרד משפחתי, חגי ולנשטין ושות׳ · דור שלישי לרואי חשבון בישראל</p>
+        </article>
+        <article class="icard">
+          <div class="icard-k">AI Finance</div>
+          <div class="icard-t">מייסדת שותפה, עם אחי רועי ולנשטין</div>
+          <p class="tagline">Bridging the gap between the world of finance<br>and the world of AI</p>
+        </article>
+        <article class="icard">
+          <div class="icard-k">הוראה</div>
+          <div class="icard-t">מרצה ל‑AI בפיננסים</div>
+          <p>קורס ראשון מסוגו באונו, בארבעה קמפוסים · כנס חשבי השכר הבכירים של הלשכה, אילת · נובמבר 2026</p>
+        </article>
+        <article class="icard">
+          <div class="icard-k">קהילות</div>
+          <div class="icard-t">מייסדת ״חשבת השכר החדשה״</div>
+          <p>מייסדת שותפה, קהילת <span class="ltr">AI Finance</span></p>
+          <span class="note">אני עצמי לא חשבת שכר</span>
+        </article>
+      </div>
+      <p class="iwhy">בונה תהליכי עבודה של AI לצוותי כספים — הטמעת כלים, קיצור תהליכים ושיפור בקרות.</p>
+    </div>
   </div>
   <div class="foot"><div class="src"><span class="ltr">ai-finance.co.il</span></div><div class="pg"></div></div>
-  <aside class="notes">הצגה עצמית, כשתי דקות. נעים מאוד, אני טל ולנשטין, רואת חשבון ודירקטורית מוסמכת. בוגרת ביג 4, ואני מנהלת משרד רואי חשבון. יחד עם אחי רועי ולנשטין הקמנו את AI Finance. הקמתי גם את קהילת ״חשבת השכר החדשה״ — חשוב להגיד בבירור: אני עצמי לא חשבת שכר. [למלא: משפט אישי קצר, למה הגעת ל-AI בפיננסים]. בנובמבר האחרון הרציתי בכנס חשבי השכר הבכירים של הלשכה, באילת. היום אני כאן כדי לתרגם את כלי ה-AI לעבודה האמיתית של מחלקת כספים.</aside>
+  <aside class="notes">הצגה עצמית, כשתי דקות, בגובה העיניים. נעים מאוד, אני טל ולנשטין, רואת חשבון ודירקטורית מוסמכת, יוצאת ביג 4. יש לנו משרד משפחתי, חגי ולנשטין ושות׳, ואנחנו דור שלישי לרואי חשבון בישראל. יחד עם אחי רועי ולנשטין הקמנו את AI Finance — Bridging the gap between the world of finance and the world of AI. אני מרצה ל-AI בפיננסים, כולל קורס ראשון מסוגו באונו, בארבעה קמפוסים, לניתוח דוחות כספיים וריגול פיננסי באמצעות AI, ובנובמבר האחרון הרציתי בכנס חשבי השכר הבכירים של הלשכה, באילת. הקמתי את קהילת ״חשבת השכר החדשה״ — חשוב להגיד בבירור: אני עצמי לא חשבת שכר — ואנחנו גם מייסדים שותפים של קהילת AI Finance. [למלא: משפט אישי קצר, למה הגעת ל-AI בפיננסים]. מה שאני עושה ביום-יום: לבנות תהליכי עבודה של AI לצוותי כספים, מהטמעת הכלים עד קיצור תהליכים ושיפור בקרות.</aside>
 </section>
 
 <!-- 4 OVERVIEW -->
