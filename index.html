@@ -301,6 +301,32 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 .nextbox .topt{margin-top:12px;font-size:24px;color:#d7e6ea;line-height:1.4}
 .nextbox .v{font-size:48px}
 .tools .tb{unicode-bidi:isolate;white-space:nowrap}
+
+/* ---------- intro (slide 3) ---------- */
+.s-intro{background:var(--cream);color:var(--ink)}
+.s-intro .intro-logo{position:absolute;top:48px;left:100px;width:200px;height:auto;border-radius:16px;box-shadow:0 10px 28px rgba(20,40,90,.16);z-index:2}
+.s-intro .intro-copy{position:absolute;right:90px;top:150px;width:1040px;z-index:1}
+.s-intro .kicker{color:var(--terra)}
+.s-intro h2{font-size:84px;font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-top:10px;max-width:1040px}
+.s-intro .iname{font-size:34px;font-weight:800;color:var(--terra);margin-top:16px}
+.s-intro .chips{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;margin-top:44px}
+.s-intro .ichip{background:#fff;border-radius:22px;padding:22px 26px;font-size:25px;font-weight:700;line-height:1.35;color:var(--ink);box-shadow:0 12px 30px rgba(120,60,30,.10);border-right:6px solid var(--terra)}
+.s-intro .why{margin-top:46px;font-size:30px;line-height:1.45;color:#4a3329;max-width:1000px;font-weight:500}
+.s-intro .eilat{margin-top:18px;font-size:22px;line-height:1.4;color:var(--muted);font-weight:600}
+.s-intro .intro-photo{position:absolute;left:100px;top:268px;width:500px;height:500px;border-radius:40px;overflow:hidden;box-shadow:0 22px 50px rgba(120,60,30,.16);background:#e8e4de;z-index:1}
+.s-intro .intro-photo img{width:500px;height:500px;display:block;object-fit:contain}
+.s-intro.anim .intro-photo{opacity:0;animation:rise .6s .05s ease forwards}
+.s-intro.anim .intro-logo{opacity:0;animation:rise .5s .1s ease forwards}
+.s-intro.anim .intro-copy .kicker{opacity:0;animation:rise .5s .15s ease forwards}
+.s-intro.anim .intro-copy h2{opacity:0;animation:rise .55s .22s ease forwards}
+.s-intro.anim .iname{opacity:0;animation:rise .5s .3s ease forwards}
+.s-intro.anim .ichip{opacity:0;animation:rise .5s ease forwards}
+.s-intro.anim .ichip:nth-child(1){animation-delay:.38s}
+.s-intro.anim .ichip:nth-child(2){animation-delay:.46s}
+.s-intro.anim .ichip:nth-child(3){animation-delay:.54s}
+.s-intro.anim .ichip:nth-child(4){animation-delay:.62s}
+.s-intro.anim .why{opacity:0;animation:rise .5s .72s ease forwards}
+.s-intro.anim .eilat{opacity:0;animation:rise .5s .82s ease forwards}
 </style>
 </head>
 <body>
@@ -412,7 +438,29 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">הכותרת "כאן רוב השימוש" היא דימוי ולא נתון סטטיסטי. ההשראה: Nicolas Boucher, The Claude iceberg for finance. לא מצוטטים נתונים מהאינפוגרפיקה.</aside>
 </section>
 
-<!-- 3 OVERVIEW -->
+
+<!-- 3 INTRO -->
+<section class="slide s-intro" data-title="הצגה עצמית">
+  <img class="intro-logo" src="assets/ai_finance_logo.jpg" alt="AI Finance" width="200" height="156">
+  <div class="intro-photo"><img src="assets/tal-portrait.png" alt="רו״ח טל ולנשטין" width="500" height="500"></div>
+  <div class="intro-copy">
+    <div class="kicker">הצגה עצמית</div>
+    <h2>נעים מאוד, אני טל</h2>
+    <div class="iname">רו״ח טל ולנשטין</div>
+    <div class="chips">
+      <div class="ichip">רו״ח ודירקטורית מוסמכת</div>
+      <div class="ichip">בוגרת <span class="ltr">Big 4</span> · משרד רואי חשבון</div>
+      <div class="ichip">מייסדת שותפה, <span class="ltr">AI Finance</span></div>
+      <div class="ichip">מייסדת קהילת ״חשבת השכר החדשה״</div>
+    </div>
+    <p class="why">אני כאן כדי לתרגם את כלי ה‑AI לפרקטיקה פשוטה של מחלקת כספים.</p>
+    <p class="eilat">נובמבר 2026 · כנס חשבי השכר הבכירים של לשכת רואי החשבון, אילת</p>
+  </div>
+  <div class="foot"><div class="src"><span class="ltr">ai-finance.co.il</span></div><div class="pg"></div></div>
+  <aside class="notes">הצגה עצמית, כשתי דקות. נעים מאוד, אני טל ולנשטין, רואת חשבון ודירקטורית מוסמכת. בוגרת ביג 4, ואני מנהלת משרד רואי חשבון. יחד עם אחי רועי ולנשטין הקמנו את AI Finance. הקמתי גם את קהילת ״חשבת השכר החדשה״ — חשוב להגיד בבירור: אני עצמי לא חשבת שכר. [למלא: משפט אישי קצר, למה הגעת ל-AI בפיננסים]. בנובמבר האחרון הרציתי בכנס חשבי השכר הבכירים של הלשכה, באילת. היום אני כאן כדי לתרגם את כלי ה-AI לעבודה האמיתית של מחלקת כספים.</aside>
+</section>
+
+<!-- 4 OVERVIEW -->
 <section class="slide s-over" data-title="מפת הקרחון">
   <div class="head"><h2>שבע שכבות</h2><p>מלמעלה למטה — כל שכבה חוסכת יותר.</p></div>
   <svg class="berg-big" viewBox="0 0 1920 1080" id="overBerg">
@@ -421,13 +469,13 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
     </defs>
     <path d="M0 238 Q 120 226 240 238 T 480 238 T 720 238 T 960 238 T 1200 238 T 1440 238 T 1680 238 T 1920 238" stroke="#fff" stroke-width="4" fill="none" opacity=".85"/>
     <g clip-path="url(#bc)">
-      <rect class="band" data-go="3"  x="0" y="0"   width="1920" height="238" fill="#F6B26B" style="animation-delay:.05s"/>
-      <rect class="band" data-go="4"  x="0" y="238" width="1920" height="118" fill="#EE8F5A" style="animation-delay:.2s"/>
-      <rect class="band" data-go="5"  x="0" y="356" width="1920" height="118" fill="#E2703F" style="animation-delay:.35s"/>
-      <rect class="band" data-go="6"  x="0" y="474" width="1920" height="118" fill="#C95A33" style="animation-delay:.5s"/>
-      <rect class="band" data-go="7"  x="0" y="592" width="1920" height="118" fill="#A8472B" style="animation-delay:.65s"/>
-      <rect class="band" data-go="8"  x="0" y="710" width="1920" height="118" fill="#833824" style="animation-delay:.8s"/>
-      <rect class="band" data-go="9"  x="0" y="828" width="1920" height="200" fill="#5E2A1E" style="animation-delay:.95s"/>
+      <rect class="band" data-go="4"  x="0" y="0"   width="1920" height="238" fill="#F6B26B" style="animation-delay:.05s"/>
+      <rect class="band" data-go="5"  x="0" y="238" width="1920" height="118" fill="#EE8F5A" style="animation-delay:.2s"/>
+      <rect class="band" data-go="6"  x="0" y="356" width="1920" height="118" fill="#E2703F" style="animation-delay:.35s"/>
+      <rect class="band" data-go="7"  x="0" y="474" width="1920" height="118" fill="#C95A33" style="animation-delay:.5s"/>
+      <rect class="band" data-go="8"  x="0" y="592" width="1920" height="118" fill="#A8472B" style="animation-delay:.65s"/>
+      <rect class="band" data-go="9"  x="0" y="710" width="1920" height="118" fill="#833824" style="animation-delay:.8s"/>
+      <rect class="band" data-go="10"  x="0" y="828" width="1920" height="200" fill="#5E2A1E" style="animation-delay:.95s"/>
       <g stroke="rgba(255,255,255,.22)" stroke-width="2"><line x1="0" y1="356" x2="1920" y2="356"/><line x1="0" y1="474" x2="1920" y2="474"/><line x1="0" y1="592" x2="1920" y2="592"/><line x1="0" y1="710" x2="1920" y2="710"/><line x1="0" y1="828" x2="1920" y2="828"/></g>
     </g>
     <g font-size="34" font-weight="800" fill="#fff" text-anchor="middle">
