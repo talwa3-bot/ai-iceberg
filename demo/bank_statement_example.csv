@@ -1,0 +1,8 @@
+﻿date,description,amount,note
+2026-11-02,Customer A payment,18500,EXAMPLE
+2026-11-05,Supplier B payment,-7200,EXAMPLE
+2026-11-08,Bank fee,-1250,EXAMPLE
+2026-11-12,Customer C payment,9600,EXAMPLE
+2026-11-18,Salary transfer,-42000,EXAMPLE
+2026-11-21,Customer D payment,15000,EXAMPLE
+2026-11-28,Customer E payment,4300,EXAMPLE

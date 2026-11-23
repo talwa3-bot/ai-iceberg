@@ -373,6 +373,336 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 }
 
 
+
+/* ===== New 3D navy/cyan slides (added; do not restyle existing cream slides) ===== */
+.s-wow{background:linear-gradient(165deg,#0b2a8a 0%,#0a1a5c 48%,#061038 100%);color:#fff;overflow:hidden}
+.s-wow .pg{position:absolute;bottom:20px;left:36px;color:#8BD3FF;z-index:3;font-weight:800}
+.s-wow .wow-stage{position:absolute;inset:0;perspective:1500px;perspective-origin:50% 38%;padding:48px 68px 70px}
+.s-wow .wow-circuit{position:absolute;inset:0;pointer-events:none;opacity:.42;background:
+  radial-gradient(ellipse at 14% 16%,rgba(139,211,255,.22),transparent 52%),
+  radial-gradient(ellipse at 90% 88%,rgba(11,42,138,.55),transparent 50%),
+  repeating-linear-gradient(90deg,transparent 0 62px,rgba(139,211,255,.08) 62px 63px),
+  repeating-linear-gradient(0deg,transparent 0 62px,rgba(139,211,255,.07) 62px 63px)}
+.s-wow .wow-floor{position:absolute;left:-12%;right:-12%;bottom:-12%;height:460px;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(139,211,255,.36) 1px,transparent 1px),linear-gradient(90deg,rgba(139,211,255,.36) 1px,transparent 1px);background-size:72px 72px;transform:rotateX(72deg) translateZ(-80px);transform-origin:center top;opacity:.38;mask-image:linear-gradient(to bottom,transparent 0%,#000 16%,#000 58%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 16%,#000 58%,transparent 100%)}
+.s-wow .wow-kicker{position:relative;z-index:2;font:800 18px/1 "Heebo",sans-serif;letter-spacing:.14em;color:#8BD3FF;margin-bottom:8px;transform:translateZ(36px)}
+.s-wow h2{position:relative;z-index:2;font-family:"FrankRuhl Libre","Frank Ruhl Libre",serif;font-weight:900;font-size:52px;line-height:1.12;letter-spacing:-.5px;color:#fff;margin:0 0 10px;max-width:1600px;transform:translateZ(48px);text-shadow:0 10px 28px rgba(0,0,0,.35)}
+.s-wow .wow-lead{position:relative;z-index:2;font:500 22px/1.45 "Heebo",sans-serif;color:#D4E6FF;max-width:1580px;margin:0 0 22px;transform:translateZ(32px)}
+.s-wow .wow-grid{position:relative;z-index:2;display:grid;gap:18px 20px}
+.s-wow .g2{grid-template-columns:1fr 1fr}
+.s-wow .g3{grid-template-columns:1fr 1fr 1fr}
+.s-wow .g4{grid-template-columns:1fr 1fr 1fr 1fr}
+.s-wow .g21{grid-template-columns:1.15fr .85fr}
+.s-wow .wow-card{--rest:rotateY(-7deg) rotateX(6deg) translateZ(32px);background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1px solid rgba(139,211,255,.28);border-radius:22px;padding:18px 20px 16px;box-shadow:0 22px 44px rgba(0,0,0,.32),0 0 24px rgba(139,211,255,.1),inset 0 1px 0 rgba(255,255,255,.12);transform:var(--rest);transform-style:preserve-3d}
+.s-wow .g2 .wow-card:nth-child(1),.s-wow .g21 .wow-card:nth-child(1){--rest:rotateY(-8deg) rotateX(7deg) translateZ(48px)}
+.s-wow .g2 .wow-card:nth-child(2),.s-wow .g21 .wow-card:nth-child(2){--rest:rotateY(6deg) rotateX(6deg) translateZ(28px)}
+.s-wow .g2 .wow-card:nth-child(3){--rest:rotateY(-7deg) rotateX(5deg) translateZ(40px)}
+.s-wow .g2 .wow-card:nth-child(4){--rest:rotateY(5deg) rotateX(5deg) translateZ(22px)}
+.s-wow .g3 .wow-card:nth-child(1){--rest:rotateY(-8deg) rotateX(7deg) translateZ(44px)}
+.s-wow .g3 .wow-card:nth-child(2){--rest:rotateY(0deg) rotateX(7deg) translateZ(36px)}
+.s-wow .g3 .wow-card:nth-child(3){--rest:rotateY(8deg) rotateX(6deg) translateZ(24px)}
+.s-wow .g4 .wow-card:nth-child(1){--rest:rotateY(-8deg) rotateX(7deg) translateZ(42px)}
+.s-wow .g4 .wow-card:nth-child(2){--rest:rotateY(-3deg) rotateX(6deg) translateZ(30px)}
+.s-wow .g4 .wow-card:nth-child(3){--rest:rotateY(3deg) rotateX(6deg) translateZ(24px)}
+.s-wow .g4 .wow-card:nth-child(4){--rest:rotateY(8deg) rotateX(6deg) translateZ(18px)}
+.s-wow .wow-k{font-size:14px;font-weight:800;letter-spacing:.8px;color:#8BD3FF;margin-bottom:6px}
+.s-wow .wow-t{font-size:24px;font-weight:800;line-height:1.25;color:#fff}
+.s-wow .wow-card p{font-size:18px;line-height:1.4;color:#D4E6FF;margin-top:7px;font-weight:500}
+.s-wow .wow-card ul{margin:8px 0 0;padding:0 18px 0 0;color:#D4E6FF;font:500 17px/1.4 "Heebo",sans-serif}
+.s-wow .wow-card li{margin:3px 0}
+.s-wow .wow-foot{position:absolute;z-index:2;right:68px;left:68px;bottom:28px;font:600 15px/1.35 "Heebo",sans-serif;color:#A9C4EA;transform:translateZ(12px)}
+.s-wow .wow-foot a{color:#8BD3FF}
+.s-wow .ltr{direction:ltr;unicode-bidi:isolate;text-align:left}
+.s-wow .stat{font:900 34px/1.1 "Heebo",sans-serif;color:#8BD3FF;letter-spacing:-.5px}
+.s-wow .stat s,.s-wow .stat small{font-size:18px;font-weight:700;color:#A9C4EA;display:block;margin-top:4px;letter-spacing:0}
+.s-wow .chain{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px}
+.s-wow .node{flex:1;text-align:center;background:linear-gradient(180deg,rgba(139,211,255,.16),rgba(255,255,255,.04));border:1px solid rgba(139,211,255,.4);border-radius:18px;padding:16px 10px;box-shadow:0 16px 32px rgba(0,0,0,.28);transform:rotateX(10deg) translateZ(40px);z-index:2}
+.s-wow .node b{display:block;font-size:22px;font-weight:800;color:#fff}
+.s-wow .node span{display:block;margin-top:4px;font-size:16px;color:#D4E6FF}
+.s-wow .arrow{flex:0 0 36px;font-size:28px;color:#8BD3FF;text-align:center;transform:translateZ(50px)}
+.s-wow .loop{position:relative;z-index:2;display:flex;gap:14px}
+.s-wow .loop .node{min-height:120px}
+.s-wow .tl{position:relative;z-index:2;display:flex;gap:12px;align-items:stretch}
+.s-wow .tl .wow-card{flex:1;min-width:0}
+.s-wow .tl .wow-k{font-size:13px}
+.s-wow .tl .wow-t{font-size:18px}
+.s-wow .tl p{font-size:15px;line-height:1.35}
+.s-wow .prompt-box{position:relative;background:rgba(6,16,56,.55);border:1px solid rgba(139,211,255,.3);border-radius:16px;padding:14px 16px 12px;margin-top:8px;transform:translateZ(20px)}
+.s-wow .prompt-box pre{margin:0;white-space:pre-wrap;font:600 16px/1.45 "Heebo",sans-serif;color:#E8F4FF;direction:rtl}
+.s-wow .wow-copy{position:absolute;top:10px;left:10px;border:0;border-radius:10px;background:#0b2a8a;color:#8BD3FF;font:800 14px "Heebo",sans-serif;padding:6px 12px;cursor:pointer;box-shadow:0 0 0 1px rgba(139,211,255,.35)}
+.s-wow .wow-copy:hover{filter:brightness(1.15)}
+.s-wow table.cmp{width:100%;border-collapse:separate;border-spacing:0;font:600 16px/1.35 "Heebo",sans-serif;color:#E8F4FF;background:rgba(6,16,56,.35);border:1px solid rgba(139,211,255,.28);border-radius:16px;overflow:hidden;transform:rotateX(6deg) translateZ(24px)}
+.s-wow table.cmp th{background:rgba(139,211,255,.14);color:#8BD3FF;font-weight:800;padding:10px 12px;text-align:right}
+.s-wow table.cmp td{padding:9px 12px;border-top:1px solid rgba(139,211,255,.14)}
+.s-wow .ans{background:linear-gradient(180deg,rgba(139,211,255,.14),rgba(255,255,255,.04));border-radius:16px;padding:14px 16px;border:1px solid rgba(139,211,255,.3)}
+.s-wow .ans .wow-k{margin-bottom:8px}
+.s-wow.anim .wow-kicker,.s-wow.anim h2,.s-wow.anim .wow-lead{opacity:0;animation:rise .55s ease forwards}
+.s-wow.anim .wow-kicker{animation-delay:.08s}
+.s-wow.anim h2{animation-delay:.16s}
+.s-wow.anim .wow-lead{animation-delay:.26s}
+.s-wow.anim .wow-card,.s-wow.anim .node,.s-wow.anim table.cmp,.s-wow.anim .prompt-box,.s-wow.anim .ans{opacity:0;animation:depth-in .7s cubic-bezier(.2,.75,.2,1) forwards}
+.s-wow.anim .wow-card:nth-child(1),.s-wow.anim .node:nth-child(1){animation-delay:.4s}
+.s-wow.anim .wow-card:nth-child(2),.s-wow.anim .node:nth-child(3){animation-delay:.5s}
+.s-wow.anim .wow-card:nth-child(3),.s-wow.anim .node:nth-child(5){animation-delay:.6s}
+.s-wow.anim .wow-card:nth-child(4),.s-wow.anim table.cmp,.s-wow.anim .prompt-box,.s-wow.anim .ans{animation-delay:.7s}
+.s-wow.anim .wow-card:nth-child(5){animation-delay:.78s}
+.s-wow.anim .wow-card:nth-child(6){animation-delay:.86s}
+.s-wow.anim .wow-foot{opacity:0;animation:rise .5s .9s ease forwards}
+@media (prefers-reduced-motion:reduce){
+  .s-wow.anim .wow-kicker,.s-wow.anim h2,.s-wow.anim .wow-lead,.s-wow.anim .wow-card,.s-wow.anim .node,.s-wow.anim table.cmp,.s-wow.anim .prompt-box,.s-wow.anim .ans,.s-wow.anim .wow-foot{animation:none!important;opacity:1!important}
+  .s-wow.anim .wow-card,.s-wow.anim .node,.s-wow.anim table.cmp{transform:var(--rest,none)!important}
+}
+
+
+/* ===== Muse animation pack (23.11.2026) — additive, navy/cyan ===== */
+/* ---- 8 MCP rotating tool ring ---- */
+.mcp-stage{position:relative;z-index:2;height:236px;margin:4px 0 18px;perspective:1100px;perspective-origin:50% 45%}
+.mcp-world{position:relative;width:100%;height:100%;transform-style:preserve-3d;display:flex;align-items:center;justify-content:center}
+.mcp-core{position:relative;z-index:3;width:150px;height:150px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,rgba(139,211,255,.45),rgba(11,42,138,.95) 55%,#061038);border:2px solid rgba(139,211,255,.7);box-shadow:0 0 40px rgba(139,211,255,.35),0 18px 40px rgba(0,0,0,.4);color:#fff;text-align:center;transform:translateZ(40px)}
+.mcp-core b{font:800 26px "Heebo",sans-serif}
+.mcp-core span{display:block;margin-top:4px;font:700 14px "Heebo",sans-serif;color:#8BD3FF;letter-spacing:.08em}
+.mcp-ring{position:absolute;width:200px;height:200px;transform-style:preserve-3d;animation:mcp-spin 16s linear infinite}
+.mcp-tool{position:absolute;inset:0;transform:rotateY(calc(var(--i)*90deg)) translateZ(170px);transform-style:preserve-3d}
+.mcp-tool .face{position:absolute;left:50%;top:50%;width:118px;height:72px;margin:-36px 0 0 -59px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(11,42,138,.55));border:1px solid rgba(139,211,255,.45);box-shadow:0 12px 28px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;font:800 18px/1.2 "Heebo",sans-serif;color:#fff;backface-visibility:visible;animation:mcp-unspin 16s linear infinite,mcp-hot 16s linear infinite;animation-delay:0s,calc(var(--i)*4s)}
+@keyframes mcp-spin{to{transform:rotateY(-360deg)}}
+@keyframes mcp-unspin{to{transform:rotateY(360deg)}}
+@keyframes mcp-hot{0%,18%,100%{filter:brightness(1);box-shadow:0 12px 28px rgba(0,0,0,.35);transform:scale(1)}
+  4%,12%{filter:brightness(1.35);box-shadow:0 0 28px rgba(139,211,255,.7);transform:scale(1.1) translateZ(16px)}}
+.mcp-beam{position:absolute;width:200px;height:2px;background:linear-gradient(90deg,rgba(139,211,255,0),#8BD3FF,rgba(139,211,255,0));transform-origin:0 50%;transform:translateZ(20px);opacity:.0;animation:mcp-beam 16s linear infinite;filter:drop-shadow(0 0 6px #8BD3FF);pointer-events:none;left:50%;top:50%}
+@keyframes mcp-beam{0%,100%{opacity:0}4%,12%{opacity:1}18%{opacity:0}}
+
+/* ---- 9 Agent loop rotateX 55° ---- */
+.agent-stage{position:relative;z-index:2;height:200px;margin:2px 0 10px;perspective:1400px}
+.agent-world{position:relative;width:100%;height:100%;transform-style:preserve-3d}
+.agent-tilt{position:absolute;left:54%;top:58%;width:340px;height:340px;margin:-170px 0 0 -170px;transform:rotateX(55deg);transform-style:preserve-3d}
+.agent-ring{position:absolute;inset:50px;border:2px solid rgba(139,211,255,.4);border-radius:50%;box-shadow:0 0 0 10px rgba(139,211,255,.06),0 30px 40px rgba(0,0,0,.25)}
+.agent-stop{position:absolute;left:50%;top:50%;width:128px;height:72px;margin:-36px 0 0 -64px;transform:rotateZ(var(--a)) translateY(-128px) rotateZ(calc(-1 * var(--a))) rotateX(-55deg);transform-style:preserve-3d}
+.agent-stop .face{height:100%;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(11,42,138,.6));border:1px solid rgba(139,211,255,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font:800 17px/1.2 "Heebo",sans-serif;box-shadow:0 10px 24px rgba(0,0,0,.35);padding:4px 8px}
+.agent-stop .face small{font:600 12px "Heebo",sans-serif;color:#8BD3FF;margin-top:2px}
+.agent-stop .chk{position:absolute;top:-8px;left:-8px;width:22px;height:22px;border-radius:50%;background:#061038;border:2px solid rgba(139,211,255,.5);color:#8BD3FF;font:800 12px/18px "Heebo",sans-serif;text-align:center;opacity:.35}
+.agent-stop:nth-child(2) .chk{animation:agent-chk 8s linear infinite}
+.agent-stop:nth-child(3) .chk{animation:agent-chk 8s linear infinite;animation-delay:1s}
+.agent-stop:nth-child(4) .chk{animation:agent-chk 8s linear infinite;animation-delay:2s}
+.agent-stop:nth-child(5) .chk{animation:agent-chk 8s linear infinite;animation-delay:3s}
+@keyframes agent-chk{0%,12%{opacity:.35;background:#061038}14%,22%,64%,72%{opacity:1;background:#0b2a8a;box-shadow:0 0 12px #8BD3FF}14.2%,21.5%,64.2%,71.5%{/* hold */}}
+.agent-stop .chk:after{content:"✓"}
+.agent-arm{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;animation:agent-sweep 8s linear infinite}
+.agent-dot{width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#8BD3FF;box-shadow:0 0 16px #8BD3FF,0 0 32px rgba(139,211,255,.7);transform:translateY(-128px) translateZ(18px)}
+@keyframes agent-sweep{to{transform:rotateZ(720deg)}}
+.agent-out{position:absolute;left:6%;top:42%;z-index:4;background:linear-gradient(180deg,rgba(139,211,255,.25),rgba(11,42,138,.7));border:1px solid rgba(139,211,255,.6);color:#fff;font:800 16px "Heebo",sans-serif;padding:8px 16px;border-radius:999px;opacity:0;animation:agent-out 8s ease-in-out infinite;box-shadow:0 8px 24px rgba(0,0,0,.35);white-space:nowrap}
+@keyframes agent-out{0%,82%{opacity:0;transform:translateY(12px) scale(.9)}90%,100%{opacity:1;transform:none}}
+
+/* ---- 24 Shadow AI office + spotlight ---- */
+.sh-office{position:relative;z-index:2;height:188px;margin:2px 0 16px;perspective:1000px}
+.sh-scene{position:relative;height:100%;border-radius:20px;border:1px solid rgba(139,211,255,.28);background:linear-gradient(180deg,rgba(11,42,138,.35),rgba(6,16,56,.55));overflow:hidden;transform:rotateX(48deg) translateZ(-20px);transform-origin:center 70%;box-shadow:inset 0 0 0 1px rgba(139,211,255,.08)}
+.sh-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(139,211,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(139,211,255,.16) 1px,transparent 1px);background-size:36px 36px;opacity:.45}
+.sh-desk{position:absolute;width:70px;height:42px;border-radius:6px;background:linear-gradient(180deg,rgba(139,211,255,.2),rgba(11,42,138,.7));border:1px solid rgba(139,211,255,.35);box-shadow:0 8px 14px rgba(0,0,0,.35);transform:translate(-50%,-50%)}
+.sh-desk:before{content:"";position:absolute;left:50%;top:-10px;width:22px;height:16px;margin-left:-11px;border-radius:4px 4px 0 0;background:rgba(212,230,255,.25);border:1px solid rgba(139,211,255,.25)}
+.sh-ghost{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:radial-gradient(circle,rgba(139,211,255,.7),rgba(139,211,255,0) 70%);opacity:.2;transform:translateZ(-8px)}
+.sh-ghost b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 10px "Heebo",sans-serif;color:#d4e6ff;text-shadow:0 1px 4px #061038}
+.sh-ghost:nth-child(8){animation:sh-reveal 5s ease-in-out infinite}
+.sh-ghost:nth-child(9){animation:sh-reveal 5s ease-in-out infinite;animation-delay:1.1s}
+.sh-ghost:nth-child(10){animation:sh-reveal 5s ease-in-out infinite;animation-delay:2.2s}
+.sh-ghost:nth-child(11){animation:sh-reveal 5s ease-in-out infinite;animation-delay:3.3s}
+@keyframes sh-reveal{0%,18%,55%,100%{opacity:.1}28%,42%{opacity:.95;filter:blur(0);box-shadow:0 0 18px rgba(139,211,255,.65)}}
+.sh-spot{position:absolute;top:-20%;width:32%;height:140%;background:linear-gradient(90deg,transparent,rgba(139,211,255,.28),transparent);mix-blend-mode:screen;animation:sh-scan 5s ease-in-out infinite;pointer-events:none;filter:blur(6px)}
+@keyframes sh-scan{0%{right:-10%}100%{right:95%}}
+.sh-cap{position:absolute;bottom:6px;right:14px;font:700 13px "Heebo",sans-serif;color:#8BD3FF;z-index:2;text-shadow:0 2px 8px #061038}
+
+/* ---- 22 3D security matrix ---- */
+.s-compare .cmpwrap{perspective:1500px;perspective-origin:50% 0%}
+.s-compare .segrid{transform:rotateX(10deg) rotateY(-5deg) translateZ(0);transform-origin:center top;box-shadow:0 28px 60px rgba(11,42,138,.18),0 18px 50px rgba(120,60,30,.12);transition:transform .4s ease}
+.s-compare.anim .segrid thead th{animation:col-rise .55s ease both}
+.s-compare.anim .segrid thead th:nth-child(1){animation-delay:.08s}
+.s-compare.anim .segrid thead th:nth-child(2){animation-delay:.18s}
+.s-compare.anim .segrid thead th:nth-child(3){animation-delay:.28s}
+.s-compare.anim .segrid thead th:nth-child(4){animation-delay:.38s}
+.s-compare.anim .segrid thead th:nth-child(5){animation-delay:.48s}
+.s-compare.anim .segrid thead th:nth-child(6){animation-delay:.58s}
+.s-compare.anim .segrid tbody tr{animation:col-rise .5s ease both}
+.s-compare.anim .segrid tbody tr:nth-child(1){animation-delay:.16s}
+.s-compare.anim .segrid tbody tr:nth-child(2){animation-delay:.24s}
+.s-compare.anim .segrid tbody tr:nth-child(3){animation-delay:.32s}
+.s-compare.anim .segrid tbody tr:nth-child(4){animation-delay:.4s}
+.s-compare.anim .segrid tbody tr:nth-child(5){animation-delay:.48s}
+.s-compare.anim .segrid tbody tr:nth-child(6){animation-delay:.56s}
+.s-compare.anim .segrid tbody tr:nth-child(7){animation-delay:.64s}
+@keyframes col-rise{from{opacity:0;transform:translateY(18px) translateZ(-40px)}to{opacity:1;transform:none}}
+.s-compare .segrid .lvl.sec-low{background:#0a1a5c;color:#8BD3FF}
+.s-compare .segrid .lvl.sec-mid{background:#0b2a8a;color:#d4e6ff}
+.s-compare .segrid .lvl.sec-high{background:#8BD3FF;color:#061038}
+.s-compare .segrid th.hot,.s-compare .segrid td.hot{background:rgba(139,211,255,.16)!important;box-shadow:inset 0 0 0 2px rgba(139,211,255,.45);position:relative;z-index:2}
+
+/* ---- 4 LLM next-token cards ---- */
+.llm-demo{position:relative;z-index:2;margin:2px 0 16px;height:168px;perspective:1200px}
+.llm-sent{font:700 22px/1.5 "Heebo",sans-serif;color:#d4e6ff;text-align:center;margin-bottom:10px;min-height:34px}
+.llm-sent .blank{display:inline-block;min-width:7ch;border-bottom:2px solid #8BD3FF;color:#8BD3FF;padding:0 6px;animation:llm-fill 6.4s ease-in-out infinite}
+@keyframes llm-fill{0%,28%{opacity:.4}40%,78%{opacity:1}90%,100%{opacity:.4}}
+.llm-cands{display:flex;justify-content:center;gap:16px;transform-style:preserve-3d}
+.llm-card{width:180px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(11,42,138,.5));border:1px solid rgba(139,211,255,.35);padding:10px 12px;color:#fff;transform-style:preserve-3d}
+.llm-card .w{font:800 20px "Heebo",sans-serif}
+.llm-card .bar{height:8px;border-radius:99px;background:rgba(6,16,56,.55);margin-top:8px;overflow:hidden}
+.llm-card .bar i{display:block;height:100%;width:0;background:#8BD3FF;border-radius:99px;animation:llm-bar 6.4s ease-in-out infinite}
+.llm-card:nth-child(1){--rest:rotateY(14deg) translateZ(8px);transform:var(--rest);animation:llm-lose 6.4s ease-in-out infinite}
+.llm-card:nth-child(1) .bar i{animation-name:llm-bar-a}
+.llm-card:nth-child(2){--rest:rotateY(0deg) translateZ(28px);transform:var(--rest);animation:llm-win 6.4s ease-in-out infinite}
+.llm-card:nth-child(2) .bar i{animation-name:llm-bar-b}
+.llm-card:nth-child(3){--rest:rotateY(-14deg) translateZ(8px);transform:var(--rest);animation:llm-lose 6.4s ease-in-out infinite}
+.llm-card:nth-child(3) .bar i{animation-name:llm-bar-c}
+@keyframes llm-bar-a{0%,10%{width:0}30%,75%{width:28%}90%,100%{width:0}}
+@keyframes llm-bar-b{0%,10%{width:0}30%,75%{width:58%}90%,100%{width:0}}
+@keyframes llm-bar-c{0%,10%{width:0}30%,75%{width:14%}90%,100%{width:0}}
+@keyframes llm-win{0%,28%{transform:rotateY(0) translateZ(28px) scale(1)}38%,70%{transform:rotateY(180deg) translateZ(48px) scale(1.06)}82%,100%{transform:rotateY(0) translateZ(28px) scale(1)}}
+@keyframes llm-lose{0%,100%{transform:var(--rest);opacity:1}38%,70%{opacity:.45}}
+.llm-note{text-align:center;font:600 13px "Heebo",sans-serif;color:#A9C4EA;margin-top:8px}
+
+/* ---- 5 tokens explode ---- */
+.tok-demo{position:relative;z-index:2;margin:2px 0 16px;height:150px;perspective:1100px}
+.tok-row{display:flex;justify-content:center;align-items:flex-end;gap:8px;height:100px;transform-style:preserve-3d}
+.tok{padding:10px 12px;border-radius:12px;font:800 20px "Heebo",sans-serif;color:#fff;border:1px solid rgba(139,211,255,.4);animation:tok-pop .7s ease both}
+.tok:nth-child(odd){background:linear-gradient(180deg,#0b2a8a,#061038)}
+.tok:nth-child(even){background:linear-gradient(180deg,#163aa8,#0b2a8a);color:#8BD3FF}
+.tok:nth-child(1){animation-delay:.12s;transform:translateZ(8px) rotateY(8deg)}
+.tok:nth-child(2){animation-delay:.22s;transform:translateZ(28px) rotateY(4deg)}
+.tok:nth-child(3){animation-delay:.32s;transform:translateZ(48px) rotateY(-2deg)}
+.tok:nth-child(4){animation-delay:.42s;transform:translateZ(24px) rotateY(-6deg)}
+.tok:nth-child(5){animation-delay:.52s;transform:translateZ(40px) rotateY(6deg)}
+.tok:nth-child(6){animation-delay:.62s;transform:translateZ(16px) rotateY(-8deg)}
+.tok:nth-child(7){animation-delay:.72s;transform:translateZ(32px) rotateY(3deg)}
+@keyframes tok-pop{from{opacity:0;transform:translateY(24px) translateZ(-80px) scale(.8)}to{opacity:1}}
+.tok-count{position:absolute;top:0;left:8px;font:800 15px "Heebo",sans-serif;color:#8BD3FF;background:rgba(6,16,56,.55);border:1px solid rgba(139,211,255,.3);border-radius:999px;padding:4px 12px}
+.tok-count b{font-size:20px}
+.s-wow.anim .tok-count b{animation:tok-n 1s steps(7) both}
+@keyframes tok-n{from{visibility:hidden} /* number set via JS or we just show 7 */}
+
+/* ---- 6 token economy tower + slider ---- */
+.eco-demo{position:relative;z-index:2;margin:2px 0 14px;display:grid;grid-template-columns:1fr 220px;gap:18px;align-items:end;min-height:168px;perspective:1000px}
+.eco-tower{height:160px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;transform-style:preserve-3d;transform:rotateX(8deg) rotateY(-12deg)}
+.eco-block{width:86px;height:16px;margin:0 auto 3px;border-radius:4px;background:linear-gradient(90deg,#0b2a8a,#8BD3FF);border:1px solid rgba(139,211,255,.4);box-shadow:0 6px 10px rgba(0,0,0,.25);transform:translateZ(calc(var(--z,0)*1px))}
+.eco-side{color:#d4e6ff;font:600 16px/1.4 "Heebo",sans-serif}
+.eco-side label{display:block;font-weight:800;color:#8BD3FF;margin-bottom:6px}
+.eco-side input[type=range]{width:100%;accent-color:#8BD3FF}
+.eco-cost{margin-top:8px;font:800 22px "Heebo",sans-serif;color:#fff}
+.eco-cost small{display:block;font:600 13px "Heebo",sans-serif;color:#A9C4EA}
+
+/* ---- 7 API packet ---- */
+.api-demo{position:relative;z-index:2;height:150px;margin:2px 0 16px;perspective:1100px}
+.api-row{position:relative;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 8%;transform-style:preserve-3d}
+.api-box{width:220px;height:92px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(11,42,138,.55));border:1px solid rgba(139,211,255,.4);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:800 20px "Heebo",sans-serif;transform:rotateY(var(--ry, -8deg)) translateZ(24px);box-shadow:0 16px 32px rgba(0,0,0,.3)}
+.api-box:last-of-type{--ry:8deg}
+.api-box small{font:600 14px "Heebo",sans-serif;color:#8BD3FF;margin-top:4px}
+.api-track{position:absolute;left:22%;right:22%;height:3px;background:rgba(139,211,255,.25);top:50%;border-radius:99px}
+.api-gate{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) translateZ(20px);background:#061038;border:1px solid #8BD3FF;color:#8BD3FF;font:800 13px "Heebo",sans-serif;padding:6px 10px;border-radius:10px;z-index:2;white-space:nowrap}
+.api-pkt{position:absolute;top:50%;width:54px;height:28px;margin-top:-14px;border-radius:8px;background:#8BD3FF;color:#061038;font:800 11px/28px "Heebo",sans-serif;text-align:center;box-shadow:0 0 16px #8BD3FF;animation:api-run 4s ease-in-out infinite;z-index:1}
+@keyframes api-run{
+  0%{right:22%;opacity:0}
+  8%{opacity:1}
+  32%{right:48%;opacity:1} /* at gate */
+  44%{right:48%}
+  70%{right:76%;opacity:1}
+  78%{opacity:0;right:76%}
+  82%{left:auto;right:76%;opacity:0}
+  84%{right:76%;opacity:1;background:#cfefff}
+  100%{right:22%;opacity:0;background:#cfefff}
+}
+
+/* ---- 23 classification drawers ---- */
+.drawers{position:relative;z-index:2;display:flex;gap:12px;height:132px;margin:2px 0 16px;perspective:1200px;transform-style:preserve-3d}
+.drawer{flex:1;border-radius:16px 16px 8px 8px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(11,42,138,.6));border:1px solid rgba(139,211,255,.35);color:#fff;padding:12px 12px 10px;transform-origin:top center;transform:rotateX(-18deg) translateZ(0);box-shadow:0 16px 28px rgba(0,0,0,.3);animation:drawer-open 5.6s ease-in-out infinite}
+.drawer:nth-child(1){animation-delay:0s;background:linear-gradient(180deg,rgba(139,211,255,.25),rgba(11,42,138,.55))}
+.drawer:nth-child(2){animation-delay:1.4s}
+.drawer:nth-child(3){animation-delay:2.8s;background:linear-gradient(180deg,rgba(11,42,138,.8),rgba(6,16,56,.9))}
+.drawer:nth-child(4){animation-delay:4.2s;background:linear-gradient(180deg,#0a1a5c,#061038);border-color:#8BD3FF}
+.drawer .k{font:800 13px "Heebo",sans-serif;color:#8BD3FF}
+.drawer .t{font:800 20px "Heebo",sans-serif;margin:4px 0}
+.drawer .d{font:600 14px/1.3 "Heebo",sans-serif;color:#d4e6ff;opacity:.0}
+@keyframes drawer-open{0%,8%,100%{transform:rotateX(-18deg);box-shadow:0 16px 28px rgba(0,0,0,.3)}16%,28%{transform:rotateX(0deg) translateZ(28px)}16.5%,27.5%{/* open */} }
+.drawer:nth-child(1) .d,.drawer:nth-child(2) .d,.drawer:nth-child(3) .d,.drawer:nth-child(4) .d{animation:drawer-txt 5.6s ease-in-out infinite}
+.drawer:nth-child(2) .d{animation-delay:1.4s}
+.drawer:nth-child(3) .d{animation-delay:2.8s}
+.drawer:nth-child(4) .d{animation-delay:4.2s}
+@keyframes drawer-txt{0%,12%,36%,100%{opacity:0}18%,30%{opacity:1}}
+
+/* ---- 25 fan cards ---- */
+.s-wow.anim .fan3{transform-style:preserve-3d}
+.s-wow.anim .fan3 .wow-card{animation:fan-land .8s cubic-bezier(.2,.75,.2,1) both}
+.s-wow.anim .fan3 .wow-card:nth-child(1){animation-delay:.12s;--from:rotateY(0deg) translateZ(-80px) translateX(40%)}
+.s-wow.anim .fan3 .wow-card:nth-child(2){animation-delay:.22s;--from:rotateY(0deg) translateZ(-40px)}
+.s-wow.anim .fan3 .wow-card:nth-child(3){animation-delay:.32s;--from:rotateY(0deg) translateZ(-80px) translateX(-40%)}
+@keyframes fan-land{from{opacity:0;transform:var(--from)}to{opacity:1;transform:var(--rest)}}
+
+/* ---- 34 bank match lines ---- */
+.match-demo{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:2px 0 12px;min-height:168px;perspective:1000px}
+.match-col{background:rgba(6,16,56,.4);border:1px solid rgba(139,211,255,.28);border-radius:16px;padding:10px 12px;transform:rotateY(var(--ry,6deg)) translateZ(12px)}
+.match-col:first-child{--ry:-6deg;animation:match-in-r .6s .1s ease both}
+.match-col:last-child{--ry:6deg;animation:match-in-l .6s .1s ease both}
+@keyframes match-in-r{from{opacity:0;transform:translateX(40px) rotateY(-6deg)}to{opacity:1;transform:rotateY(-6deg) translateZ(12px)}}
+@keyframes match-in-l{from{opacity:0;transform:translateX(-40px) rotateY(6deg)}to{opacity:1;transform:rotateY(6deg) translateZ(12px)}}
+.match-col ul{margin:0;padding:0}.match-col h3{margin:0 0 8px;font:800 16px "Heebo",sans-serif;color:#8BD3FF}
+.match-col li{list-style:none;margin:0 0 4px;padding:5px 8px;border-radius:8px;font:600 14px/1.3 "Heebo",sans-serif;color:#d4e6ff;background:rgba(139,211,255,.08);position:relative}
+.match-col li.ok{animation:match-flash 1.2s ease both}
+.match-col:first-child li.ok{animation-delay:.5s}
+.match-col:last-child li.ok:nth-of-type(1){animation-delay:.5s}
+.match-col li.ok:nth-child(2){animation-delay:.7s}
+.match-col li.ok{box-shadow:inset 3px 0 0 #8BD3FF}.match-col li.gap{opacity:.55;border:1px dashed rgba(139,211,255,.45);background:transparent;color:#A9C4EA}
+@keyframes match-flash{from{box-shadow:none}40%{box-shadow:0 0 0 1px #8BD3FF,0 0 12px rgba(139,211,255,.5)}to{box-shadow:0 0 0 1px rgba(139,211,255,.35)}}
+
+/* ---- 35 3D bars ---- */
+.bars-demo{position:relative;z-index:2;height:126px;margin:4px 0 18px;display:flex;align-items:flex-end;justify-content:space-around;gap:8px;padding:20px 12px 20px;border-radius:16px;overflow:hidden;background:rgba(6,16,56,.35);border:1px solid rgba(139,211,255,.2)}
+.bar-pair{flex:1;height:100%;display:flex;align-items:flex-end;justify-content:center;gap:4px;position:relative;padding-bottom:16px;padding-top:16px}
+.bar-pair .b{width:18px;border-radius:4px 4px 0 0;transform-origin:bottom;animation:bar-grow .8s ease both}
+.bar-pair .b.bud{background:rgba(139,211,255,.28);border:1px solid rgba(139,211,255,.45)}
+.bar-pair .b.act{background:linear-gradient(180deg,#8BD3FF,#0b2a8a);border:1px solid #8BD3FF}
+.bar-pair .lab{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);font:700 11px "Heebo",sans-serif;color:#A9C4EA;white-space:nowrap}
+.bar-pair .delta{position:absolute;top:0;left:50%;transform:translateX(-50%);font:800 11px "Heebo",sans-serif;color:#d4e6ff;background:rgba(6,16,56,.65);padding:1px 5px;border-radius:8px;opacity:0;animation:delta-pop .4s .8s ease forwards}
+@keyframes bar-grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes delta-pop{from{opacity:0;transform:translateX(-50%) translateY(6px) scale(.8)}to{opacity:1;transform:translateX(-50%) scale(1)}}
+
+/* ---- 36 race tracks placeholders ---- */
+.race{position:relative;z-index:2;display:grid;gap:8px;margin:2px 0 14px}
+.race-row{display:grid;grid-template-columns:110px 1fr 130px;align-items:center;gap:12px}
+.race-row .nm{font:800 16px "Heebo",sans-serif;color:#8BD3FF}
+.race-trk{height:14px;border-radius:99px;background:rgba(6,16,56,.55);border:1px solid rgba(139,211,255,.3);overflow:hidden;transform:rotateX(12deg);position:relative}
+.race-trk i{display:block;height:100%;width:18%;border-radius:99px;background:linear-gradient(90deg,#0b2a8a,#8BD3FF);animation:race-wait 1.6s ease-in-out infinite;opacity:.7}
+@keyframes race-wait{0%,100%{transform:translateX(-10%);opacity:.45}50%{transform:translateX(40%);opacity:.85}}
+.race-row .st{font:800 14px "Heebo",sans-serif;color:#d4e6ff;white-space:nowrap}
+
+/* tighten card typography slightly when a demo is present */
+.s-wow .has-viz .wow-card p{font-size:16px}
+.s-wow .has-viz .wow-t{font-size:22px}
+.s-wow .has-viz .wow-grid{gap:12px 14px}
+
+/* reduced motion + static: freeze to a complete, readable pose */
+@media (prefers-reduced-motion:reduce){
+  .mcp-ring,.mcp-tool .face,.mcp-beam,.agent-arm,.agent-out,.agent-stop .chk,
+  .sh-spot,.sh-ghost,.llm-card,.llm-card .bar i,.llm-sent .blank,
+  .tok,.tok-count b,.api-pkt,.drawer,.drawer .d,.fan3 .wow-card,
+  .match-col, .match-col li.ok,.bar-pair .b,.bar-pair .delta,.race-trk i,
+  .s-compare.anim .segrid thead th,.s-compare.anim .segrid tbody tr{
+    animation:none!important;opacity:1!important;filter:none!important
+  }
+  .mcp-ring{transform:rotateX(22deg) rotateY(-24deg)!important}
+  .agent-arm{transform:rotateZ(40deg)!important}
+  .agent-out{opacity:1!important;transform:none!important}
+  .agent-stop .chk{opacity:1!important}
+  .api-pkt{right:48%;opacity:1!important}
+  .drawer{transform:rotateX(-6deg)!important}
+  .drawer .d{opacity:1!important}
+  .sh-ghost{opacity:.7!important}
+  .llm-card:nth-child(2){transform:rotateY(0) translateZ(28px)!important}
+  .bar-pair .b{transform:scaleY(1)!important}
+  .bar-pair .delta{opacity:1!important}
+  .race-trk i{transform:none;width:22%}
+}
+.static .mcp-ring,.static .mcp-world .mcp-ring{animation:none!important;transform:rotateX(22deg) rotateY(-24deg)!important}
+.static .mcp-tool .face,.static .mcp-beam,.static .agent-arm,.static .agent-out,.static .sh-spot,.static .api-pkt,.static .race-trk i,.static .llm-card,.static .llm-card .bar i,.static .drawer{animation:none!important}
+.static .agent-out,.static .drawer .d,.static .sh-ghost,.static .bar-pair .delta{opacity:1!important;filter:none!important}
+.static .mcp-tool .face{transform:none!important;filter:none!important}
+.static .llm-card:nth-child(2) .bar i{width:58%!important}
+.static .llm-card:nth-child(1) .bar i{width:28%!important}
+.static .llm-card:nth-child(3) .bar i{width:14%!important}
+.static .api-pkt{right:58%;left:auto;opacity:1!important;background:#8BD3FF;animation:none!important;z-index:3}
+.static .race-trk i{width:22%;transform:none}
+
 </style>
 </head>
 <body>
@@ -564,7 +894,168 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">הצגה עצמית, כשתי דקות, בגובה העיניים. נעים מאוד, אני טל ולנשטין, רואת חשבון ודירקטורית מוסמכת, יוצאת ביג 4. יש לנו משרד משפחתי, חגי ולנשטין ושות׳, ואנחנו דור שלישי לרואי חשבון בישראל. יחד עם אחי רועי ולנשטין הקמנו את AI Finance — Bridging the gap between the world of finance and the world of AI. אני מרצה ל-AI בפיננסים, כולל קורס ראשון מסוגו באונו, בארבעה קמפוסים, לניתוח דוחות כספיים וריגול פיננסי באמצעות AI, ובנובמבר האחרון הרציתי בכנס חשבי השכר הבכירים של הלשכה, באילת. הקמתי את קהילת ״חשבת השכר החדשה״ — חשוב להגיד בבירור: אני עצמי לא חשבת שכר — ואנחנו גם מייסדים שותפים של קהילת AI Finance. [למלא: משפט אישי קצר, למה הגעת ל-AI בפיננסים]. מה שאני עושה ביום-יום: לבנות תהליכי עבודה של AI לצוותי כספים, מהטמעת הכלים עד קיצור תהליכים ושיפור בקרות. אפשר ללחוץ על כל אחד מארבעת הכרטיסים כדי לפתוח איור AI שלי באותו מצב: דירקטורית, AI Finance, הוראה, והקהילה. Esc, כפתור הסגירה או לחיצה מחוץ לתמונה סוגרים, והמצגת לא מתקדמת.</aside>
 </section>
 
-<!-- 4 OVERVIEW -->
+
+<!-- NEW FOUNDATIONS (added after intro; existing slides kept) -->
+<section class="slide s-wow" data-title="יסודות · LLM">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 1/6</div>
+    <h2>מה זה LLM, ואיך הוא עובד</h2>
+    <p class="wow-lead">מודל שפה גדול לא ״יודע חשבונאות״ כמו רואה חשבון. הוא מנבא, מילה אחרי מילה, מה סביר שיופיע בהמשך — לפי מה שלמד ומה שנתתם לו עכשיו.</p>
+    <div class="llm-demo" aria-label="המחשת חיזוי המילה הבאה">
+      <div class="llm-sent">יתרת הספקים לסוף הרבעון היא <span class="blank">יציבה</span>.</div>
+      <div class="llm-cands">
+        <div class="llm-card"><div class="w">גבוהה</div><div class="bar"><i></i></div></div>
+        <div class="llm-card"><div class="w">יציבה</div><div class="bar"><i></i></div></div>
+        <div class="llm-card"><div class="w">נמוכה</div><div class="bar"><i></i></div></div>
+      </div>
+      <div class="llm-note">המחשה של חיזוי המילה הבאה — לא פלט של מודל אמיתי</div>
+    </div>
+    <div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">העיקרון</div><div class="wow-t">חיזוי התו הבא / המילה הבאה</div><p>המודל מקבל רצף, ומחשב מה התו הבא הכי סביר. כך נבנית תשובה שלמה — לא בחיפוש במסד נתונים, אלא בניסוח הסתברותי.</p></article><article class="wow-card"><div class="wow-k">חלון ההקשר</div><div class="wow-t">הזיכרון של השיחה</div><p>רק מה שנכנס לחלון ההקשר (הפרומפט, הקבצים, והתשובות הקודמות) זמין לו עכשיו. מה שמחוץ לחלון — כאילו לא היה.</p></article><article class="wow-card"><div class="wow-k">גבול חשוב</div><div class="wow-t">זה לא מקור אמת</div><p>ניסוח בטוח אינו אימות. המודל יכול לכתוב סעיף, סכום או תקדים שנשמעים נכון — ואינם נכונים.</p></article><article class="wow-card"><div class="wow-k">הזיה</div><div class="wow-t">Hallucination</div><p>מודלי שפה לפעמים מייצרים טענות שגויות בביטחון. לכן בכל מספר, ציטוט וסעיף — בודקים במקור, לא בשיחה.</p></article>
+</div>
+    <div class="wow-foot">מקורות: OpenAI, Why language models hallucinate — openai.com/index/why-language-models-hallucinate/ · Anthropic, Prompting best practices.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף יסודות: מה זה LLM. המטאפורה: המודל לא ״שולף תשובה מהספר״, הוא מנבא את ההמשך הסביר. להדגיש שתי מגבלות לפיננסים: (1) חלון הקשר — מסמך ארוך עלול להיחתך או להידחק; (2) הזיה — ניסוח משכנע אינו ראיה. מקור על הזיות: OpenAI, Why language models hallucinate (https://openai.com/index/why-language-models-hallucinate/). אפשר לשאול את האולם: ״מתי כבר קיבלתן תשובה שנשמעה מושלמת — ואז המספר לא ישב?״ הסיפור האישי: [למלא].</aside>
+</section>
+
+<section class="slide s-wow" data-title="יסודות · טוקנים">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 2/6</div>
+    <h2>טוקנים: יחידת המידה של המודל</h2>
+    <p class="wow-lead">המודל לא קורא ״מילים״ כמונו. הוא מפרק טקסט לחתיכות קטנות שנקראות טוקנים — וכל טוקן תופס מקום בחלון ההקשר ועולה כסף.</p>
+    <div class="tok-demo" aria-label="פירוק משפט עברי לטוקנים">
+      <div class="tok-count">טוקנים · <b>7</b></div>
+      <div class="tok-row">
+        <span class="tok">יתרת</span>
+        <span class="tok">הס־</span>
+        <span class="tok">פקים</span>
+        <span class="tok">ל־</span>
+        <span class="tok">סוף</span>
+        <span class="tok">ה־</span>
+        <span class="tok">רבעון</span>
+      </div>
+    </div>
+    <div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">מה זה טוקן</div><div class="wow-t">חתיכת טקסט</div><p>מילה קצרה באנגלית היא לפעמים טוקן אחד. מילה בעברית, מספר, או סימן — לעיתים מתפצלים לכמה טוקנים.</p></article><article class="wow-card"><div class="wow-k">עברית יקרה יותר</div><div class="wow-t">אותו משפט, יותר טוקנים</div><p>משפט בעברית צורך בדרך כלל יותר טוקנים מאותו תוכן באנגלית, כי הטוקנייזר פחות יעיל בשפה שלנו. לכן מסמך ארוך בעברית ממלא את החלון מהר יותר.</p></article><article class="wow-card"><div class="wow-k">מה נספר</div><div class="wow-t">קלט + פלט</div><p>נספרים גם מה ששולחים (פרומפט, קבצים, היסטוריה) וגם מה שהמודל כותב חזרה. שיחה ארוכה מצטברת.</p></article><article class="wow-card"><div class="wow-k">למה זה חשוב בכספים</div><div class="wow-t">חלון, עלות, דיוק</div><p>כשהקשר מתמלא — המודל ״שוכח״ את ההתחלה, העלות עולה, ואיכות הניתוח על מסמכים ארוכים יורדת. לכן חותכים ומארגנים חומר לפני השליחה.</p></article>
+</div>
+    <div class="wow-foot">העיקרון: טוקן הוא יחידת העיבוד והחיוב. אין כאן מחירון — ראו את השקף הבא לכלכלת הטוקנים.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף טוקנים. לא חייבים להיכנס לטכניקה: ״המודל משלם וזוכר לפי חתיכות, לא לפי עמודים.״ עברית בדרך כלל יקרה יותר מאנגלית בטוקנים — בלי מספר מדויק היום, כי הוא תלוי בטוקנייזר ובמשפט. טיפ מעשי: לצרף רק את הסעיפים הרלוונטיים, לא את כל ההסכם בבת אחת, ולשמור סיכום מסודר. אם שואלים כמה טוקנים זה עמוד — התשובה: תלוי בשפה, בטבלאות ובפורמט.</aside>
+</section>
+
+<section class="slide s-wow" data-title="יסודות · כלכלת הטוקנים">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 3/6</div>
+    <h2>כלכלת הטוקנים: לחשוב עלות למשימה</h2>
+    <p class="wow-lead">המחירים משתנים בין ספקים ומודלים, ומתעדכנים. מה שנשאר יציב: פלט יקר מקלט, מודל חזק יקר יותר, והעלות האמיתית היא למשימה — לא ל״צ׳אט״.</p>
+    <div class="eco-demo" aria-label="מגדל עלות לפי אורך משימה">
+      <div class="eco-tower" id="ecoTower"></div>
+      <div class="eco-side">
+        <label for="ecoRange">אורך המשימה (המחשה)</label>
+        <input type="range" id="ecoRange" min="2" max="10" value="5" />
+        <div class="eco-cost" id="ecoCost">40 יחידות<small>המחשה בלבד, לא מחירון ספק</small></div>
+      </div>
+    </div>
+    <div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">כלל אצבע 1</div><div class="wow-t">פלט יקר מקלט</div><p>ייצור תשובה ארוכה עולה יותר מקריאת אותו היקף. לבקש תשובה ממוקדת — לא רק ״יפה יותר״, גם זול ומדויק יותר.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 2</div><div class="wow-t">מודל לפי משימה</div><p>סיכום שגרתי לא חייב את המודל החזק ביותר. בדיקת אמות מידה, חוזה, או ניתוח רב־מסמכים — כן שווה מודל חזק / מצב חשיבה.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 3</div><div class="wow-t">הקשר ארוך עולה</div><p>כל קובץ שמצרפים וכל סיבוב בשיחה נכנסים לחיוב. כדאי: מסמך נקי, שאלה ברורה, בלי לשרשר שיחות אין־סוף על אותם קבצים.</p></article><article class="wow-card"><div class="wow-k">איך מודדים אצלנו</div><div class="wow-t">עלות למשימה</div><p>שואלים: כמה עלה ביאור סגירה / התאמת בנק / טיוטת ביאור — כולל זמן בדיקה שלנו. לא רק ״כמה עולה טוקן״.</p></article>
+</div>
+    <div class="wow-foot">אין כאן מחירון: המספרים מתעדכנים אצל הספקים. לבדוק בפרייסינג הרשמי לפני פיילוט, ולמדוד עלות למשימה בפיילוט עצמו.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף כלכלת טוקנים. במצגת המורחבת הקודמת הופיעה טבלת מחירים מ־11.11.2026 — לא שיחזרנו סכומים, כדי לא להציג מחירון שעלול להתיישן. המסר לקהל: לבחור מודל לפי סיכון המשימה, ולמדוד עלות כוללת (מודל + זמן רו״ח שבודקת). אם שואלים מחיר עדכני — לפתוח את עמוד התמחור של הספק, לא מהזיכרון.</aside>
+</section>
+
+<section class="slide s-wow" data-title="יסודות · API">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 4/6</div>
+    <h2>מה זה API, ואיך הוא עובד</h2>
+    <p class="wow-lead">API הוא ממשק תוכנה: המערכת שלכם שולחת בקשה למודל ומקבלת תשובה — בלי להדביק נתונים ידנית בצ׳אט אישי.</p>
+    <div class="api-demo" aria-label="זרימת בקשה ותשובה דרך API">
+      <div class="api-row">
+        <div class="api-box">המערכת שלכם<small>ERP / קובץ</small></div>
+        <div class="api-track"></div>
+        <div class="api-gate">שער · מפתח API</div>
+        <div class="api-pkt">JSON</div>
+        <div class="api-box">המודל<small>תשובה</small></div>
+      </div>
+    </div>
+    <div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">בפשטות</div><div class="wow-t">בקשה ותשובה</div><p>התוכנה שולחת פרומפט, קבצים או נתונים, ומקבלת טקסט או קובץ בחזרה. זה אותו מודל — רק בצינור מבוקר.</p></article><article class="wow-card"><div class="wow-k">למה זה חשוב בכספים</div><div class="wow-t">פחות העתק־הדבק</div><p>אפשר לחבר ERP, סגירה או תיקייה — עם הרשאות, יומן וסביבה ארגונית. לא לשלוח קובץ לקוח מחשבון פרטי.</p></article><article class="wow-card"><div class="wow-k">מפתח גישה</div><div class="wow-t">מי נכנס, מה מותר</div><p>החיבור נעשה עם מפתח והרשאות. מי שמחזיק מפתח פתוח במחשב או בצ׳אט — פתח דלת לנתונים.</p></article><article class="wow-card"><div class="wow-k">גבול ה־API</div><div class="wow-t">עדיין צריך MCP או כלי</div><p>API מדבר עם המודל. כדי שהמודל יקרא מערכת, יריץ כלי או יעדכן קובץ — צריך חיבור כלים. זה הגשר לשקף הבא.</p></article>
+</div>
+    <div class="wow-foot">API = ממשק תכנותי לספק. המדיניות, שמירת הנתונים ורמת הארגון תלויות בחוזה ובתוכנית — לא ב״יש API״ לבד.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף API. דוגמה חיה: ״במקום להעלות ייצוא כל פעם בצ׳אט, הסקריפט שולח את הקובץ ומחזיר טיוטת פערים.״ להדגיש: API אינו אוטומטית מאובטח; צריך תוכנית ארגונית, איסור על מפתחות במסמכים, ורישום למי יש גישה. מעבר ל־MCP: ה־API הוא הצינור; MCP הוא תקן לחיבור הכלים וההקשר.</aside>
+</section>
+
+<section class="slide s-wow" data-title="יסודות · MCP">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 5/6</div>
+    <h2>מה זה MCP, ואיך הוא עובד</h2>
+    <p class="wow-lead">MCP — Model Context Protocol — הוא תקן פתוח לחיבור מודל לכלים ולהקשר: כמו ״שקע אחיד״ בין העוזר לבין המערכות שלכם.</p>
+    <div class="mcp-stage" aria-label="טבעת כלים סביב המודל">
+      <div class="mcp-world">
+        <div class="mcp-core"><b>המודל</b><span>MCP</span></div>
+        <div class="mcp-ring">
+          <div class="mcp-tool" style="--i:0"><div class="face">Excel</div></div>
+          <div class="mcp-tool" style="--i:1"><div class="face">Drive</div></div>
+          <div class="mcp-tool" style="--i:2"><div class="face">ERP</div></div>
+          <div class="mcp-tool" style="--i:3"><div class="face">מייל</div></div>
+        </div>
+      </div>
+    </div>
+<div class="wow-grid g3 has-viz">
+  <article class="wow-card"><div class="wow-k">מתי הוכרז</div><div class="wow-t">25 בנובמבר 2024</div><p>Anthropic פרסמה את Model Context Protocol כתקן פתוח לחיבור עוזרי AI למקורות נתונים ולכלים.</p></article><article class="wow-card"><div class="wow-k">המטאפורה</div><div class="wow-t">כמו USB‑C לכלים</div><p>במקום חיבור חד־פעמי לכל מערכת, שרת MCP חושף יכולות (לקרוא קובץ, לשאול בסיס נתונים) בצורה אחידה.</p></article><article class="wow-card"><div class="wow-k">זהירות</div><div class="wow-t">חיבור ≠ אישור גורף</div><p>לכל חיבור יש להגדיר הרשאות. מגדירים מה מותר לקרוא ולכתוב, ומה דורש אישור אדם — במיוחד על נתוני לקוחות.</p></article>
+</div>
+    <div class="wow-foot">מקור: Anthropic, Introducing the Model Context Protocol, 25.11.2024 — anthropic.com/news/model-context-protocol · modelcontextprotocol.io</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף MCP. להסביר במשפט: ״המודל לבד לא רואה את ה־ERP; MCP הוא השקע שמחבר אותו, באישור שלכם.״ תאריך ההכרזה: 25 בנובמבר 2024, Anthropic, תקן פתוח. לא להבטיח שכל ספק מממש אותו באותה צורה. שאלה לאולם: אילו מערכות הייתן מחברות קודם — תיקיית הסגירה, הייצוא מהנהלת חשבונות, או האימייל? סייג: חיבור רחב בלי הרשאות הוא סיכון, לא יתרון.</aside>
+</section>
+
+<section class="slide s-wow" data-title="יסודות · אייג'נט">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 6/6</div>
+    <h2>מה זה אייג׳נט, ואיך הוא עובד</h2>
+    <p class="wow-lead">עוזר עונה בשיחה. אייג׳נט מקבל מטרה, מתכנן, מפעיל כלים, מסתכל על התוצאה — וחוזר על הלולאה עד שהוא מסיים או מבקש מכם אישור.</p>
+    <div class="agent-stage" aria-label="לולאת סוכן בתלת-ממד">
+      <div class="agent-world">
+        <div class="agent-tilt">
+          <div class="agent-ring"></div>
+          <div class="agent-stop" style="--a:0deg"><div class="face">מטרה<small>מה מבקשים</small></div><i class="chk"></i></div>
+          <div class="agent-stop" style="--a:90deg"><div class="face">תכנון<small>הצעד הבא</small></div><i class="chk"></i></div>
+          <div class="agent-stop" style="--a:180deg"><div class="face">פעולה<small>הפעלת כלי</small></div><i class="chk"></i></div>
+          <div class="agent-stop" style="--a:270deg"><div class="face">בדיקה<small>מה יצא</small></div><i class="chk"></i></div>
+          <div class="agent-arm"><div class="agent-dot"></div></div>
+        </div>
+        <div class="agent-out">תוצר מוכן לאישור</div>
+      </div>
+    </div>
+<div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">ההבדל</div><div class="wow-t">שיחה מול סוכן</div><p>בצ׳אט אתן מנהלות כל צעד. בסוכן מגדירים משימה (״התאימי את הבנק והוציאי פערים״) והוא רץ עם כלים. אתן נשארות אחראיות על התוצאה.</p></article><article class="wow-card"><div class="wow-k">כלל בקרה</div><div class="wow-t">אישור על הצעד הרגיש</div><p>לקרוא קובץ — לרוב בסדר. לשלוח מייל, לשנות רשומה, או להעביר תשלום — רק עם אישור. סוכן בלי גדרות הוא סיכון תפעולי.</p></article>
+</div>
+    <div class="wow-foot">הלולאה תכנון → כלי → תצפית היא תיאור עקרוני של סוכן. בהמשך: Cowork, Dots ו־Grok Bot — ודמו על משימת כספים.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף אייג׳נט. לולאה: plan, tool, observe, repeat. דוגמה כספית: סוכן מקבל ייצוא בנק וכרטסת, מריץ התאמה, כותב דוח פערים, עוצר לפני שליחה ללקוח. להדגיש אחריות: הסוכן לא מחליף חתימה של רו״ח. מעבר: אחרי היסודות עוברים למפת הקרחון (השקפים הקיימים), ואחר כך להעמקת אבטחה, כלים ודמואים.</aside>
+</section>
+
+
+<!-- 10 OVERVIEW (was 4; +6 foundation slides) -->
 <section class="slide s-over" data-title="מפת הקרחון">
   <div class="head"><h2>שבע שכבות</h2><p>מלמעלה למטה — כל שכבה חוסכת יותר.</p></div>
   <svg class="berg-big" viewBox="0 0 1920 1080" id="overBerg">
@@ -573,13 +1064,13 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
     </defs>
     <path d="M0 238 Q 120 226 240 238 T 480 238 T 720 238 T 960 238 T 1200 238 T 1440 238 T 1680 238 T 1920 238" stroke="#fff" stroke-width="4" fill="none" opacity=".85"/>
     <g clip-path="url(#bc)">
-      <rect class="band" data-go="4"  x="0" y="0"   width="1920" height="238" fill="#F6B26B" style="animation-delay:.05s"/>
-      <rect class="band" data-go="5"  x="0" y="238" width="1920" height="118" fill="#EE8F5A" style="animation-delay:.2s"/>
-      <rect class="band" data-go="6"  x="0" y="356" width="1920" height="118" fill="#E2703F" style="animation-delay:.35s"/>
-      <rect class="band" data-go="7"  x="0" y="474" width="1920" height="118" fill="#C95A33" style="animation-delay:.5s"/>
-      <rect class="band" data-go="8"  x="0" y="592" width="1920" height="118" fill="#A8472B" style="animation-delay:.65s"/>
-      <rect class="band" data-go="9"  x="0" y="710" width="1920" height="118" fill="#833824" style="animation-delay:.8s"/>
-      <rect class="band" data-go="10"  x="0" y="828" width="1920" height="200" fill="#5E2A1E" style="animation-delay:.95s"/>
+      <rect class="band" data-go="10"  x="0" y="0"   width="1920" height="238" fill="#F6B26B" style="animation-delay:.05s"/>
+      <rect class="band" data-go="11"  x="0" y="238" width="1920" height="118" fill="#EE8F5A" style="animation-delay:.2s"/>
+      <rect class="band" data-go="12"  x="0" y="356" width="1920" height="118" fill="#E2703F" style="animation-delay:.35s"/>
+      <rect class="band" data-go="13"  x="0" y="474" width="1920" height="118" fill="#C95A33" style="animation-delay:.5s"/>
+      <rect class="band" data-go="14"  x="0" y="592" width="1920" height="118" fill="#A8472B" style="animation-delay:.65s"/>
+      <rect class="band" data-go="15"  x="0" y="710" width="1920" height="118" fill="#833824" style="animation-delay:.8s"/>
+      <rect class="band" data-go="16"  x="0" y="828" width="1920" height="200" fill="#5E2A1E" style="animation-delay:.95s"/>
       <g stroke="rgba(255,255,255,.22)" stroke-width="2"><line x1="0" y1="356" x2="1920" y2="356"/><line x1="0" y1="474" x2="1920" y2="474"/><line x1="0" y1="592" x2="1920" y2="592"/><line x1="0" y1="710" x2="1920" y2="710"/><line x1="0" y1="828" x2="1920" y2="828"/></g>
     </g>
     <g font-size="34" font-weight="800" fill="#fff" text-anchor="middle">
@@ -964,6 +1455,351 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 <div class="foot"><div class="src">מקורות: openai.com/enterprise-privacy · privacy.claude.com · learn.microsoft.com (Enterprise data protection) · knowledge.workspace.google.com (Privacy Hub). פירוט ב‑SOURCES.md.</div><div class="pg"></div></div>
 <aside class="notes">שקף השוואה: הכלים לפי שכבה, ורמת האבטחה הנדרשת. הרמות הן המלצת עבודה לאנשי כספים, לא תו תקן של הספק. המדיניות המחייבת היא של הארגון ושל הספק, והיא מתעדכנת. מקורות רשמיים מפורטים ב‑SOURCES.md.</aside>
 </section>
+
+<!-- NEW DEPTH: security, news, timeline, tools, agents, native, demos (added before איפה אני?; existing slides kept) -->
+<section class="slide s-wow" data-title="אבטחת מידע">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">אבטחה · 1/3</div>
+    <h2>אבטחת מידע: קודם לסווג, אחר כך לבחור כלי</h2>
+    <p class="wow-lead">השאלה אינה ״האם מותר AI״. השאלה: איזה מידע, באיזו סביבה, ועם איזו בקרה. כלי צרכני וכלי ארגוני אינם אותה רמת הגנה.</p>
+    <div class="drawers" aria-label="מגירות סיווג מידע">
+      <div class="drawer"><div class="k">1</div><div class="t">ציבורי</div><div class="d">מאמר, שאלה כללית — אפשר בצ׳אט כללי</div></div>
+      <div class="drawer"><div class="k">2</div><div class="t">פנימי</div><div class="d">תהליך משרדי בלי נתוני לקוח — סביבה מאושרת</div></div>
+      <div class="drawer"><div class="k">3</div><div class="t">רגיש</div><div class="d">דוחות וקבצי עבודה — תוכנית ארגונית</div></div>
+      <div class="drawer"><div class="k">4</div><div class="t">סודי</div><div class="d">שכר, בנק, חוזים — מנעול עבה, רק סביבה מבוקרת</div></div>
+    </div>
+    <div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">סיווג</div><div class="wow-t">מה מותר לצאת מהארגון</div><p>ציבורי / פנימי / סודי / נתוני לקוח ולשכה. נתוני שכר, חשבונות בנק, חוזים ומספרים מזהים — לא נכנסים לחשבון אישי.</p></article><article class="wow-card"><div class="wow-k">סביבה</div><div class="wow-t">צרכני מול ארגוני</div><p>חשבון אישי, תוכנית חינמית או אפליקציה על הטלפון — לא סביבת העבודה של התיק. סביבה ארגונית: זהות, יומן, מדיניות שימור, ואיסור אימון על הנתונים לפי החוזה.</p></article><article class="wow-card"><div class="wow-k">כלל ברזל</div><div class="wow-t">לא להדביק תיק בצ׳אט פרטי</div><p>גם ״רק הפעם״ וגם ״בלי שם הלקוח״ עלולים להשאיר די בהקשר. אם אין כלי מאושר — לא שולחים את הקובץ.</p></article><article class="wow-card"><div class="wow-k">בקרה</div><div class="wow-t">מי רואה, כמה זמן, מה נרשם</div><p>לשאול את IT/הספק: האם השיחות נשמרות, האם יש SSO, האם אפשר לכבות אימון, ומה קורה באירוע דליפה.</p></article>
+</div>
+    <div class="wow-foot">המלצת עבודה לאנשי כספים, לא תו תקן של ספק. המדיניות המחייבת היא של הארגון ושל הספק, והיא מתעדכנת.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף אבטחת מידע. זה משלים את טבלת ״כלים ואבטחה״ שכבר קיימת במצגת — לא מחליף אותה. לתרגל עם האולם סיווג מהיר: מאמר מקצועי (אפשר), מאזן לא מזוהה (זהירות), ייצוא שכר (רק סביבה מאושרת). הפניה קדימה: Shadow AI, ואז החומר האמריקאי (NIST / CISA / AI Action Plan).</aside>
+</section>
+
+<section class="slide s-wow" data-title="Shadow AI">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">אבטחה · 2/3</div>
+    <h2>Shadow AI: כשעובדים מביאים כלי לבד</h2>
+    <p class="wow-lead">כשאין כלי מאושר וקל, אנשים מביאים כלי משלהם — כדי להספיק יותר. הרווח התפעולי עלול לעלות בסיכון אבטחה, ציות וסודיות לקוח.</p>
+    <div class="sh-office" aria-label="משרד מלמעלה: זרקור חושף כלים לא מאושרים">
+      <div class="sh-scene">
+        <div class="sh-grid"></div>
+        <div class="sh-desk" style="left:14%;top:38%"></div>
+        <div class="sh-desk" style="left:32%;top:28%"></div>
+        <div class="sh-desk" style="left:50%;top:40%"></div>
+        <div class="sh-desk" style="left:68%;top:26%"></div>
+        <div class="sh-desk" style="left:84%;top:42%"></div>
+        <div class="sh-desk" style="left:40%;top:62%"></div>
+        <div class="sh-ghost" style="left:32%;top:28%"><b>כלי אישי</b></div>
+        <div class="sh-ghost" style="left:68%;top:26%"><b>צ׳אט פרטי</b></div>
+        <div class="sh-ghost" style="left:84%;top:42%"><b>בלי אישור</b></div>
+        <div class="sh-ghost" style="left:40%;top:62%"><b>Shadow</b></div>
+        <div class="sh-spot"></div>
+      </div>
+      <div class="sh-cap">הזרקור חושף שימוש לא מאושר מתחת לפני השטח</div>
+    </div>
+    <div class="wow-grid g3 has-viz">
+  <article class="wow-card"><div class="wow-k">מה זה</div><div class="wow-t">שימוש בלי אישור</div><p>IBM מגדירה shadow AI כשימוש ב־AI בלי אישור או פיקוח של המעסיק.</p></article><article class="wow-card"><div class="wow-k">Microsoft · מאי 2024</div><div class="stat">78%<small>ממשתמשי AI בעבודה מביאים כלי משלהם (BYOAI). ב־SME: 80%.</small></div></article><article class="wow-card"><div class="wow-k">IBM · דוח 2025</div><div class="stat">20%<small>מהארגונים שנבדקו דיווחו על אירוע שקשור ל־shadow AI, שהוסיף בממוצע 200,321 דולר לעלות הפריצה.</small></div></article>
+</div>
+<div class="wow-grid g2" style="margin-top:16px">
+  <article class="wow-card"><div class="wow-k">המקרה שכולם זוכרים</div><div class="wow-t">סמסונג, אפריל 2023</div><p>אחרי דליפה פנימית, סמסונג אסרה על עובדים להשתמש בכלי AI גנרטיביים כמו ChatGPT. גם אחרי האירוע ביקשו שלא להזין מידע חברתי או אישי.</p></article><article class="wow-card"><div class="wow-k">מה עושים</div><div class="wow-t">לא לאסור בלי חלופה</div><p>איסור בלי כלי מאושר דוחף את השימוש למחתרת. פותחים סביבה מאושרת, מסבירים מה אסור, ובודקים שימוש לא מורשה — בלי להשפיל את מי שניסה לעבוד מהר.</p></article>
+</div>
+    <div class="wow-foot">מקורות: Microsoft Work Trend Index, 8.5.2024 — 78% BYOAI · IBM Cost of a Data Breach Report 2025 — 20% ו־+200,321$ · TechCrunch, 2.5.2023, על איסור סמסונג לאחר דליפה באפריל.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף Shadow AI. להגיד במפורש: העובדים לא ״רעים״ — הם מנסים לגמור עבודה. המספרים: Microsoft WTI 8 במאי 2024, 78% ממשתמשי AI מביאים כלי משלהם (80% ב־SME). IBM Cost of a Data Breach 2025: 20% מהארגונים במדגם דיווחו על פריצה שקשורה ל־shadow AI; האירועים האלה הוסיפו 200,321 דולר לממוצע. 63% מהארגונים שנפרצו אין להם מדיניות ממשל AI או שהיא עדיין נכתבת. סמסונג: TechCrunch 2.5.2023, איסור אחרי דליפה פנימית באפריל 2023. המסר: חלופה מאושרת + מדיניות ברורה. לא להמציא מה בדיוק דלף מעבר למה שכתוב בכתבה (דליפה פנימית של מידע חברתי).</aside>
+</section>
+
+<section class="slide s-wow" data-title="אבטחת AI בארה״ב">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">אבטחה · 3/3</div>
+    <h2>אבטחת AI בארה״ב: שלושה מסמכי יסוד</h2>
+    <p class="wow-lead">שלושה מסמכים רשמיים שכדאי להכיר, נכון לנובמבר 2026. זה לא ייעוץ משפטי, וזה לא רגולציה ישראלית.</p>
+    <div class="wow-grid g3 fan3">
+  <article class="wow-card"><div class="wow-k">NIST</div><div class="wow-t">AI RMF + פרופיל GenAI</div><p>מסגרת וולונטרית לניהול סיכוני AI. ביולי 2024 פורסם NIST AI 600-1, פרופיל ל־Generative AI: סיכונים ייחודיים, ופעולות מוצעות לניהולם.</p></article><article class="wow-card"><div class="wow-k">CISA · NSA · FBI</div><div class="wow-t">אבטחת נתוני AI, 22.5.2025</div><p>הנחיה משותפת: אבטחת הנתונים שמשמשים לאימון ולהפעלת מערכות AI. סיכונים לאורך מחזור החיים, כולל שרשרת אספקה, הרעלת נתונים וסחיפת נתונים.</p></article><article class="wow-card"><div class="wow-k">הבית הלבן</div><div class="wow-t">America’s AI Action Plan, יולי 2025</div><p>תוכנית מדיניות פדרלית. בין השאר: חיזוק סייבר לתשתיות קריטיות, קידום AI מאובטח־מעיצוב, וחיזוק יכולת הממשל להגיב לאירועי AI.</p></article>
+</div>
+<div class="wow-grid g2" style="margin-top:16px">
+  <article class="wow-card"><div class="wow-k">מה זה אומר לנו</div><div class="wow-t">לא להעתיק־להדביק רגולציה</div><p>המסמכים האמריקאיים הם מצפן: סיווג מידע, בקרת גישה, מעקב אחרי מקור הנתונים, ושימוש וולונטרי במסגרות סיכון. בישראל חלים כללים אחרים (פרטיות, בנק ישראל, רשות ניירות ערך) — לבדוק אצל היועמ״ש.</p></article><article class="wow-card"><div class="wow-k">שאלה לדירקטוריון</div><div class="wow-t">יש לנו ממשל ל־AI?</div><p>לא ״האם ניסינו צ׳אט״, אלא: מי מאשר כלים, איפה נמצא מידע הלקוח, ומה עושים כשעובד השתמש בכלי לא מאושר.</p></article>
+</div>
+    <div class="wow-foot">מקורות שנפתחו למושב הזה: NIST AI 600-1, יולי 2024, doi.org/10.6028/NIST.AI.600-1 · CISA, 22.5.2025 · White House, America’s AI Action Plan, יולי 2025. שקף מקורי ישן לא אותר במצגות הקודמות.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף אבטחת AI בארה״ב. חשוב לשקיפות: חיפשנו במצגות הקודמות (merged, v2, gpt, iceberg-insert) ולא מצאנו שקף ישן ייעודי — זה שקף חדש ממקורות רשמיים שנפתחו בנובמבר 2026. NIST AI 600-1 (יולי 2024) הוא פרופיל GenAI למסגרת AI RMF, לשימוש וולונטרי. CISA/NSA/FBI (ושותפים בינלאומיים) 22.5.2025: AI Data Security, כולל מקור הנתונים, שלמות, שרשרת אספקה, data poisoning ו־data drift. America’s AI Action Plan (יולי 2025): בין היתר Promote Secure-By-Design AI, Bolster Critical Infrastructure Cybersecurity, Mature Federal Capacity for AI Incident Response. לא להציג כחובה על חברה ישראלית. קישור לשיחה: Shadow AI, סיווג, ומדיניות דירקטוריון.</aside>
+</section>
+
+<section class="slide s-wow" data-title="כתבות מהעולם הפיננסי">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">הקשר · כתבות</div>
+    <h2>כתבות רלוונטיות מהעולם הפיננסי</h2>
+    <p class="wow-lead">שלושה סיפורים מהשנתיים האחרונות: טעות בדוח, סוכנים בביקורת, והיקף פריסה. כל אחד מהם הוא שיעור — לא רכילות.</p>
+    <div class="wow-grid g3">
+  <article class="wow-card"><div class="wow-k">Deloitte אוסטרליה</div><div class="wow-t">החזר חלקי לממשלה, 2025</div><p>ABC News: משרד Deloitte נדרש להשיב לממשלה החזר חלקי, אחרי שהגיש דוח שהסתמך על AI וכלל טעויות. השיעור: גם משרד גדול משלם על חומר שלא נבדק עד הסוף.</p></article><article class="wow-card"><div class="wow-k">KPMG Clara intelligence</div><div class="wow-t">17 בנובמבר 2026</div><p>KPMG ארה״ב הכריזה על פריסת KCi: ניתוח 100% מאוכלוסיית התנועות בתחומים נבחרים; בחלק מהתיקים קיצור לוחות זמנים בעד שלושה וחצי שבועות; פריסה ליותר מ־125 צוותים בארה״ב ו־500 בעולם; יעד לכל ביקורות החברות הפרטיות ב־2027. הביקורת נשארת ״human-assured״.</p></article><article class="wow-card"><div class="wow-k">EY Assurance</div><div class="wow-t">2026</div><p>הודעת EY: השקת AI סוכני בקנה מידה ארגוני בביקורת, ״לעידן ה־AI״. השיעור: ה־Big 4 לא מדברים כבר על ניסוי בצ׳אט — אלא על סוכנים בתוך תהליך הביקורת, עם אחריות המבקר.</p></article>
+</div>
+    <div class="wow-foot">מקורות: ABC News, 9.10.2025 — Deloitte pays back government after using AI in a report containing errors · KPMG US, 17.11.2026 — U.S. launch of KPMG Clara intelligence · EY, 2026 — enterprise-scale agentic AI in Assurance (ey.com/…/2026/04/…).</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף כתבות. שלושה סיפורים, בלי להמציא סכומים שלא מופיעים בכתבה (ב־ABC לא ציטטנו סכום החזר). Deloitte אוסטרליה: דוח עם טעויות אחרי שימוש ב־AI, החזר חלקי לממשלה, ABC 9.10.2025. KPMG 17.11.2026: המספרים מההודעה הרשמית. EY: כותרת ההודעה מ־2026 (נתיב /2026/04/ באתר EY); לא הוספנו נתוני ביצוע כי לא חולצו מהעמוד. אם יש זמן: לחבר לטיפים על ציטוט לפני מסקנה, ולאחריות המבקר/הרו״ח. כתבות נוספות במערך המרצה (Arup, Air Canada, פסיקה ישראלית) — לא דחסנו הכל לשקף.</aside>
+</section>
+
+<section class="slide s-wow" data-title="AI בפיננסים · שנתיים">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">הקשר · ציר זמן</div>
+    <h2>AI בפיננסים: שנתיים של קפיצה</h2>
+    <p class="wow-lead">מעל מה שכבר יש בשכבות הקרחון — רגעים מאומתים מ־2024 עד נובמבר 2026. לא ״הכל השתנה ביום אחד״: התקן, הכלים, והפריסה הארגונית הגיעו בזה אחר זה.</p>
+    <div class="tl">
+  <article class="wow-card"><div class="wow-k">25.11.2024</div><div class="wow-t">MCP</div><p>Anthropic מכריזה על Model Context Protocol, תקן פתוח לחיבור כלים.</p></article><article class="wow-card"><div class="wow-k">2025</div><div class="wow-t">כניסה לפיננסים</div><p>Claude for Financial Services (Anthropic, 27.10.2025) · שלהי 2025: השקת Google Antigravity IDE, סביבה סוכנית לקוד.</p></article><article class="wow-card"><div class="wow-k">אפריל 2026</div><div class="wow-t">סוכנים בביקורת</div><p>EY מכריזה על AI סוכני בקנה מידה ארגוני ב־Assurance.</p></article><article class="wow-card"><div class="wow-k">יוני–אוק׳ 2026</div><div class="wow-t">Copilot בכספים</div><p>Microsoft על Copilot ב־Excel ל־Frontier Finance (25.6) ו־Copilot for finance (29.10).</p></article><article class="wow-card"><div class="wow-k">אוג׳–ספט׳ 2026</div><div class="wow-t">סוכנים תמידיים</div><p>11.8: Grok Bot · 15.9: מדריך Anthropic לארגון AI‑native · 29.9: OpenAI Dots.</p></article><article class="wow-card"><div class="wow-k">17.11.2026</div><div class="wow-t">KPMG KCi</div><p>השקה בארה״ב של Clara intelligence — ביקורת AI עם אחריות אדם.</p></article>
+</div>
+    <div class="wow-foot">כל נקודה ממקור שנפתח למושב הזה. תאריך EY לפי נתיב ההודעה /2026/04/. Antigravity IDE: לפי בלוג Google, השקה בנובמבר 2025.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף ציר זמן 2024–2026, בנוסף לשכבות הקרחון הקיימות (לא במקומן). נקודות מאומתות בלבד. Microsoft Excel/finance: כתובות הרשמיות נפתחו; חלק מהעמודים החזירו חסימה, לכן מציינים את התאריך והכותרת מהמקור הרשמי בלי ציטוטי עומק. Antigravity IDE: נובמבר 2025 לפי בלוג Antigravity 2.0 (שפורסם 19.5.2026). אפשר לעצור ב־Dots/Grok Bot ולפתוח את שקפי הכלים.</aside>
+</section>
+
+<section class="slide s-wow" data-title="כלי קוד">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">כלים לבונים · 1/2</div>
+    <h2>כלי קוד: במה הם שונים</h2>
+    <p class="wow-lead">לא צריך להיות מתכנתת: מתארים תהליך, והסוכן כותב, מריץ ובודק. ארבעה כלים שונים — לא אותו דבר בשמות אחרים.</p>
+    <div class="wow-grid g4">
+  <article class="wow-card"><div class="wow-k">Anthropic</div><div class="wow-t">Claude Code</div><p>סוכן קוד שקורא את בסיס הקוד, עורך קבצים ומריץ פקודות — בטרמינל, ב־IDE, באפליקציה ובדפדפן. מתקן ובונה שוב עד שזה עובד.</p></article><article class="wow-card"><div class="wow-k">OpenAI</div><div class="wow-t">Codex</div><p>סוכן הקוד של OpenAI: כותב, בודק ומשחרר קוד. כלול בתוכניות ChatGPT (עם מגבלות בתוכניות החינמיות/הבסיסיות לפי הספק).</p></article><article class="wow-card"><div class="wow-k">Google</div><div class="wow-t">Antigravity</div><p>סביבת פיתוח סוכנית של Google. הסוכן פועל בעורך, בטרמינל ובדפדפן, עם ניהול משימות ו־artifacts. קיימים גם אפליקציה עצמאית והרחבות ל־IDE.</p></article><article class="wow-card"><div class="wow-k">xAI</div><div class="wow-t">Grok Bot</div><p>לא IDE לקוד. צוות בוטים תמידיים: לכל בוט מחשב משלו, הוא נכנס לכלים ולאתרים שלכם, עובד ב־Slack, וחוזר עם עבודה גמורה. מתאים גם למשימות שמערבות קבצים וקוד, אבל זה עוזר עבודה כללי.</p></article>
+</div>
+    <div class="wow-foot">מקורות: code.claude.com/docs · openai.com/codex · antigravity.google · x.ai/bot (השקת Grok Bot: 11.8.2026). המלצה: סקריפט על נתוני כספים — קודם על קובץ דוגמה, ואחר כך בקרה כמו כל שינוי מערכת.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף כלי קוד. זה שחזור והרחבה של ״כלים לבונים · קוד״ מהמצגת המורחבת הקודמת, בתוספת Antigravity ו־Grok Bot. הבדלים לקריאה בקול: Claude Code ו־Codex נולדו לקוד; Antigravity הוא סביבה סוכנית של Google; Grok Bot הוא צוות סוכני עבודה עם מחשב, לא עורך קוד ייעודי. פרומפט לדוגמה לדמו בהמשך: התאמת בנק. אזהרה: לא מריצים על נתוני אמת בלי סביבה מאושרת ובדיקה.</aside>
+</section>
+
+<section class="slide s-wow" data-title="יצירה והרחבות">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">כלים לבונים · 2/2</div>
+    <h2>יצירה, הרחבות, וסוכן שרץ בשבילכם</h2>
+    <p class="wow-lead">מעבר לקוד: לעצב חומר למשקיעים, לחבר תוספים, ולהשאיר סוכן שיעקוב אחרי הנתונים — עם אישור על הצעד החשוב.</p>
+    <div class="wow-grid g2">
+  <article class="wow-card"><div class="wow-k">Claude</div><div class="wow-t">Design, Plugins, Chrome</div><p>Claude Design: ויזואלים, אב־טיפוס ו־one‑pager, ייצוא ל־PPTX/PDF. Plugins: סקילים, מחברי MCP ופקודות. Claude in Chrome: פעולה באתרים, לפי הרשאות.</p></article><article class="wow-card"><div class="wow-k">OpenAI</div><div class="wow-t">Dots + Plugins</div><p>Dots: סוכנים תמידיים עם מחשב ענן משלהם, שמשתמשים בכלים מחוברים ומבקשים אישור. Plugins: הרחבות משותפות ל־ChatGPT, לעבודה ולסוכנים.</p></article><article class="wow-card"><div class="wow-k">הדוגמה של OpenAI</div><div class="wow-t">עדכון למשקיעים</div><p>Dot שעוקב אחרי שימוש והכנסות, מסמן שינויים, ומרענן מצגת דירקטוריון לקראת עדכון למשקיעים — ובודק איתכם כשצריך אישור.</p></article><article class="wow-card"><div class="wow-k">לכספים</div><div class="wow-t">מה כן / מה לא</div><p>כן: טיוטת סקירה, רענון שקפים, מעקב אחרי סף חריגה. לא: לשלוח ללקוח או להנהלה בלי עיניים של רו״ח, ולא לחבר מערכת בלי IT.</p></article>
+</div>
+    <div class="wow-foot">שוחזר מ־״כלים לבונים · יצירה והרחבות״ במצגת המורחבת. מקורות: claude.com/product/design · openai.com/index/introducing-dots/ (29.9.2026). פירוט סוכנים בשקף הבא.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף יצירה והרחבות — שוחזר מהגרסה המורחבת הקודמת, לא במקום שקף קיים. דוגמת ה־dot למשקיעים היא דוגמה של OpenAI עצמה, לא מקרה שלנו. מעבר טבעי לשקף האייג׳נטים: Cowork, Dots, Grok Bot.</aside>
+</section>
+
+<section class="slide s-wow" data-title="אייג'נטים לעבודה">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">אייג׳נטים</div>
+    <h2>אייג׳נטים לעבודה: Cowork, Dots, Grok Bot</h2>
+    <p class="wow-lead">שלושה סוכני עבודה — לא כלי קוד. ״קלוד דואט״ מתייחס כאן ל־Claude Cowork של Anthropic (אין מוצר בשם Duet בהקשר הזה). Dots הוא המוצר של OpenAI.</p>
+    <div class="wow-grid g3">
+  <article class="wow-card"><div class="wow-k">Anthropic</div><div class="wow-t">Claude Cowork</div><p>סוכן לעבודת ידע, לא רק לצ׳אט. רץ באתר, בדסקטופ ובמובייל; אפשר להתחיל במשרד ולהמשיך בטלפון. נשאר לעבוד גם אחרי שסוגרים את המחשב, ומאפשר לתזמן משימה. בתוכניות בתשלום (Pro, Max, Ultra, ועוד בהדרגה). בדף המוצר נכתב כיום ש־Cowork ״הוא פשוט Claude״.</p></article><article class="wow-card"><div class="wow-k">OpenAI · 29.9.2026</div><div class="wow-t">Dots</div><p>סוכנים תמידיים (always-on) עם מחשב ענן משלהם. נכנסים לאפליקציות מחוברות, ממשיכים לעבוד לבד, ומבקשים אישור בדברים חשובים. דוגמת OpenAI עצמה: מעקב הכנסות ורענון מצגת למשקיעים.</p></article><article class="wow-card"><div class="wow-k">xAI · 11.8.2026</div><div class="wow-t">Grok Bot</div><p>צוות בוטים תמידיים שאפשר למסור להם עבודה אמיתית. לכל בוט מחשב משלו, נכנס לכלים ולאתרים, עובד ב־Slack כמו חבר צוות, אפשר להזמין לפגישת Google Meet או Zoom, וחוזר עם תוצר מוגמר לאישור.</p></article>
+</div>
+    <div class="wow-foot">מקורות: claude.com/product/cowork · openai.com/index/introducing-dots/ · x.ai/bot ו־x.ai/news/introducing-grok-bot. Dots נבחר כמוצר הרלוונטי לפיננסים (לא מוצרים אחרים בשם Dots).</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף אייג׳נטים. החלטה 1: ״קלוד דואט״ = Claude Cowork; לא מצאנו מוצר Anthropic בשם Duet בהקשר הזה (Google Duet AI הישן הפך ל־Gemini, ואינו העמית כאן). החלטה 2: Dots = OpenAI Dots, 29.9.2026. החלטה 3: Grok Bot לפי x.ai/bot בלבד, בלי ניחושים. הבדל לקול: Cowork הוא Claude שממשיך משימת ידע בין מכשירים; Dots הוא סוכן תמידי עם מחשב ענן של OpenAI; Grok Bot הוא צוות בוטים עם מחשב לכל אחד, משולב בצוות. כולם דורשים גדרות ואישור אדם.</aside>
+</section>
+
+<section class="slide s-wow" data-title="ChatGPT לחשבונאות">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">כלים · חשבונאות</div>
+    <h2>ChatGPT לחשבונאות: התוסף הרשמי</h2>
+    <p class="wow-lead">כשאומרים ״GPT Accountant״ הכוונה כאן לתוסף Accounting הרשמי של OpenAI ל־ChatGPT — לא ל־GPT מותאם אישית ישן בשם דומה.</p>
+    <div class="wow-grid g2">
+  <article class="wow-card"><div class="wow-k">מה הוא עושה</div><div class="wow-t">טיוטות לסגירה ודיווח</div><p>לפי מרכז העזרה של OpenAI: מסייע במשימות חשבונאיות כמו סגירת ספרים, מאחד רשומות מגיליונות ומיישומים מחוברים, ומכין טיוטות לבדיקה שלכם.</p></article><article class="wow-card"><div class="wow-k">איך מתקינים</div><div class="wow-t">Plugin בשם Accounting</div><p>ב־ChatGPT Business אפשר להתקין בלי אישור מנהל. ב־Enterprise מנהל חייב לאשר בקונסולה. התוסף עצמו חינמי להתקנה; השימוש במודל ובכלים תלוי בתוכנית.</p></article><article class="wow-card"><div class="wow-k">חיבורים</div><div class="wow-t">קבצים + יישומי הנה״ח</div><p>מעלים תבנית Excel וקבצים, או מחברים אפליקציית הנהלת חשבונות. בין השותפים שמצוינים בעזרה: QuickBooks Online, Xero, NetSuite, FreshBooks, BILL ועוד — לבדוק ברישום העדכני מה נתמך.</p></article><article class="wow-card"><div class="wow-k">גבול מקצועי</div><div class="wow-t">טיוטה, לא חתימה</div><p>התוסף מציג טיוטה ומקורות לסכומים. הבדיקה, הסיווג והאחריות נשארים אצל רואת החשבון. לא לערבב עם ״custom GPT״ ישן שנבנה לבד — כאן מדובר בתוסף רשמי.</p></article>
+</div>
+    <div class="wow-foot">מקור: OpenAI Help, Using ChatGPT for accounting work — help.openai.com/en/articles/20001709-using-chatgpt-for-accounting-work · openai.com/business/solutions/accounting/. עודכנים אצל הספק.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף GPT Accountant. החלטה: המוצר הרלוונטי ביותר בנובמבר 2026 הוא התוסף הרשמי Accounting ל־ChatGPT, לא GPTs קהילתיים בשמות דומים. עובדות מהעזרה הרשמית שנפתחה במושב הזה (עודכנה ״אתמול״ יחסית לפתיחה). שותפי התוסף — לציין שרשימה מתעדכנת. אם שואלים על פרישת custom GPTs: לא שמנו תאריך בשקף כי לא נפתח כאן מסמך הפרישה עצמו; אפשר להגיד ש־OpenAI מעבירה יכולות לתוספים, ולבדוק את דף העזרה העדכני.</aside>
+</section>
+
+<section class="slide s-wow" data-title="AI-native · למה">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">ארגון כספים AI‑native · 1/2</div>
+    <h2>אותו כלי. תשואה אחרת.</h2>
+    <p class="wow-lead">לפי Anthropic, שני ארגונים יכולים לתת לאנשים אותו מודל — ולקבל תוצאה שונה. ההשפעה גדלה ככל שיש למודל גישה, אמון, ושיטות עבודה כתובות שאפשר להריץ.</p>
+    <div class="wow-grid g4">
+  <article class="wow-card"><div class="wow-k">שלב 1</div><div class="wow-t">פרודוקטיביות אישית</div><p>ביאור סטיות בצ׳אט, לבד, בלי חיבור מערכות.</p></article><article class="wow-card"><div class="wow-k">שלב 2</div><div class="wow-t">תהליך צוות</div><p>סקיל סגירה משותף, שכולן מריצות באותו אופן.</p></article><article class="wow-card"><div class="wow-k">שלב 3</div><div class="wow-t">תהליך מחלקה</div><p>סגירה, AP/AR ו־FP&A מחוברים ל־ERP.</p></article><article class="wow-card"><div class="wow-k">שלב 4</div><div class="wow-t">השפעה על KPI</div><p>ימי סגירה, DSO, דיוק תחזית — מדד תוצאה, לא רק ״חסכנו זמן״.</p></article>
+</div>
+<div class="wow-grid g2" style="margin-top:16px">
+  <article class="wow-card"><div class="wow-k">לפני פיילוט</div><div class="wow-t">ארבע החלטות</div><p>בעלים (מי שמחזיק את המערכות והדיווח) · חיבור IT ואבטחה · מדד פעילות אחד + מדד תוצאה אחד · תקרות הוצאה.</p></article><article class="wow-card"><div class="wow-k">שקיפות</div><div class="wow-t">מה שלנו, מה שלהם</div><p>ארבעת השלבים והמסגרת — לפי Anthropic, על ארגון מכירות. המיפוי לשורות הכספים (ביאור, סגירה, DSO) הוא התאמה של AI Finance, לא ציטוט מהמאמר.</p></article>
+</div>
+    <div class="wow-foot">מקור: Anthropic, Building an AI-native revenue organization, 15.9.2026 — claude.com/resources/articles/building-an-ai-native-revenue-organization · ההתאמה לכספים: AI Finance.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף AI-native 1/2, שוחזר מהגרסה המורחבת. המאמר הרשמי (15.9.2026) מדבר על ארגון הכנסות/מכירות. אל תציגי את המיפוי הכספי כנתון של Anthropic. לפני פיילוט: בעלים, חיבור, מדדים, תקרה. מעבר לשקף המדידה.</aside>
+</section>
+
+<section class="slide s-wow" data-title="AI-native · כמה">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">ארגון כספים AI‑native · 2/2</div>
+    <h2>איך מודדים? לא רק שעות שנחסכו</h2>
+    <p class="wow-lead">תיק שבנוי רק על ״זמן שהתפנה״ נעצר בעלות השעות האלה. מודדים יעילות, הרחבה, ויכולות חדשות — ומשווים לקבוצה שלא השתמשה, באותו רבעון.</p>
+    <div class="wow-grid g3">
+  <article class="wow-card"><div class="wow-k">יעילות</div><div class="wow-t">אותה עבודה, מהר יותר</div><p>בכספים: ביאור סגירה והתאמות בפחות זמן — בלי לוותר על בדיקה.</p></article><article class="wow-card"><div class="wow-k">הרחבה</div><div class="wow-t">יותר תפוקה מאותו צוות</div><p>בכספים: יותר ישויות או מרכזי עלות לכל אנליסט, באותה איכות בקרה.</p></article><article class="wow-card"><div class="wow-k">יכולת חדשה</div><div class="wow-t">עבודה שלא נעשתה</div><p>בכספים: בדיקה חודשית של חוזי ספקים מול חשבוניות — משימה שלא היה לה זמן.</p></article>
+</div>
+<div class="wow-grid g2" style="margin-top:16px">
+  <article class="wow-card"><div class="wow-k">דוגמאות Anthropic · מכירות, לא כספים</div><div class="wow-t">Cox ו־Cyera</div><p>Cox Communications: תשואה פי 7 בשנה הראשונה; עלות אימות והעשרת לידים ירדה ב־86%, והדיוק עלה מ־18% ל־97%. Cyera: 88% מכ־1,500 עובדים משתמשים ב־Claude מדי שבוע. אלה נתוני מכירות/ארגון, לא נתוני כספים.</p></article><article class="wow-card"><div class="wow-k">איך מריצים</div><div class="wow-t">הקמה → פיילוט → גלים</div><p>פיילוט על 2–3 צוותים, השוואה לקבוצה בלי הכלי באותו רבעון, ואז הרחבה. לא ״לפני/אחרי״ בלי ביקורת.</p></article>
+</div>
+    <div class="wow-foot">מקור: Anthropic, 15.9.2026, אותו מאמר. מספרי Cox ו־Cyera — כפי שדווחו שם, על מכירות. המיפוי לשורות הכספים הוא התאמה של AI Finance.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף AI-native 2/2. המספרים (Cox 7x, 86%, 18%→97%; Cyera 88% מ־1,500) אומתו בעמוד המאמר שנפתח במושב הזה. לא ציטטנו את Workato (3–4 שעות ל־45 דקות) כי לא הופיע בעמוד שנפתח, רק במדריך המורחב הישן. להדגיש פעמיים: אלה לא תוצאות של מחלקת כספים. המשפט ל־CFO: תיק של שעות שנחסכו נחסם בשווי השכר.</aside>
+</section>
+
+<section class="slide s-wow" data-title="דמו · התאמת בנק">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">דמו חי · 1/3</div>
+    <h2>דמו: התאמת בנק מול הכרטסת</h2>
+    <p class="wow-lead">משימה אחת, נתוני דוגמה בלבד (תיקייה demo/). מריצים אצלכן בכלים — כאן מופיעים הפרומפט, ומה התשובה הנכונה שחושבה מהקבצים. בלי להמציא פלט של מודל.</p>
+    <div class="match-demo" aria-label="התאמת בנק מול כרטסת — נתוני דוגמה">
+      <div class="match-col">
+        <h3>בנק (דוגמה)</h3>
+        <ul>
+          <li class="ok">2.11 · 18,500</li>
+          <li class="ok">5.11 · ‎-7,200</li>
+          <li class="gap">8.11 · עמלה ‎-1,250</li>
+          <li class="ok">12.11 · 9,600</li>
+          <li class="ok">18.11 · ‎-42,000</li>
+          <li class="gap">21.11 · 15,000</li>
+          <li class="ok">28.11 · 4,300</li>
+        </ul>
+      </div>
+      <div class="match-col">
+        <h3>כרטסת (דוגמה)</h3>
+        <ul>
+          <li class="ok">2.11 · INV-100 · 18,500</li>
+          <li class="ok">5.11 · BILL-55 · ‎-7,200</li>
+          <li class="ok">12.11 · INV-101 · 9,600</li>
+          <li class="ok">18.11 · PAY-11 · ‎-42,000</li>
+          <li class="gap">21.11 · INV-102 · 15,300</li>
+          <li class="gap">25.11 · CHK-88 · ‎-4,800</li>
+          <li class="ok">28.11 · INV-103 · 4,300</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wow-grid g21 has-viz">
+  <article class="wow-card">
+    <div class="wow-k">הפרומפט · להעתיק ולהריץ</div>
+    <div class="wow-t">התאימי לפי סכום ותאריך</div>
+    <div class="prompt-box">
+      <button type="button" class="wow-copy" onclick="copyWow(this)">העתקה</button>
+      <pre>הקבצים המצורפים הם דוגמה בלבד, לא נתונים אמיתיים.
+יש שני קבצים לחודש נובמבר 2026 של ״חברת דוגמה בע״מ״:
+• demo/bank_statement_example.csv — דפי בנק
+• demo/ledger_export_example.csv — ייצוא כרטסת מה־ERP
+
+התאימי תנועות לפי סכום ותאריך (סובלנות של יום אחד).
+הוציאי טבלת פערים: תנועות רק בבנק, רק בכרטסת, והפרשי סכום.
+בסוף: סיכום קצר בעברית, בלי להמציא תנועות שלא בקבצים.</pre>
+    </div>
+  </article>
+  <article class="wow-card ans">
+    <div class="wow-k">התשובה הנכונה · חושבה מהקבצים</div>
+    <div class="wow-t">3 פערים (4 רשומות לא מותאמות)</div>
+    <ul>
+      <li>רק בבנק: עמלת בנק 8.11, <b>‎-1,250</b></li>
+      <li>רק בכרטסת: שיק CHK-88 מ־25.11, <b>‎-4,800</b> (טרם נפרע)</li>
+      <li>פער סכום (שתי רשומות) ב־21.11, לקוח D: בנק <b>15,000</b> / כרטסת INV-102 <b>15,300</b> (הפרש 300)</li>
+      <li>5 תנועות מותאמות: 18,500; ‎-7,200; 9,600; ‎-42,000; 4,300</li>
+    </ul>
+  </article>
+</div>
+    <div class="wow-foot">קבצים: demo/bank_statement_example.csv ו־demo/ledger_export_example.csv — מסומנים כדוגמה. התשובה הנכונה חושבה מהקבצים, אינה פלט של מודל.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">דמו 1 — התאמת בנק. להקרין את הפרומפט, להעתיק, לצרף את שני קבצי הדוגמה (לא נתוני לקוח). אחרי שהמודל עונה: להשוות לשלושת הפערים (עמלה, שיק פתוח, והפרש 300 שקלים — ארבע רשומות לא מותאמות) שחושבו מראש. נקודות להשוואה בין כלים: האם מצא את עמלת ה־1,250, את השיק הפתוח, ואת הפרש ה־300 — או ״סגר״ בטעות. לא להקריא פלט מומצא. אם אין זמן להריץ חי: לעבור על התשובה הנכונה ועל רשת ההשוואה בשקף 3/3.</aside>
+</section>
+
+<section class="slide s-wow" data-title="דמו · תקציב מול ביצוע">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">דמו חי · 2/3</div>
+    <h2>דמו: תקציב מול ביצוע לחודש</h2>
+    <p class="wow-lead">משימת FP&A בסיסית על קובץ דוגמה. מבקשים ניתוח סטיות — ואז בודקים מול החישוב שלנו, לא מול ״תחושת הבטן״ של המודל.</p>
+    <div class="bars-demo" aria-label="גרף תקציב מול ביצוע — נתוני דוגמה"><div class="bar-pair" style="animation-delay:0.1s"><div class="b bud" style="height:62px;animation-delay:0.1s"></div><div class="b act" style="height:59px;animation-delay:0.2s"></div><div class="delta">‎-4.2%</div><div class="lab">הכנסות</div></div><div class="bar-pair" style="animation-delay:0.2s"><div class="b bud" style="height:24px;animation-delay:0.2s"></div><div class="b act" style="height:27px;animation-delay:0.3s"></div><div class="delta">+7.9%</div><div class="lab">עלות מכר</div></div><div class="bar-pair" style="animation-delay:0.3s"><div class="b bud" style="height:12px;animation-delay:0.3s"></div><div class="b act" style="height:12px;animation-delay:0.4s"></div><div class="delta">0</div><div class="lab">משכורות</div></div><div class="bar-pair" style="animation-delay:0.4s"><div class="b bud" style="height:8px;animation-delay:0.4s"></div><div class="b act" style="height:8px;animation-delay:0.5s"></div><div class="delta">+56%</div><div class="lab">תוכנה</div></div><div class="bar-pair" style="animation-delay:0.5s"><div class="b bud" style="height:8px;animation-delay:0.5s"></div><div class="b act" style="height:8px;animation-delay:0.6s"></div><div class="delta">‎-74%</div><div class="lab">נסיעות</div></div><div class="bar-pair" style="animation-delay:0.6s"><div class="b bud" style="height:8px;animation-delay:0.6s"></div><div class="b act" style="height:8px;animation-delay:0.7s"></div><div class="delta">0</div><div class="lab">שכ״ט</div></div><div class="bar-pair" style="animation-delay:0.7s"><div class="b bud" style="height:8px;animation-delay:0.7s"></div><div class="b act" style="height:8px;animation-delay:0.8s"></div><div class="delta">+4.6%</div><div class="lab">משרד</div></div><div class="bar-pair" style="animation-delay:0.8s"><div class="b bud" style="height:8px;animation-delay:0.8s"></div><div class="b act" style="height:8px;animation-delay:0.9s"></div><div class="delta">‎-12%</div><div class="lab">שיווק</div></div></div>
+    <div class="wow-grid g21 has-viz">
+  <article class="wow-card">
+    <div class="wow-k">הפרומפט · להעתיק ולהריץ</div>
+    <div class="wow-t">סטיות נובמבר 2026</div>
+    <div class="prompt-box">
+      <button type="button" class="wow-copy" onclick="copyWow(this)">העתקה</button>
+      <pre>הקובץ demo/budget_vs_actual_example.csv הוא דוגמה בלבד (חברת דוגמה בע״מ, נובמבר 2026).
+חשבי לכל שורה: סטייה = ביצוע − תקציב, ושיעור סטייה מהתקציב.
+צייני את שלוש הסטיות הגדולות ביותר באחוזים (בערך מוחלט),
+ואת פער ההכנסות והשפעת עלות המכר על הרווח הגולמי.
+אל תוסיפי שורות שלא בקובץ, ואל תעגלי לפני החישוב.</pre>
+    </div>
+  </article>
+  <article class="wow-card ans">
+    <div class="wow-k">התשובה הנכונה · חושבה מהקובץ</div>
+    <div class="wow-t">הכנסות חסרות, תוכנה חריגה</div>
+    <ul>
+      <li>הכנסות: 498,200 מול 520,000 = <b>‎-21,800</b> (‎-4.19%)</li>
+      <li>עלות המכר: 226,500 מול 210,000 = <b>+16,500</b> (+7.86%) · פגיעה ברווח הגולמי: <b>38,300</b></li>
+      <li>הסטיות הגדולות באחוזים: נסיעות ‎-73.75%; תוכנה +56.25%; שיווק ‎-11.82%</li>
+      <li>משכורות ושכ״ט מקצועי: אפס סטייה</li>
+    </ul>
+  </article>
+</div>
+    <div class="wow-foot">קובץ: demo/budget_vs_actual_example.csv (וגם xlsx) — דוגמה בלבד. הרווח הגולמי: (הכנסות−עלות המכר) בפועל 271,700 מול תקציב 310,000.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">דמו 2 — תקציב מול ביצוע. החישוב: ירידת הכנסות 21,800 ועלייה בעלות המכר 16,500 — יחד פגיעה של 38,300 ברווח הגולמי (תקציב 310,000, בפועל 271,700). מלכודת נפוצה: מודל שמדרג לפי סכום ולא לפי אחוז, או שמעגל 4.19% ל־4% ושובר את הדיוק. להשוות בין מודל מהיר למודל חשיבה: האם הדרך מוסברת, האם יצא קובץ, האם יש המצאת שורות.</aside>
+</section>
+
+<section class="slide s-wow" data-title="דמו · השוואת כלים">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">דמו חי · 3/3</div>
+    <h2>דמו: במה נבדלים כלים ומודלים</h2>
+    <p class="wow-lead">אותה משימה, כמה כלים. לא מציגים כאן פלט מומצא. בודקים ארבעה דברים — ומשווים גם מודל מהיר מול מודל חשיבה.</p>
+    <div class="race" aria-label="מסלולי השוואה — ממתין להרצה חיה">
+      <div class="race-row"><div class="nm">ChatGPT</div><div class="race-trk"><i></i></div><div class="st">כאן נריץ חי</div></div>
+      <div class="race-row"><div class="nm">Claude</div><div class="race-trk"><i></i></div><div class="st">כאן נריץ חי</div></div>
+      <div class="race-row"><div class="nm">Copilot</div><div class="race-trk"><i></i></div><div class="st">כאן נריץ חי</div></div>
+      <div class="race-row"><div class="nm">Gemini</div><div class="race-trk"><i></i></div><div class="st">כאן נריץ חי</div></div>
+    </div>
+    <div class="wow-grid g4 has-viz">
+  <article class="wow-card"><div class="wow-k">1 · דיוק</div><div class="wow-t">מול התשובה שחושבה</div><p>האם מצא את כל החריגות והסטיות — בלי תנועות או שורות שהומצאו.</p></article>
+  <article class="wow-card"><div class="wow-k">2 · הדרך</div><div class="wow-t">הסבר שאפשר לבדוק</div><p>האם רואים איך התקבל כל מספר, או רק סיכום שנשמע משכנע.</p></article>
+  <article class="wow-card"><div class="wow-k">3 · פורמט</div><div class="wow-t">טבלה שאפשר להעביר</div><p>כותרות ברורות בעברית, מספרים מסודרים — לא פסקה אחת שקשה להעתיק.</p></article>
+  <article class="wow-card"><div class="wow-k">4 · קובץ</div><div class="wow-t">Excel / CSV</div><p>האם הוחזר קובץ שאפשר לבדוק, או רק טקסט בצ׳אט.</p></article>
+</div>
+<div class="wow-grid g2" style="margin-top:16px">
+  <article class="wow-card"><div class="wow-k">מודל מהיר מול חשיבה</div><div class="wow-t">אותו פרומפט, שתי הגדרות</div><p>במודל המהיר: זמן ותמצות. במצב חשיבה / מודל חזק: סיכוי טוב יותר לתפוס הפרש 300 או שיק פתוח — ובדרך כלל יקר יותר. לא מניחים מראש מי ״מנצח״; בודקים מול התשובה הנכונה.</p></article><article class="wow-card"><div class="wow-k">איך מריצים באולם</div><div class="wow-t">כללי משחק</div><p>אותם קבצי דוגמה, אותו פרומפט. לא מתקנים את המודל באמצע. ממלאים את הרשת בכתב, ואז דנים: מה היה חסר, ומה היה מסוכן לאשר בלי בדיקה.</p></article>
+</div>
+    <div class="wow-foot">אין בשקף פלט של כלי. רשת הבדיקה משמשת להרצה חיה של דמו 1 או 2. הכלים: ChatGPT, Claude, Copilot, Gemini — ומצב מהיר מול חשיבה.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">דמו 3 — השוואה. אם הרשת החיצונית או החשבון לא זמינים באולם, השקף עדיין עובד: מלמדות מה לבדוק כשחוזרות למשרד. לא למלא את הטבלה מראש בתוצאות מומצאות. אם רצות רק כלי אחד: להריץ פעם במודל מהיר ופעם במצב חשיבה. חיבור חזרה לטיפים ולשכבת האבטחה: גם תשובה יפה דורשת בדיקה, ורק על קובץ דוגמה או בסביבה מאושרת.</aside>
+</section>
+
 <section class="slide s-self" data-title="איפה אני?">
   <h2>איפה אני על הקרחון?</h2>
   <div class="sub">לבחור את השכבה שבה אני היום — ולקבל את הצעד הבא.</div>
@@ -1116,6 +1952,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
     const card=e.target.closest&&e.target.closest('.icard[data-toon]');
     if(card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openToon(card);return;}
     if(e.key==='Escape'){document.getElementById('notesPanel').classList.remove('open');return;}
+    if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('button,a,input,textarea,.wow-copy,.prompt-box'))return;
     if(['ArrowLeft','ArrowDown','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next();}
     else if(['ArrowRight','ArrowUp','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev();}
     else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
@@ -1145,7 +1982,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   document.querySelectorAll('.rung').forEach(r=>r.addEventListener('click',e=>{e.stopPropagation();
     document.querySelectorAll('.rung').forEach(x=>x.classList.remove('sel'));r.classList.add('sel');
     applyStep(steps[+r.dataset.i]);}));
-  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox'))return;
+  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.segrid'))return;
     const r=stage.getBoundingClientRect(); (e.clientX < r.left+r.width/2)?next():prev();});
   const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);
   addEventListener('hashchange',()=>{const k=parseInt(location.hash.slice(1));if(!isNaN(k)&&k-1!==cur)show(k-1);});
@@ -1185,6 +2022,72 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   document.getElementById('toonClose').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();closeToon();});
   panel.addEventListener('click',e=>e.stopPropagation());
   box.addEventListener('click',()=>closeToon());
+})();
+</script>
+
+
+<script>
+function copyWow(btn){
+  const box=btn.closest('.prompt-box')||btn.parentElement;
+  const pre=box.querySelector('pre');
+  if(!pre)return;
+  const t=pre.innerText;
+  navigator.clipboard.writeText(t).then(()=>{
+    const old=btn.textContent; btn.textContent='הועתק ✓';
+    setTimeout(()=>btn.textContent=old,1600);
+  }).catch(()=>{});
+}
+</script>
+
+
+<script>
+(function(){
+  function paintTower(n){
+    const t=document.getElementById('ecoTower');
+    if(!t) return;
+    n=Math.max(2,Math.min(10,+n||5));
+    t.innerHTML='';
+    for(let i=0;i<n;i++){
+      const d=document.createElement('div');
+      d.className='eco-block';
+      d.style.setProperty('--z', (n-i)*2);
+      t.appendChild(d);
+    }
+    const c=document.getElementById('ecoCost');
+    if(c) c.innerHTML=(n*8)+' יחידות<small>המחשה בלבד, לא מחירון ספק</small>';
+  }
+  function bindEco(){
+    const r=document.getElementById('ecoRange');
+    if(!r || r.dataset.bound) return;
+    r.dataset.bound='1';
+    r.addEventListener('input',()=>paintTower(r.value));
+    paintTower(r.value);
+  }
+  function bindCompare(){
+    document.querySelectorAll('.s-compare .segrid').forEach(tbl=>{
+      if(tbl.dataset.bound) return;
+      tbl.dataset.bound='1';
+      const clear=()=>tbl.querySelectorAll('.hot').forEach(el=>el.classList.remove('hot'));
+      tbl.addEventListener('mouseover',e=>{
+        const cell=e.target.closest('th,td');
+        if(!cell||!tbl.contains(cell)) return;
+        const i=[...cell.parentElement.children].indexOf(cell)+1;
+        if(i<2||i>5) return;
+        clear();
+        tbl.querySelectorAll('th:nth-child('+i+'), td:nth-child('+i+')').forEach(el=>el.classList.add('hot'));
+      });
+      tbl.addEventListener('mouseleave',clear);
+    });
+  }
+  const _show=window.show;
+  // show is inside an IIFE, not on window. Hook via MutationObserver / periodic bind on hashchange
+  addEventListener('hashchange',()=>{bindEco();bindCompare();});
+  document.addEventListener('DOMContentLoaded',()=>{bindEco();bindCompare();});
+  // also bind now
+  bindEco();bindCompare();
+  // rebind when a slide becomes .anim (show() toggles class)
+  const mo=new MutationObserver(()=>{bindEco();bindCompare();});
+  document.querySelectorAll('section.slide').forEach(s=>mo.observe(s,{attributes:true,attributeFilter:['class']}));
 })();
 </script>
 
