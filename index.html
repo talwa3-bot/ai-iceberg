@@ -29,14 +29,16 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 
 /* ---------- title ---------- */
 .s-title{background:radial-gradient(1200px 800px at 85% 10%,#FFE3C8 0%,var(--cream) 55%),var(--cream)}
-.s-title .wrap{position:absolute;top:150px;right:120px;width:1000px}
-.kicker{font-size:28px;font-weight:700;color:var(--terra);letter-spacing:.5px}
-.h-xl{font-size:132px;line-height:1.02;font-weight:900;letter-spacing:-2px;margin-top:26px}
+.s-title .aif-banner-wrap{position:absolute;top:36px;right:80px;width:1000px;height:calc(1000px * 464 / 1179);border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(14,34,51,.16);background:#03103F}
+.s-title .aif-banner-wrap img{width:100%;height:auto;display:block}
+.s-title .wrap{position:absolute;top:456px;right:80px;width:1000px}
+.kicker{font-size:26px;font-weight:700;color:var(--terra);letter-spacing:.5px}
+.h-xl{font-size:120px;line-height:1.02;font-weight:900;letter-spacing:-2px;margin-top:14px}
 .h-xl em{font-style:normal;color:var(--terra)}
-.lead{font-size:42px;line-height:1.35;font-weight:400;color:#4a3329;margin-top:40px;max-width:900px}
-.byline{position:absolute;bottom:110px;right:120px;font-size:28px;color:var(--muted)}
+.lead{font-size:38px;line-height:1.35;font-weight:400;color:#4a3329;margin-top:20px;max-width:900px}
+.byline{position:absolute;bottom:48px;right:80px;font-size:26px;color:var(--muted)}
 .byline b{color:var(--ink);font-weight:800}
-.hero-berg{position:absolute;left:60px;top:70px;width:760px;height:940px}
+.hero-berg{position:absolute;left:40px;top:36px;width:720px;height:890px}
 
 /* ---------- inspiration ---------- */
 .s-insp{background:var(--deep);color:#fff}
@@ -181,15 +183,14 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 
 /* ---------- CTA / AI Finance close ---------- */
 .s-cta{background:radial-gradient(1200px 800px at 50% 0%,#FFEEDD 0%,var(--cream) 58%),var(--cream);color:var(--ink)}
-.s-cta .cta-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;padding:48px 80px 90px;text-align:center}
-.s-cta .logo-wrap{flex:none;width:500px;border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(14,34,51,.16)}
+.s-cta .cta-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 80px 72px;text-align:center}
+.s-cta .logo-wrap{flex:none;width:1080px;height:calc(1080px * 464 / 1179);border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(14,34,51,.16);background:#03103F}
 .s-cta .logo-wrap img{width:100%;height:auto;display:block;vertical-align:top}
-.s-cta .who-name{margin-top:22px;font-size:36px;font-weight:800;color:var(--ink);letter-spacing:.2px}
-.s-cta .tagline{margin-top:8px;font-size:26px;font-weight:500;color:var(--muted);direction:ltr;unicode-bidi:isolate;letter-spacing:.01em;max-width:1400px;line-height:1.35}
-.s-cta .qrs{display:flex;flex-direction:row;gap:56px;margin-top:28px;justify-content:center;align-items:stretch}
-.s-cta .qrcard{background:#fff;border-radius:32px;padding:26px 32px 22px;box-shadow:0 18px 50px rgba(43,26,20,.10);display:flex;flex-direction:column;align-items:center;width:430px}
+.s-cta .who-name{margin-top:20px;font-size:36px;font-weight:800;color:var(--ink);letter-spacing:.2px}
+.s-cta .qrs{display:flex;flex-direction:row;gap:56px;margin-top:22px;justify-content:center;align-items:stretch}
+.s-cta .qrcard{background:#fff;border-radius:32px;padding:22px 32px 18px;box-shadow:0 18px 50px rgba(43,26,20,.10);display:flex;flex-direction:column;align-items:center;width:430px}
 .s-cta .qrcard img{width:260px;height:260px;display:block;border-radius:12px;background:#fff}
-.s-cta .qrcard .qlabel{margin-top:16px;font-size:26px;font-weight:700;color:var(--ink);line-height:1.35;max-width:380px}
+.s-cta .qrcard .qlabel{margin-top:14px;font-size:26px;font-weight:700;color:var(--ink);line-height:1.35;max-width:380px}
 .s-cta .foot{color:var(--muted)}
 
 /* ---------- chrome ---------- */
@@ -298,6 +299,7 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 
 <!-- 1 TITLE -->
 <section class="slide s-title" data-title="פתיחה">
+  <div class="aif-banner-wrap"><img src="assets/aif-banner.jpg" alt="AI Finance — טל ורועי ולנשטין" width="1179" height="471"></div>
   <svg class="hero-berg" viewBox="0 0 760 940" aria-hidden="true">
     <defs>
       <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7D8C"/><stop offset="1" stop-color="#0E2233"/></linearGradient>
@@ -774,9 +776,8 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 <!-- CTA -->
 <section class="slide s-cta" data-title="AI Finance">
   <div class="cta-inner">
-    <div class="logo-wrap"><img src="assets/ai_finance_logo.jpg" alt="AI Finance"></div>
+    <div class="logo-wrap"><img src="assets/aif-banner.jpg" alt="AI Finance — טל ורועי ולנשטין" width="1179" height="471"></div>
     <div class="who-name">רו״ח טל ולנשטין</div>
-    <div class="tagline">Bridging the gap between the world of finance and the world of AI</div>
     <div class="qrs">
       <div class="qrcard">
         <img src="qr/whatsapp.png" alt="QR: הצטרפו לקהילת AI Finance בוואטסאפ" width="260" height="260">
