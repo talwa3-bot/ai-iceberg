@@ -213,6 +213,8 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 #modal a,#modal button{font:600 18px "Heebo";color:#fff;background:var(--terra);border:none;border-radius:12px;padding:10px 20px;cursor:pointer;text-decoration:none}
 #notesPanel{position:fixed;bottom:0;right:0;left:0;max-height:40vh;overflow:auto;background:rgba(255,250,245,.97);color:#2B1A14;font-size:16px;line-height:1.5;padding:18px 28px;z-index:60;display:none;border-top:4px solid var(--terra)}
 #notesPanel.open{display:block}
+#notesClose{position:sticky;top:0;float:left;font:700 16px "Heebo";border:none;border-radius:10px;padding:8px 14px;background:#0b2a8a;color:#fff;cursor:pointer;margin:0 0 8px 12px;z-index:2}
+body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 #notesPanel a{color:var(--terra-d)}
 .static #nav,.static #prog{display:none!important}
 .static *{animation-duration:0s!important;animation-delay:0s!important;transition:none!important}
@@ -936,7 +938,7 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
     history.replaceState(null,'','#'+(cur+1)+(location.search?'':''));
     document.getElementById('prog').style.width=((cur+1)/slides.length*100)+'%';
     const n=s.querySelector('.notes');
-    document.getElementById('notesPanel').innerHTML='<b>'+(cur+1)+' · '+(s.dataset.title||'')+'</b><br>'+(n?n.innerHTML.replace(/(https?:\/\/[^\s)]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>'):'');
+    document.getElementById('notesPanel').innerHTML='<button id="notesClose" type="button" onclick="document.getElementById(\'notesPanel\').classList.remove(\'open\')">✕ סגירת הערות</button><b>'+(cur+1)+' · '+(s.dataset.title||'')+'</b><br>'+(n?n.innerHTML.replace(/(https?:\/\/[^\s)]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>'):'');
   }
   slides.forEach((s,k)=>{const p=s.querySelector('.pg');if(p)p.textContent=k+1;});
   const next=()=>show(cur+1), prev=()=>show(cur-1);
@@ -947,12 +949,14 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
   modal.addEventListener('click',e=>{if(e.target===modal)closeVid();});
   addEventListener('keydown',e=>{
     if(modal.classList.contains('open')){if(e.key==='Escape')closeVid();return;}
+    if(e.key==='Escape'){document.getElementById('notesPanel').classList.remove('open');return;}
     if(['ArrowLeft','ArrowDown','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next();}
     else if(['ArrowRight','ArrowUp','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev();}
     else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
     else if(e.key==='n'||e.key==='N'||e.key==='מ')document.getElementById('notesPanel').classList.toggle('open');
     else if(e.key==='f'||e.key==='F')document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();
   });
+  (()=>{const np=document.getElementById('notesPanel'),nv=document.getElementById('nav');const fit=()=>{nv.style.bottom=np.classList.contains('open')?(np.offsetHeight+12)+'px':'';};new ResizeObserver(fit).observe(np);new MutationObserver(fit).observe(np,{attributes:true,attributeFilter:['class']});})();
   document.getElementById('bNext').onclick=next;document.getElementById('bPrev').onclick=prev;
   document.getElementById('bNotes').onclick=()=>document.getElementById('notesPanel').classList.toggle('open');
   document.querySelectorAll('.vcard').forEach(v=>v.addEventListener('click',e=>{e.stopPropagation();openVid(v.dataset.yt);}));
