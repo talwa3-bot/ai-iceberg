@@ -548,10 +548,12 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 .llm-card:nth-child(2) .bar i{animation-name:llm-bar-b}
 .llm-card:nth-child(3){--rest:rotateY(-14deg) translateZ(8px);transform:var(--rest);animation:llm-lose 6.4s ease-in-out infinite}
 .llm-card:nth-child(3) .bar i{animation-name:llm-bar-c}
-@keyframes llm-bar-a{0%,10%{width:0}30%,75%{width:28%}90%,100%{width:0}}
-@keyframes llm-bar-b{0%,10%{width:0}30%,75%{width:58%}90%,100%{width:0}}
-@keyframes llm-bar-c{0%,10%{width:0}30%,75%{width:14%}90%,100%{width:0}}
-@keyframes llm-win{0%,28%{transform:rotateY(0) translateZ(28px) scale(1)}38%,70%{transform:rotateY(180deg) translateZ(48px) scale(1.06)}82%,100%{transform:rotateY(0) translateZ(28px) scale(1)}}
+@keyframes llm-bar-a{0%,10%{width:0}30%,75%{width:23%}90%,100%{width:0}}
+@keyframes llm-bar-b{0%,10%{width:0}30%,75%{width:62%}90%,100%{width:0}}
+@keyframes llm-bar-c{0%,10%{width:0}30%,75%{width:15%}90%,100%{width:0}}
+@keyframes llm-win{0%,28%{transform:rotateY(0) translateZ(28px) scale(1)}40%,70%{transform:rotateY(360deg) translateZ(48px) scale(1.08);box-shadow:0 0 34px rgba(139,211,255,.55)}82%,100%{transform:rotateY(360deg) translateZ(28px) scale(1)}}
+.llm-card{direction:rtl;text-align:right;width:200px}
+.llm-card .pct{float:left;font:700 16px "Heebo",sans-serif;color:#8BD3FF;direction:ltr;margin-top:4px}
 @keyframes llm-lose{0%,100%{transform:var(--rest);opacity:1}38%,70%{opacity:.45}}
 .llm-note{text-align:center;font:600 13px "Heebo",sans-serif;color:#A9C4EA;margin-top:8px}
 
@@ -697,9 +699,9 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 .static .mcp-tool .face,.static .mcp-beam,.static .agent-arm,.static .agent-out,.static .sh-spot,.static .api-pkt,.static .race-trk i,.static .llm-card,.static .llm-card .bar i,.static .drawer{animation:none!important}
 .static .agent-out,.static .drawer .d,.static .sh-ghost,.static .bar-pair .delta{opacity:1!important;filter:none!important}
 .static .mcp-tool .face{transform:none!important;filter:none!important}
-.static .llm-card:nth-child(2) .bar i{width:58%!important}
-.static .llm-card:nth-child(1) .bar i{width:28%!important}
-.static .llm-card:nth-child(3) .bar i{width:14%!important}
+.static .llm-card:nth-child(2) .bar i{width:62%!important}
+.static .llm-card:nth-child(1) .bar i{width:23%!important}
+.static .llm-card:nth-child(3) .bar i{width:15%!important}
 .static .api-pkt{right:58%;left:auto;opacity:1!important;background:#8BD3FF;animation:none!important;z-index:3}
 .static .race-trk i{width:22%;transform:none}
 
@@ -1327,6 +1329,78 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
   .s-cta .logo-wrap::after{display:none}
 }
 
+
+/* v5: token-economy table + fixed tower */
+.s-wow .eco-wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:stretch;margin:0 0 16px;perspective:1300px}
+.tokx{transform-style:preserve-3d}
+.tokx-h{font:800 18px "Heebo",sans-serif;color:#8BD3FF;margin-bottom:8px}
+.tokx-h em{font-style:normal;background:rgba(139,211,255,.18);border:1px solid rgba(139,211,255,.5);border-radius:99px;padding:1px 10px;color:#fff;font-size:15px}
+.tokx-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;transform-style:preserve-3d}
+.tx-card{--rest:rotateX(10deg) translateZ(20px);transform:var(--rest);background:linear-gradient(180deg,rgba(139,211,255,.18),rgba(11,42,138,.55));border:1px solid rgba(139,211,255,.42);border-radius:16px;padding:10px 12px;color:#fff;box-shadow:0 18px 32px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.18);transition:transform .3s}
+.tx-card:hover{transform:rotateX(0) translateZ(46px)}
+.tx-n{font:800 20px "Heebo",sans-serif}
+.tx-s{font:500 13px "Heebo",sans-serif;color:#A9C4EA;margin-bottom:6px;min-height:17px}
+.tx-row{display:flex;justify-content:space-between;align-items:baseline;font:600 14px "Heebo",sans-serif;color:#D4E6FF;border-top:1px solid rgba(139,211,255,.18);padding:3px 0}
+.tx-row b{font:900 19px "Heebo",sans-serif;color:#8BD3FF}
+.tx-row.en b{color:#fff;font-weight:800;font-size:16px}
+.tx-c{margin-top:5px;font:600 13px/1.35 "Heebo",sans-serif;color:#D4E6FF}
+.tx-c b{color:#fff}.tx-c small{color:#A9C4EA;font-size:12px}
+.s-wow.anim .tx-card{opacity:0;animation:tx-in .75s cubic-bezier(.2,.8,.2,1.08) forwards}
+.s-wow.anim .tx-card:nth-child(1){animation-delay:.25s}.s-wow.anim .tx-card:nth-child(2){animation-delay:.35s}.s-wow.anim .tx-card:nth-child(3){animation-delay:.45s}.s-wow.anim .tx-card:nth-child(4){animation-delay:.55s}.s-wow.anim .tx-card:nth-child(5){animation-delay:.65s}
+@keyframes tx-in{from{opacity:0;transform:rotateX(-75deg) translateZ(-60px) translateY(30px)}to{opacity:1;transform:var(--rest)}}
+.s-wow .eco-demo{margin:0;grid-template-columns:110px 1fr;gap:14px;min-height:0;align-items:end;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(139,211,255,.3);border-radius:18px;padding:12px 14px}
+.s-wow .eco-tower{height:190px;transform:rotateX(14deg) rotateY(-18deg);justify-content:flex-end}
+.s-wow .eco-block{width:78px;height:14px;margin:0 auto 3px;flex:0 0 14px;transform:none;box-shadow:6px 6px 0 rgba(6,16,56,.75),0 6px 10px rgba(0,0,0,.25)}
+.s-wow .eco-block.new{animation:eco-drop .45s cubic-bezier(.2,.8,.2,1.2) both}
+@keyframes eco-drop{from{opacity:0;transform:translateY(-70px)}to{opacity:1;transform:none}}
+.s-wow .eco-side label{font-size:16px}
+.s-wow .eco-side label b{color:#fff;font-size:20px;margin-right:6px}
+.s-wow .eco-cost{font-size:17px;line-height:1.45;font-weight:700}
+.s-wow .eco-cost .tk{display:block;font:900 22px "Heebo",sans-serif;color:#8BD3FF}
+.s-wow .eco-cost small{font-size:12px}
+.s-wow .eco-cost .mrow{display:flex;justify-content:space-between;font-size:16px;border-top:1px solid rgba(139,211,255,.15)}
+.s-wow .eco-cost .mrow b{color:#8BD3FF}
+.px-nums b .from{font-size:16px;color:#A9C4EA;margin-left:2px}
+.px-nums b span.ltr{display:inline;font:inherit;color:inherit}
+.px-nums b small.from{display:inline;font:700 16px "Heebo",sans-serif}
+.s-wow .wow-foot.foot-wide{left:400px}
+.static .tx-card,.static .eco-block.new{animation:none!important;opacity:1!important}
+.static .tx-card{transform:var(--rest)!important}
+@media (prefers-reduced-motion:reduce){.tx-card,.eco-block.new,.px-card .px-bar i,.px-sweep{animation:none!important;opacity:1!important}}
+
+/* v5: Anthropic prices slide */
+.s-prices .px-grid{gap:16px 18px}
+.s-prices .px-card{padding:16px 18px 14px;position:relative;overflow:hidden}
+.px-top b{display:block;font:900 30px "Heebo",sans-serif;color:#fff;text-align:right}
+.px-top small{display:block;font:700 15px "Heebo",sans-serif;color:#8BD3FF;margin-top:2px}
+.px-nums{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.px-nums div{background:rgba(6,16,56,.45);border:1px solid rgba(139,211,255,.25);border-radius:12px;padding:8px 10px;text-align:center}
+.px-nums span{display:block;font:600 14px "Heebo",sans-serif;color:#A9C4EA}
+.px-nums b{display:block;font:900 38px/1.1 "Heebo",sans-serif;color:#8BD3FF}
+.px-bar{height:10px;border-radius:99px;background:rgba(6,16,56,.6);margin:12px 0 6px;overflow:hidden;direction:ltr}
+.px-bar i{display:block;height:100%;width:var(--w);border-radius:99px;background:linear-gradient(90deg,#8BD3FF,#3E7BFA)}
+.px-cache{font:600 14px "Heebo",sans-serif;color:#D4E6FF}
+.px-cache b{color:#fff}
+.s-prices .px-card p{font-size:18px;margin-top:10px}
+.s-prices .px-card{min-height:330px}
+.s-prices .px-chip{font-size:18px}
+.px-k{display:block;font:800 13px "Heebo",sans-serif;color:#8BD3FF;letter-spacing:.6px;margin-bottom:2px}
+.px-chips{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr 2fr;gap:12px;margin-top:18px;transform:rotateX(8deg) translateZ(14px)}
+.px-chip{background:rgba(139,211,255,.12);border:1px solid rgba(139,211,255,.38);border-radius:14px;padding:10px 14px;font:500 16px/1.4 "Heebo",sans-serif;color:#D4E6FF}
+.px-chip b{color:#fff}.px-chip small{color:#A9C4EA}
+.s-prices.anim .px-card{animation:px-flip .8s cubic-bezier(.2,.8,.2,1.05) forwards}
+@keyframes px-flip{from{opacity:0;transform:rotateY(80deg) translateZ(-80px)}to{opacity:1;transform:var(--rest)}}
+.s-prices.anim .px-bar i{animation:px-grow 1.1s 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes px-grow{from{width:0}to{width:var(--w)}}
+.s-prices.anim .px-chip{opacity:0;animation:depth-in .6s cubic-bezier(.2,.75,.2,1) forwards}
+.s-prices.anim .px-chip:nth-child(1){animation-delay:1.1s}.s-prices.anim .px-chip:nth-child(2){animation-delay:1.2s}.s-prices.anim .px-chip:nth-child(3){animation-delay:1.3s}
+.s-prices .px-card::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(139,211,255,.16) 50%,transparent 60%);transform:translateX(-120%);pointer-events:none}
+.s-prices.anim .px-card::after{animation:px-shine 5s 2.2s ease-in-out infinite}
+.s-prices.anim .px-card:nth-child(2)::after{animation-delay:2.5s}.s-prices.anim .px-card:nth-child(3)::after{animation-delay:2.8s}.s-prices.anim .px-card:nth-child(4)::after{animation-delay:3.1s}
+@keyframes px-shine{0%{transform:translateX(-120%)}30%,100%{transform:translateX(120%)}}
+.static .s-prices .px-card,.static .s-prices .px-chip,.static .s-prices .px-bar i,.static .s-prices .px-card::after{animation:none!important;opacity:1!important}
+.static .s-prices .px-card{transform:var(--rest)!important}
+@media (prefers-reduced-motion:reduce){.s-prices .px-card,.s-prices .px-chip,.s-prices .px-bar i,.s-prices .px-card::after{animation:none!important;opacity:1!important}.s-prices .px-card{transform:var(--rest)!important}}
 </style>
 </head>
 <body>
@@ -1528,23 +1602,23 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     <div class="wow-floor" aria-hidden="true"></div>
     <div class="wow-kicker">יסודות · 1/6</div>
     <h2>מה זה LLM, ואיך הוא עובד</h2>
-    <p class="wow-lead">מודל שפה גדול לא ״יודע חשבונאות״ כמו רואה חשבון. הוא מנבא, מילה אחרי מילה, מה סביר שיופיע בהמשך — לפי מה שלמד ומה שנמצא מולו עכשיו.</p>
+    <p class="wow-lead">מודל שפה גדול (<span class="ltr">LLM</span>) לא ״יודע״ חשבונאות כמו רואה חשבון. הוא מנחש, מילה אחר מילה, מה הכי סביר שיבוא עכשיו — לפי מה שלמד ולפי מה שכתוב לפניו.</p>
     <div class="llm-demo" aria-label="המחשת חיזוי המילה הבאה">
-      <div class="llm-sent">יתרת הספקים לסוף הרבעון היא <span class="blank">יציבה</span>.</div>
+      <div class="llm-sent">ההכנסות ברבעון השלישי <span class="blank">עלו</span> ב־12% לעומת אשתקד.</div>
       <div class="llm-cands">
-        <div class="llm-card"><div class="w">גבוהה</div><div class="bar"><i></i></div></div>
-        <div class="llm-card"><div class="w">יציבה</div><div class="bar"><i></i></div></div>
-        <div class="llm-card"><div class="w">נמוכה</div><div class="bar"><i></i></div></div>
+        <div class="llm-card"><div class="w">ירדו <span class="pct">23%</span></div><div class="bar"><i></i></div></div>
+        <div class="llm-card"><div class="w">עלו <span class="pct">62%</span></div><div class="bar"><i></i></div></div>
+        <div class="llm-card"><div class="w">נשארו יציבות <span class="pct">15%</span></div><div class="bar"><i></i></div></div>
       </div>
-      <div class="llm-note">המחשה של חיזוי המילה הבאה — לא פלט של מודל אמיתי</div>
+      <div class="llm-note">המחשה של חיזוי המילה הבאה. ההסתברויות להמחשה בלבד, לא פלט של מודל אמיתי.</div>
     </div>
     <div class="wow-grid g2 has-viz">
-  <article class="wow-card"><div class="wow-k">העיקרון</div><div class="wow-t">חיזוי התו הבא / המילה הבאה</div><p>המודל מקבל רצף, ומחשב מה התו הבא הכי סביר. כך נבנית תשובה שלמה — לא בחיפוש במסד נתונים, אלא בניסוח הסתברותי.</p></article><article class="wow-card"><div class="wow-k">חלון ההקשר</div><div class="wow-t">הזיכרון של השיחה</div><p>רק מה שנכנס לחלון ההקשר (הפרומפט, הקבצים, והתשובות הקודמות) זמין לו עכשיו. מה שמחוץ לחלון — כאילו לא היה.</p></article><article class="wow-card"><div class="wow-k">גבול חשוב</div><div class="wow-t">זה לא מקור אמת</div><p>ניסוח משכנע אינו אימות. המודל יכול לכתוב סעיף, סכום או תקדים שנשמעים נכון — ואינם נכונים.</p></article><article class="wow-card"><div class="wow-k">הזיה</div><div class="wow-t">Hallucination</div><p>מודלי שפה לפעמים מייצרים טענות שגויות בביטחון. לכן בכל מספר, ציטוט וסעיף — בודקים במקור, לא בשיחה.</p></article>
+  <article class="wow-card"><div class="wow-k">העיקרון</div><div class="wow-t">חיזוי המילה הבאה</div><p>המודל מקבל טקסט ומחשב איזו מילה הכי סביר שתבוא אחריו. כך, מילה אחר מילה, נבנית תשובה שלמה. הוא לא מחפש במאגר נתונים — הוא מנסח לפי הסתברות.</p></article><article class="wow-card"><div class="wow-k">חלון ההקשר</div><div class="wow-t">הזיכרון של השיחה</div><p>המודל רואה רק את מה שנמצא בחלון ההקשר: הפרומפט, הקבצים והתשובות הקודמות. מה שמחוץ לחלון — מבחינתו לא קיים.</p></article><article class="wow-card"><div class="wow-k">גבול חשוב</div><div class="wow-t">זה לא מקור אמת</div><p>ניסוח משכנע הוא לא אימות. המודל יכול לכתוב סעיף, סכום או תקדים שנשמעים נכון, ובפועל הם שגויים.</p></article><article class="wow-card"><div class="wow-k">הזיה</div><div class="wow-t"><span class="ltr">Hallucination</span></div><p>לפעמים המודל מציג טענה שגויה בביטחון מלא. לכן כל מספר, ציטוט וסעיף בודקים במקור, לא בשיחה.</p></article>
 </div>
     <div class="wow-foot">מקורות: OpenAI, Why language models hallucinate — openai.com/index/why-language-models-hallucinate/ · Anthropic, Prompting best practices.</div>
     <div class="pg"></div>
   </div>
-  <aside class="notes">שקף יסודות: מה זה LLM. המטאפורה: המודל לא ״שולף תשובה מהספר״, הוא מנבא את ההמשך הסביר. להדגיש שתי מגבלות לפיננסים: (1) חלון הקשר — מסמך ארוך עלול להיחתך או להידחק; (2) הזיה — ניסוח משכנע אינו ראיה. מקור על הזיות: OpenAI, Why language models hallucinate (https://openai.com/index/why-language-models-hallucinate/). אפשר לשאול את האולם: ״מתי כבר קיבלתן תשובה שנשמעה מושלמת — ואז המספר לא ישב?״ אפשר להוסיף כאן סיפור אישי קצר מהאולם או מהעבודה.</aside>
+  <aside class="notes">שקף יסודות: מה זה LLM. המטאפורה: המודל לא ״שולף תשובה מהספר״, הוא מנבא את ההמשך הסביר. להדגיש שתי מגבלות לפיננסים: (1) חלון הקשר — מסמך ארוך עלול להיחתך או להידחק; (2) הזיה — ניסוח משכנע אינו ראיה. מקור על הזיות: OpenAI, Why language models hallucinate (https://openai.com/index/why-language-models-hallucinate/). הדוגמה על המסך: ״ההכנסות ברבעון השלישי ___״ — המודל שוקל ״עלו / ירדו / נשארו יציבות״ ובוחר את הסביר ביותר בהקשר. ההסתברויות להמחשה בלבד. אפשר לשאול את האולם: ״מתי קיבלתן תשובה שנשמעה מושלמת, ואז המספר לא הסתדר?״ אפשר להוסיף כאן סיפור אישי קצר מהאולם או מהעבודה.</aside>
 </section>
 
 <section class="slide s-wow" data-title="יסודות · טוקנים">
@@ -1582,21 +1656,27 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     <div class="wow-kicker">יסודות · 3/6</div>
     <h2>כלכלת הטוקנים: לחשוב עלות למשימה</h2>
     <p class="wow-lead">המחירים משתנים בין ספקים ומודלים, ומתעדכנים. מה שנשאר יציב: פלט יקר מקלט, מודל חזק יקר יותר, והעלות האמיתית היא למשימה — לא ל״צ׳אט״.</p>
-    <div class="eco-demo" aria-label="מגדל עלות לפי אורך משימה">
+    <div class="eco-wrap">
+    <div class="tokx" aria-label="הערכת טוקנים לפי סוג קובץ, עברית מול אנגלית">
+      <div class="tokx-h">כמה טוקנים זה? <em>הערכה</em> · טוקני קלט ליחידה</div>
+      <div class="tokx-grid"><div class="tx-card"><div class="tx-n">עמוד PDF</div><div class="tx-s">טקסט + תמונה של העמוד</div><div class="tx-row"><span>עברית</span><b class="ltr">3,700–5,800</b></div><div class="tx-row en"><span>English</span><b class="ltr">3,000–4,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.5–2.3</b> <small>(אנגלית <span class="ltr">$1.2–1.8</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד טקסט</div><div class="tx-s">כ־500 מילים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div><div class="tx-card"><div class="tx-n">גיליון Excel</div><div class="tx-s">50 שורות × 10 עמודות</div><div class="tx-row"><span>עברית</span><b class="ltr">≈4,000</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈3,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.60</b> <small>(אנגלית <span class="ltr">$1.40</span>)</small></div></div><div class="tx-card"><div class="tx-n">תמונה</div><div class="tx-s">1092×1092 פיקסלים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,600</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈1,600</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.64</b> <small>(אנגלית <span class="ltr">$0.64</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד Word</div><div class="tx-s">כ־500 מילים, נקרא כטקסט</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div></div>
+    </div>
+    <div class="eco-demo" aria-label="מגדל עלות לפי מספר עמודי PDF בעברית">
       <div class="eco-tower" id="ecoTower"></div>
       <div class="eco-side">
-        <label for="ecoRange">אורך המשימה (המחשה)</label>
-        <input type="range" id="ecoRange" min="2" max="10" value="5" />
-        <div class="eco-cost" id="ecoCost">40 יחידות<small>המחשה בלבד, לא מחירון ספק</small></div>
+        <label for="ecoRange">כמה עמודי PDF בעברית? <b id="ecoN">200</b></label>
+        <input type="range" id="ecoRange" min="10" max="500" step="10" value="200" />
+        <div class="eco-cost" id="ecoCost"></div>
       </div>
+    </div>
     </div>
     <div class="wow-grid g2 has-viz">
   <article class="wow-card"><div class="wow-k">כלל אצבע 1</div><div class="wow-t">פלט יקר מקלט</div><p>ייצור תשובה ארוכה עולה יותר מקריאת אותו היקף. לבקש תשובה ממוקדת — לא רק ״יפה יותר״, גם זול ומדויק יותר.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 2</div><div class="wow-t">מודל לפי משימה</div><p>סיכום שגרתי לא חייב את המודל החזק ביותר. בדיקת אמות מידה, חוזה, או ניתוח רב־מסמכים — כן שווה מודל חזק / מצב חשיבה.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 3</div><div class="wow-t">הקשר ארוך עולה</div><p>כל קובץ שמצרפים וכל סיבוב בשיחה נכנסים לחיוב. כדאי: מסמך נקי, שאלה ברורה, בלי לשרשר שיחות אין־סוף על אותם קבצים.</p></article><article class="wow-card"><div class="wow-k">איך מודדים אצלנו</div><div class="wow-t">עלות למשימה</div><p>שואלים: כמה עלה ביאור סגירה / התאמת בנק / טיוטת ביאור — כולל זמן בדיקה שלנו. לא רק ״כמה עולה טוקן״.</p></article>
 </div>
-    <div class="wow-foot">אין כאן מחירון: המספרים מתעדכנים אצל הספקים. לבדוק בעמוד התמחור הרשמי לפני פיילוט, ולמדוד עלות למשימה בפיילוט עצמו.</div>
+    <div class="wow-foot foot-wide">הערכה בלבד. PDF ותמונה: Anthropic docs (PDF support, Vision: טוקנים ≈ רוחב×גובה/750). יחס עברית/אנגלית ≈1.4: מדידה שלנו על אותו טקסט פיננסי בשתי השפות (<span class="ltr">tiktoken o200k</span>). מחיר: <span class="ltr">Opus 5.5</span> ‏$4 למיליון טוקני קלט, docs.claude.com · נבדק 23.11.2026.</div>
     <div class="pg"></div>
   </div>
-  <aside class="notes">שקף כלכלת טוקנים. במצגת המורחבת הקודמת הופיעה טבלת מחירים מ־11.11.2026 — לא שיחזרנו סכומים, כדי לא להציג מחירון שעלול להתיישן. המסר לקהל: לבחור מודל לפי סיכון המשימה, ולמדוד עלות כוללת (מודל + זמן רו״ח שבודקת). אם שואלים מחיר עדכני — לפתוח את עמוד התמחור של הספק, לא מהזיכרון.</aside>
+  <aside class="notes">שקף כלכלת טוקנים. טבלת סוגי הקבצים היא הערכה (נבדק 23.11.2026): PDF — לפי Anthropic, כל עמוד נקרא גם כטקסט (כ־1,500–3,000 טוקנים) וגם כתמונה (כ־1,600 טוקנים לעמוד בגודל 1092×1092; נוסחה: רוחב×גובה/750) — https://docs.claude.com/en/docs/build-with-claude/pdf-support , https://docs.claude.com/en/docs/build-with-claude/vision . עמוד טקסט/Word: 500 מילים; לפי Anthropic מיליון טוקנים ≈ 555 אלף מילים באנגלית → כ־900 טוקנים לעמוד. עברית: מדדנו את אותו טקסט פיננסי בעברית ובאנגלית עם tiktoken o200k_base — עברית צרכה פי 1.4 טוקנים (505 מול 360). זה טוקנייזר של OpenAI, לכן היחס הוא הערכה. Excel: גיליון של 50 שורות × 10 עמודות, כטקסט; עברית ≈ פי 1.14 כי רוב התאים מספרים. Word שמומר ל־PDF נספר לפי תעריף PDF. העלות: 100 יחידות במחיר הקלט של Opus 5.5 ($4 למיליון). המגדל: כל בלוק = 50 עמודי PDF בעברית (~4,750 טוקנים לעמוד); ב־Haiku מעל 100K טוקנים בפרומפט המחיר עולה ל־$0.50 למיליון. המסר לקהל: לבחור מודל לפי סיכון המשימה, ולמדוד עלות כוללת (מודל + זמן רו״ח שבודקת). אם שואלים מחיר עדכני — לפתוח את עמוד התמחור של הספק, לא מהזיכרון.</aside>
 </section>
 
 <section class="slide s-wow" data-title="יסודות · API">
@@ -2000,6 +2080,26 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
   <div class="rule"><span>מתחילים ב‑<span class="ltr">Opus</span>.</span><span>התוצאה חלשה? <em>קודם מעלים Effort</em> — ורק אז מחליפים מודל.</span></div>
   <div class="foot"><div class="src">מקורות: platform.claude.com/docs/en/models/overview · academy.claude.com/tutorials/choosing-the-right-claude-model · support.claude.com/en/articles/8664678</div><div class="pg"></div></div>
   <aside class="notes">Models overview (Anthropic, נבדק 11.11.2026): Claude Fable 5.2 — "For demanding reasoning and long-horizon agentic work"; Claude Opus 5.5 — "For long-running agentic coding and knowledge work"; Claude Sonnet 5.5 — "The best combination of speed and intelligence"; Claude Haiku 5.5 — "For high-volume, latency-sensitive tasks such as classification, extraction, and routing". https://platform.claude.com/docs/en/models/overview . Claude Academy, Choosing a Claude model for knowledge workers: start with Opus for most knowledge work; Opus is the default on Pro, Max, Ultra and Team; Free includes Haiku and Sonnet, paid plans add Opus, Fable access depends on plan; if a result falls short, change one setting at a time — effort first, then model. https://academy.claude.com/tutorials/choosing-the-right-claude-model . Effort levels (Low/Medium/High/Extra high/Max): https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings . שורת "בפיננסים" — המלצות שלנו, לא של Anthropic.</aside>
+</section>
+<!-- ANTHROPIC PRICES (v5) -->
+<section class="slide s-wow s-prices" data-title="מודלי Anthropic · מחירים">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">מודלים · מחירון <span class="ltr">API</span></div>
+    <h2>מודלי <span class="ltr">Anthropic</span>: כמה זה עולה ולמה כל אחד</h2>
+    <p class="wow-lead">המחיר בדולרים לכל מיליון טוקנים. קלט = מה ששולחים למודל, פלט = מה שהוא כותב. זה תמחור ה־<span class="ltr">API</span> (אוטומציות ופיתוח); מנוי <span class="ltr">Claude</span> רגיל מתומחר בנפרד.</p>
+    <div class="px-sweep" aria-hidden="true"></div>
+    <div class="wow-grid g4 px-grid"><article class="wow-card px-card"><div class="px-top"><b class="ltr">Fable 5.2</b><small>החזק ביותר</small></div><div class="px-nums"><div><span>קלט</span><b class="ltr">$8</b></div><div><span>פלט</span><b class="ltr">$40</b></div></div><div class="px-bar" title="מחיר פלט יחסי"><i style="--w:100%"></i></div><div class="px-cache">קריאה מ־<span class="ltr">Cache</span>: <b class="ltr">$0.20</b></div><p><span class="px-k">בפיננסים</span>ניתוחים מורכבים במיוחד: מודל תזרים רב־תרחישי, בדיקת אמות מידה מול הרבה מסמכים — כש־<span class="ltr">Opus</span> לא הספיק.</p></article><article class="wow-card px-card"><div class="px-top"><b class="ltr">Opus 5.5</b><small>נקודת הפתיחה המומלצת</small></div><div class="px-nums"><div><span>קלט</span><b class="ltr">$4</b></div><div><span>פלט</span><b class="ltr">$20</b></div></div><div class="px-bar" title="מחיר פלט יחסי"><i style="--w:50%"></i></div><div class="px-cache">קריאה מ־<span class="ltr">Cache</span>: <b class="ltr">$0.20</b></div><p><span class="px-k">בפיננסים</span>סגירה חודשית, ניתוח סטיות, טיוטת ביאורים, מצגת דירקטוריון.</p></article><article class="wow-card px-card"><div class="px-top"><b class="ltr">Sonnet 5.5</b><small>מהירות ואינטליגנציה</small></div><div class="px-nums"><div><span>קלט</span><b class="ltr">$2</b></div><div><span>פלט</span><b class="ltr">$10</b></div></div><div class="px-bar" title="מחיר פלט יחסי"><i style="--w:25%"></i></div><div class="px-cache">קריאה מ־<span class="ltr">Cache</span>: <b class="ltr">$0.10</b></div><p><span class="px-k">בפיננסים</span>משימות מוגדרות בהיקף: סיכום דוחות, ניסוח מיילים, טבלאות מסודרות.</p></article><article class="wow-card px-card"><div class="px-top"><b class="ltr">Haiku 5.5</b><small>הכי מהיר והכי זול</small></div><div class="px-nums"><div><span>קלט</span><b><small class="from">מ־</small><span class="ltr">$0.10</span></b></div><div><span>פלט</span><b><small class="from">מ־</small><span class="ltr">$0.50</span></b></div></div><div class="px-bar" title="מחיר פלט יחסי"><i style="--w:3%"></i></div><div class="px-cache">קריאה מ־<span class="ltr">Cache</span>: <b class="ltr">$0.01</b></div><p><span class="px-k">בפיננסים</span>כמויות גדולות: סיווג תנועות בנק, חילוץ נתונים מחשבוניות, ניתוב מסמכים.</p></article></div>
+    <div class="px-chips">
+      <div class="px-chip"><b><span class="ltr">Batch</span>: ‎−50%</b> על קלט ופלט, למשימות שלא דחופות</div>
+      <div class="px-chip"><b><span class="ltr">Cache</span></b>: קריאה חוזרת של אותו מסמך ב־2.5%–10% ממחיר הקלט</div>
+      <div class="px-chip"><b>דוגמה</b>: 100 עמודי PDF בעברית (~475K טוקנים) + סיכום של 2,000 טוקנים ≈ <span class="ltr">Fable $3.88 · Opus $1.94 · Sonnet $0.97 · Haiku $0.24</span> <small>(הערכה)</small></div>
+    </div>
+    <div class="wow-foot foot-wide">מקורות: docs.claude.com/en/docs/about-claude/models/overview · anthropic.com/pricing · נבדק 23.11.2026. מחירי <span class="ltr">Haiku</span> לפרומפט עד 100K טוקנים (מעל: $0.50 קלט / $2.50 פלט). ללא מע״מ. שורת ״בפיננסים״ — המלצה שלנו.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">מחירון API של Anthropic, נבדק 23.11.2026 (https://docs.claude.com/en/docs/about-claude/models/overview , https://www.anthropic.com/pricing). לכל מיליון טוקנים — Claude Fable 5.2: $8 קלט / $40 פלט, קריאה מ־cache $0.20, כתיבה ל־cache $10. Claude Opus 5.5: $4 / $20, cache קריאה $0.20, כתיבה $5. Claude Sonnet 5.5: $2 / $10, cache קריאה $0.10, כתיבה $2.50. Claude Haiku 5.5: מ־$0.10 קלט / $0.50 פלט לפרומפט עד 100K טוקנים; מעל 100K — $0.50 / $2.50; cache קריאה $0.01. Batch API: הנחה של 50%. המסר לקהל: ההבדל בין המודלים הוא פי 40 ויותר — לכן בוחרים מודל לפי המשימה. מתחילים ב־Opus; לכמויות גדולות ופשוטות (סיווג, חילוץ) — Haiku; Fable רק כש־Opus לא מספיק. הדוגמה: 100 עמודי PDF בעברית ≈ 475 אלף טוקנים (הערכה מהשקף של כלכלת הטוקנים). שורת ״בפיננסים״ היא המלצה שלנו, לא של Anthropic. מנוי Claude (Pro $20 לחודש, Max $100, Ultra $200) הוא מסלול אחר, עם מכסות שימוש ולא תשלום לטוקן.</aside>
 </section>
 <!-- SELF ASSESSMENT -->
 <section class="slide s-compare" data-title="כלים ואבטחה">
@@ -2635,7 +2735,7 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     const box=document.querySelector('.s-self .nextbox');
     if(box){box.classList.remove('pop');void box.offsetWidth;box.classList.add('pop');}
   }));
-  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.segrid,.car-stage,.car-btn,.mcard,.cmp .card,.insp-scene,.tip,.folder-sink,.gauge-row,.term-demo,.brick-row,.twin-trees,.plugin-frame,.nextbox'))return;
+  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.tokx,.eco-wrap,.px-grid,.px-chips,.segrid,.car-stage,.car-btn,.mcard,.cmp .card,.insp-scene,.tip,.folder-sink,.gauge-row,.term-demo,.brick-row,.twin-trees,.plugin-frame,.nextbox'))return;
     const r=stage.getBoundingClientRect(); (e.clientX < r.left+r.width/2)?next():prev();});
   const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);
   addEventListener('hashchange',()=>{const k=parseInt(location.hash.slice(1));if(!isNaN(k)&&k-1!==cur)show(k-1);});
@@ -2719,19 +2819,20 @@ function copyWow(btn){
 
 <script>
 (function(){
-  function paintTower(n){
+  function paintTower(v){
     const t=document.getElementById('ecoTower');
     if(!t) return;
-    n=Math.max(2,Math.min(10,+n||5));
-    t.innerHTML='';
-    for(let i=0;i<n;i++){
-      const d=document.createElement('div');
-      d.className='eco-block';
-      d.style.setProperty('--z', (n-i)*2);
-      t.appendChild(d);
-    }
+    const pages=Math.max(10,Math.min(500,+v||200));
+    const want=Math.max(1,Math.min(10,Math.ceil(pages/50)));
+    const have=t.children.length;
+    for(let i=have;i<want;i++){const d=document.createElement('div');d.className='eco-block new';d.style.animationDelay=((i-have)*60)+'ms';t.prepend(d);}
+    while(t.children.length>want) t.removeChild(t.firstElementChild);
+    const tok=pages*4750;
+    const f=x=>'$'+(x<1?x.toFixed(2):x.toFixed(2));
+    const haiku=tok*(tok>100000?0.5:0.1)/1e6;
+    const nEl=document.getElementById('ecoN'); if(nEl) nEl.textContent=pages;
     const c=document.getElementById('ecoCost');
-    if(c) c.innerHTML=(n*8)+' יחידות<small>המחשה בלבד, לא מחירון ספק</small>';
+    if(c) c.innerHTML='<span class="tk">≈ '+Math.round(tok/1000).toLocaleString('en-US')+'K טוקנים</span><span class="mrow"><span class="ltr">Opus 5.5</span><b class="ltr">'+f(tok*4/1e6)+'</b></span><span class="mrow"><span class="ltr">Sonnet 5.5</span><b class="ltr">'+f(tok*2/1e6)+'</b></span><span class="mrow"><span class="ltr">Haiku 5.5</span><b class="ltr">'+f(haiku)+'</b></span><small>הערכה · טוקני קלט בלבד · כל בלוק = 50 עמודים</small>';
   }
   function bindEco(){
     const r=document.getElementById('ecoRange');
