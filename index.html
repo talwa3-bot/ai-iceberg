@@ -1412,6 +1412,18 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
 .static .s-prices .px-card,.static .s-prices .px-chip,.static .s-prices .px-bar i,.static .s-prices .px-card::after{animation:none!important;opacity:1!important}
 .static .s-prices .px-card{transform:var(--rest)!important}
 @media (prefers-reduced-motion:reduce){.s-prices .px-card,.s-prices .px-chip,.s-prices .px-bar i,.s-prices .px-card::after{animation:none!important;opacity:1!important}.s-prices .px-card{transform:var(--rest)!important}}
+
+/* intro video lightbox */
+#talVidOpen{cursor:pointer}
+#talVidOpen .play-hint{position:absolute;left:50%;bottom:16px;translate:-50% 0;z-index:3;background:rgba(6,16,56,.72);border:1px solid rgba(139,211,255,.55);color:#fff;font:800 18px "Heebo",sans-serif;padding:7px 16px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.3);animation:hint-pulse 2.4s ease-in-out infinite;pointer-events:none}
+@keyframes hint-pulse{0%,100%{box-shadow:0 8px 20px rgba(0,0,0,.3),0 0 0 0 rgba(139,211,255,.45)}50%{box-shadow:0 8px 20px rgba(0,0,0,.3),0 0 0 10px rgba(139,211,255,0)}}
+.static #talVidOpen .play-hint{animation:none}
+#vidBox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(6,16,56,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:120;padding:24px}
+#vidBox.open{display:flex}
+#vidBox .vid-panel{position:relative;background:linear-gradient(165deg,rgba(255,255,255,.14),rgba(11,42,138,.38) 55%,rgba(6,16,56,.55));border:1px solid rgba(139,211,255,.45);border-radius:24px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:toon-pop .5s cubic-bezier(.2,.75,.2,1) both}
+#vidBox video{display:block;max-height:calc(100vh - 80px);max-width:calc(100vw - 80px);border-radius:16px;background:#061038}
+#vidClose{position:absolute;top:-14px;left:-14px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(139,211,255,.6);background:#0b2a8a;color:#fff;font:800 20px "Heebo",sans-serif;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:reduce){#vidBox .vid-panel,#talVidOpen .play-hint{animation:none}}
 </style>
 </head>
 <body>
@@ -1563,8 +1575,9 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     <img class="intro-logo" src="assets/ai_finance_logo.jpg" alt="AI Finance" width="188" height="146">
     <div class="photo-tilt">
       <div class="photo-glow" aria-hidden="true"></div>
-      <div class="photo-card">
+      <div class="photo-card" id="talVidOpen" role="button" tabindex="0" aria-label="צפייה בסרטון ההיכרות">
         <img src="assets/tal-portrait.png" alt="רו״ח טל ולנשטין" width="500" height="500">
+        <span class="play-hint" aria-hidden="true">▶ לחצו לצפייה</span>
       </div>
     </div>
     <div class="intro-copy">
@@ -2686,6 +2699,12 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     </figure>
   </div>
 </div>
+<div id="vidBox" aria-hidden="true">
+  <div class="vid-panel" role="dialog" aria-modal="true" aria-label="סרטון היכרות: רו״ח טל ולנשטין">
+    <button type="button" id="vidClose" aria-label="סגירה">✕</button>
+    <video id="talVid" src="assets/tal-intro.mp4" controls playsinline preload="metadata"></video>
+  </div>
+</div>
 <div id="notesPanel"></div>
 
 <script>
@@ -2700,6 +2719,7 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
   function show(i){
     i=Math.max(0,Math.min(slides.length-1,i));
     if(typeof closeToon==='function') closeToon();
+    if(typeof closeVid2==='function') closeVid2();
     slides[cur].classList.remove('active','anim','reveal');
     cur=i;const s=slides[cur];
     void s.offsetWidth; s.classList.add('active','anim');
@@ -2718,6 +2738,9 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
   modal.addEventListener('click',e=>{if(e.target===modal)closeVid();});
   addEventListener('keydown',e=>{
     if(modal.classList.contains('open')){if(e.key==='Escape')closeVid();return;}
+    const vb=document.getElementById('vidBox');
+    if(vb&&vb.classList.contains('open')){if(e.key==='Escape'){e.preventDefault();closeVid2();}else if(e.target.tagName!=='VIDEO'&&!['Tab'].includes(e.key)){e.preventDefault();}return;}
+    if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('#talVidOpen')){e.preventDefault();openVid2();return;}
     const toon=document.getElementById('toonBox');
     if(toon&&toon.classList.contains('open')){if(e.key==='Escape')closeToon();e.preventDefault();return;}
     const card=e.target.closest&&e.target.closest('.icard[data-toon]');
@@ -2756,7 +2779,7 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     const box=document.querySelector('.s-self .nextbox');
     if(box){box.classList.remove('pop');void box.offsetWidth;box.classList.add('pop');}
   }));
-  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.tokx,.eco-wrap,.px-grid,.px-chips,.segrid,.car-stage,.car-btn,.mcard,.cmp .card,.insp-scene,.tip,.folder-sink,.gauge-row,.term-demo,.brick-row,.twin-trees,.plugin-frame,.nextbox'))return;
+  stage.addEventListener('click',e=>{if(e.target.closest('#talVidOpen,#vidBox,a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.tokx,.eco-wrap,.px-grid,.px-chips,.segrid,.car-stage,.car-btn,.mcard,.cmp .card,.insp-scene,.tip,.folder-sink,.gauge-row,.term-demo,.brick-row,.twin-trees,.plugin-frame,.nextbox'))return;
     const r=stage.getBoundingClientRect(); (e.clientX < r.left+r.width/2)?next():prev();});
   const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);
   addEventListener('hashchange',()=>{const k=parseInt(location.hash.slice(1));if(!isNaN(k)&&k-1!==cur)show(k-1);});
@@ -2890,5 +2913,29 @@ function copyWow(btn){
 })();
 </script>
 
+
+<script>
+(function(){
+  const box=document.getElementById('vidBox'),v=document.getElementById('talVid'),card=document.getElementById('talVidOpen');
+  if(!box||!v||!card) return;
+  window.openVid2=function(){
+    box.classList.add('open');box.setAttribute('aria-hidden','false');
+    try{v.currentTime=0;}catch(e){}
+    v.muted=false;
+    const p=v.play(); if(p&&p.catch) p.catch(()=>{v.muted=true;v.play().catch(()=>{});});
+  };
+  window.closeVid2=function(){
+    if(!box.classList.contains('open')) return;
+    v.pause(); try{v.currentTime=0;}catch(e){}
+    box.classList.remove('open');box.setAttribute('aria-hidden','true');
+    card.focus({preventScroll:true});
+  };
+  card.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openVid2();});
+  document.getElementById('vidClose').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();closeVid2();});
+  box.querySelector('.vid-panel').addEventListener('click',e=>e.stopPropagation());
+  box.addEventListener('click',()=>closeVid2());
+  v.addEventListener('ended',()=>closeVid2());
+})();
+</script>
 </body>
 </html>
