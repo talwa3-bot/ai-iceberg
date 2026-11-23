@@ -1421,7 +1421,7 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
 #vidBox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(6,16,56,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:120;padding:24px}
 #vidBox.open{display:flex}
 #vidBox .vid-panel{position:relative;background:linear-gradient(165deg,rgba(255,255,255,.14),rgba(11,42,138,.38) 55%,rgba(6,16,56,.55));border:1px solid rgba(139,211,255,.45);border-radius:24px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:toon-pop .5s cubic-bezier(.2,.75,.2,1) both}
-#vidBox video{display:block;max-height:calc(100vh - 80px);max-width:calc(100vw - 80px);border-radius:16px;background:#061038}
+#vidBox video{display:block;width:min(calc(100vw - 80px),calc((100vh - 80px)*16/9));aspect-ratio:16/9;height:auto;border-radius:16px;background:#061038}
 #vidClose{position:absolute;top:-14px;left:-14px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(139,211,255,.6);background:#0b2a8a;color:#fff;font:800 20px "Heebo",sans-serif;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.4)}
 @media (prefers-reduced-motion:reduce){#vidBox .vid-panel,#talVidOpen .play-hint{animation:none}}
 </style>
