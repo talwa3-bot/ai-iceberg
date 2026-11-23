@@ -703,6 +703,630 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 .static .api-pkt{right:58%;left:auto;opacity:1!important;background:#8BD3FF;animation:none!important;z-index:3}
 .static .race-trk i{width:22%;transform:none}
 
+
+/* ===== Muse Priority B (23.11.2026) — additive 3D + entrances. Slide 3 untouched. ===== */
+
+/* --- Never transform/filter Tal's photographs (frame only) --- */
+.s-title .aif-banner-wrap img,
+.s-cta .logo-wrap img{
+  filter:none!important;
+  transform:none!important;
+  animation:none!important;
+}
+
+/* ========== 1 Title: iceberg sway + title rises from the water ========== */
+.s-title{perspective:1600px;perspective-origin:22% 42%}
+.s-title .hero-berg{
+  transform-origin:50% 38%;
+  transform:rotateY(-12deg) rotateX(6deg) translateZ(24px);
+  will-change:transform;
+}
+.s-title.anim .hero-berg{animation:berg-sway 14s ease-in-out infinite}
+@keyframes berg-sway{
+  0%,100%{transform:rotateY(-16deg) rotateX(6deg) translateZ(20px)}
+  50%{transform:rotateY(16deg) rotateX(4deg) translateZ(32px)}
+}
+.s-title.anim .kicker,
+.s-title.anim .h-xl,
+.s-title.anim .lead,
+.s-title.anim .byline{opacity:0;animation:rise-water .8s ease forwards}
+.s-title.anim .kicker{animation-delay:.12s}
+.s-title.anim .h-xl{animation-delay:.26s}
+.s-title.anim .lead{animation-delay:.42s}
+.s-title.anim .byline{animation-delay:.56s}
+@keyframes rise-water{
+  from{opacity:0;transform:translateY(56px) translateZ(-24px)}
+  to{opacity:1;transform:none}
+}
+
+/* ========== 2 Inspiration: camera dives from the tip into the deep ========== */
+.s-insp{perspective:1500px;overflow:hidden}
+.s-insp .insp-scene{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:20% 30%}
+.s-insp.anim .insp-scene{animation:cam-dive 2.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes cam-dive{
+  0%{transform:translateY(-240px) translateZ(120px) scale(1.16)}
+  100%{transform:translateY(0) translateZ(0) scale(1)}
+}
+.s-insp.anim .kicker{opacity:0;animation:rise .55s 1.1s ease forwards}
+.s-insp.anim .big{opacity:0;animation:rise .7s 1.25s ease forwards}
+.s-insp.anim .credit{opacity:0;animation:rise .5s 1.5s ease forwards}
+.s-insp .tip{transform:rotateY(12deg) rotateX(4deg) translateZ(40px);transform-origin:50% 40%;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
+
+/* ========== 10 Map: layers build bottom-up with Z depth + rising bubbles ========== */
+.s-over{perspective:1800px;perspective-origin:50% 28%}
+.s-over .head{transform:translateZ(48px);z-index:3}
+.s-over.anim .head h2{opacity:0;animation:rise .55s .08s ease forwards}
+.s-over.anim .head p{opacity:0;animation:rise .5s .2s ease forwards}
+.s-over .berg-big{transform:rotateX(8deg) translateZ(0);transform-origin:50% 30%;transform-style:preserve-3d}
+.s-over .berg-big .band{transform-box:fill-box;transform-origin:center bottom}
+.s-over.anim .berg-big .band{opacity:0;animation:band-build .7s cubic-bezier(.2,.75,.2,1) forwards}
+.s-over.anim .berg-big .band:nth-of-type(1){animation-delay:1.15s;--z:8px}
+.s-over.anim .berg-big .band:nth-of-type(2){animation-delay:.98s;--z:16px}
+.s-over.anim .berg-big .band:nth-of-type(3){animation-delay:.81s;--z:24px}
+.s-over.anim .berg-big .band:nth-of-type(4){animation-delay:.64s;--z:32px}
+.s-over.anim .berg-big .band:nth-of-type(5){animation-delay:.47s;--z:40px}
+.s-over.anim .berg-big .band:nth-of-type(6){animation-delay:.3s;--z:48px}
+.s-over.anim .berg-big .band:nth-of-type(7){animation-delay:.14s;--z:56px}
+@keyframes band-build{
+  from{opacity:0;transform:translateZ(-70px) translateY(28px)}
+  to{opacity:1;transform:translateZ(var(--z,0))}
+}
+.s-over.anim .berg-big .lbl{opacity:0;animation:rise .4s ease forwards}
+.s-over.anim .berg-big .lbl:nth-of-type(1){animation-delay:1.25s}
+.s-over.anim .berg-big .lbl:nth-of-type(2){animation-delay:1.08s}
+.s-over.anim .berg-big .lbl:nth-of-type(3){animation-delay:.91s}
+.s-over.anim .berg-big .lbl:nth-of-type(4){animation-delay:.74s}
+.s-over.anim .berg-big .lbl:nth-of-type(5){animation-delay:.57s}
+.s-over.anim .berg-big .lbl:nth-of-type(6){animation-delay:.4s}
+.s-over.anim .berg-big .lbl:nth-of-type(7){animation-delay:.24s}
+.s-over .bubbles{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.s-over .bubbles i{position:absolute;display:block;border-radius:50%;background:rgba(139,211,255,.45);border:1px solid rgba(255,255,255,.5);opacity:0}
+.s-over.anim .bubbles i{animation:bubble-up 4.8s ease-in infinite}
+.s-over .bubbles i:nth-child(1){left:18%;width:10px;height:10px;bottom:8%;animation-delay:.2s}
+.s-over .bubbles i:nth-child(2){left:26%;width:7px;height:7px;bottom:4%;animation-delay:1.1s}
+.s-over .bubbles i:nth-child(3){left:38%;width:12px;height:12px;bottom:10%;animation-delay:.6s}
+.s-over .bubbles i:nth-child(4){left:48%;width:6px;height:6px;bottom:6%;animation-delay:1.8s}
+.s-over .bubbles i:nth-child(5){left:22%;width:8px;height:8px;bottom:2%;animation-delay:2.4s}
+.s-over .bubbles i:nth-child(6){left:33%;width:9px;height:9px;bottom:12%;animation-delay:3.1s}
+@keyframes bubble-up{
+  0%{opacity:0;transform:translateY(0) scale(.6)}
+  12%{opacity:.85}
+  100%{opacity:0;transform:translateY(-520px) scale(1.1)}
+}
+
+/* ========== Cream slides 11–21, 37–38: real 3D depth, content intact ========== */
+.s-layer,.s-self,.s-quote{perspective:1400px;perspective-origin:50% 36%}
+.s-layer .txt,.s-tip .txt,.s-models .hd,.s-self h2,.s-self .sub{
+  transform:translateZ(28px);
+}
+.s-layer .visual{
+  transform:rotateY(-6deg) rotateX(3deg) translateZ(36px);
+  transform-style:preserve-3d;
+}
+.s-layer .mock{transform:translateZ(16px);box-shadow:0 22px 48px rgba(120,60,30,.16),0 0 0 1px rgba(11,42,138,.04)}
+.s-layer.anim .chip{opacity:0;animation:cream-in .5s .08s ease forwards}
+.s-layer.anim h2{opacity:0;animation:cream-in .55s .16s ease forwards}
+.s-layer.anim .phrase{opacity:0;animation:cream-in .5s .26s ease forwards}
+.s-layer.anim .prompt{opacity:0;animation:prompt-tilt .7s .32s ease forwards}
+.s-layer.anim .tools{opacity:0;animation:cream-in .45s .48s ease forwards}
+.s-layer.anim .sec{opacity:0;animation:cream-in .45s .56s ease forwards}
+.s-layer.anim .visual{opacity:0;animation:viz-in .7s .28s ease forwards}
+.s-layer.anim .hd h2{opacity:0;animation:cream-in .55s .1s ease forwards}
+.s-layer.anim .hd p{opacity:0;animation:cream-in .45s .2s ease forwards}
+.s-layer.anim .test{opacity:0;animation:cream-in .5s .36s ease forwards}
+.s-layer.anim .scale,.s-layer.anim .rule{opacity:0;animation:cream-in .5s .7s ease forwards}
+@keyframes cream-in{
+  from{opacity:0;transform:translateY(22px) translateZ(-16px)}
+  to{opacity:1;transform:translateZ(28px)}
+}
+@keyframes prompt-tilt{
+  from{opacity:0;transform:rotateY(8deg) translateZ(48px) translateY(16px)}
+  to{opacity:1;transform:rotateY(0deg) translateZ(16px)}
+}
+@keyframes viz-in{
+  from{opacity:0;transform:rotateY(-14deg) rotateX(8deg) translateZ(-20px)}
+  to{opacity:1;transform:rotateY(-6deg) rotateX(3deg) translateZ(36px)}
+}
+
+/* Mini-iceberg depth meter (restyles existing .depth dots; same 7 marks) */
+.s-layer .depth{
+  width:52px;gap:4px;perspective:500px;z-index:4;
+  padding:8px 6px 10px;border-radius:16px;
+  background:linear-gradient(180deg,rgba(252,235,217,.65),rgba(23,68,86,.18));
+  box-shadow:inset 0 0 0 1px rgba(11,42,138,.08),0 10px 24px rgba(120,60,30,.1);
+}
+.s-layer .depth i{
+  display:block;height:20px;margin:0 auto;border-radius:4px;
+  background:#e8d6c6;transform:translateZ(8px);
+  box-shadow:0 2px 0 rgba(0,0,0,.08);
+}
+.s-layer .depth i:nth-child(1){width:18px;height:16px;clip-path:polygon(50% 0,100% 100%,0 100%);border-radius:0;background:#F6B26B}
+.s-layer .depth i:nth-child(2){width:24px;background:#EE8F5A}
+.s-layer .depth i:nth-child(3){width:30px;background:#E2703F}
+.s-layer .depth i:nth-child(4){width:36px;background:#C95A33}
+.s-layer .depth i:nth-child(5){width:42px;background:#A8472B}
+.s-layer .depth i:nth-child(6){width:46px;background:#833824}
+.s-layer .depth i:nth-child(7){width:50px;background:#5E2A1E}
+.s-layer .depth i.on{
+  box-shadow:0 0 0 2px #8BD3FF,0 0 16px rgba(139,211,255,.7);
+  transform:translateZ(22px) scale(1.08);
+  outline:none;
+}
+.s-layer.anim .depth i{opacity:0;animation:cream-in .4s ease forwards}
+.s-layer.anim .depth i:nth-child(1){animation-delay:.7s}
+.s-layer.anim .depth i:nth-child(2){animation-delay:.76s}
+.s-layer.anim .depth i:nth-child(3){animation-delay:.82s}
+.s-layer.anim .depth i:nth-child(4){animation-delay:.88s}
+.s-layer.anim .depth i:nth-child(5){animation-delay:.94s}
+.s-layer.anim .depth i:nth-child(6){animation-delay:1s}
+.s-layer.anim .depth i:nth-child(7){animation-delay:1.06s}
+
+/* Per-layer details (additive, existing mocks stay) */
+.slide[data-title="שכבה 2"] .mbody{position:relative}
+.slide[data-title="שכבה 2"] .files{padding-left:84px}
+.slide[data-title="שכבה 2"] .folder-sink{
+  position:absolute;left:16px;top:16px;bottom:auto;width:64px;height:48px;z-index:2;
+  border-radius:0 12px 12px 12px;
+  background:linear-gradient(180deg,#8BD3FF,#0b2a8a);
+  box-shadow:0 10px 20px rgba(11,42,138,.28);
+  transform:rotateY(-12deg) translateZ(24px);
+}
+.slide[data-title="שכבה 2"] .folder-sink::before{
+  content:"";position:absolute;top:-12px;right:0;width:40px;height:14px;border-radius:8px 8px 0 0;background:#8BD3FF;
+}
+.slide[data-title="שכבה 2"].anim .file{animation:file-suck .7s ease forwards}
+@keyframes file-suck{
+  0%{opacity:0;transform:translate(40px,-20px) scale(1)}
+  55%{opacity:1;transform:translate(0,0) scale(1)}
+  100%{opacity:1;transform:translate(-36px,-6px) scale(.94)}
+}
+.slide[data-title="שכבה 3"] .skill{position:relative;overflow:visible}
+.slide[data-title="שכבה 3"] .skill::after{
+  content:"שמור";position:absolute;left:-8px;top:-14px;
+  font:800 14px/1 "Heebo",sans-serif;color:#0a1a5c;letter-spacing:.08em;
+  background:#8BD3FF;border-radius:999px;padding:6px 12px;
+  transform:rotate(-12deg) scale(.4);opacity:0;box-shadow:0 8px 16px rgba(11,42,138,.25);
+}
+.slide[data-title="שכבה 3"].anim .skill::after{animation:stamp-in .4s .9s cubic-bezier(.2,1.4,.4,1) forwards}
+@keyframes stamp-in{from{opacity:0;transform:rotate(-18deg) scale(1.4)}to{opacity:1;transform:rotate(-12deg) scale(1)}}
+.slide[data-title="שכבה 4"].anim .out:nth-child(1){transform-origin:right center;animation:fan-out .7s .3s cubic-bezier(.2,.8,.2,1.1) forwards}
+.slide[data-title="שכבה 4"].anim .out:nth-child(2){animation:fan-out .7s .45s cubic-bezier(.2,.8,.2,1.1) forwards}
+.slide[data-title="שכבה 4"].anim .out:nth-child(3){animation:fan-out .7s .6s cubic-bezier(.2,.8,.2,1.1) forwards}
+@keyframes fan-out{
+  from{opacity:0;transform:rotateZ(8deg) translateX(-40px) translateZ(-20px)}
+  to{opacity:1;transform:rotateZ(0) translateZ(12px)}
+}
+.slide[data-title="שכבה 5"].anim .grid td.num{opacity:0;animation:cell-fill .35s ease forwards}
+.slide[data-title="שכבה 5"].anim .grid tr:nth-child(2) td.num{animation-delay:.4s}
+.slide[data-title="שכבה 5"].anim .grid tr:nth-child(3) td.num{animation-delay:.55s}
+.slide[data-title="שכבה 5"].anim .grid tr:nth-child(4) td.num{animation-delay:.7s}
+.slide[data-title="שכבה 5"].anim .grid tr:nth-child(5) td.num{animation-delay:.85s}
+.slide[data-title="שכבה 5"].anim .grid tr:nth-child(6) td.num{animation-delay:1s}
+.slide[data-title="שכבה 5"].anim .grid tr:nth-child(7) td.num{animation-delay:1.15s}
+@keyframes cell-fill{from{opacity:0;transform:translateZ(-10px)}to{opacity:1;transform:none}}
+.slide[data-title="שכבה 6"] .res{position:relative}
+.slide[data-title="שכבה 6"].anim .res{opacity:0;animation:converge .55s ease forwards}
+.slide[data-title="שכבה 6"].anim .res:nth-of-type(1){animation-delay:.45s}
+.slide[data-title="שכבה 6"].anim .res:nth-of-type(2){animation-delay:.6s}
+.slide[data-title="שכבה 6"].anim .res:nth-of-type(3){animation-delay:.75s}
+@keyframes converge{from{opacity:0;transform:translateX(48px) translateZ(-20px)}to{opacity:1;transform:translateZ(8px)}}
+.slide[data-title="שכבה 7"].anim .bars i{transform-origin:bottom;animation:dash-bar .7s ease both,dash-loop 3.2s 1.2s ease-in-out infinite}
+@keyframes dash-bar{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes dash-loop{0%,100%{filter:brightness(1)}50%{filter:brightness(1.2)}}
+
+/* ========== 18–20 Flip: good card flips in (both stay visible) ========== */
+.s-tip{perspective:1400px}
+.s-tip .cmp{transform-style:preserve-3d;transform:translateZ(28px)}
+.s-tip.anim .cmp .bad{opacity:0;animation:tip-in .55s .15s ease forwards}
+.s-tip.anim .cmp .arr{opacity:0;animation:rise .3s .55s ease forwards}
+.s-tip.anim .cmp .good{opacity:0;animation:tip-flip .9s .65s ease forwards}
+@keyframes tip-in{
+  from{opacity:0;transform:rotateY(-28deg) translateZ(-20px)}
+  to{opacity:1;transform:rotateY(-4deg) translateZ(12px)}
+}
+@keyframes tip-flip{
+  0%{opacity:0;transform:rotateY(180deg) translateZ(20px)}
+  35%{opacity:1}
+  100%{opacity:1;transform:rotateY(-2deg) translateZ(24px)}
+}
+.s-tip .cmp .card{cursor:pointer;transform-style:preserve-3d}
+
+/* ========== 21 Models: 3D coverflow, all four stay readable ========== */
+.s-models{perspective:1600px}
+.s-models .car-stage{position:absolute;top:262px;right:70px;left:70px;height:480px;perspective:1600px}
+.s-models .car-stage .mgrid,
+.s-models .car-stage .mgrid.c4{
+  position:absolute;top:0;right:0;left:0;height:100%;width:auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  transform-style:preserve-3d;align-items:stretch;
+}
+.s-models .mcard{
+  transform-style:preserve-3d;
+  transform:rotateY(var(--ry,0deg)) rotateX(4deg) translateZ(var(--z,28px));
+  transition:transform .55s cubic-bezier(.2,.75,.2,1),box-shadow .4s;
+  cursor:pointer;
+}
+.s-models .mcard:nth-child(1){--ry:10deg;--z:18px}
+.s-models .mcard:nth-child(2){--ry:4deg;--z:36px}
+.s-models .mcard:nth-child(3){--ry:-4deg;--z:36px}
+.s-models .mcard:nth-child(4){--ry:-10deg;--z:18px}
+.s-models .mcard.front{
+  --ry:0deg;--z:64px;
+  box-shadow:0 22px 50px rgba(11,42,138,.18),0 0 0 3px rgba(139,211,255,.65),0 18px 50px rgba(120,60,30,.12);
+}
+.s-models .car-btn{
+  position:absolute;top:46%;z-index:5;width:56px;height:56px;border-radius:50%;
+  border:2px solid rgba(11,42,138,.25);background:#fff;color:#0a1a5c;
+  font:800 28px/1 "Heebo",sans-serif;cursor:pointer;box-shadow:0 8px 20px rgba(11,42,138,.15);
+}
+.s-models .car-prev{right:-8px}
+.s-models .car-next{left:-8px}
+.s-models.anim .mcard{animation:none;opacity:0;animation:card-3d .6s ease forwards}
+.s-models.anim .mcard:nth-child(1){animation-delay:.2s}
+.s-models.anim .mcard:nth-child(2){animation-delay:.3s}
+.s-models.anim .mcard:nth-child(3){animation-delay:.4s}
+.s-models.anim .mcard:nth-child(4){animation-delay:.5s}
+@keyframes card-3d{
+  from{opacity:0;transform:rotateY(var(--ry,0deg)) translateZ(-40px) translateY(24px)}
+  to{opacity:1;transform:rotateY(var(--ry,0deg)) rotateX(4deg) translateZ(var(--z,28px))}
+}
+
+/* ========== 26 Newspaper clippings land on a desk ========== */
+.s-news .wow-grid{perspective:1400px;transform-style:preserve-3d;margin-inline:40px}
+.s-wow.s-news .g3 .wow-card{--rest:rotateX(4deg) translateZ(24px)}
+.s-wow.s-news .g3 .wow-card:nth-child(1){--rest:rotateZ(-1.2deg) rotateX(3deg) rotateY(-2deg) translateZ(20px)}
+.s-wow.s-news .g3 .wow-card:nth-child(2){--rest:rotateZ(.8deg) rotateX(3deg) translateZ(28px)}
+.s-wow.s-news .g3 .wow-card:nth-child(3){--rest:rotateZ(-.6deg) rotateX(3deg) rotateY(2deg) translateZ(20px)}
+.s-news.anim .wow-card{animation:clip-drop .85s cubic-bezier(.2,.7,.2,1.05) forwards}
+@keyframes clip-drop{
+  from{opacity:0;transform:translateY(-90px) rotateX(55deg) translateZ(80px)}
+  to{opacity:1;transform:var(--rest)}
+}
+
+/* ========== 27 Timeline travels in Z ========== */
+.s-years .tl{perspective:1400px;transform-style:preserve-3d;transform:rotateX(8deg) translateZ(0)}
+.s-years .tl .wow-card{--rest:rotateY(-6deg) rotateX(4deg) translateZ(var(--tz,20px))}
+.s-years .tl .wow-card:nth-child(1){--tz:8px}
+.s-years .tl .wow-card:nth-child(2){--tz:20px}
+.s-years .tl .wow-card:nth-child(3){--tz:36px}
+.s-years .tl .wow-card:nth-child(4){--tz:52px}
+.s-years .tl .wow-card:nth-child(5){--tz:40px}
+.s-years .tl .wow-card:nth-child(6){--tz:24px}
+.s-years.anim .tl{animation:tl-cam 2.2s ease both}
+@keyframes tl-cam{
+  from{transform:rotateX(14deg) translateZ(-80px) translateY(16px)}
+  to{transform:rotateX(8deg) translateZ(0)}
+}
+.s-years.anim .tl .wow-card{opacity:0;animation:tl-lit .55s ease forwards}
+.s-years.anim .tl .wow-card:nth-child(1){animation-delay:.2s}
+.s-years.anim .tl .wow-card:nth-child(2){animation-delay:.4s}
+.s-years.anim .tl .wow-card:nth-child(3){animation-delay:.6s}
+.s-years.anim .tl .wow-card:nth-child(4){animation-delay:.8s}
+.s-years.anim .tl .wow-card:nth-child(5){animation-delay:1s}
+.s-years.anim .tl .wow-card:nth-child(6){animation-delay:1.2s}
+@keyframes tl-lit{
+  from{opacity:.15;transform:rotateY(-10deg) translateZ(-30px);filter:brightness(.7)}
+  to{opacity:1;transform:var(--rest);filter:none}
+}
+
+/* ========== 28 Code tools: tilted terminal chrome (no invented output) ========== */
+.term-demo{
+  position:relative;z-index:2;height:84px;margin:4px 0 12px;perspective:1100px;overflow:hidden;
+}
+.term-win{
+  height:100%;border-radius:14px;overflow:hidden;width:100%;
+  background:linear-gradient(180deg,rgba(6,16,56,.7),rgba(11,42,138,.45));
+  border:1px solid rgba(139,211,255,.35);
+  transform:rotateX(10deg) translateZ(16px);
+  box-shadow:0 18px 36px rgba(0,0,0,.35);
+}
+.term-win .tb{height:28px;background:rgba(139,211,255,.12);display:flex;align-items:center;gap:8px;padding:0 14px;color:#8BD3FF;font:700 12px/1 "Heebo",sans-serif}
+.term-win .tb i{width:10px;height:10px;border-radius:50%;background:rgba(139,211,255,.5)}
+.term-win .body{padding:10px 16px;font:700 16px/1.6 "Heebo",sans-serif;color:#D4E6FF}
+.term-win .body b{color:#8BD3FF}
+.s-code.anim .term-win{opacity:0;animation:term-in .7s .2s ease forwards}
+@keyframes term-in{
+  from{opacity:0;transform:rotateX(28deg) translateY(16px) translateZ(-16px)}
+  to{opacity:1;transform:rotateX(10deg) translateZ(16px)}
+}
+
+/* ========== 29 Bricks assemble beside existing cards ========== */
+.brick-row{position:relative;z-index:2;display:flex;gap:10px;height:52px;margin:0 0 12px;perspective:1000px}
+.brick-row i{
+  flex:1;border-radius:8px;
+  background:linear-gradient(180deg,rgba(139,211,255,.35),rgba(11,42,138,.5));
+  border:1px solid rgba(139,211,255,.4);
+  transform:rotateX(16deg) translateZ(16px);
+  font:800 14px/52px "Heebo",sans-serif;color:#fff;text-align:center;
+}
+.s-create.anim .brick-row i{opacity:0;animation:brick-in .5s ease forwards}
+.s-create.anim .brick-row i:nth-child(1){animation-delay:.2s}
+.s-create.anim .brick-row i:nth-child(2){animation-delay:.35s}
+.s-create.anim .brick-row i:nth-child(3){animation-delay:.5s}
+.s-create.anim .brick-row i:nth-child(4){animation-delay:.65s}
+@keyframes brick-in{
+  from{opacity:0;transform:translateY(-24px) rotateX(50deg)}
+  to{opacity:1;transform:rotateX(16deg) translateZ(16px)}
+}
+
+/* ========== 30 Agent workstations ========== */
+.s-agents .wow-grid{perspective:1200px}
+.s-agents .wow-card{--rest:rotateX(8deg) rotateY(-6deg) translateZ(36px)}
+.s-agents .wow-card:nth-child(2){--rest:rotateX(8deg) translateZ(52px)}
+.s-agents .wow-card:nth-child(3){--rest:rotateX(8deg) rotateY(6deg) translateZ(36px)}
+.s-agents.anim .wow-card{animation:desk-in .7s ease forwards}
+@keyframes desk-in{
+  from{opacity:0;transform:rotateX(28deg) translateY(30px) translateZ(-20px)}
+  to{opacity:1;transform:var(--rest)}
+}
+
+/* ========== 31 Plugin frame pulls forward ========== */
+.plugin-frame{
+  position:relative;z-index:2;margin:0 0 12px;height:36px;perspective:1000px;
+}
+.plugin-frame .tab{
+  display:inline-block;padding:6px 16px;border-radius:10px 10px 0 0;
+  background:linear-gradient(180deg,#8BD3FF,#0b2a8a);color:#fff;
+  font:800 15px/1 "Heebo",sans-serif;
+  transform:translateZ(40px);
+  box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+.s-acct.anim .plugin-frame .tab{animation:plug-out .7s .15s ease both}
+@keyframes plug-out{
+  from{opacity:0;transform:translateZ(-40px) translateY(12px)}
+  to{opacity:1;transform:translateZ(40px)}
+}
+.s-acct .wow-card{--rest:rotateY(-6deg) rotateX(5deg) translateZ(28px)}
+
+/* ========== 32 Twin orgs: branching vs flat tree ========== */
+.twin-trees{
+  position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  height:110px;margin:0 0 12px;perspective:1100px;
+}
+.twin-trees .tree{position:relative;transform-style:preserve-3d;transform:rotateX(12deg) translateZ(20px)}
+.twin-trees .tree .cap{font:800 15px/1 "Heebo",sans-serif;color:#8BD3FF;margin-bottom:8px}
+.twin-trees .trunk{height:10px;border-radius:8px;background:rgba(139,211,255,.4);width:70%;margin:0 auto}
+.twin-trees .br{display:flex;gap:8px;margin-top:8px;justify-content:center}
+.twin-trees .br i{display:block;height:36px;border-radius:8px;background:linear-gradient(180deg,#8BD3FF,#0b2a8a);flex:1;max-width:70px}
+.twin-trees .flat .br i:nth-child(n+2){opacity:.22;transform:scaleY(.35);transform-origin:top}
+.s-native.anim .tree:first-child .br i{animation:branch .7s .3s ease both}
+.s-native.anim .tree:last-child .br i{animation:stay-flat .7s .3s ease both}
+@keyframes branch{from{transform:scaleY(.2);opacity:0}to{transform:scaleY(1);opacity:1}}
+@keyframes stay-flat{from{opacity:0}to{opacity:.22;transform:scaleY(.35)}}
+.s-native.anim .tree:last-child .br i:first-child{animation:branch .7s .3s ease both}
+
+/* ========== 33 Gauges (decorative needles, no invented numbers) ========== */
+.gauge-row{position:relative;z-index:2;display:flex;gap:28px;justify-content:center;margin:0 0 12px;perspective:1000px}
+.gauge{width:150px;text-align:center;transform:rotateX(12deg) translateZ(24px)}
+.gauge .dial{
+  width:150px;height:78px;margin:0 auto;overflow:hidden;position:relative;
+  background:radial-gradient(circle at 50% 100%,rgba(139,211,255,.2),rgba(6,16,56,.4));
+  border:1px solid rgba(139,211,255,.35);border-bottom:none;border-radius:150px 150px 0 0;
+}
+.gauge .needle{
+  position:absolute;left:50%;bottom:4px;width:4px;height:64px;margin-left:-2px;
+  background:#8BD3FF;transform-origin:50% 100%;border-radius:4px;
+  box-shadow:0 0 10px rgba(139,211,255,.6);
+}
+.s-measure.anim .gauge:nth-child(1) .needle{animation:needle 1.2s .2s ease both;--ang:-42deg}
+.s-measure.anim .gauge:nth-child(2) .needle{animation:needle 1.2s .4s ease both;--ang:-8deg}
+.s-measure.anim .gauge:nth-child(3) .needle{animation:needle 1.2s .6s ease both;--ang:28deg}
+@keyframes needle{from{transform:rotate(-80deg)}to{transform:rotate(var(--ang))}}
+.gauge span{display:block;margin-top:6px;font:800 15px "Heebo",sans-serif;color:#D4E6FF}
+
+/* ========== 37 Where am I: selected rung comes forward, next-step pops ========== */
+.s-self .ladder{transform-style:preserve-3d;transform:rotateY(8deg) translateZ(20px)}
+.s-self .rung[data-i="0"]{--i:0}.s-self .rung[data-i="1"]{--i:1}.s-self .rung[data-i="2"]{--i:2}.s-self .rung[data-i="3"]{--i:3}.s-self .rung[data-i="4"]{--i:4}.s-self .rung[data-i="5"]{--i:5}.s-self .rung[data-i="6"]{--i:6}
+.s-self .rung{transform:translateZ(calc((6 - var(--i,0))*6px));transition:transform .4s ease,box-shadow .3s}
+.s-self .rung.sel{transform:translateX(-16px) translateZ(48px) scale(1.03);box-shadow:0 16px 36px rgba(11,42,138,.2),0 0 0 3px rgba(139,211,255,.55)}
+.s-self .nextbox{transform:rotateY(-6deg) translateZ(32px);transform-origin:left center}
+.s-self .nextbox.pop{animation:next-pop .45s ease}
+@keyframes next-pop{from{opacity:.4;transform:rotateY(-18deg) translateZ(-20px)}to{opacity:1;transform:rotateY(-6deg) translateZ(32px)}}
+.s-self.anim h2{opacity:0;animation:cream-in .55s .08s ease forwards}
+.s-self.anim .sub{opacity:0;animation:cream-in .5s .18s ease forwards}
+.s-self.anim .rung{opacity:0;animation:rung-in .5s ease forwards}
+.s-self.anim .rung.sel{animation-name:rung-in-sel}
+@keyframes rung-in-sel{from{opacity:0;transform:translateX(24px) translateZ(-20px)}to{opacity:1;transform:translateX(-16px) translateZ(48px) scale(1.03)}}
+.s-self.anim .rung:nth-child(1){animation-delay:.22s}
+.s-self.anim .rung:nth-child(2){animation-delay:.3s}
+.s-self.anim .rung:nth-child(3){animation-delay:.38s}
+.s-self.anim .rung:nth-child(4){animation-delay:.46s}
+.s-self.anim .rung:nth-child(5){animation-delay:.54s}
+.s-self.anim .rung:nth-child(6){animation-delay:.62s}
+.s-self.anim .rung:nth-child(7){animation-delay:.7s}
+.s-self.anim .nextbox{opacity:0;animation:next-pop .55s .5s ease forwards}
+@keyframes rung-in{
+  from{opacity:0;transform:translateX(24px) translateZ(-20px)}
+  to{opacity:1;transform:translateZ(calc((6 - var(--i,0))*6px))}
+}
+
+/* ========== 38 Summary: words appear; cream "iceberg" rises ========== */
+.s-quote .line,.s-quote .wl{transform-origin:50% 100%}
+.s-quote.anim .line{animation:berg-reveal 1.6s ease both}
+.s-quote.anim .wl{animation:berg-reveal 1.6s ease both}
+@keyframes berg-reveal{from{transform:translateY(22px)}to{transform:translateY(0)}}
+.s-quote.anim .q1 span,
+.s-quote.anim .q2 span{opacity:0;animation:word-in .35s ease forwards}
+.s-quote.anim .q1 span:nth-child(1){animation-delay:.2s}
+.s-quote.anim .q1 span:nth-child(2){animation-delay:.32s}
+.s-quote.anim .q1 span:nth-child(3){animation-delay:.44s}
+.s-quote.anim .q1 span:nth-child(4){animation-delay:.56s}
+.s-quote.anim .q2 span:nth-child(1){animation-delay:.9s}
+.s-quote.anim .q2 span:nth-child(2){animation-delay:1.02s}
+.s-quote.anim .q2 .hl{animation-delay:1.2s}
+@keyframes word-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.s-quote.anim .sig{opacity:0;animation:rise .5s 1.45s ease forwards}
+
+/* ========== 39 Close: frame entrance + cyan shine on the FRAME, QR stagger ========== */
+.s-cta{perspective:1400px}
+.s-cta .logo-wrap{position:relative;transform:translateZ(28px)}
+.s-cta .logo-wrap::after{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(105deg,transparent 40%,rgba(139,211,255,.28) 50%,transparent 60%);
+  background-size:220% 100%;opacity:0;
+}
+.s-cta.anim .logo-wrap{opacity:0;animation:frame-in .8s .12s ease forwards}
+.s-cta.anim .logo-wrap::after{animation:shine 1.2s .5s ease both}
+@keyframes frame-in{from{opacity:0;transform:translateY(24px) translateZ(-16px)}to{opacity:1;transform:translateZ(28px)}}
+@keyframes shine{0%{opacity:0;background-position:120% 0}25%{opacity:1}100%{opacity:0;background-position:-20% 0}}
+.s-cta.anim .who-name{opacity:0;animation:rise .5s .4s ease forwards}
+.s-cta.anim .qrcard{opacity:0;animation:qr-in .6s ease forwards;transform:translateZ(24px)}
+.s-cta.anim .qrcard:nth-child(1){animation-delay:.55s}
+.s-cta.anim .qrcard:nth-child(2){animation-delay:.7s}
+@keyframes qr-in{
+  from{opacity:0;transform:translateY(20px) rotateX(18deg)}
+  to{opacity:1;transform:translateZ(24px)}
+}
+
+/* ========== Polish: MCP labels always face the camera ========== */
+.mcp-tool{transform-style:preserve-3d}
+.mcp-billboard{
+  position:absolute;inset:0;transform-style:preserve-3d;
+  animation:mcp-unspin 16s linear infinite;
+}
+.mcp-tool .face{
+  animation:mcp-hot 16s linear infinite;
+  animation-delay:calc(var(--i)*4s);
+}
+/* mcp-hot must NOT set transform (it fought the billboard unspin) */
+@keyframes mcp-hot{
+  0%,18%,100%{filter:brightness(1);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+  4%,12%{filter:brightness(1.35);box-shadow:0 0 28px rgba(139,211,255,.7)}
+}
+
+/* ========== Polish: slide 35 per-row bar scale ========== */
+.bars-demo{align-items:stretch;height:148px;padding:28px 12px 28px}
+.bar-pair{height:100%;align-items:flex-end;padding-bottom:20px;padding-top:18px}
+.bar-pair .b{min-height:8px;width:20px}
+.bars-caption{position:relative;z-index:2;font:600 14px/1.35 "Heebo",sans-serif;color:#A9C4EA;margin:2px 0 10px}
+
+/* ========== Static + reduced-motion: final visible state (fixes empty navy thumbs) ========== */
+html.static .s-wow.anim .wow-kicker,
+html.static .s-wow.anim h2,
+html.static .s-wow.anim .wow-lead,
+html.static .s-wow.anim .wow-card,
+html.static .s-wow.anim .node,
+html.static .s-wow.anim table.cmp,
+html.static .s-wow.anim .prompt-box,
+html.static .s-wow.anim .ans,
+html.static .s-wow.anim .wow-foot,
+html.static .s-wow.anim .tl,
+html.static .s-title.anim .kicker,
+html.static .s-title.anim .h-xl,
+html.static .s-title.anim .lead,
+html.static .s-title.anim .byline,
+html.static .s-insp.anim .insp-scene,
+html.static .s-insp.anim .kicker,
+html.static .s-insp.anim .big,
+html.static .s-insp.anim .credit,
+html.static .s-over.anim .head h2,
+html.static .s-over.anim .head p,
+html.static .s-over.anim .berg-big .band,
+html.static .s-over.anim .berg-big .lbl,
+html.static .s-layer.anim .chip,
+html.static .s-layer.anim h2,
+html.static .s-layer.anim .phrase,
+html.static .s-layer.anim .prompt,
+html.static .s-layer.anim .tools,
+html.static .s-layer.anim .sec,
+html.static .s-layer.anim .visual,
+html.static .s-layer.anim .hd h2,
+html.static .s-layer.anim .hd p,
+html.static .s-layer.anim .test,
+html.static .s-layer.anim .scale,
+html.static .s-layer.anim .rule,
+html.static .s-layer.anim .depth i,
+html.static .s-layer.anim .mcard,
+html.static .s-models.anim .mcard,
+html.static .s-tip.anim .cmp .bad,
+html.static .s-tip.anim .cmp .good,
+html.static .s-tip.anim .cmp .arr,
+html.static .s-self.anim h2,
+html.static .s-self.anim .sub,
+html.static .s-self.anim .rung,
+html.static .s-self.anim .nextbox,
+html.static .s-quote.anim .q1,
+html.static .s-quote.anim .q2,
+html.static .s-quote.anim .q1 span,
+html.static .s-quote.anim .q2 span,
+html.static .s-quote.anim .sig,
+html.static .s-quote.anim .line,
+html.static .s-quote.anim .wl,
+html.static .s-cta.anim .logo-wrap,
+html.static .s-cta.anim .who-name,
+html.static .s-cta.anim .qrcard,
+html.static .anim .file,
+html.static .anim .month,
+html.static .anim .out,
+html.static .anim .typing,
+html.static .anim .cmp .good,
+html.static .anim .res,
+html.static .anim .grid td.num,
+html.static .slide[data-title="שכבה 3"] .skill::after,
+html.static .s-news.anim .wow-card,
+html.static .s-years.anim .tl,
+html.static .s-years.anim .tl .wow-card,
+html.static .s-code.anim .term-win,
+html.static .s-create.anim .brick-row i,
+html.static .s-agents.anim .wow-card,
+html.static .s-acct.anim .plugin-frame .tab,
+html.static .s-native.anim .tree .br i,
+html.static .s-measure.anim .gauge .needle,
+html.static .bar-pair .b,
+html.static .bar-pair .delta,
+html.static .s-over .bubbles i{
+  animation:none!important;
+  opacity:1!important;
+  clip-path:none!important;
+  filter:none!important;
+}
+html.static .s-title.anim .hero-berg{animation:none!important;transform:rotateY(-12deg) rotateX(6deg) translateZ(24px)!important}
+html.static .s-insp.anim .insp-scene{transform:none!important}
+html.static .s-over.anim .berg-big .band{transform:translateZ(24px)!important}
+html.static .s-layer.anim .prompt{transform:rotateY(0deg) translateZ(16px)!important}
+html.static .s-layer.anim .visual{transform:rotateY(-6deg) rotateX(3deg) translateZ(36px)!important}
+html.static .s-wow.anim .wow-card,
+html.static .s-wow.anim .node,
+html.static .s-wow.anim table.cmp{transform:var(--rest,none)!important}
+html.static .s-models .mcard{opacity:1!important;transform:rotateY(var(--ry,0deg)) rotateX(4deg) translateZ(var(--z,28px))!important}
+html.static .s-self.anim .rung{transform:translateZ(calc((6 - var(--i,0))*6px))!important}
+html.static .s-self.anim .rung.sel{transform:translateX(-16px) translateZ(48px) scale(1.03)!important}
+html.static .s-self.anim .nextbox{transform:rotateY(-6deg) translateZ(32px)!important;opacity:1!important}
+html.static .s-quote.anim .line,html.static .s-quote.anim .wl{transform:none!important}
+html.static .s-cta.anim .logo-wrap{transform:translateZ(28px)!important}
+html.static .s-cta.anim .logo-wrap::after{animation:none!important;opacity:0!important}
+html.static .s-measure .gauge .needle{transform:rotate(var(--ang,-10deg))!important}
+html.static .s-over .bubbles i{opacity:.35!important;transform:translateY(-180px)!important;animation:none!important}
+html.static .mcp-billboard{animation:none!important;transform:rotateY(calc(var(--i)*-90deg + 24deg))!important}
+html.static .mcp-tool .face{animation:none!important;transform:none!important;filter:none!important}
+html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!important;animation:none!important}
+
+@media (prefers-reduced-motion:reduce){
+  .s-title .hero-berg,.s-insp .insp-scene,.s-over .berg-big,.s-over .bubbles i,
+  .s-layer.anim .chip,.s-layer.anim h2,.s-layer.anim .phrase,.s-layer.anim .prompt,
+  .s-layer.anim .tools,.s-layer.anim .sec,.s-layer.anim .visual,.s-layer.anim .hd h2,
+  .s-layer.anim .hd p,.s-layer.anim .test,.s-layer.anim .scale,.s-layer.anim .rule,
+  .s-layer.anim .depth i,.s-tip.anim .cmp .bad,.s-tip.anim .cmp .good,.s-tip.anim .cmp .arr,
+  .s-models.anim .mcard,.s-self.anim h2,.s-self.anim .sub,.s-self.anim .rung,.s-self.anim .nextbox,
+  .s-quote.anim .q1 span,.s-quote.anim .q2 span,.s-quote.anim .sig,.s-quote.anim .line,.s-quote.anim .wl,
+  .s-cta.anim .logo-wrap,.s-cta.anim .who-name,.s-cta.anim .qrcard,
+  .s-news.anim .wow-card,.s-years.anim .tl,.s-years.anim .tl .wow-card,
+  .s-code.anim .term-win,.s-create.anim .brick-row i,.s-agents.anim .wow-card,
+  .s-acct.anim .plugin-frame .tab,.s-native.anim .tree .br i,.s-measure.anim .gauge .needle,
+  .s-title.anim .kicker,.s-title.anim .h-xl,.s-title.anim .lead,.s-title.anim .byline,
+  .s-insp.anim .kicker,.s-insp.anim .big,.s-insp.anim .credit,
+  .s-over.anim .head h2,.s-over.anim .head p,.s-over.anim .berg-big .band,.s-over.anim .berg-big .lbl,
+  .mcp-ring,.mcp-billboard,.slide[data-title="שכבה 7"] .bars i{
+    animation:none!important;opacity:1!important;
+  }
+  .s-title .hero-berg{transform:rotateY(-12deg) rotateX(6deg) translateZ(24px)!important}
+  .s-insp .insp-scene{transform:none!important}
+  .s-layer.anim .visual{transform:rotateY(-6deg) rotateX(3deg) translateZ(36px)!important;opacity:1!important}
+  .s-layer.anim .prompt{transform:rotateY(0) translateZ(16px)!important;opacity:1!important}
+  .mcp-billboard{transform:rotateY(calc(var(--i)*-90deg + 24deg))!important}
+  .s-cta .logo-wrap::after{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -793,6 +1417,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 
 <!-- 2 INSPIRATION -->
 <section class="slide s-insp" data-title="השראה">
+  <div class="insp-scene">
   <svg class="tip" viewBox="0 0 520 780" aria-hidden="true">
     <defs><linearGradient id="tw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5F6E"/><stop offset="1" stop-color="#0E2233"/></linearGradient>
     <linearGradient id="tb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C95A33" stop-opacity=".95"/><stop offset="1" stop-color="#5E2A1E" stop-opacity=".5"/></linearGradient></defs>
@@ -809,6 +1434,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <div class="credit">
     <div class="ic">🧊</div>
     <p>מבוסס על האינפוגרפיקה של <b class="ltr">Nicolas Boucher</b><br><b class="ltr">“The Claude iceberg for finance”</b><br>אותן שבע שכבות, באותו סדר — בעברית, ובהתאמה לכל הכלים.</p>
+  </div>
   </div>
   <div class="foot" style="color:#9fb6bd"><div class="src">קרדיט: Nicolas Boucher, “The Claude iceberg for finance” (אינפוגרפיקה). ההתאמה לעברית ולכלים נוספים: AI Finance.</div><div class="pg"></div></div>
   <aside class="notes">הכותרת "כאן רוב השימוש" היא דימוי ולא נתון סטטיסטי. ההשראה: Nicolas Boucher, The Claude iceberg for finance. לא מצוטטים נתונים מהאינפוגרפיקה.</aside>
@@ -1009,10 +1635,10 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
       <div class="mcp-world">
         <div class="mcp-core"><b>המודל</b><span>MCP</span></div>
         <div class="mcp-ring">
-          <div class="mcp-tool" style="--i:0"><div class="face">Excel</div></div>
-          <div class="mcp-tool" style="--i:1"><div class="face">Drive</div></div>
-          <div class="mcp-tool" style="--i:2"><div class="face">ERP</div></div>
-          <div class="mcp-tool" style="--i:3"><div class="face">מייל</div></div>
+          <div class="mcp-tool" style="--i:0"><div class="mcp-billboard"><div class="face">Excel</div></div></div>
+          <div class="mcp-tool" style="--i:1"><div class="mcp-billboard"><div class="face">Drive</div></div></div>
+          <div class="mcp-tool" style="--i:2"><div class="mcp-billboard"><div class="face">ERP</div></div></div>
+          <div class="mcp-tool" style="--i:3"><div class="mcp-billboard"><div class="face">מייל</div></div></div>
         </div>
       </div>
     </div>
@@ -1088,6 +1714,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
       <line x1="1330" y1="330" x2="1330" y2="900" stroke="#cfe3e8" stroke-width="3" stroke-dasharray="6 10"/>
     </g>
   </svg>
+  <div class="bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="hint">לחיצה על שכבה — קפיצה אליה</div>
   <aside class="notes">מפת הדרך: שבע השכבות לפי Nicolas Boucher. הסדר הוא העיקר — כל שכבה נשענת על הקודמת. "דקות / ימים" — המסר של המצגת, לא מדידה.</aside>
 </section>
@@ -1140,6 +1767,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
           <div class="file" style="animation-delay:.3s"><span class="ext x-pdf">PDF</span>דוח רבעון 2 שפורסם</div>
           <div class="file" style="animation-delay:.5s"><span class="ext x-doc">DOCX</span>מדיניות חשבונאית</div>
         </div>
+        <div class="folder-sink" aria-hidden="true"></div>
         <div class="instr"><b>הנחיות הפרויקט:</b> מטבע ₪ · סף מהותיות לפי המדיניות · תשובות קצרות, השורה התחתונה קודם.</div>
       </div>
     </div>
@@ -1367,7 +1995,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 <section class="slide s-layer s-models" data-title="מודלים">
   <div class="side" style="background:var(--terra)"></div>
   <div class="hd"><h2>ארבעה מודלים. כל אחד לעבודה אחרת.</h2><p>הסדר כמו בתפריט המודלים של Claude · נכון לנובמבר 2026</p></div>
-  <div class="mgrid c4" style="grid-template-columns:repeat(4,1fr)"><div class="mcard" style="animation-delay:0.00s"><div class="top" style="background:#5E2A1E"><b>Fable 5.2</b><small>החזק ביותר</small></div><div class="ds">לחשיבה תובענית ולמשימות ארוכות במיוחד</div><div class="fin"><span class="k">בפיננסים</span>מודל תזרים עם תרחישים — כש‑<span class="ltr">Opus</span> לא הספיק</div></div><div class="mcard" style="animation-delay:0.12s"><div class="top" style="background:#A8472B"><b>Opus 5.5</b><small>נקודת הפתיחה המומלצת</small></div><div class="ds">לעבודת ידע ולמשימות ארוכות</div><div class="fin"><span class="k">בפיננסים</span>סגירה חודשית, ניתוח סטיות, מצגת דירקטוריון</div></div><div class="mcard" style="animation-delay:0.24s"><div class="top" style="background:#E2703F"><b>Sonnet 5.5</b><small>מהירות ואינטליגנציה</small></div><div class="ds">השילוב הטוב ביותר של מהירות ואינטליגנציה</div><div class="fin"><span class="k">בפיננסים</span>משימות מוגדרות: סיכום דוח, ניסוח מייל, טבלה מסודרת</div></div><div class="mcard" style="animation-delay:0.36s"><div class="top" style="background:#E89B4C"><b>Haiku 5.5</b><small>הכי מהיר</small></div><div class="ds">לכמויות גדולות ומהירות: סיווג, חילוץ וניתוב</div><div class="fin"><span class="k">בפיננסים</span>סיווג תנועות בנק, חילוץ נתונים מחשבוניות</div></div></div>
+  <div class="car-stage" id="modelCar"><button type="button" class="car-btn car-prev" aria-label="המודל הקודם">›</button><button type="button" class="car-btn car-next" aria-label="המודל הבא">‹</button><div class="mgrid c4" style="grid-template-columns:repeat(4,1fr)"><div class="mcard" style="animation-delay:0.00s"><div class="top" style="background:#5E2A1E"><b>Fable 5.2</b><small>החזק ביותר</small></div><div class="ds">לחשיבה תובענית ולמשימות ארוכות במיוחד</div><div class="fin"><span class="k">בפיננסים</span>מודל תזרים עם תרחישים — כש‑<span class="ltr">Opus</span> לא הספיק</div></div><div class="mcard front" style="animation-delay:0.12s"><div class="top" style="background:#A8472B"><b>Opus 5.5</b><small>נקודת הפתיחה המומלצת</small></div><div class="ds">לעבודת ידע ולמשימות ארוכות</div><div class="fin"><span class="k">בפיננסים</span>סגירה חודשית, ניתוח סטיות, מצגת דירקטוריון</div></div><div class="mcard" style="animation-delay:0.24s"><div class="top" style="background:#E2703F"><b>Sonnet 5.5</b><small>מהירות ואינטליגנציה</small></div><div class="ds">השילוב הטוב ביותר של מהירות ואינטליגנציה</div><div class="fin"><span class="k">בפיננסים</span>משימות מוגדרות: סיכום דוח, ניסוח מייל, טבלה מסודרת</div></div><div class="mcard" style="animation-delay:0.36s"><div class="top" style="background:#E89B4C"><b>Haiku 5.5</b><small>הכי מהיר</small></div><div class="ds">לכמויות גדולות ומהירות: סיווג, חילוץ וניתוב</div><div class="fin"><span class="k">בפיננסים</span>סיווג תנועות בנק, חילוץ נתונים מחשבוניות</div></div></div></div>
   <div class="scale"><span>יותר עומק</span><i style=""></i><span>יותר מהירות</span></div>
   <div class="rule"><span>מתחילים ב‑<span class="ltr">Opus</span>.</span><span>התוצאה חלשה? <em>קודם מעלים Effort</em> — ורק אז מחליפים מודל.</span></div>
   <div class="foot"><div class="src">מקורות: platform.claude.com/docs/en/models/overview · academy.claude.com/tutorials/choosing-the-right-claude-model · support.claude.com/en/articles/8664678</div><div class="pg"></div></div>
@@ -1534,7 +2162,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף אבטחת AI בארה״ב. חשוב לשקיפות: חיפשנו במצגות הקודמות (merged, v2, gpt, iceberg-insert) ולא מצאנו שקף ישן ייעודי — זה שקף חדש ממקורות רשמיים שנפתחו בנובמבר 2026. NIST AI 600-1 (יולי 2024) הוא פרופיל GenAI למסגרת AI RMF, לשימוש וולונטרי. CISA/NSA/FBI (ושותפים בינלאומיים) 22.5.2025: AI Data Security, כולל מקור הנתונים, שלמות, שרשרת אספקה, data poisoning ו־data drift. America’s AI Action Plan (יולי 2025): בין היתר Promote Secure-By-Design AI, Bolster Critical Infrastructure Cybersecurity, Mature Federal Capacity for AI Incident Response. לא להציג כחובה על חברה ישראלית. קישור לשיחה: Shadow AI, סיווג, ומדיניות דירקטוריון.</aside>
 </section>
 
-<section class="slide s-wow" data-title="כתבות מהעולם הפיננסי">
+<section class="slide s-wow s-news" data-title="כתבות מהעולם הפיננסי">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
@@ -1550,7 +2178,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף כתבות. שלושה סיפורים, בלי להמציא סכומים שלא מופיעים בכתבה (ב־ABC לא ציטטנו סכום החזר). Deloitte אוסטרליה: דוח עם טעויות אחרי שימוש ב־AI, החזר חלקי לממשלה, ABC 9.10.2025. KPMG 17.11.2026: המספרים מההודעה הרשמית. EY: כותרת ההודעה מ־2026 (נתיב /2026/04/ באתר EY); לא הוספנו נתוני ביצוע כי לא חולצו מהעמוד. אם יש זמן: לחבר לטיפים על ציטוט לפני מסקנה, ולאחריות המבקר/הרו״ח. כתבות נוספות במערך המרצה (Arup, Air Canada, פסיקה ישראלית) — לא דחסנו הכל לשקף.</aside>
 </section>
 
-<section class="slide s-wow" data-title="AI בפיננסים · שנתיים">
+<section class="slide s-wow s-years" data-title="AI בפיננסים · שנתיים">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
@@ -1566,13 +2194,14 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף ציר זמן 2024–2026, בנוסף לשכבות הקרחון הקיימות (לא במקומן). נקודות מאומתות בלבד. Microsoft Excel/finance: כתובות הרשמיות נפתחו; חלק מהעמודים החזירו חסימה, לכן מציינים את התאריך והכותרת מהמקור הרשמי בלי ציטוטי עומק. Antigravity IDE: נובמבר 2025 לפי בלוג Antigravity 2.0 (שפורסם 19.5.2026). אפשר לעצור ב־Dots/Grok Bot ולפתוח את שקפי הכלים.</aside>
 </section>
 
-<section class="slide s-wow" data-title="כלי קוד">
+<section class="slide s-wow s-code" data-title="כלי קוד">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
     <div class="wow-kicker">כלים לבונים · 1/2</div>
     <h2>כלי קוד: במה הם שונים</h2>
     <p class="wow-lead">לא צריך להיות מתכנתת: מתארים תהליך, והסוכן כותב, מריץ ובודק. ארבעה כלים שונים — לא אותו דבר בשמות אחרים.</p>
+    <div class="term-demo" aria-hidden="true"><div class="term-win"><div class="tb"><i></i><i></i><i></i> טרמינל · המחשה</div><div class="body">$ <b>claude code</b> · <b>codex</b> · <b>antigravity</b> · <b>grok bot</b></div></div></div>
     <div class="wow-grid g4">
   <article class="wow-card"><div class="wow-k">Anthropic</div><div class="wow-t">Claude Code</div><p>סוכן קוד שקורא את בסיס הקוד, עורך קבצים ומריץ פקודות — בטרמינל, ב־IDE, באפליקציה ובדפדפן. מתקן ובונה שוב עד שזה עובד.</p></article><article class="wow-card"><div class="wow-k">OpenAI</div><div class="wow-t">Codex</div><p>סוכן הקוד של OpenAI: כותב, בודק ומשחרר קוד. כלול בתוכניות ChatGPT (עם מגבלות בתוכניות החינמיות/הבסיסיות לפי הספק).</p></article><article class="wow-card"><div class="wow-k">Google</div><div class="wow-t">Antigravity</div><p>סביבת פיתוח סוכנית של Google. הסוכן פועל בעורך, בטרמינל ובדפדפן, עם ניהול משימות ו־artifacts. קיימים גם אפליקציה עצמאית והרחבות ל־IDE.</p></article><article class="wow-card"><div class="wow-k">xAI</div><div class="wow-t">Grok Bot</div><p>לא IDE לקוד. צוות בוטים תמידיים: לכל בוט מחשב משלו, הוא נכנס לכלים ולאתרים שלכם, עובד ב־Slack, וחוזר עם עבודה גמורה. מתאים גם למשימות שמערבות קבצים וקוד, אבל זה עוזר עבודה כללי.</p></article>
 </div>
@@ -1582,13 +2211,14 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף כלי קוד. זה שחזור והרחבה של ״כלים לבונים · קוד״ מהמצגת המורחבת הקודמת, בתוספת Antigravity ו־Grok Bot. הבדלים לקריאה בקול: Claude Code ו־Codex נולדו לקוד; Antigravity הוא סביבה סוכנית של Google; Grok Bot הוא צוות סוכני עבודה עם מחשב, לא עורך קוד ייעודי. פרומפט לדוגמה לדמו בהמשך: התאמת בנק. אזהרה: לא מריצים על נתוני אמת בלי סביבה מאושרת ובדיקה.</aside>
 </section>
 
-<section class="slide s-wow" data-title="יצירה והרחבות">
+<section class="slide s-wow s-create" data-title="יצירה והרחבות">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
     <div class="wow-kicker">כלים לבונים · 2/2</div>
     <h2>יצירה, הרחבות, וסוכן שרץ בשבילכם</h2>
     <p class="wow-lead">מעבר לקוד: לעצב חומר למשקיעים, לחבר תוספים, ולהשאיר סוכן שיעקוב אחרי הנתונים — עם אישור על הצעד החשוב.</p>
+    <div class="brick-row" aria-hidden="true"><i>עיצוב</i><i>תוסף</i><i>מעקב</i><i>אישור</i></div>
     <div class="wow-grid g2">
   <article class="wow-card"><div class="wow-k">Claude</div><div class="wow-t">Design, Plugins, Chrome</div><p>Claude Design: ויזואלים, אב־טיפוס ו־one‑pager, ייצוא ל־PPTX/PDF. Plugins: סקילים, מחברי MCP ופקודות. Claude in Chrome: פעולה באתרים, לפי הרשאות.</p></article><article class="wow-card"><div class="wow-k">OpenAI</div><div class="wow-t">Dots + Plugins</div><p>Dots: סוכנים תמידיים עם מחשב ענן משלהם, שמשתמשים בכלים מחוברים ומבקשים אישור. Plugins: הרחבות משותפות ל־ChatGPT, לעבודה ולסוכנים.</p></article><article class="wow-card"><div class="wow-k">הדוגמה של OpenAI</div><div class="wow-t">עדכון למשקיעים</div><p>Dot שעוקב אחרי שימוש והכנסות, מסמן שינויים, ומרענן מצגת דירקטוריון לקראת עדכון למשקיעים — ובודק איתכם כשצריך אישור.</p></article><article class="wow-card"><div class="wow-k">לכספים</div><div class="wow-t">מה כן / מה לא</div><p>כן: טיוטת סקירה, רענון שקפים, מעקב אחרי סף חריגה. לא: לשלוח ללקוח או להנהלה בלי עיניים של רו״ח, ולא לחבר מערכת בלי IT.</p></article>
 </div>
@@ -1598,7 +2228,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף יצירה והרחבות — שוחזר מהגרסה המורחבת הקודמת, לא במקום שקף קיים. דוגמת ה־dot למשקיעים היא דוגמה של OpenAI עצמה, לא מקרה שלנו. מעבר טבעי לשקף האייג׳נטים: Cowork, Dots, Grok Bot.</aside>
 </section>
 
-<section class="slide s-wow" data-title="אייג'נטים לעבודה">
+<section class="slide s-wow s-agents" data-title="אייג'נטים לעבודה">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
@@ -1614,13 +2244,14 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף אייג׳נטים. החלטה 1: ״קלוד דואט״ = Claude Cowork; לא מצאנו מוצר Anthropic בשם Duet בהקשר הזה (Google Duet AI הישן הפך ל־Gemini, ואינו העמית כאן). החלטה 2: Dots = OpenAI Dots, 29.9.2026. החלטה 3: Grok Bot לפי x.ai/bot בלבד, בלי ניחושים. הבדל לקול: Cowork הוא Claude שממשיך משימת ידע בין מכשירים; Dots הוא סוכן תמידי עם מחשב ענן של OpenAI; Grok Bot הוא צוות בוטים עם מחשב לכל אחד, משולב בצוות. כולם דורשים גדרות ואישור אדם.</aside>
 </section>
 
-<section class="slide s-wow" data-title="ChatGPT לחשבונאות">
+<section class="slide s-wow s-acct" data-title="ChatGPT לחשבונאות">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
     <div class="wow-kicker">כלים · חשבונאות</div>
     <h2>ChatGPT לחשבונאות: התוסף הרשמי</h2>
     <p class="wow-lead">כשאומרים ״GPT Accountant״ הכוונה כאן לתוסף Accounting הרשמי של OpenAI ל־ChatGPT — לא ל־GPT מותאם אישית ישן בשם דומה.</p>
+    <div class="plugin-frame" aria-hidden="true"><span class="tab">Accounting · תוסף</span></div>
     <div class="wow-grid g2">
   <article class="wow-card"><div class="wow-k">מה הוא עושה</div><div class="wow-t">טיוטות לסגירה ודיווח</div><p>לפי מרכז העזרה של OpenAI: מסייע במשימות חשבונאיות כמו סגירת ספרים, מאחד רשומות מגיליונות ומיישומים מחוברים, ומכין טיוטות לבדיקה שלכם.</p></article><article class="wow-card"><div class="wow-k">איך מתקינים</div><div class="wow-t">Plugin בשם Accounting</div><p>ב־ChatGPT Business אפשר להתקין בלי אישור מנהל. ב־Enterprise מנהל חייב לאשר בקונסולה. התוסף עצמו חינמי להתקנה; השימוש במודל ובכלים תלוי בתוכנית.</p></article><article class="wow-card"><div class="wow-k">חיבורים</div><div class="wow-t">קבצים + יישומי הנה״ח</div><p>מעלים תבנית Excel וקבצים, או מחברים אפליקציית הנהלת חשבונות. בין השותפים שמצוינים בעזרה: QuickBooks Online, Xero, NetSuite, FreshBooks, BILL ועוד — לבדוק ברישום העדכני מה נתמך.</p></article><article class="wow-card"><div class="wow-k">גבול מקצועי</div><div class="wow-t">טיוטה, לא חתימה</div><p>התוסף מציג טיוטה ומקורות לסכומים. הבדיקה, הסיווג והאחריות נשארים אצל רואת החשבון. לא לערבב עם ״custom GPT״ ישן שנבנה לבד — כאן מדובר בתוסף רשמי.</p></article>
 </div>
@@ -1630,13 +2261,17 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף GPT Accountant. החלטה: המוצר הרלוונטי ביותר בנובמבר 2026 הוא התוסף הרשמי Accounting ל־ChatGPT, לא GPTs קהילתיים בשמות דומים. עובדות מהעזרה הרשמית שנפתחה במושב הזה (עודכנה ״אתמול״ יחסית לפתיחה). שותפי התוסף — לציין שרשימה מתעדכנת. אם שואלים על פרישת custom GPTs: לא שמנו תאריך בשקף כי לא נפתח כאן מסמך הפרישה עצמו; אפשר להגיד ש־OpenAI מעבירה יכולות לתוספים, ולבדוק את דף העזרה העדכני.</aside>
 </section>
 
-<section class="slide s-wow" data-title="AI-native · למה">
+<section class="slide s-wow s-native" data-title="AI-native · למה">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
     <div class="wow-kicker">ארגון כספים AI‑native · 1/2</div>
     <h2>אותו כלי. תשואה אחרת.</h2>
     <p class="wow-lead">לפי Anthropic, שני ארגונים יכולים לתת לאנשים אותו מודל — ולקבל תוצאה שונה. ההשפעה גדלה ככל שיש למודל גישה, אמון, ושיטות עבודה כתובות שאפשר להריץ.</p>
+    <div class="twin-trees" aria-hidden="true">
+      <div class="tree"><div class="cap">תהליך מחלקה</div><div class="trunk"></div><div class="br"><i></i><i></i><i></i></div></div>
+      <div class="tree flat"><div class="cap">פרודוקטיביות אישית</div><div class="trunk"></div><div class="br"><i></i><i></i><i></i></div></div>
+    </div>
     <div class="wow-grid g4">
   <article class="wow-card"><div class="wow-k">שלב 1</div><div class="wow-t">פרודוקטיביות אישית</div><p>ביאור סטיות בצ׳אט, לבד, בלי חיבור מערכות.</p></article><article class="wow-card"><div class="wow-k">שלב 2</div><div class="wow-t">תהליך צוות</div><p>סקיל סגירה משותף, שכולן מריצות באותו אופן.</p></article><article class="wow-card"><div class="wow-k">שלב 3</div><div class="wow-t">תהליך מחלקה</div><p>סגירה, AP/AR ו־FP&A מחוברים ל־ERP.</p></article><article class="wow-card"><div class="wow-k">שלב 4</div><div class="wow-t">השפעה על KPI</div><p>ימי סגירה, DSO, דיוק תחזית — מדד תוצאה, לא רק ״חסכנו זמן״.</p></article>
 </div>
@@ -1649,13 +2284,18 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   <aside class="notes">שקף AI-native 1/2, שוחזר מהגרסה המורחבת. המאמר הרשמי (15.9.2026) מדבר על ארגון הכנסות/מכירות. אל תציגי את המיפוי הכספי כנתון של Anthropic. לפני פיילוט: בעלים, חיבור, מדדים, תקרה. מעבר לשקף המדידה.</aside>
 </section>
 
-<section class="slide s-wow" data-title="AI-native · כמה">
+<section class="slide s-wow s-measure" data-title="AI-native · כמה">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
     <div class="wow-kicker">ארגון כספים AI‑native · 2/2</div>
     <h2>איך מודדים? לא רק שעות שנחסכו</h2>
     <p class="wow-lead">תיק שבנוי רק על ״זמן שהתפנה״ נעצר בעלות השעות האלה. מודדים יעילות, הרחבה, ויכולות חדשות — ומשווים לקבוצה שלא השתמשה, באותו רבעון.</p>
+    <div class="gauge-row" aria-hidden="true">
+      <div class="gauge"><div class="dial"><i class="needle" style="--ang:-42deg"></i></div><span>יעילות</span></div>
+      <div class="gauge"><div class="dial"><i class="needle" style="--ang:-8deg"></i></div><span>הרחבה</span></div>
+      <div class="gauge"><div class="dial"><i class="needle" style="--ang:28deg"></i></div><span>יכולת חדשה</span></div>
+    </div>
     <div class="wow-grid g3">
   <article class="wow-card"><div class="wow-k">יעילות</div><div class="wow-t">אותה עבודה, מהר יותר</div><p>בכספים: ביאור סגירה והתאמות בפחות זמן — בלי לוותר על בדיקה.</p></article><article class="wow-card"><div class="wow-k">הרחבה</div><div class="wow-t">יותר תפוקה מאותו צוות</div><p>בכספים: יותר ישויות או מרכזי עלות לכל אנליסט, באותה איכות בקרה.</p></article><article class="wow-card"><div class="wow-k">יכולת חדשה</div><div class="wow-t">עבודה שלא נעשתה</div><p>בכספים: בדיקה חודשית של חוזי ספקים מול חשבוניות — משימה שלא היה לה זמן.</p></article>
 </div>
@@ -1741,7 +2381,17 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
     <div class="wow-kicker">דמו חי · 2/3</div>
     <h2>דמו: תקציב מול ביצוע לחודש</h2>
     <p class="wow-lead">משימת FP&A בסיסית על קובץ דוגמה. מבקשים ניתוח סטיות — ואז בודקים מול החישוב שלנו, לא מול ״תחושת הבטן״ של המודל.</p>
-    <div class="bars-demo" aria-label="גרף תקציב מול ביצוע — נתוני דוגמה"><div class="bar-pair" style="animation-delay:0.1s"><div class="b bud" style="height:62px;animation-delay:0.1s"></div><div class="b act" style="height:59px;animation-delay:0.2s"></div><div class="delta">‎-4.2%</div><div class="lab">הכנסות</div></div><div class="bar-pair" style="animation-delay:0.2s"><div class="b bud" style="height:24px;animation-delay:0.2s"></div><div class="b act" style="height:27px;animation-delay:0.3s"></div><div class="delta">+7.9%</div><div class="lab">עלות מכר</div></div><div class="bar-pair" style="animation-delay:0.3s"><div class="b bud" style="height:12px;animation-delay:0.3s"></div><div class="b act" style="height:12px;animation-delay:0.4s"></div><div class="delta">0</div><div class="lab">משכורות</div></div><div class="bar-pair" style="animation-delay:0.4s"><div class="b bud" style="height:8px;animation-delay:0.4s"></div><div class="b act" style="height:8px;animation-delay:0.5s"></div><div class="delta">+56%</div><div class="lab">תוכנה</div></div><div class="bar-pair" style="animation-delay:0.5s"><div class="b bud" style="height:8px;animation-delay:0.5s"></div><div class="b act" style="height:8px;animation-delay:0.6s"></div><div class="delta">‎-74%</div><div class="lab">נסיעות</div></div><div class="bar-pair" style="animation-delay:0.6s"><div class="b bud" style="height:8px;animation-delay:0.6s"></div><div class="b act" style="height:8px;animation-delay:0.7s"></div><div class="delta">0</div><div class="lab">שכ״ט</div></div><div class="bar-pair" style="animation-delay:0.7s"><div class="b bud" style="height:8px;animation-delay:0.7s"></div><div class="b act" style="height:8px;animation-delay:0.8s"></div><div class="delta">+4.6%</div><div class="lab">משרד</div></div><div class="bar-pair" style="animation-delay:0.8s"><div class="b bud" style="height:8px;animation-delay:0.8s"></div><div class="b act" style="height:8px;animation-delay:0.9s"></div><div class="delta">‎-12%</div><div class="lab">שיווק</div></div></div>
+    <div class="bars-demo" aria-label="גרף תקציב מול ביצוע — כל זוג עמודות לפי הסקאלה של אותה שורה, נתוני דוגמה">
+      <div class="bar-pair" style="animation-delay:0.1s"><div class="b bud" style="height:100%;animation-delay:0.1s"></div><div class="b act" style="height:95.8%;animation-delay:0.2s"></div><div class="delta">‎-4.2%</div><div class="lab">הכנסות</div></div>
+      <div class="bar-pair" style="animation-delay:0.2s"><div class="b bud" style="height:92.7%;animation-delay:0.2s"></div><div class="b act" style="height:100%;animation-delay:0.3s"></div><div class="delta">+7.9%</div><div class="lab">עלות מכר</div></div>
+      <div class="bar-pair" style="animation-delay:0.3s"><div class="b bud" style="height:100%;animation-delay:0.3s"></div><div class="b act" style="height:100%;animation-delay:0.4s"></div><div class="delta">0</div><div class="lab">משכורות</div></div>
+      <div class="bar-pair" style="animation-delay:0.4s"><div class="b bud" style="height:64%;animation-delay:0.4s"></div><div class="b act" style="height:100%;animation-delay:0.5s"></div><div class="delta">+56%</div><div class="lab">תוכנה</div></div>
+      <div class="bar-pair" style="animation-delay:0.5s"><div class="b bud" style="height:100%;animation-delay:0.5s"></div><div class="b act" style="height:26.3%;animation-delay:0.6s"></div><div class="delta">‎-74%</div><div class="lab">נסיעות</div></div>
+      <div class="bar-pair" style="animation-delay:0.6s"><div class="b bud" style="height:100%;animation-delay:0.6s"></div><div class="b act" style="height:100%;animation-delay:0.7s"></div><div class="delta">0</div><div class="lab">שכ״ט</div></div>
+      <div class="bar-pair" style="animation-delay:0.7s"><div class="b bud" style="height:95.6%;animation-delay:0.7s"></div><div class="b act" style="height:100%;animation-delay:0.8s"></div><div class="delta">+4.6%</div><div class="lab">משרד</div></div>
+      <div class="bar-pair" style="animation-delay:0.8s"><div class="b bud" style="height:100%;animation-delay:0.8s"></div><div class="b act" style="height:88.2%;animation-delay:0.9s"></div><div class="delta">‎-12%</div><div class="lab">שיווק</div></div>
+    </div>
+    <p class="bars-caption">כל זוג עמודות מנורמל לפי השורה שלו (לא לפי סקאלה אחת לכל הגרף), כדי שגם סכומים קטנים יהיו קריאים. המספרים מגיעים מקובץ הדוגמה.</p>
     <div class="wow-grid g21 has-viz">
   <article class="wow-card">
     <div class="wow-k">הפרומפט · להעתיק ולהריץ</div>
@@ -1821,8 +2471,8 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 <section class="slide s-quote" data-title="סיכום">
   <div class="line"></div>
   <svg class="wl" viewBox="0 0 1920 30" preserveAspectRatio="none"><path d="M0 12 Q 120 0 240 12 T 480 12 T 720 12 T 960 12 T 1200 12 T 1440 12 T 1680 12 T 1920 12" stroke="#fff" stroke-width="5" fill="none"/></svg>
-  <div class="q1">שכבה 1 חוסכת דקות.</div>
-  <div class="q2">השכבות שמתחת<br><span>חוסכות ימים.</span></div>
+  <div class="q1"><span>שכבה</span> <span>1</span> <span>חוסכת</span> <span>דקות.</span></div>
+  <div class="q2"><span>השכבות</span> <span>שמתחת</span><br><span class="hl">חוסכות ימים.</span></div>
   <div class="sig">טל ולנשטין · <span class="ltr">AI Finance</span></div>
   <aside class="notes">שורת הסיכום — מסר, לא מדידה.</aside>
 </section>
@@ -1933,7 +2583,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
     cur=i;const s=slides[cur];
     void s.offsetWidth; s.classList.add('active','anim');
     if(s.classList.contains('s-over')) s.querySelector('svg').classList.add('reveal');
-    history.replaceState(null,'','#'+(cur+1)+(location.search?'':''));
+    history.replaceState(null,'',location.pathname+location.search+'#'+(cur+1));
     document.getElementById('prog').style.width=((cur+1)/slides.length*100)+'%';
     const n=s.querySelector('.notes');
     document.getElementById('notesPanel').innerHTML='<button id="notesClose" type="button" onclick="document.getElementById(\'notesPanel\').classList.remove(\'open\')">✕ סגירת הערות</button><b>'+(cur+1)+' · '+(s.dataset.title||'')+'</b><br>'+(n?n.innerHTML.replace(/(https?:\/\/[^\s)]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>'):'');
@@ -1952,7 +2602,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
     const card=e.target.closest&&e.target.closest('.icard[data-toon]');
     if(card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openToon(card);return;}
     if(e.key==='Escape'){document.getElementById('notesPanel').classList.remove('open');return;}
-    if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('button,a,input,textarea,.wow-copy,.prompt-box'))return;
+    if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('button,a,input,textarea,.wow-copy,.prompt-box,.car-btn,.mcard,.cmp .card'))return;
     if(['ArrowLeft','ArrowDown','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next();}
     else if(['ArrowRight','ArrowUp','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev();}
     else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
@@ -1981,11 +2631,38 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   }
   document.querySelectorAll('.rung').forEach(r=>r.addEventListener('click',e=>{e.stopPropagation();
     document.querySelectorAll('.rung').forEach(x=>x.classList.remove('sel'));r.classList.add('sel');
-    applyStep(steps[+r.dataset.i]);}));
-  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.segrid'))return;
+    applyStep(steps[+r.dataset.i]);
+    const box=document.querySelector('.s-self .nextbox');
+    if(box){box.classList.remove('pop');void box.offsetWidth;box.classList.add('pop');}
+  }));
+  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.segrid,.car-stage,.car-btn,.mcard,.cmp .card,.insp-scene,.tip,.folder-sink,.gauge-row,.term-demo,.brick-row,.twin-trees,.plugin-frame,.nextbox'))return;
     const r=stage.getBoundingClientRect(); (e.clientX < r.left+r.width/2)?next():prev();});
   const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);
   addEventListener('hashchange',()=>{const k=parseInt(location.hash.slice(1));if(!isNaN(k)&&k-1!==cur)show(k-1);});
+  (function bindCarousel(){
+    const stage=document.getElementById('modelCar');
+    if(!stage) return;
+    const cards=[...stage.querySelectorAll('.mcard')];
+    let i=Math.max(0,cards.findIndex(c=>c.classList.contains('front')));
+    if(i<0) i=1;
+    function paint(){
+      cards.forEach((c,k)=>c.classList.toggle('front',k===i));
+    }
+    stage.addEventListener('click',e=>{
+      const btn=e.target.closest('.car-next,.car-prev,.mcard');
+      if(!btn) return;
+      e.stopPropagation();
+      if(btn.classList.contains('car-prev')) i=(i-1+cards.length)%cards.length;
+      else i=(i+1)%cards.length;
+      paint();
+    });
+  })();
+  document.querySelector('.s-insp .insp-scene')?.addEventListener('click',e=>{
+    e.stopPropagation();
+    const s=document.querySelector('.s-insp');
+    if(!s||!s.classList.contains('active')) return;
+    s.classList.remove('anim');void s.offsetWidth;s.classList.add('anim');
+  });
 })();
 </script>
 
