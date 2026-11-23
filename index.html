@@ -28,17 +28,24 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 .badge{position:absolute;bottom:18px;right:18px;background:rgba(43,26,20,.82);color:#fff;font-size:17px;font-weight:600;padding:6px 14px;border-radius:999px;z-index:3}
 
 /* ---------- title ---------- */
-.s-title{background:radial-gradient(1200px 800px at 85% 10%,#FFE3C8 0%,var(--cream) 55%),var(--cream)}
-.s-title .aif-banner-wrap{position:absolute;top:36px;right:80px;width:1000px;height:calc(1000px * 464 / 1179);border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(14,34,51,.16);background:#03103F}
+.s-title{background:radial-gradient(1100px 720px at 88% -8%,#163aa8 0%,transparent 58%),radial-gradient(900px 600px at -5% 110%,#0c246e 0%,transparent 55%),linear-gradient(165deg,#0b2a8a 0%,#0a1a5c 48%,#061038 100%);color:#fff}
+.s-title .aif-banner-wrap{position:absolute;top:36px;right:80px;width:1000px;height:calc(1000px * 464 / 1179);border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(3,16,63,.45),0 0 40px rgba(80,180,255,.18);background:#03103F;z-index:1}
 .s-title .aif-banner-wrap img{width:100%;height:auto;display:block}
-.s-title .wrap{position:absolute;top:456px;right:80px;width:1000px}
+.s-title .wrap{position:absolute;top:456px;right:80px;width:1000px;z-index:1}
 .kicker{font-size:26px;font-weight:700;color:var(--terra);letter-spacing:.5px}
 .h-xl{font-size:120px;line-height:1.02;font-weight:900;letter-spacing:-2px;margin-top:14px}
 .h-xl em{font-style:normal;color:var(--terra)}
 .lead{font-size:38px;line-height:1.35;font-weight:400;color:#4a3329;margin-top:20px;max-width:900px}
 .byline{position:absolute;bottom:48px;right:80px;font-size:26px;color:var(--muted)}
 .byline b{color:var(--ink);font-weight:800}
-.hero-berg{position:absolute;left:40px;top:36px;width:720px;height:890px}
+.hero-berg{position:absolute;left:40px;top:36px;width:720px;height:890px;z-index:1;filter:drop-shadow(0 18px 40px rgba(3,16,63,.35))}
+.s-title .circuit-bg,.s-cta .circuit-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.s-title .kicker{color:#8BD3FF}
+.s-title .h-xl{color:#fff}
+.s-title .h-xl em{color:#8BD3FF}
+.s-title .lead{color:#D4E6FF}
+.s-title .byline{color:#A9C4EA;z-index:1}
+.s-title .byline b{color:#fff}
 
 /* ---------- inspiration ---------- */
 .s-insp{background:var(--deep);color:#fff}
@@ -182,16 +189,17 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 .s-quote .sig{position:absolute;bottom:90px;width:100%;text-align:center;font-size:28px;color:#bcd2d8}
 
 /* ---------- CTA / AI Finance close ---------- */
-.s-cta{background:radial-gradient(1200px 800px at 50% 0%,#FFEEDD 0%,var(--cream) 58%),var(--cream);color:var(--ink)}
-.s-cta .cta-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 80px 72px;text-align:center}
-.s-cta .logo-wrap{flex:none;width:1080px;height:calc(1080px * 464 / 1179);border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(14,34,51,.16);background:#03103F}
+.s-cta{background:radial-gradient(1100px 720px at 50% -8%,#163aa8 0%,transparent 58%),radial-gradient(900px 600px at 50% 110%,#0c246e 0%,transparent 55%),linear-gradient(165deg,#0b2a8a 0%,#0a1a5c 48%,#061038 100%);color:#fff}
+.s-cta .cta-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 80px 72px;text-align:center;z-index:1}
+.s-cta .logo-wrap{flex:none;width:1080px;height:calc(1080px * 464 / 1179);border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(3,16,63,.45),0 0 40px rgba(80,180,255,.18);background:#03103F}
 .s-cta .logo-wrap img{width:100%;height:auto;display:block;vertical-align:top}
-.s-cta .who-name{margin-top:20px;font-size:36px;font-weight:800;color:var(--ink);letter-spacing:.2px}
+.s-cta .who-name{margin-top:20px;font-size:36px;font-weight:800;color:#fff;letter-spacing:.2px}
 .s-cta .qrs{display:flex;flex-direction:row;gap:56px;margin-top:22px;justify-content:center;align-items:stretch}
-.s-cta .qrcard{background:#fff;border-radius:32px;padding:22px 32px 18px;box-shadow:0 18px 50px rgba(43,26,20,.10);display:flex;flex-direction:column;align-items:center;width:430px}
+.s-cta .qrcard{background:#fff;border-radius:32px;padding:22px 32px 18px;box-shadow:0 18px 50px rgba(3,16,63,.28);display:flex;flex-direction:column;align-items:center;width:430px}
 .s-cta .qrcard img{width:260px;height:260px;display:block;border-radius:12px;background:#fff}
-.s-cta .qrcard .qlabel{margin-top:14px;font-size:26px;font-weight:700;color:var(--ink);line-height:1.35;max-width:380px}
-.s-cta .foot{color:var(--muted)}
+.s-cta .qrcard .qlabel{margin-top:14px;font-size:26px;font-weight:700;color:#0a1a5c;line-height:1.35;max-width:380px}
+.s-cta .foot{color:#A9C4EA;z-index:1}
+.s-cta .foot .pg{color:#8BD3FF}
 
 /* ---------- chrome ---------- */
 #nav{position:fixed;bottom:16px;left:16px;display:flex;gap:8px;z-index:50;opacity:.35;transition:opacity .2s}
@@ -299,18 +307,74 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 
 <!-- 1 TITLE -->
 <section class="slide s-title" data-title="פתיחה">
+  <svg class="circuit-bg" viewBox="0 0 1920 1080" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <filter id="cg-title" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="1.2" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <g fill="none" stroke="#7EC8FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".42" filter="url(#cg-title)">
+      <path d="M0 160 H160 V80 H300 V40"/>
+      <path d="M0 240 H110 V360 H230 V430 H320"/>
+      <path d="M40 520 H140 V620 H60 V720"/>
+      <path d="M0 900 H180 V980 H300"/>
+      <path d="M1920 140 H1760 V60 H1620"/>
+      <path d="M1920 260 H1800 V380 H1680 V460"/>
+      <path d="M1920 820 H1780 V940 H1640 V1020"/>
+      <path d="M1920 980 H1700"/>
+      <path d="M240 0 V90 H360 V160"/>
+      <path d="M1680 0 V70 H1560 V130"/>
+      <path d="M80 1080 V1000 H200"/>
+      <path d="M1840 1080 V1000"/>
+    </g>
+    <g fill="#7EC8FF" opacity=".55">
+      <circle cx="160" cy="160" r="3.2"/>
+      <circle cx="300" cy="80" r="3.2"/>
+      <circle cx="110" cy="240" r="3.2"/>
+      <circle cx="230" cy="360" r="3.2"/>
+      <circle cx="320" cy="430" r="3.2"/>
+      <circle cx="140" cy="520" r="3.2"/>
+      <circle cx="140" cy="620" r="3.2"/>
+      <circle cx="180" cy="900" r="3.2"/>
+      <circle cx="300" cy="980" r="3.2"/>
+      <circle cx="1760" cy="140" r="3.2"/>
+      <circle cx="1620" cy="60" r="3.2"/>
+      <circle cx="1800" cy="260" r="3.2"/>
+      <circle cx="1680" cy="380" r="3.2"/>
+      <circle cx="1780" cy="820" r="3.2"/>
+      <circle cx="1640" cy="940" r="3.2"/>
+      <circle cx="360" cy="90" r="3.2"/>
+      <circle cx="1560" cy="70" r="3.2"/>
+      <circle cx="200" cy="1000" r="3.2"/>
+    </g>
+    <g fill="#7EC8FF" opacity=".18">
+      <circle cx="1500" cy="200" r="2"/>
+      <circle cx="1540" cy="260" r="1.6"/>
+      <circle cx="1600" cy="220" r="1.8"/>
+      <circle cx="1660" cy="300" r="1.5"/>
+      <circle cx="1720" cy="180" r="1.7"/>
+      <circle cx="1480" cy="340" r="1.4"/>
+      <circle cx="420" cy="860" r="1.6"/>
+      <circle cx="480" cy="920" r="1.4"/>
+      <circle cx="360" cy="940" r="1.8"/>
+      <circle cx="1400" cy="960" r="1.5"/>
+      <circle cx="1460" cy="880" r="1.6"/>
+    </g>
+  </svg>
   <div class="aif-banner-wrap"><img src="assets/aif-banner.jpg" alt="AI Finance — טל ורועי ולנשטין" width="1179" height="471"></div>
   <svg class="hero-berg" viewBox="0 0 760 940" aria-hidden="true">
     <defs>
-      <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7D8C"/><stop offset="1" stop-color="#0E2233"/></linearGradient>
-      <linearGradient id="hb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6B26B"/><stop offset=".5" stop-color="#C95A33"/><stop offset="1" stop-color="#5E2A1E"/></linearGradient>
+      <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A4F9C"/><stop offset="1" stop-color="#061033"/></linearGradient>
+      <linearGradient id="hb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ED4F5"/><stop offset=".35" stop-color="#3B8FD0"/><stop offset=".7" stop-color="#164A96"/><stop offset="1" stop-color="#0A1A5C"/></linearGradient>
+      <linearGradient id="ht" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D4EEFF"/></linearGradient>
       <clipPath id="hc"><rect x="0" y="0" width="760" height="940" rx="60"/></clipPath>
     </defs>
     <g clip-path="url(#hc)">
-      <rect width="760" height="940" fill="#FCEBD9"/>
+      <rect width="760" height="940" fill="#E8F4FF"/>
       <rect y="250" width="760" height="690" fill="url(#hw)"/>
       <polygon fill="url(#hb)" points="370,70 410,110 450,190 500,250 610,340 660,500 630,680 540,820 420,900 320,900 200,810 120,650 110,470 170,330 270,250 320,170"/>
-      <polygon fill="#F6B26B" points="370,70 410,110 450,190 500,250 270,250 320,170"/>
+      <polygon fill="url(#ht)" points="370,70 410,110 450,190 500,250 270,250 320,170"/>
       <path d="M0 250 Q 95 238 190 250 T 380 250 T 570 250 T 760 250" stroke="#fff" stroke-width="5" fill="none" opacity=".8"/>
     </g>
   </svg>
@@ -775,6 +839,61 @@ body{font-family:"Heebo",sans-serif;color:var(--ink)}
 
 <!-- CTA -->
 <section class="slide s-cta" data-title="AI Finance">
+  <svg class="circuit-bg" viewBox="0 0 1920 1080" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <filter id="cg-cta" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="1.2" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <g fill="none" stroke="#7EC8FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".42" filter="url(#cg-cta)">
+      <path d="M0 160 H160 V80 H300 V40"/>
+      <path d="M0 240 H110 V360 H230 V430 H320"/>
+      <path d="M40 520 H140 V620 H60 V720"/>
+      <path d="M0 900 H180 V980 H300"/>
+      <path d="M1920 140 H1760 V60 H1620"/>
+      <path d="M1920 260 H1800 V380 H1680 V460"/>
+      <path d="M1920 820 H1780 V940 H1640 V1020"/>
+      <path d="M1920 980 H1700"/>
+      <path d="M240 0 V90 H360 V160"/>
+      <path d="M1680 0 V70 H1560 V130"/>
+      <path d="M80 1080 V1000 H200"/>
+      <path d="M1840 1080 V1000"/>
+    </g>
+    <g fill="#7EC8FF" opacity=".55">
+      <circle cx="160" cy="160" r="3.2"/>
+      <circle cx="300" cy="80" r="3.2"/>
+      <circle cx="110" cy="240" r="3.2"/>
+      <circle cx="230" cy="360" r="3.2"/>
+      <circle cx="320" cy="430" r="3.2"/>
+      <circle cx="140" cy="520" r="3.2"/>
+      <circle cx="140" cy="620" r="3.2"/>
+      <circle cx="180" cy="900" r="3.2"/>
+      <circle cx="300" cy="980" r="3.2"/>
+      <circle cx="1760" cy="140" r="3.2"/>
+      <circle cx="1620" cy="60" r="3.2"/>
+      <circle cx="1800" cy="260" r="3.2"/>
+      <circle cx="1680" cy="380" r="3.2"/>
+      <circle cx="1780" cy="820" r="3.2"/>
+      <circle cx="1640" cy="940" r="3.2"/>
+      <circle cx="360" cy="90" r="3.2"/>
+      <circle cx="1560" cy="70" r="3.2"/>
+      <circle cx="200" cy="1000" r="3.2"/>
+    </g>
+    <g fill="#7EC8FF" opacity=".18">
+      <circle cx="1500" cy="200" r="2"/>
+      <circle cx="1540" cy="260" r="1.6"/>
+      <circle cx="1600" cy="220" r="1.8"/>
+      <circle cx="1660" cy="300" r="1.5"/>
+      <circle cx="1720" cy="180" r="1.7"/>
+      <circle cx="1480" cy="340" r="1.4"/>
+      <circle cx="420" cy="860" r="1.6"/>
+      <circle cx="480" cy="920" r="1.4"/>
+      <circle cx="360" cy="940" r="1.8"/>
+      <circle cx="1400" cy="960" r="1.5"/>
+      <circle cx="1460" cy="880" r="1.6"/>
+    </g>
+  </svg>
   <div class="cta-inner">
     <div class="logo-wrap"><img src="assets/aif-banner.jpg" alt="AI Finance — טל ורועי ולנשטין" width="1179" height="471"></div>
     <div class="who-name">רו״ח טל ולנשטין</div>
