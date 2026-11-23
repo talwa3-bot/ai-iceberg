@@ -354,6 +354,25 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   .s-intro .photo-tilt{transition:none!important;transform:none!important}
 }
 
+.s-intro .icard{cursor:pointer;position:relative}
+.s-intro .icard:hover,.s-intro .icard:focus-visible{outline:none;box-shadow:0 22px 44px rgba(0,0,0,.32),0 0 32px rgba(139,211,255,.28),inset 0 1px 0 rgba(255,255,255,.12);filter:brightness(1.08)}
+.s-intro .icard-hint{display:block;margin-top:10px;font-size:15px;font-weight:700;color:#8BD3FF;letter-spacing:.2px}
+#toonBox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(6,16,56,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:110;perspective:1600px;padding:28px}
+#toonBox.open{display:flex}
+#toonBox .toon-panel{position:relative;width:min(92vw,1180px);max-height:calc(100vh - 56px);transform-style:preserve-3d;background:linear-gradient(165deg,rgba(255,255,255,.14),rgba(11,42,138,.38) 55%,rgba(6,16,56,.55));border:1px solid rgba(139,211,255,.45);border-radius:28px;padding:18px 18px 14px;box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 64px rgba(139,211,255,.28),inset 0 1px 0 rgba(255,255,255,.2)}
+#toonBox.open .toon-panel{animation:toon-pop .55s cubic-bezier(.2,.75,.2,1) both}
+@keyframes toon-pop{from{opacity:0;transform:translateZ(-300px) rotateY(16deg) scale(.86)}to{opacity:1;transform:translateZ(0) rotateY(0) scale(1)}}
+#toonBox .toon-panel img{width:100%;height:auto;max-height:calc(100vh - 150px);object-fit:contain;display:block;border-radius:18px;background:#061038}
+#toonBox figcaption{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding:0 6px;direction:rtl}
+#toonBox #toonCap{font:800 22px "Heebo",sans-serif;color:#fff}
+#toonBox .toon-micro{font:700 13px "Heebo",sans-serif;color:#8BD3FF;letter-spacing:.3px;opacity:.9;white-space:nowrap}
+#toonClose{position:absolute;top:14px;left:14px;z-index:2;width:48px;height:48px;border:none;border-radius:14px;background:#0b2a8a;color:#fff;font:800 22px "Heebo",sans-serif;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.35),0 0 0 1px rgba(139,211,255,.4)}
+#toonClose:hover{background:#163aa8;color:#8BD3FF}
+@media (prefers-reduced-motion:reduce){
+  #toonBox.open .toon-panel{animation:none}
+}
+
+
 </style>
 </head>
 <body>
@@ -513,32 +532,36 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
       <div class="iname">רו״ח טל ולנשטין</div>
       <p class="irole">פיננסים, נתונים ובינה מלאכותית</p>
       <div class="icards">
-        <article class="icard">
+        <article class="icard" role="button" tabindex="0" data-toon="assets/toon-board.jpg" data-toon-cap="רו״ח ודירקטורית מוסמכת">
           <div class="icard-k">המקצוע</div>
           <div class="icard-t">רו״ח ודירקטורית מוסמכת</div>
           <p>יוצאת <span class="ltr">Big 4</span> · משרד משפחתי, חגי ולנשטין ושות׳ · דור שלישי לרואי חשבון בישראל</p>
+          <span class="icard-hint">לחצו לראות ✨</span>
         </article>
-        <article class="icard">
+        <article class="icard" role="button" tabindex="0" data-toon="assets/toon-ai.jpg" data-toon-cap="מייסדת שותפה, AI Finance">
           <div class="icard-k">AI Finance</div>
           <div class="icard-t">מייסדת שותפה, עם אחי רועי ולנשטין</div>
           <p class="tagline">Bridging the gap between the world of finance<br>and the world of AI</p>
+          <span class="icard-hint">לחצו לראות ✨</span>
         </article>
-        <article class="icard">
+        <article class="icard" role="button" tabindex="0" data-toon="assets/toon-stage.jpg" data-toon-cap="מרצה ל‑AI בפיננסים">
           <div class="icard-k">הוראה</div>
           <div class="icard-t">מרצה ל‑AI בפיננסים</div>
           <p>קורס ראשון מסוגו באונו, בארבעה קמפוסים · כנס חשבי השכר הבכירים של הלשכה, אילת · נובמבר 2026</p>
+          <span class="icard-hint">לחצו לראות ✨</span>
         </article>
-        <article class="icard">
+        <article class="icard" role="button" tabindex="0" data-toon="assets/toon-community.jpg" data-toon-cap="מייסדת ״חשבת השכר החדשה״">
           <div class="icard-k">קהילות</div>
           <div class="icard-t">מייסדת ״חשבת השכר החדשה״</div>
           <p>מייסדת שותפה, קהילת <span class="ltr">AI Finance</span></p>
+          <span class="icard-hint">לחצו לראות ✨</span>
         </article>
       </div>
       <p class="iwhy">בונה תהליכי עבודה של AI לצוותי כספים — הטמעת כלים, קיצור תהליכים ושיפור בקרות.</p>
     </div>
   </div>
   <div class="foot"><div class="src"><span class="ltr">ai-finance.co.il</span></div><div class="pg"></div></div>
-  <aside class="notes">הצגה עצמית, כשתי דקות, בגובה העיניים. נעים מאוד, אני טל ולנשטין, רואת חשבון ודירקטורית מוסמכת, יוצאת ביג 4. יש לנו משרד משפחתי, חגי ולנשטין ושות׳, ואנחנו דור שלישי לרואי חשבון בישראל. יחד עם אחי רועי ולנשטין הקמנו את AI Finance — Bridging the gap between the world of finance and the world of AI. אני מרצה ל-AI בפיננסים, כולל קורס ראשון מסוגו באונו, בארבעה קמפוסים, לניתוח דוחות כספיים וריגול פיננסי באמצעות AI, ובנובמבר האחרון הרציתי בכנס חשבי השכר הבכירים של הלשכה, באילת. הקמתי את קהילת ״חשבת השכר החדשה״ — חשוב להגיד בבירור: אני עצמי לא חשבת שכר — ואנחנו גם מייסדים שותפים של קהילת AI Finance. [למלא: משפט אישי קצר, למה הגעת ל-AI בפיננסים]. מה שאני עושה ביום-יום: לבנות תהליכי עבודה של AI לצוותי כספים, מהטמעת הכלים עד קיצור תהליכים ושיפור בקרות.</aside>
+  <aside class="notes">הצגה עצמית, כשתי דקות, בגובה העיניים. נעים מאוד, אני טל ולנשטין, רואת חשבון ודירקטורית מוסמכת, יוצאת ביג 4. יש לנו משרד משפחתי, חגי ולנשטין ושות׳, ואנחנו דור שלישי לרואי חשבון בישראל. יחד עם אחי רועי ולנשטין הקמנו את AI Finance — Bridging the gap between the world of finance and the world of AI. אני מרצה ל-AI בפיננסים, כולל קורס ראשון מסוגו באונו, בארבעה קמפוסים, לניתוח דוחות כספיים וריגול פיננסי באמצעות AI, ובנובמבר האחרון הרציתי בכנס חשבי השכר הבכירים של הלשכה, באילת. הקמתי את קהילת ״חשבת השכר החדשה״ — חשוב להגיד בבירור: אני עצמי לא חשבת שכר — ואנחנו גם מייסדים שותפים של קהילת AI Finance. [למלא: משפט אישי קצר, למה הגעת ל-AI בפיננסים]. מה שאני עושה ביום-יום: לבנות תהליכי עבודה של AI לצוותי כספים, מהטמעת הכלים עד קיצור תהליכים ושיפור בקרות. אפשר ללחוץ על כל אחד מארבעת הכרטיסים כדי לפתוח איור AI שלי באותו מצב: דירקטורית, AI Finance, הוראה, והקהילה. Esc, כפתור הסגירה או לחיצה מחוץ לתמונה סוגרים, והמצגת לא מתקדמת.</aside>
 </section>
 
 <!-- 4 OVERVIEW -->
@@ -1047,6 +1070,15 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 
 <div id="nav"><button id="bPrev">→ הקודם</button><button id="bNotes">הערות (N)</button><button id="bNext">הבא ←</button></div>
 <div id="modal"><iframe id="yt" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="row"><a id="ytOpen" target="_blank" rel="noopener">פתיחה ביוטיוב ↗</a><button id="ytClose">סגירה (Esc)</button></div></div>
+<div id="toonBox" aria-hidden="true">
+  <div class="toon-panel" role="dialog" aria-modal="true" aria-labelledby="toonCap">
+    <button type="button" id="toonClose" aria-label="סגירה">✕</button>
+    <figure>
+      <img id="toonImg" alt="">
+      <figcaption><span id="toonCap"></span><span class="toon-micro">איור AI</span></figcaption>
+    </figure>
+  </div>
+</div>
 <div id="notesPanel"></div>
 
 <script>
@@ -1060,6 +1092,7 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   addEventListener('resize',fit);fit();
   function show(i){
     i=Math.max(0,Math.min(slides.length-1,i));
+    if(typeof closeToon==='function') closeToon();
     slides[cur].classList.remove('active','anim','reveal');
     cur=i;const s=slides[cur];
     void s.offsetWidth; s.classList.add('active','anim');
@@ -1078,6 +1111,10 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   modal.addEventListener('click',e=>{if(e.target===modal)closeVid();});
   addEventListener('keydown',e=>{
     if(modal.classList.contains('open')){if(e.key==='Escape')closeVid();return;}
+    const toon=document.getElementById('toonBox');
+    if(toon&&toon.classList.contains('open')){if(e.key==='Escape')closeToon();e.preventDefault();return;}
+    const card=e.target.closest&&e.target.closest('.icard[data-toon]');
+    if(card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openToon(card);return;}
     if(e.key==='Escape'){document.getElementById('notesPanel').classList.remove('open');return;}
     if(['ArrowLeft','ArrowDown','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();next();}
     else if(['ArrowRight','ArrowUp','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev();}
@@ -1108,11 +1145,48 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
   document.querySelectorAll('.rung').forEach(r=>r.addEventListener('click',e=>{e.stopPropagation();
     document.querySelectorAll('.rung').forEach(x=>x.classList.remove('sel'));r.classList.add('sel');
     applyStep(steps[+r.dataset.i]);}));
-  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge'))return;
+  stage.addEventListener('click',e=>{if(e.target.closest('a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox'))return;
     const r=stage.getBoundingClientRect(); (e.clientX < r.left+r.width/2)?next():prev();});
   const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);
   addEventListener('hashchange',()=>{const k=parseInt(location.hash.slice(1));if(!isNaN(k)&&k-1!==cur)show(k-1);});
 })();
 </script>
+
+<script>
+(function(){
+  const box=document.getElementById('toonBox');
+  const panel=box&&box.querySelector('.toon-panel');
+  const img=document.getElementById('toonImg');
+  const cap=document.getElementById('toonCap');
+  if(!box||!panel||!img||!cap) return;
+  const srcs=['assets/toon-board.jpg','assets/toon-ai.jpg','assets/toon-stage.jpg','assets/toon-community.jpg'];
+  srcs.forEach(s=>{const i=new Image(); i.src=s;});
+  window.openToon=function(card){
+    const src=card.getAttribute('data-toon');
+    const title=card.getAttribute('data-toon-cap')||'';
+    if(!src) return;
+    img.src=src;
+    img.alt=title;
+    cap.textContent=title;
+    box.classList.add('open');
+    box.setAttribute('aria-hidden','false');
+    const btn=document.getElementById('toonClose');
+    if(btn) btn.focus();
+  };
+  window.closeToon=function(){
+    if(!box.classList.contains('open')) return;
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    img.removeAttribute('src');
+  };
+  document.querySelectorAll('.icard[data-toon]').forEach(card=>{
+    card.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openToon(card);});
+  });
+  document.getElementById('toonClose').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();closeToon();});
+  panel.addEventListener('click',e=>e.stopPropagation());
+  box.addEventListener('click',()=>closeToon());
+})();
+</script>
+
 </body>
 </html>
