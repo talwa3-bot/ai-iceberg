@@ -570,10 +570,21 @@ body:has(#notesPanel.open) #nav{z-index:70;opacity:1}
 .tok:nth-child(5){animation-delay:.52s;transform:translateZ(40px) rotateY(6deg)}
 .tok:nth-child(6){animation-delay:.62s;transform:translateZ(16px) rotateY(-8deg)}
 .tok:nth-child(7){animation-delay:.72s;transform:translateZ(32px) rotateY(3deg)}
+.tok-sent{text-align:center;font:700 20px "Heebo",sans-serif;color:#D4E6FF;margin-bottom:8px}
+.tok-en{text-align:center;font:600 15px "Heebo",sans-serif;color:#A9C4EA;margin-top:8px}.tok-en b{color:#8BD3FF}
+.tok-demo{height:auto!important}.tok-row{height:auto!important;gap:6px!important}.tok{padding:8px 10px!important}
+.tok:nth-child(8){animation-delay:0.82s;transform:translateZ(12px) rotateY(5deg)}
+.tok:nth-child(9){animation-delay:0.92s;transform:translateZ(36px) rotateY(-4deg)}
+.tok:nth-child(10){animation-delay:1.02s;transform:translateZ(20px) rotateY(7deg)}
+.tok:nth-child(11){animation-delay:1.12s;transform:translateZ(44px) rotateY(-6deg)}
+.tok:nth-child(12){animation-delay:1.22s;transform:translateZ(10px) rotateY(3deg)}
+.tok:nth-child(13){animation-delay:1.32s;transform:translateZ(30px) rotateY(-3deg)}
+.tok:nth-child(14){animation-delay:1.42s;transform:translateZ(50px) rotateY(6deg)}
+.tok:nth-child(15){animation-delay:1.52s;transform:translateZ(18px) rotateY(-5deg)}
 @keyframes tok-pop{from{opacity:0;transform:translateY(24px) translateZ(-80px) scale(.8)}to{opacity:1}}
 .tok-count{position:absolute;top:0;left:8px;font:800 15px "Heebo",sans-serif;color:#8BD3FF;background:rgba(6,16,56,.55);border:1px solid rgba(139,211,255,.3);border-radius:999px;padding:4px 12px}
 .tok-count b{font-size:20px}
-.s-wow.anim .tok-count b{animation:tok-n 1s steps(7) both}
+.s-wow.anim .tok-count b{animation:tok-n 1.6s steps(15) both}
 @keyframes tok-n{from{visibility:hidden} /* number set via JS or we just show 7 */}
 
 /* ---- 6 token economy tower + slider ---- */
@@ -1629,16 +1640,26 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     <h2>טוקנים: יחידת המידה של המודל</h2>
     <p class="wow-lead">המודל לא קורא ״מילים״ כמונו. הוא מפרק טקסט לחתיכות קטנות שנקראות טוקנים — וכל טוקן תופס מקום בחלון ההקשר ועולה כסף.</p>
     <div class="tok-demo" aria-label="פירוק משפט עברי לטוקנים">
-      <div class="tok-count">טוקנים · <b>7</b></div>
+      <div class="tok-count">טוקנים · <b>15</b></div>
+      <div class="tok-sent">המשפט: ההכנסות ברבעון השלישי עלו ב־<span class="ltr">12%</span></div>
       <div class="tok-row">
-        <span class="tok">יתרת</span>
-        <span class="tok">הס־</span>
-        <span class="tok">פקים</span>
-        <span class="tok">ל־</span>
-        <span class="tok">סוף</span>
-        <span class="tok">ה־</span>
-        <span class="tok">רבעון</span>
+        <span class="tok">ה</span>
+        <span class="tok">ה</span>
+        <span class="tok">כ</span>
+        <span class="tok">נסות</span>
+        <span class="tok">בר</span>
+        <span class="tok">בע</span>
+        <span class="tok">ון</span>
+        <span class="tok">השל</span>
+        <span class="tok">ישי</span>
+        <span class="tok">על</span>
+        <span class="tok">ו</span>
+        <span class="tok">ב</span>
+        <span class="tok">־</span>
+        <span class="tok">12</span>
+        <span class="tok">%</span>
       </div>
+      <div class="tok-en">אותו משפט באנגלית: <span class="ltr">Third-quarter revenue rose 12%</span> = <b>7</b> טוקנים · הערכה, נמדד ב־<span class="ltr">tiktoken o200k_base</span></div>
     </div>
     <div class="wow-grid g2 has-viz">
   <article class="wow-card"><div class="wow-k">מה זה טוקן</div><div class="wow-t">חתיכת טקסט</div><p>מילה קצרה באנגלית היא לפעמים טוקן אחד. מילה בעברית, מספר, או סימן — לעיתים מתפצלים לכמה טוקנים.</p></article><article class="wow-card"><div class="wow-k">עברית יקרה יותר</div><div class="wow-t">אותו משפט, יותר טוקנים</div><p>משפט בעברית צורך בדרך כלל יותר טוקנים מאותו תוכן באנגלית, כי הטוקנייזר פחות יעיל בשפה שלנו. לכן מסמך ארוך בעברית ממלא את החלון מהר יותר.</p></article><article class="wow-card"><div class="wow-k">מה נספר</div><div class="wow-t">קלט + פלט</div><p>נספרים גם מה ששולחים (פרומפט, קבצים, היסטוריה) וגם מה שהמודל כותב בחזרה. שיחה ארוכה מצטברת.</p></article><article class="wow-card"><div class="wow-k">למה זה חשוב בכספים</div><div class="wow-t">חלון, עלות, דיוק</div><p>כשחלון ההקשר מתמלא — המודל ״שוכח״ את ההתחלה, העלות עולה, ואיכות הניתוח על מסמכים ארוכים יורדת. לכן חותכים ומארגנים חומר לפני השליחה.</p></article>
@@ -1646,7 +1667,7 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
     <div class="wow-foot">העיקרון: טוקן הוא יחידת העיבוד והחיוב. אין כאן מחירון — ראו את השקף הבא לכלכלת הטוקנים.</div>
     <div class="pg"></div>
   </div>
-  <aside class="notes">שקף טוקנים. לא חייבים להיכנס לטכניקה: ״המודל משלם וזוכר לפי חתיכות, לא לפי עמודים.״ עברית בדרך כלל יקרה יותר מאנגלית בטוקנים — בלי מספר מדויק היום, כי הוא תלוי בטוקנייזר ובמשפט. טיפ מעשי: לצרף רק את הסעיפים הרלוונטיים, לא את כל ההסכם בבת אחת, ולשמור סיכום מסודר. אם שואלים כמה טוקנים זה עמוד — התשובה: תלוי בשפה, בטבלאות ובפורמט.</aside>
+  <aside class="notes">שקף טוקנים. לא חייבים להיכנס לטכניקה: ״המודל משלם וזוכר לפי חתיכות, לא לפי עמודים.״ הדוגמה על המסך: ״ההכנסות ברבעון השלישי עלו ב־12%״ = 15 טוקנים, ובאנגלית (Third-quarter revenue rose 12%) = 7 טוקנים. נמדד ב־tiktoken o200k_base (הטוקנייזר של OpenAI) ב־23.11.2026 — הערכה; הטוקנייזר של Claude סופר אחרת. על טקסט פיננסי ארוך היחס היה כ־1.4 (ראו השקף הבא) — במשפט קצר הפער נראה גדול יותר. טיפ מעשי: לצרף רק את הסעיפים הרלוונטיים, לא את כל ההסכם בבת אחת, ולשמור סיכום מסודר. אם שואלים כמה טוקנים זה עמוד — התשובה: תלוי בשפה, בטבלאות ובפורמט.</aside>
 </section>
 
 <section class="slide s-wow" data-title="יסודות · כלכלת הטוקנים">
