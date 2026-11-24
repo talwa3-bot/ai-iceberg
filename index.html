@@ -2060,7 +2060,7 @@ html.wk .mcp-beam{display:none}
     <div class="wow-grid g2 has-viz">
   <article class="wow-card"><div class="wow-k">מה זה טוקן</div><div class="wow-t">חתיכת טקסט</div><p>מילה קצרה באנגלית היא לפעמים טוקן אחד. מילה בעברית, מספר, או סימן — לעיתים מתפצלים לכמה טוקנים.</p></article><article class="wow-card"><div class="wow-k">עברית יקרה יותר</div><div class="wow-t">אותו משפט, יותר טוקנים</div><p>משפט בעברית צורך בדרך כלל יותר טוקנים מאותו תוכן באנגלית, כי הטוקנייזר פחות יעיל בשפה שלנו. לכן מסמך ארוך בעברית ממלא את החלון מהר יותר.</p></article><article class="wow-card"><div class="wow-k">מה נספר</div><div class="wow-t">קלט + פלט</div><p>נספרים גם מה ששולחים (פרומפט, קבצים, היסטוריה) וגם מה שהמודל כותב בחזרה. שיחה ארוכה מצטברת.</p></article><article class="wow-card"><div class="wow-k">למה זה חשוב בכספים</div><div class="wow-t">חלון, עלות, דיוק</div><p>כשחלון ההקשר מתמלא — המודל ״שוכח״ את ההתחלה, העלות עולה, ואיכות הניתוח על מסמכים ארוכים יורדת. לכן חותכים ומארגנים חומר לפני השליחה.</p></article>
 </div>
-    <div class="wow-foot">העיקרון: טוקן הוא יחידת העיבוד והחיוב. אין כאן מחירון — ראו את השקף הבא לכלכלת הטוקנים.</div>
+    <div class="wow-foot">העיקרון: טוקן הוא יחידת העיבוד והחיוב. אין כאן מחירון.</div>
     <div class="pg"></div>
   </div>
   <aside class="notes">שקף טוקנים. לא חייבים להיכנס לטכניקה: ״המודל משלם וזוכר לפי חתיכות, לא לפי עמודים.״ הדוגמה על המסך: ״ההכנסות ברבעון השלישי עלו ב־12%״ = 15 טוקנים, ובאנגלית (Third-quarter revenue rose 12%) = 7 טוקנים. נמדד ב־tiktoken o200k_base (הטוקנייזר של OpenAI) ב־23.11.2026 — הערכה; הטוקנייזר של Claude סופר אחרת. על טקסט פיננסי ארוך היחס היה כ־1.4 (ראו השקף הבא) — במשפט קצר הפער נראה גדול יותר. טיפ מעשי: לצרף רק את הסעיפים הרלוונטיים, לא את כל ההסכם בבת אחת, ולשמור סיכום מסודר. אם שואלים כמה טוקנים זה עמוד — התשובה: תלוי בשפה, בטבלאות ובפורמט.</aside>
@@ -2091,10 +2091,10 @@ html.wk .mcp-beam{display:none}
         <div class="row an"><span>דימוי</span><div>הארגז המוכן</div></div></article>
     </div>
     <div class="strip"><div><b class="ltr">API</b> = הצינור</div><div><b class="ltr">MCP</b> = השקע האחיד</div><div><b>פלאגין</b> = הארגז המוכן</div></div>
-    <div class="wow-foot">מקורות: anthropic.com/news/model-context-protocol (25.11.2024) · claude.com/resources/articles/cowork-plugins · claude.com/docs/office-agents/fsi-plugins · anthropic.com/news/finance-agents. השקפים המקוריים על <span class="ltr">API</span> ו־<span class="ltr">MCP</span> נמצאים בנספח.</div>
+    <div class="wow-foot">מקורות: anthropic.com/news/model-context-protocol (25.11.2024) · claude.com/resources/articles/cowork-plugins · claude.com/docs/office-agents/fsi-plugins · anthropic.com/news/finance-agents.</div>
     <div class="pg"></div>
   </div>
-  <aside class="notes">שקף מאוחד: API, MCP ופלאגין. API: ממשק תוכנה; מערכת שולחת בקשה למודל ומקבלת תשובה. מתאים למפתחים ולאוטומציות. דוגמה: ה-ERP שולח כל לילה חשבוניות לסיווג. דימוי: הצינור. MCP: Model Context Protocol, תקן פתוח ש-Anthropic הכריזה עליו ב-25.11.2024 (anthropic.com/news/model-context-protocol); מחבר מודל לכלים ולמקורות מידע בדרך אחידה — בתיעוד של MCP עצמו משווים אותו ליציאת USB-C. דוגמה: Claude קורא כרטסת מ-Drive, נתונים מה-ERP ומיילים, דרך קונקטורים. דימוי: השקע האחיד. פלאגין: לפי Anthropic (claude.com/resources/articles/cowork-plugins), פלאגינים ב-Cowork מאגדים skills, connectors, slash commands ו-sub-agents כדי להפוך את Claude למומחה לתפקיד, לצוות ולחברה; עובדים גם ב-Claude Code. דוגמה אמיתית: ערכת הפלאגינים הפתוחה של Anthropic לשירותים פיננסיים — Financial analysis (ליבה: comps, DCF, LBO, שלושה דוחות, וכל קונקטורי ה-MCP לספקי מידע פיננסי), ועוד Investment banking, Equity research, Private equity (claude.com/docs/office-agents/fsi-plugins). במאי 2026 Anthropic הוסיפה תבניות אייג׳נטים לפיננסים, כולל Month-end closer ו-General ledger reconciler, שמגיעות כפלאגינים (anthropic.com/news/finance-agents). אזהרת Anthropic: ניתוח פיננסי שנוצר ב-AI צריך בדיקה של איש מקצוע מוסמך. רצועת הסיכום: API = הצינור · MCP = השקע האחיד · פלאגין = הארגז המוכן. השקפים המקוריים של API ו-MCP הועברו לנספח בסוף המצגת.</aside>
+  <aside class="notes">שקף מאוחד: API, MCP ופלאגין. API: ממשק תוכנה; מערכת שולחת בקשה למודל ומקבלת תשובה. מתאים למפתחים ולאוטומציות. דוגמה: ה-ERP שולח כל לילה חשבוניות לסיווג. דימוי: הצינור. MCP: Model Context Protocol, תקן פתוח ש-Anthropic הכריזה עליו ב-25.11.2024 (anthropic.com/news/model-context-protocol); מחבר מודל לכלים ולמקורות מידע בדרך אחידה — בתיעוד של MCP עצמו משווים אותו ליציאת USB-C. דוגמה: Claude קורא כרטסת מ-Drive, נתונים מה-ERP ומיילים, דרך קונקטורים. דימוי: השקע האחיד. פלאגין: לפי Anthropic (claude.com/resources/articles/cowork-plugins), פלאגינים ב-Cowork מאגדים skills, connectors, slash commands ו-sub-agents כדי להפוך את Claude למומחה לתפקיד, לצוות ולחברה; עובדים גם ב-Claude Code. דוגמה אמיתית: ערכת הפלאגינים הפתוחה של Anthropic לשירותים פיננסיים — Financial analysis (ליבה: comps, DCF, LBO, שלושה דוחות, וכל קונקטורי ה-MCP לספקי מידע פיננסי), ועוד Investment banking, Equity research, Private equity (claude.com/docs/office-agents/fsi-plugins). במאי 2026 Anthropic הוסיפה תבניות אייג׳נטים לפיננסים, כולל Month-end closer ו-General ledger reconciler, שמגיעות כפלאגינים (anthropic.com/news/finance-agents). אזהרת Anthropic: ניתוח פיננסי שנוצר ב-AI צריך בדיקה של איש מקצוע מוסמך. רצועת הסיכום: API = הצינור · MCP = השקע האחיד · פלאגין = הארגז המוכן.</aside>
 </section>
 
 
@@ -2551,7 +2551,7 @@ html.wk .mcp-beam{display:none}
     <div class="rnote dk" style="left:68px;top:40px;max-width:600px"><span class="rt">חדש</span><div><b>תגיות פרויקט לפי קוד לקוח (בטא):</b> ב־<span class="ltr">Claude Enterprise</span> מתייגים פרויקט בקוד לקוח או מרכז עלות, ורואים הוצאה לפי תגית.<small>support.claude.com · Track spend by cost code with project tags</small></div></div>
     <div class="pg"></div>
   </div>
-  <aside class="notes">מחירון API של Anthropic, נבדק 23.11.2026 (https://docs.claude.com/en/docs/about-claude/models/overview , https://www.anthropic.com/pricing). לכל מיליון טוקנים — Claude Fable 5.2: $8 קלט / $40 פלט, קריאה מ־cache $0.20, כתיבה ל־cache $10. Claude Opus 5.5: $4 / $20, cache קריאה $0.20, כתיבה $5. Claude Sonnet 5.5: $2 / $10, cache קריאה $0.10, כתיבה $2.50. Claude Haiku 5.5: מ־$0.10 קלט / $0.50 פלט לפרומפט עד 100K טוקנים; מעל 100K — $0.50 / $2.50; cache קריאה $0.01. Batch API: הנחה של 50%. המסר לקהל: ההבדל בין המודלים הוא פי 40 ויותר — לכן בוחרים מודל לפי המשימה. מתחילים ב־Opus; לכמויות גדולות ופשוטות (סיווג, חילוץ) — Haiku; Fable רק כש־Opus לא מספיק. הדוגמה: 100 עמודי PDF בעברית ≈ 475 אלף טוקנים (הערכה מהשקף של כלכלת הטוקנים). שורת ״בפיננסים״ היא המלצה שלנו, לא של Anthropic. מנוי Claude (Pro $20 לחודש, Max $100, Ultra $200) הוא מסלול אחר, עם מכסות שימוש ולא תשלום לטוקן.</aside>
+  <aside class="notes">מחירון API של Anthropic, נבדק 23.11.2026 (https://docs.claude.com/en/docs/about-claude/models/overview , https://www.anthropic.com/pricing). לכל מיליון טוקנים — Claude Fable 5.2: $8 קלט / $40 פלט, קריאה מ־cache $0.20, כתיבה ל־cache $10. Claude Opus 5.5: $4 / $20, cache קריאה $0.20, כתיבה $5. Claude Sonnet 5.5: $2 / $10, cache קריאה $0.10, כתיבה $2.50. Claude Haiku 5.5: מ־$0.10 קלט / $0.50 פלט לפרומפט עד 100K טוקנים; מעל 100K — $0.50 / $2.50; cache קריאה $0.01. Batch API: הנחה של 50%. המסר לקהל: ההבדל בין המודלים הוא פי 40 ויותר — לכן בוחרים מודל לפי המשימה. מתחילים ב־Opus; לכמויות גדולות ופשוטות (סיווג, חילוץ) — Haiku; Fable רק כש־Opus לא מספיק. הדוגמה: 100 עמודי PDF בעברית ≈ 475 אלף טוקנים (הערכה). שורת ״בפיננסים״ היא המלצה שלנו, לא של Anthropic. מנוי Claude (Pro $20 לחודש, Max $100, Ultra $200) הוא מסלול אחר, עם מכסות שימוש ולא תשלום לטוקן.</aside>
 </section>
 <!-- v8: characters -->
 <section class="slide s-wow " data-title="דמות · עדנה · הפרומפט">
@@ -3267,86 +3267,7 @@ html.wk .mcp-beam{display:none}
   <div class="foot"><div class="src"></div><div class="pg"></div></div>
   <aside class="notes">שקף סיום של AI Finance. ברקוד ימין: קבוצת הוואטסאפ. ברקוד שמאל: פרופיל הלינקדאין של טל — הסריקה פותחת את הפרופיל, בלי שליחת בקשת התחברות אוטומטית.</aside>
 </section>
-<!-- v9: appendix -->
-<section class="slide s-wow" data-title="נספח · כלכלת הטוקנים">
-  <div class="wow-stage">
-    <div class="wow-circuit" aria-hidden="true"></div>
-    <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">נספח · כלכלת הטוקנים</div>
-    <h2>כלכלת הטוקנים: לחשוב עלות למשימה</h2>
-    <p class="wow-lead">המחירים משתנים בין ספקים ומודלים, ומתעדכנים. מה שנשאר יציב: פלט יקר מקלט, מודל חזק יקר יותר, והעלות האמיתית היא למשימה — לא ל״צ׳אט״.</p>
-    <div class="eco-wrap">
-    <div class="tokx" aria-label="הערכת טוקנים לפי סוג קובץ, עברית מול אנגלית">
-      <div class="tokx-h">כמה טוקנים זה? <em>הערכה</em> · טוקני קלט ליחידה</div>
-      <div class="tokx-grid"><div class="tx-card"><div class="tx-n">עמוד PDF</div><div class="tx-s">טקסט + תמונה של העמוד</div><div class="tx-row"><span>עברית</span><b class="ltr">3,700–5,800</b></div><div class="tx-row en"><span>English</span><b class="ltr">3,000–4,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.5–2.3</b> <small>(אנגלית <span class="ltr">$1.2–1.8</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד טקסט</div><div class="tx-s">כ־500 מילים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div><div class="tx-card"><div class="tx-n">גיליון Excel</div><div class="tx-s">50 שורות × 10 עמודות</div><div class="tx-row"><span>עברית</span><b class="ltr">≈4,000</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈3,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.60</b> <small>(אנגלית <span class="ltr">$1.40</span>)</small></div></div><div class="tx-card"><div class="tx-n">תמונה</div><div class="tx-s">1092×1092 פיקסלים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,600</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈1,600</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.64</b> <small>(אנגלית <span class="ltr">$0.64</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד Word</div><div class="tx-s">כ־500 מילים, נקרא כטקסט</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div></div>
-    </div>
-    <div class="eco-demo" aria-label="מגדל עלות לפי מספר עמודי PDF בעברית">
-      <div class="eco-tower" id="ecoTower"></div>
-      <div class="eco-side">
-        <label for="ecoRange">כמה עמודי PDF בעברית? <b id="ecoN">200</b></label>
-        <input type="range" id="ecoRange" min="10" max="500" step="10" value="200" />
-        <div class="eco-cost" id="ecoCost"></div>
-      </div>
-    </div>
-    </div>
-    <div class="wow-grid g2 has-viz">
-  <article class="wow-card"><div class="wow-k">כלל אצבע 1</div><div class="wow-t">פלט יקר מקלט</div><p>ייצור תשובה ארוכה עולה יותר מקריאת אותו היקף. לבקש תשובה ממוקדת — לא רק ״יפה יותר״, גם זול ומדויק יותר.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 2</div><div class="wow-t">מודל לפי משימה</div><p>סיכום שגרתי לא חייב את המודל החזק ביותר. בדיקת אמות מידה, חוזה, או ניתוח רב־מסמכים — כן שווה מודל חזק / מצב חשיבה.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 3</div><div class="wow-t">הקשר ארוך עולה</div><p>כל קובץ שמצרפים וכל סיבוב בשיחה נכנסים לחיוב. כדאי: מסמך נקי, שאלה ברורה, בלי לשרשר שיחות אין־סוף על אותם קבצים.</p></article><article class="wow-card"><div class="wow-k">איך מודדים אצלנו</div><div class="wow-t">עלות למשימה</div><p>שואלים: כמה עלה ביאור סגירה / התאמת בנק / טיוטת ביאור — כולל זמן בדיקה שלנו. לא רק ״כמה עולה טוקן״.</p></article>
-</div>
-    <div class="wow-foot foot-wide">הערכה בלבד. PDF ותמונה: Anthropic docs (PDF support, Vision: טוקנים ≈ רוחב×גובה/750). יחס עברית/אנגלית ≈1.4: מדידה שלנו על אותו טקסט פיננסי בשתי השפות (<span class="ltr">tiktoken o200k</span>). מחיר: <span class="ltr">Opus 5.5</span> ‏$4 למיליון טוקני קלט, docs.claude.com · נבדק 23.11.2026.</div>
-    <div class="pg"></div>
-  </div>
-  <aside class="notes">שקף כלכלת טוקנים. טבלת סוגי הקבצים היא הערכה (נבדק 23.11.2026): PDF — לפי Anthropic, כל עמוד נקרא גם כטקסט (כ־1,500–3,000 טוקנים) וגם כתמונה (כ־1,600 טוקנים לעמוד בגודל 1092×1092; נוסחה: רוחב×גובה/750) — https://docs.claude.com/en/docs/build-with-claude/pdf-support , https://docs.claude.com/en/docs/build-with-claude/vision . עמוד טקסט/Word: 500 מילים; לפי Anthropic מיליון טוקנים ≈ 555 אלף מילים באנגלית → כ־900 טוקנים לעמוד. עברית: מדדנו את אותו טקסט פיננסי בעברית ובאנגלית עם tiktoken o200k_base — עברית צרכה פי 1.4 טוקנים (505 מול 360). זה טוקנייזר של OpenAI, לכן היחס הוא הערכה. Excel: גיליון של 50 שורות × 10 עמודות, כטקסט; עברית ≈ פי 1.14 כי רוב התאים מספרים. Word שמומר ל־PDF נספר לפי תעריף PDF. העלות: 100 יחידות במחיר הקלט של Opus 5.5 ($4 למיליון). המגדל: כל בלוק = 50 עמודי PDF בעברית (~4,750 טוקנים לעמוד); ב־Haiku מעל 100K טוקנים בפרומפט המחיר עולה ל־$0.50 למיליון. המסר לקהל: לבחור מודל לפי סיכון המשימה, ולמדוד עלות כוללת (מודל + זמן רו״ח שבודק). אם שואלים מחיר עדכני — לפתוח את עמוד התמחור של הספק, לא מהזיכרון.</aside>
-</section>
-<section class="slide s-wow" data-title="נספח · API">
-  <div class="wow-stage">
-    <div class="wow-circuit" aria-hidden="true"></div>
-    <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">נספח · API</div>
-    <h2>מה זה API, ואיך הוא עובד</h2>
-    <p class="wow-lead">API הוא ממשק תוכנה: המערכת שלכם שולחת בקשה למודל ומקבלת תשובה — בלי להדביק נתונים ידנית בצ׳אט אישי.</p>
-    <div class="api-demo" aria-label="זרימת בקשה ותשובה דרך API">
-      <div class="api-row">
-        <div class="api-box">המערכת שלכם<small>ERP / קובץ</small></div>
-        <div class="api-track"></div>
-        <div class="api-gate">שער · מפתח API</div>
-        <div class="api-pkt">JSON</div>
-        <div class="api-box">המודל<small>תשובה</small></div>
-      </div>
-    </div>
-    <div class="wow-grid g2 has-viz">
-  <article class="wow-card"><div class="wow-k">בפשטות</div><div class="wow-t">בקשה ותשובה</div><p>התוכנה שולחת פרומפט, קבצים או נתונים, ומקבלת טקסט או קובץ בחזרה. זה אותו מודל — רק בצינור מבוקר.</p></article><article class="wow-card"><div class="wow-k">למה זה חשוב בכספים</div><div class="wow-t">פחות העתק־הדבק</div><p>אפשר לחבר ERP, סגירה או תיקייה — עם הרשאות, יומן וסביבה ארגונית. לא לשלוח קובץ לקוח מחשבון פרטי.</p></article><article class="wow-card"><div class="wow-k">מפתח גישה</div><div class="wow-t">מי נכנס, מה מותר</div><p>החיבור נעשה עם מפתח והרשאות. מי שמחזיק מפתח פתוח במחשב או בצ׳אט — פתח דלת לנתונים.</p></article><article class="wow-card"><div class="wow-k">גבול ה־API</div><div class="wow-t">עדיין צריך MCP או כלי</div><p>API מדבר עם המודל. כדי שהמודל יקרא מערכת, יריץ כלי או יעדכן קובץ — צריך חיבור כלים. זה הגשר לשקף הבא.</p></article>
-</div>
-    <div class="wow-foot">API = ממשק תכנותי לספק. המדיניות, שמירת הנתונים ורמת הארגון תלויות בחוזה ובתוכנית — לא ב״יש API״ לבד.</div>
-    <div class="pg"></div>
-  </div>
-  <aside class="notes">שקף API. דוגמה חיה: ״במקום להעלות ייצוא כל פעם בצ׳אט, הסקריפט שולח את הקובץ ומחזיר טיוטת פערים.״ להדגיש: API אינו אוטומטית מאובטח; צריך תוכנית ארגונית, איסור על מפתחות במסמכים, ורישום למי יש גישה. מעבר ל־MCP: ה־API הוא הצינור; MCP הוא תקן לחיבור הכלים וההקשר.</aside>
-</section>
-<section class="slide s-wow" data-title="נספח · MCP">
-  <div class="wow-stage">
-    <div class="wow-circuit" aria-hidden="true"></div>
-    <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">נספח · MCP</div>
-    <h2>מה זה MCP, ואיך הוא עובד</h2>
-    <p class="wow-lead">MCP — Model Context Protocol — הוא תקן פתוח לחיבור מודל לכלים ולהקשר: כמו ״שקע אחיד״ בין העוזר לבין המערכות שלכם.</p>
-    <div class="mcp-stage" aria-label="טבעת כלים סביב המודל">
-      <div class="mcp-world">
-        <div class="mcp-core"><b>המודל</b><span>MCP</span></div>
-        <div class="mcp-ring">
-          <div class="mcp-tool" style="--i:0"><div class="mcp-billboard"><div class="face">Excel</div></div></div>
-          <div class="mcp-tool" style="--i:1"><div class="mcp-billboard"><div class="face">Drive</div></div></div>
-          <div class="mcp-tool" style="--i:2"><div class="mcp-billboard"><div class="face">ERP</div></div></div>
-          <div class="mcp-tool" style="--i:3"><div class="mcp-billboard"><div class="face">מייל</div></div></div>
-        </div>
-      </div>
-    </div>
-<div class="wow-grid g3 has-viz">
-  <article class="wow-card"><div class="wow-k">מתי הוכרז</div><div class="wow-t">25 בנובמבר 2024</div><p>Anthropic פרסמה את Model Context Protocol כתקן פתוח לחיבור עוזרי AI למקורות נתונים ולכלים.</p></article><article class="wow-card"><div class="wow-k">המטאפורה</div><div class="wow-t">כמו USB‑C לכלים</div><p>במקום חיבור ייעודי נפרד לכל מערכת, שרת MCP חושף יכולות (לקרוא קובץ, לשאול בסיס נתונים) בצורה אחידה.</p></article><article class="wow-card"><div class="wow-k">זהירות</div><div class="wow-t">חיבור ≠ אישור גורף</div><p>לכל חיבור יש להגדיר הרשאות. מגדירים מה מותר לקרוא ולכתוב, ומה דורש אישור אדם — במיוחד על נתוני לקוחות.</p></article>
-</div>
-    <div class="wow-foot">מקור: Anthropic, Introducing the Model Context Protocol, 25.11.2024 — anthropic.com/news/model-context-protocol · modelcontextprotocol.io</div>
-    <div class="pg"></div>
-  </div>
-  <aside class="notes">שקף MCP. להסביר במשפט: ״המודל לבד לא רואה את ה־ERP; MCP הוא השקע שמחבר אותו, באישור שלכם.״ תאריך ההכרזה: 25 בנובמבר 2024, Anthropic, תקן פתוח. לא להבטיח שכל ספק מממש אותו באותה צורה. שאלה לאולם: אילו מערכות הייתם מחברים קודם — תיקיית הסגירה, הייצוא מהנהלת חשבונות, או האימייל? סייג: חיבור רחב בלי הרשאות הוא סיכון, לא יתרון.</aside>
-</section>
+
 
 </div></div>
 
