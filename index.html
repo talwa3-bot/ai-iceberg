@@ -1632,6 +1632,36 @@ html.static .s-wow .dev,html.static .s-wow .fan .sl{transform:var(--rest)!import
 .s-wow .flow .fs{font-size:25px;padding:17px 12px}
 .s-wow .flow .fs small{font-size:17px}
 
+/* v8.1 step 0 robot */
+.s-wow .bk-chain .bk-node{padding:18px 16px 16px}
+.s-wow .bk-chain .bk-node b{font-size:28px}
+.s-wow .bk-chain .bk-node small{font-size:19px}
+.s-wow .bk-node.zero{flex:1.55;border-color:#8BD3FF;background:linear-gradient(180deg,rgba(139,211,255,.28),rgba(11,42,138,.25));box-shadow:0 22px 44px rgba(0,0,0,.35),0 0 30px rgba(139,211,255,.3)}
+.s-wow .bk-node.zero .bn{background:#fff;color:#0b2a8a}
+.s-wow .robos{display:flex;align-items:flex-end;justify-content:center;gap:18px;margin-top:10px;perspective:600px}
+.s-wow .robo{position:relative;display:flex;flex-direction:column;align-items:center;width:84px;transform-style:preserve-3d;--hc:linear-gradient(180deg,#8BD3FF,#4d8dff);--bc:#0b2a8a;--bd:#8BD3FF;--ey:#fff;--gl:0 0 22px rgba(139,211,255,.75)}
+.s-wow .robo.gray{--hc:linear-gradient(180deg,#b8bec9,#8a919e);--bc:#5d6472;--bd:#9aa1ad;--ey:#3e4450;--gl:none;opacity:.85}
+.s-wow .robo .ant{width:4px;height:12px;background:var(--bd);border-radius:2px;position:relative}
+.s-wow .robo .ant::after{content:"";position:absolute;top:-8px;left:-4px;width:12px;height:12px;border-radius:50%;background:var(--bd);box-shadow:var(--gl)}
+.s-wow .robo .rh{width:60px;height:42px;border-radius:14px;background:var(--hc);display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:var(--gl)}
+.s-wow .robo .rh i{width:11px;height:11px;border-radius:50%;background:var(--ey);box-shadow:0 0 8px var(--ey)}
+.s-wow .robo.gray .rh i{box-shadow:none;height:4px;border-radius:2px}
+.s-wow .robo .rb{width:46px;height:30px;margin-top:4px;border-radius:10px;background:var(--bc);border:2px solid var(--bd);display:flex;align-items:center;justify-content:center}
+.s-wow .robo .rb i{width:14px;height:14px;border-radius:4px;background:var(--bd)}
+.s-wow .robo span{margin-top:6px;font:700 15px "Heebo",sans-serif;color:#D4E6FF;white-space:nowrap}
+.s-wow .robo.gray span{color:#9aa1ad}
+.s-wow .rarr{font:900 26px "Heebo",sans-serif;color:#8BD3FF;align-self:center;margin-bottom:22px}
+.s-wow.anim .robo.learn{animation:robo-learn 2.6s .9s cubic-bezier(.3,.7,.2,1) both}
+.s-wow.anim .rarr{animation:robo-arr 1.2s .7s ease both}
+@keyframes robo-learn{0%{filter:grayscale(1) brightness(.8);transform:rotateY(0) translateZ(0)}45%{filter:grayscale(1) brightness(.9);transform:rotateY(180deg) translateZ(20px)}100%{filter:grayscale(0) brightness(1);transform:rotateY(360deg) translateZ(0)}}
+@keyframes robo-arr{0%{opacity:0;transform:translateX(14px)}100%{opacity:1;transform:none}}
+.s-wow .zero-ex{position:relative;z-index:2;margin:-18px 0 26px;padding:12px 20px;border-radius:16px;border:1px dashed rgba(139,211,255,.6);background:rgba(6,16,56,.45);font:600 21px/1.45 "Heebo",sans-serif;color:#fff;transform:rotateX(8deg) translateZ(28px)}
+.s-wow .zero-ex span{display:inline-block;margin-left:12px;padding:3px 12px;border-radius:999px;background:#8BD3FF;color:#061038;font:800 15px "Heebo",sans-serif;vertical-align:2px}
+.s-wow.anim .zero-ex{opacity:0;animation:rise .5s 1.2s ease forwards}
+html.lite .s-wow .robo.learn,html.lite .s-wow .rarr,html.static .s-wow .robo.learn,html.static .s-wow .rarr,html.lite .s-wow .zero-ex,html.static .s-wow .zero-ex{animation:none!important;filter:none!important;opacity:1!important;transform:none!important}
+html.static .s-wow .zero-ex,html.lite .s-wow .zero-ex{transform:rotateX(8deg) translateZ(28px)!important}
+@media (prefers-reduced-motion:reduce){.s-wow.anim .robo.learn,.s-wow.anim .rarr,.s-wow.anim .zero-ex{animation:none!important;filter:none!important;opacity:1!important;transform:none!important}}
+
 
 /* ===== lite mode: phones/tablets only (html.lite). Desktop unaffected. ===== */
 html.lite .slide:not(.active){display:none!important}
@@ -2025,8 +2055,11 @@ html.wk .mcp-beam{display:none}
     <div class="wow-floor" aria-hidden="true"></div>
     <div class="wow-kicker">יסודות · 7/8 · פרומפטינג: השיטה של טל</div>
     <h2>מתחילות מהתוצר. גוזרות אחורה.</h2>
-    <p class="wow-lead">לפני שכותבות מילה ל־<span class="ltr">Claude</span>, מגדירות איך נראה התוצר הגמור, ומשם הולכות אחורה עד לפרומפט.</p>
+    <p class="wow-lead">קודם נותנות ל־<span class="ltr">Claude</span> ללמוד את החומר. אחר כך מגדירות איך נראה התוצר הגמור, ומשם הולכות אחורה עד לפרומפט.</p>
     <div class="bk-chain">
+      <div class="bk-node zero" style="--z:70"><span class="bn">0</span><b>ללמוד לפני שמתחילים</b><small>החומר, הלקוח, הספק, הנושא</small>
+        <div class="robos" aria-label="רובוט שהופך מאפור לצבעוני"><div class="robo gray"><i class="ant"></i><div class="rh"><i></i><i></i></div><div class="rb"><i></i></div><span>גנרי</span></div><span class="rarr">←</span><div class="robo learn"><i class="ant"></i><div class="rh"><i></i><i></i></div><div class="rb"><i></i></div><span>מכיר אותנו</span></div></div></div>
+      <div class="bk-arr">←</div>
       <div class="bk-node goal" style="--z:60"><span class="bn">1</span><b>התוצר הגמור</b><small>מה בדיוק יוצא בסוף? שקף, קובץ, מייל</small></div>
       <div class="bk-arr">←</div>
       <div class="bk-node" style="--z:48"><span class="bn">2</span><b>למי</b><small>מי קורא, ומה הוא יעשה עם זה</small></div>
@@ -2037,6 +2070,7 @@ html.wk .mcp-beam{display:none}
       <div class="bk-arr">←</div>
       <div class="bk-node last" style="--z:16"><span class="bn">5</span><b>הפרומפט</b><small>רק עכשיו כותבות</small></div>
     </div>
+    <div class="zero-ex"><span>שלב 0 · פרומפט לדוגמה</span>״לפני שמתחילות: לקרוא את תיק הלקוח, את הסכם הספק ואת הדוחות של השנה שעברה, ולסכם לי בעמוד אחד מה חשוב לדעת. עוד לא לבצע כלום.״</div>
     <div class="wow-grid g21 pp-grid">
       <article class="wow-card pp-bad"><span class="pp-lab">פחות טוב</span><div class="pp-q">״תכיני לי ניתוח של ההוצאות.״</div><p>אין תוצר, אין קורא, אין פורמט. <span class="ltr">Claude</span> ינחש, ואתן תתקנו.</p></article>
       <article class="wow-card pp-good"><span class="pp-lab">יותר טוב · נגזר אחורה</span><div class="pp-q"><em>התוצר:</em> שקף אחד לישיבת ההנהלה: 5 סעיפי ההוצאה שחרגו הכי הרבה ברבעון 3. <em>למי:</em> מנכ״ל ובעלים, לא אנשי כספים. <em>פורמט:</em> טבלה + משפט הסבר לכל סעיף, השורה התחתונה קודם. <em>קלטים:</em> כרטסת ההוצאות ותקציב 2026 (מצורפים). <em>צעדים:</em> לסכם לפי סעיף, להשוות לתקציב, לדרג לפי החריגה בש״ח.</div></article>
@@ -2044,7 +2078,7 @@ html.wk .mcp-beam{display:none}
     <div class="wow-foot">השיטה שטל ולנשטין מלמדת ב־AI Finance. משתלבת עם הטיפ הראשון של <span class="ltr">Anthropic</span>: ברור, ישיר ומפורש. הפרומפטים לדוגמה שלנו, מותאמים לכספים.</div>
     <div class="pg"></div>
   </div>
-  <aside class="notes">שקף גזירה אחורה, השיטה האהובה על טל. המסר: לא מתחילות מ״מה לכתוב ל־Claude״, אלא מ״איך נראה הדבר הגמור שאני צריכה ביד״. חמישה צעדים אחורה: 1. התוצר הגמור. 2. למי הוא מיועד ומה הקורא יעשה איתו. 3. פורמט: מבנה, אורך, טון. 4. אילו צעדים וקלטים צריך כדי להגיע לשם. 5. רק אז כותבות את הפרומפט, שבעצם כבר כתוב. הדוגמה: ״ניתוח הוצאות״ מול פרומפט שנגזר מהשקף הסופי לישיבת ההנהלה. לקשר לטיפ 1 של Anthropic (Be clear and direct). מעבר: לאון מוסיף לזה כלי פרקטי, סוגריים מרובעים.</aside>
+  <aside class="notes">שקף גזירה אחורה, השיטה האהובה על טל. שלב 0, ללמוד לפני שמתחילים: לפני כל משימה נותנות ל-Claude לקרוא וללמוד את החומר, הנושא, הלקוח או הספק — תיק הלקוח, הסכם הספק, דוחות קודמים — ולסכם מה חשוב לדעת, בלי לבצע עדיין כלום. הרובוט האפור הוא מודל גנרי שלא מכיר אותנו; אחרי שלב 0 הוא נצבע בצבעים שלנו ומכיר את הלקוח. פרומפט לדוגמה: ״לפני שמתחילות: לקרוא את תיק הלקוח, את הסכם הספק ואת הדוחות של השנה שעברה, ולסכם לי בעמוד אחד מה חשוב לדעת. עוד לא לבצע כלום.״ אחר כך המסר: לא מתחילות מ״מה לכתוב ל־Claude״, אלא מ״איך נראה הדבר הגמור שאני צריכה ביד״. חמישה צעדים אחורה: 1. התוצר הגמור. 2. למי הוא מיועד ומה הקורא יעשה איתו. 3. פורמט: מבנה, אורך, טון. 4. אילו צעדים וקלטים צריך כדי להגיע לשם. 5. רק אז כותבות את הפרומפט, שבעצם כבר כתוב. הדוגמה: ״ניתוח הוצאות״ מול פרומפט שנגזר מהשקף הסופי לישיבת ההנהלה. לקשר לטיפ 1 של Anthropic (Be clear and direct). מעבר: לאון מוסיף לזה כלי פרקטי, סוגריים מרובעים.</aside>
 </section>
 <section class="slide s-wow " data-title="יסודות · פרומפטינג: השיטה של לאון">
   <div class="wow-stage">
