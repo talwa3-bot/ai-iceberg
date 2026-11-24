@@ -1426,6 +1426,213 @@ html.static .slide[data-title="שכבה 7"] .bars i{transform:scaleY(1)!importan
 #vidClose{position:absolute;top:-14px;left:-14px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(139,211,255,.6);background:#0b2a8a;color:#fff;font:800 20px "Heebo",sans-serif;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.4)}
 @media (prefers-reduced-motion:reduce){#vidBox .vid-panel,#talVidOpen .play-hint{animation:none}}
 
+
+/* ===== v8 additions: backward prompting, Leon, characters, agent team ===== */
+.s-wow .bk-chain{position:relative;z-index:2;display:flex;align-items:stretch;gap:10px;margin:6px 0 26px;transform-style:preserve-3d}
+.s-wow .bk-node{flex:1;position:relative;background:linear-gradient(180deg,rgba(139,211,255,.18),rgba(255,255,255,.04));border:1px solid rgba(139,211,255,.42);border-radius:20px;padding:16px 16px 14px;box-shadow:0 18px 36px rgba(0,0,0,.3);transform:rotateX(12deg) translateZ(calc(var(--z,0) * 1px));transform-style:preserve-3d}
+.s-wow .bk-node .bn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#8BD3FF;color:#061038;font:900 18px "Heebo",sans-serif;margin-bottom:8px}
+.s-wow .bk-node b{display:block;font:800 24px/1.2 "Heebo",sans-serif;color:#fff}
+.s-wow .bk-node small{display:block;font:500 17px/1.35 "Heebo",sans-serif;color:#D4E6FF;margin-top:6px}
+.s-wow .bk-node.goal{background:linear-gradient(180deg,rgba(139,211,255,.42),rgba(139,211,255,.12));border-color:#8BD3FF;box-shadow:0 22px 44px rgba(0,0,0,.35),0 0 34px rgba(139,211,255,.35)}
+.s-wow .bk-node.last{border-style:dashed}
+.s-wow .bk-arr{flex:0 0 34px;align-self:center;text-align:center;font:900 30px "Heebo",sans-serif;color:#8BD3FF;transform:translateZ(40px)}
+.s-wow .bk-dir{position:relative;z-index:2;font:700 16px "Heebo",sans-serif;color:#8BD3FF;margin:-14px 0 14px;letter-spacing:.04em}
+.s-wow .pp-lab{display:inline-block;font:800 14px "Heebo",sans-serif;letter-spacing:.06em;padding:4px 12px;border-radius:999px;margin-bottom:8px}
+.s-wow .pp-bad .pp-lab{background:rgba(255,255,255,.14);color:#D4E6FF}
+.s-wow .pp-good .pp-lab{background:#8BD3FF;color:#061038}
+.s-wow .pp-bad{opacity:.86}
+.s-wow .pp-good{border-color:#8BD3FF!important;box-shadow:0 22px 44px rgba(0,0,0,.32),0 0 30px rgba(139,211,255,.3)!important}
+.s-wow .pp-q{font:500 21px/1.5 "Heebo",sans-serif;color:#fff}
+.s-wow .pp-q em{font-style:normal;color:#8BD3FF;font-weight:800}
+.s-wow .code-card{direction:ltr;text-align:left;font:500 18px/1.55 ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;color:#E6F1FF;background:rgba(6,16,56,.72)!important}
+.s-wow .code-card .br{color:#061038;background:#8BD3FF;border-radius:6px;padding:0 5px;font-weight:700}
+.s-wow .code-card .tail{display:block;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(139,211,255,.45);color:#BFE3FF}
+.s-wow .code-card .ck{font:800 13px "Heebo",sans-serif;letter-spacing:.12em;color:#8BD3FF;display:block;margin-bottom:8px;direction:rtl;text-align:right}
+.s-wow .rules{list-style:none;margin:10px 0 0;padding:0;counter-reset:r}
+.s-wow .rules li{counter-increment:r;position:relative;padding:8px 46px 8px 0;font:700 20px/1.35 "Heebo",sans-serif;color:#fff;border-bottom:1px solid rgba(139,211,255,.16)}
+.s-wow .rules li::before{content:counter(r);position:absolute;right:0;top:6px;width:32px;height:32px;border-radius:10px;background:rgba(139,211,255,.2);color:#8BD3FF;font:900 17px/32px "Heebo",sans-serif;text-align:center}
+.s-wow .credit{display:inline-flex;align-items:center;gap:10px;position:relative;z-index:2;margin:-8px 0 16px;padding:7px 16px;border-radius:999px;border:1px solid rgba(139,211,255,.45);background:rgba(139,211,255,.1);font:700 17px "Heebo",sans-serif;color:#D4E6FF}
+.s-wow .credit b{color:#8BD3FF}
+/* characters */
+.s-wow .ch-wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:24px;transform-style:preserve-3d}
+.s-wow .ch-prompt .pl{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px solid rgba(139,211,255,.13)}
+.s-wow .ch-prompt .pl:last-child{border-bottom:0}
+.s-wow .ch-prompt .pl span{font:800 14px "Heebo",sans-serif;letter-spacing:.06em;color:#061038;background:#8BD3FF;border-radius:8px;padding:3px 8px;text-align:center}
+.s-wow .ch-prompt .pl.lv span{background:rgba(139,211,255,.22);color:#8BD3FF}
+.s-wow .ch-prompt .pl p{margin:0;font:500 18.5px/1.42 "Heebo",sans-serif;color:#fff}
+.s-wow .mrow{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:11px 14px;margin-top:10px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(139,211,255,.22)}
+.s-wow .mrow .task{font:700 18px/1.3 "Heebo",sans-serif;color:#fff}
+.s-wow .mrow .mdl{direction:ltr;font:800 17px "Heebo",sans-serif;color:#061038;background:#8BD3FF;border-radius:10px;padding:5px 11px;white-space:nowrap}
+.s-wow .mrow .why{grid-column:1/-1;font:500 16px/1.35 "Heebo",sans-serif;color:#BFD6F5}
+.s-wow .mrow.esc{border-style:dashed;background:transparent}
+.s-wow .mrow.esc .mdl{background:transparent;color:#8BD3FF;border:1px solid #8BD3FF}
+.s-wow .cost{margin-top:12px;font:600 15.5px/1.4 "Heebo",sans-serif;color:#A9C4EA}
+.s-wow .cost b{color:#8BD3FF}
+.s-wow .demo-tag{position:absolute;top:-12px;left:18px;z-index:5;font:800 13px "Heebo",sans-serif;letter-spacing:.1em;background:#061038;color:#8BD3FF;border:1px solid #8BD3FF;border-radius:999px;padding:3px 12px}
+.s-wow .devs{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:4px;perspective:1600px;transform-style:preserve-3d}
+.s-wow .dev{position:relative;border-radius:22px;padding:14px;background:linear-gradient(160deg,#1b2f6e,#0a1440);border:1px solid rgba(139,211,255,.5);box-shadow:0 34px 70px rgba(0,0,0,.5),0 0 40px rgba(139,211,255,.18),inset 0 1px 0 rgba(255,255,255,.18);transform:var(--rest);transform-style:preserve-3d}
+.s-wow .dev.l{--rest:rotateY(10deg) rotateX(6deg) translateZ(20px)}
+.s-wow .dev.r{--rest:rotateY(-10deg) rotateX(6deg) translateZ(30px)}
+.s-wow .dev .bar{display:flex;gap:6px;margin:0 2px 10px}
+.s-wow .dev .bar i{width:10px;height:10px;border-radius:50%;background:rgba(139,211,255,.5)}
+.s-wow .dev .bar em{margin-inline-start:auto;font:700 13px "Heebo",sans-serif;font-style:normal;color:#A9C4EA}
+.s-wow .scr{border-radius:12px;overflow:hidden;background:#fff;color:#0b1b4d;height:420px;position:relative}
+.s-wow .scr.dk{background:#0c1a4a;color:#fff}
+/* board slide mock */
+.s-wow .bs-hd{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;background:#0b2a8a;color:#fff;font:800 22px "Heebo",sans-serif}
+.s-wow .bs-hd small{font:600 14px "Heebo",sans-serif;color:#8BD3FF}
+.s-wow .bs-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px 22px 6px}
+.s-wow .bs-kpi div{border-radius:12px;background:#EEF4FF;padding:10px 12px}
+.s-wow .bs-kpi span{display:block;font:700 14px "Heebo",sans-serif;color:#4A5E8F}
+.s-wow .bs-kpi b{display:block;font:900 30px "Heebo",sans-serif;color:#0b2a8a;direction:ltr;text-align:right}
+.s-wow .bs-kpi i{font:700 13px "Heebo",sans-serif;font-style:normal;color:#1E7F5C}
+.s-wow .bs-kpi i.dn{color:#8a5a00}
+.s-wow .bs-body{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:8px 22px 16px}
+.s-wow .bs-bars{display:flex;align-items:flex-end;gap:12px;height:150px;border-bottom:2px solid #c9d6f2;padding:0 6px}
+.s-wow .bs-bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.s-wow .bs-bars i{width:100%;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#4d8dff,#0b2a8a);height:var(--h);transform-origin:bottom}
+.s-wow .bs-bars i.o{background:linear-gradient(180deg,#8BD3FF,#3a9bd8)}
+.s-wow .bs-bars span{font:700 12px "Heebo",sans-serif;color:#4A5E8F;margin-top:4px;white-space:nowrap}
+.s-wow .bs-txt{font:500 16px/1.45 "Heebo",sans-serif;color:#1b2a55}
+.s-wow .bs-txt p{margin:0 0 8px;padding-right:12px;border-right:3px solid #8BD3FF}
+.s-wow .bs-cap{font:700 13px "Heebo",sans-serif;color:#4A5E8F;margin-bottom:6px}
+/* close dashboard */
+.s-wow .db{padding:16px 18px}
+.s-wow .db h4{margin:0 0 4px;font:800 21px "Heebo",sans-serif;color:#fff}
+.s-wow .db .sub{font:600 14px "Heebo",sans-serif;color:#8BD3FF;margin-bottom:12px}
+.s-wow .db .prog{height:12px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin-bottom:14px}
+.s-wow .db .prog i{display:block;height:100%;width:var(--p);background:linear-gradient(90deg,#8BD3FF,#4d8dff);border-radius:999px;transform-origin:right}
+.s-wow .db .st{display:flex;align-items:center;gap:12px;padding:10px 12px;margin-bottom:8px;border-radius:12px;background:rgba(255,255,255,.06);font:700 17px "Heebo",sans-serif}
+.s-wow .db .st .d{width:26px;height:26px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:900 14px "Heebo",sans-serif}
+.s-wow .db .st.ok .d{background:#8BD3FF;color:#061038}
+.s-wow .db .st.wip .d{border:2px solid #8BD3FF;color:#8BD3FF}
+.s-wow .db .st.todo .d{border:2px dashed rgba(139,211,255,.5)}
+.s-wow .db .st em{margin-inline-start:auto;font:600 14px "Heebo",sans-serif;font-style:normal;color:#A9C4EA}
+/* excel mock */
+.s-wow .xl{font:500 15px "Heebo",sans-serif}
+.s-wow .xl .tabs{display:flex;gap:2px;background:#e8eef9;padding:6px 8px 0}
+.s-wow .xl .tabs span{padding:6px 12px;border-radius:8px 8px 0 0;font:700 13px "Heebo",sans-serif;color:#4A5E8F}
+.s-wow .xl .tabs span.on{background:#fff;color:#0b2a8a}
+.s-wow .xl table{width:100%;border-collapse:collapse}
+.s-wow .xl th{background:#0b2a8a;color:#fff;font:700 14px "Heebo",sans-serif;padding:8px;text-align:right}
+.s-wow .xl td{padding:9px 8px;border-bottom:1px solid #dfe7f5;color:#1b2a55}
+.s-wow .xl td.n{direction:ltr;text-align:right;font-weight:800}
+.s-wow .xl .flag{display:inline-block;padding:2px 10px;border-radius:999px;background:#E3F2FF;color:#0b2a8a;font:800 12.5px "Heebo",sans-serif}
+.s-wow .xl .flag.hi{background:#0b2a8a;color:#fff}
+.s-wow .fan{position:relative;height:420px;transform-style:preserve-3d}
+.s-wow .fan .sl{position:absolute;width:76%;height:250px;border-radius:14px;background:#fff;box-shadow:0 24px 50px rgba(0,0,0,.45);overflow:hidden;transform:var(--rest);transform-style:preserve-3d;border:1px solid rgba(139,211,255,.6)}
+.s-wow .fan .sl:nth-child(1){top:0;right:0;--rest:rotateY(-14deg) rotateZ(2deg) translateZ(10px)}
+.s-wow .fan .sl:nth-child(2){top:70px;right:12%;--rest:rotateY(-10deg) rotateZ(-1deg) translateZ(40px)}
+.s-wow .fan .sl:nth-child(3){top:150px;right:24%;--rest:rotateY(-6deg) rotateZ(1deg) translateZ(70px)}
+.s-wow .fan .sl .t{background:#0b2a8a;color:#fff;font:800 17px "Heebo",sans-serif;padding:10px 14px}
+.s-wow .fan .sl .c{padding:12px 14px;font:600 15px/1.45 "Heebo",sans-serif;color:#1b2a55}
+.s-wow .fan .sl .big{font:900 34px "Heebo",sans-serif;color:#0b2a8a;direction:ltr;text-align:right}
+.s-wow .fan .sl .mini{display:flex;gap:8px;align-items:flex-end;height:70px;margin-top:6px}
+.s-wow .fan .sl .mini i{flex:1;background:linear-gradient(180deg,#8BD3FF,#0b2a8a);border-radius:4px 4px 0 0;height:var(--h)}
+.s-wow .teaser{position:relative;z-index:2;display:flex;align-items:center;gap:16px;margin-top:26px;padding:14px 22px;border-radius:18px;background:linear-gradient(90deg,rgba(139,211,255,.22),rgba(139,211,255,.05));border:1px solid rgba(139,211,255,.55);transform:rotateX(8deg) translateZ(30px);font:700 21px/1.35 "Heebo",sans-serif;color:#fff}
+.s-wow .teaser img{width:48px;height:48px;border-radius:12px;object-fit:cover;flex:none}
+.s-wow .teaser b{color:#8BD3FF}
+.s-wow .cap2{position:relative;z-index:2;font:600 16px/1.35 "Heebo",sans-serif;color:#A9C4EA;margin-top:10px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+/* agent team */
+.s-wow .team{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px 16px;transform-style:preserve-3d}
+.s-wow .tm{position:relative;display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.035));border:1px solid rgba(139,211,255,.28);box-shadow:0 16px 32px rgba(0,0,0,.28);transform:rotateX(9deg) translateZ(calc(var(--z,20) * 1px))}
+.s-wow .tm .av{flex:none;width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(139,211,255,.18);border:1px solid rgba(139,211,255,.5);color:#8BD3FF;font:900 19px "Heebo",sans-serif}
+.s-wow .tm b{display:block;font:800 19px/1.2 "Heebo",sans-serif;color:#fff}
+.s-wow .tm small{display:block;font:500 15px/1.33 "Heebo",sans-serif;color:#C9DDF7;margin-top:3px}
+.s-wow .tm.rev{border-color:rgba(139,211,255,.6)}
+.s-wow .tm.hub{background:linear-gradient(180deg,rgba(139,211,255,.34),rgba(139,211,255,.1));border-color:#8BD3FF}
+.s-wow .tm.hub .av{background:#8BD3FF;color:#061038}
+.s-wow .flow{position:relative;z-index:2;display:flex;align-items:center;gap:10px;margin-top:24px;transform:rotateX(10deg) translateZ(36px)}
+.s-wow .flow .fs{flex:1;text-align:center;padding:13px 10px;border-radius:16px;border:1px solid rgba(139,211,255,.45);background:rgba(139,211,255,.1);font:800 19px/1.2 "Heebo",sans-serif;color:#fff}
+.s-wow .flow .fs small{display:block;font:500 14px "Heebo",sans-serif;color:#BFD6F5;margin-top:3px}
+.s-wow .flow .fs.me{background:#8BD3FF;color:#061038;border-color:#8BD3FF;box-shadow:0 0 34px rgba(139,211,255,.55)}
+.s-wow .flow .fs.me small{color:#0b2a8a}
+.s-wow .flow .fa{color:#8BD3FF;font:900 26px "Heebo",sans-serif}
+/* animations */
+.s-wow.anim .bk-node,.s-wow.anim .tm,.s-wow.anim .mrow,.s-wow.anim .flow .fs,.s-wow.anim .ch-prompt .pl{opacity:0;animation:rise .5s ease forwards}
+.s-wow.anim .bk-node:nth-child(1){animation-delay:.35s}.s-wow.anim .bk-node:nth-child(3){animation-delay:.5s}.s-wow.anim .bk-node:nth-child(5){animation-delay:.65s}.s-wow.anim .bk-node:nth-child(7){animation-delay:.8s}.s-wow.anim .bk-node:nth-child(9){animation-delay:.95s}
+.s-wow.anim .bk-arr{opacity:0;animation:rise .4s .9s ease forwards}
+.s-wow.anim .ch-prompt .pl:nth-child(1){animation-delay:.45s}.s-wow.anim .ch-prompt .pl:nth-child(2){animation-delay:.55s}.s-wow.anim .ch-prompt .pl:nth-child(3){animation-delay:.65s}.s-wow.anim .ch-prompt .pl:nth-child(4){animation-delay:.75s}.s-wow.anim .ch-prompt .pl:nth-child(5){animation-delay:.85s}.s-wow.anim .ch-prompt .pl:nth-child(6){animation-delay:.95s}
+.s-wow.anim .mrow:nth-of-type(1){animation-delay:.9s}.s-wow.anim .mrow:nth-of-type(2){animation-delay:1.05s}.s-wow.anim .mrow:nth-of-type(3){animation-delay:1.2s}
+.s-wow.anim .tm{animation-delay:calc(.3s + var(--i,0) * .06s)}
+.s-wow.anim .flow .fs{animation-delay:calc(1.1s + var(--i,0) * .12s)}
+.s-wow.anim .dev,.s-wow.anim .fan .sl{opacity:0;animation:depth-in .8s cubic-bezier(.2,.75,.2,1) forwards}
+.s-wow.anim .dev.r{animation-delay:.35s}.s-wow.anim .dev.l{animation-delay:.55s}
+.s-wow.anim .fan .sl:nth-child(1){animation-delay:.6s}.s-wow.anim .fan .sl:nth-child(2){animation-delay:.75s}.s-wow.anim .fan .sl:nth-child(3){animation-delay:.9s}
+.s-wow.anim .bs-bars i{animation:dash-bar .8s 1s ease both}
+.s-wow.anim .db .prog i{animation:v8-grow 1.2s 1s ease both}
+.s-wow.anim .teaser{opacity:0;animation:rise .55s 1.3s ease forwards}
+@keyframes v8-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){
+  .s-wow.anim .bk-node,.s-wow.anim .bk-arr,.s-wow.anim .tm,.s-wow.anim .mrow,.s-wow.anim .flow .fs,.s-wow.anim .ch-prompt .pl,.s-wow.anim .dev,.s-wow.anim .fan .sl,.s-wow.anim .teaser,.s-wow.anim .bs-bars i,.s-wow.anim .db .prog i{animation:none!important;opacity:1!important}
+  .s-wow.anim .dev,.s-wow.anim .fan .sl{transform:var(--rest)!important}
+}
+html.static .s-wow .bk-node,html.static .s-wow .bk-arr,html.static .s-wow .tm,html.static .s-wow .mrow,html.static .s-wow .flow .fs,html.static .s-wow .ch-prompt .pl,html.static .s-wow .dev,html.static .s-wow .fan .sl,html.static .s-wow .teaser,html.static .s-wow .bs-bars i,html.static .s-wow .db .prog i{animation:none!important;opacity:1!important}
+html.static .s-wow .dev,html.static .s-wow .fan .sl{transform:var(--rest)!important}
+/* v8 sizing pass */
+.s-wow .bk-node{padding:22px 20px 20px}
+.s-wow .bk-node b{font-size:31px}
+.s-wow .bk-node small{font-size:21px}
+.s-wow .bk-node .bn{width:42px;height:42px;font-size:22px}
+.s-wow .bk-chain{margin:14px 0 40px}
+.s-wow .pp-grid{grid-template-columns:.78fr 1.22fr}
+.s-wow .pp-lab{font-size:17px}
+.s-wow .pp-q{font-size:28px;line-height:1.5}
+.s-wow .pp-bad p{font-size:22px}
+.s-wow .lcredit{display:inline-flex;align-items:center;gap:10px;position:relative;z-index:2;margin:0 0 22px;padding:9px 20px;border-radius:999px;border:1px solid rgba(139,211,255,.45);background:rgba(139,211,255,.1);font:700 21px "Heebo",sans-serif;color:#D4E6FF}
+.s-wow .lcredit b{color:#8BD3FF}
+.s-wow .code-card{font-size:23px;line-height:1.6;padding:24px 26px!important}
+.s-wow .code-card .ck{font-size:16px}
+.s-wow .rules li{font-size:27px;padding:13px 56px 13px 0}
+.s-wow .rules li::before{width:40px;height:40px;font-size:20px;line-height:40px;top:10px}
+.s-wow .leon-card p{font-size:22px}
+.s-wow .wow-k{font-size:16px}
+.s-wow .ch-wrap{gap:30px;margin-top:10px}
+.s-wow .ch-prompt .pl{grid-template-columns:160px 1fr;padding:10px 0}
+.s-wow .ch-prompt .pl span{font-size:17px;padding:5px 8px}
+.s-wow .ch-prompt .pl p{font-size:23.5px;line-height:1.42}
+.s-wow .mrow{padding:15px 18px;margin-top:14px}
+.s-wow .mrow .task{font-size:24px}
+.s-wow .mrow .mdl{font-size:21px;padding:7px 14px}
+.s-wow .mrow .why{font-size:20px}
+.s-wow .cost{font-size:19.5px;margin-top:16px}
+.s-wow .devs{margin:14px 40px 0;gap:46px}
+.s-wow .dev.l{--rest:rotateY(5deg) rotateX(4deg)}
+.s-wow .dev.r{--rest:rotateY(-5deg) rotateX(4deg)}
+.s-wow .scr{height:500px}
+.s-wow .bs-hd{font-size:26px;padding:20px 24px}
+.s-wow .bs-kpi b{font-size:36px}
+.s-wow .bs-kpi span{font-size:16px}.s-wow .bs-kpi i{font-size:15px}
+.s-wow .bs-bars{height:190px}
+.s-wow .bs-bars span{font-size:14px}
+.s-wow .bs-txt{font-size:19px}
+.s-wow .db h4{font-size:25px}.s-wow .db .sub{font-size:16px}
+.s-wow .db .st{font-size:20px;padding:12px 14px}
+.s-wow .db .st em{font-size:16px}
+.s-wow .xl th{font-size:17px;padding:11px 10px}
+.s-wow .xl td{font-size:19px;padding:13px 10px}
+.s-wow .xl .flag{font-size:15px}
+.s-wow .xl .tabs span{font-size:15px}
+.s-wow .fan{height:500px!important;display:flex;flex-direction:column;gap:16px;padding:18px}
+.s-wow .fan .sl{position:relative!important;top:auto!important;right:auto!important;width:auto;height:auto;flex:1;display:grid;grid-template-columns:200px 1fr;align-items:stretch}
+.s-wow .fan .sl:nth-child(1){--rest:rotateY(-6deg) translateZ(10px)}
+.s-wow .fan .sl:nth-child(2){--rest:rotateY(-6deg) translateZ(25px)}
+.s-wow .fan .sl:nth-child(3){--rest:rotateY(-6deg) translateZ(40px)}
+.s-wow .fan .sl .t{display:flex;align-items:center;font-size:20px;line-height:1.3;padding:14px 16px}
+.s-wow .fan .sl .c{font-size:18.5px;align-self:center}
+.s-wow .fan .sl .big{font-size:38px}
+.s-wow .fan .sl .mini{display:none}
+.s-wow .teaser{font-size:25px;margin-top:40px;padding:18px 26px}
+.s-wow .team{gap:20px 18px;margin-top:6px}
+.s-wow .tm{padding:17px 18px}
+.s-wow .tm .av{width:54px;height:54px;font-size:23px}
+.s-wow .tm b{font-size:24px}
+.s-wow .tm small{font-size:18.5px}
+.s-wow .flow{margin-top:38px}
+.s-wow .flow .fs{font-size:25px;padding:17px 12px}
+.s-wow .flow .fs small{font-size:17px}
+
+
 /* ===== lite mode: phones/tablets only (html.lite). Desktop unaffected. ===== */
 html.lite .slide:not(.active){display:none!important}
 html.lite .slide{transition:none!important}
@@ -1642,7 +1849,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 1/6</div>
+    <div class="wow-kicker">יסודות · 1/8</div>
     <h2>מה זה LLM, ואיך הוא עובד</h2>
     <p class="wow-lead">מודל שפה גדול (<span class="ltr">LLM</span>) לא ״יודע״ חשבונאות כמו רואה חשבון. הוא מנחש, מילה אחר מילה, מה הכי סביר שיבוא עכשיו — לפי מה שלמד ולפי מה שכתוב לפניו.</p>
     <div class="llm-demo" aria-label="המחשת חיזוי המילה הבאה">
@@ -1667,7 +1874,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 2/6</div>
+    <div class="wow-kicker">יסודות · 2/8</div>
     <h2>טוקנים: יחידת המידה של המודל</h2>
     <p class="wow-lead">המודל לא קורא ״מילים״ כמונו. הוא מפרק טקסט לחתיכות קטנות שנקראות טוקנים — וכל טוקן תופס מקום בחלון ההקשר ועולה כסף.</p>
     <div class="tok-demo" aria-label="פירוק משפט עברי לטוקנים">
@@ -1705,7 +1912,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 3/6</div>
+    <div class="wow-kicker">יסודות · 3/8</div>
     <h2>כלכלת הטוקנים: לחשוב עלות למשימה</h2>
     <p class="wow-lead">המחירים משתנים בין ספקים ומודלים, ומתעדכנים. מה שנשאר יציב: פלט יקר מקלט, מודל חזק יקר יותר, והעלות האמיתית היא למשימה — לא ל״צ׳אט״.</p>
     <div class="eco-wrap">
@@ -1735,7 +1942,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 4/6</div>
+    <div class="wow-kicker">יסודות · 4/8</div>
     <h2>מה זה API, ואיך הוא עובד</h2>
     <p class="wow-lead">API הוא ממשק תוכנה: המערכת שלכן שולחת בקשה למודל ומקבלת תשובה — בלי להדביק נתונים ידנית בצ׳אט אישי.</p>
     <div class="api-demo" aria-label="זרימת בקשה ותשובה דרך API">
@@ -1760,7 +1967,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 5/6</div>
+    <div class="wow-kicker">יסודות · 5/8</div>
     <h2>מה זה MCP, ואיך הוא עובד</h2>
     <p class="wow-lead">MCP — Model Context Protocol — הוא תקן פתוח לחיבור מודל לכלים ולהקשר: כמו ״שקע אחיד״ בין העוזר לבין המערכות שלכן.</p>
     <div class="mcp-stage" aria-label="טבעת כלים סביב המודל">
@@ -1787,7 +1994,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 6/6</div>
+    <div class="wow-kicker">יסודות · 6/8</div>
     <h2>מה זה אייג׳נט, ואיך הוא עובד</h2>
     <p class="wow-lead">עוזר עונה בשיחה. אייג׳נט מקבל מטרה, מתכנן, מפעיל כלים, מסתכל על התוצאה — וחוזר על הלולאה עד שהוא מסיים או מבקש מכן אישור.</p>
     <div class="agent-stage" aria-label="לולאת סוכן בתלת-ממד">
@@ -1811,6 +2018,52 @@ html.wk .mcp-beam{display:none}
   </div>
   <aside class="notes">שקף אייג׳נט. לולאה: plan, tool, observe, repeat. דוגמה כספית: סוכן מקבל ייצוא בנק וכרטסת, מריץ התאמה, כותב דוח פערים, עוצר לפני שליחה ללקוח. להדגיש אחריות: הסוכן לא מחליף חתימה של רו״ח. מעבר: אחרי היסודות עוברים למפת הקרחון (השקפים הקיימים), ואחר כך להעמקת אבטחה, כלים והדגמות.</aside>
 </section>
+<!-- v8: foundations 7-8: backward prompting + Leon -->
+<section class="slide s-wow " data-title="יסודות · פרומפטינג: גזירה אחורה">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 7/8 · פרומפטינג: השיטה של טל</div>
+    <h2>מתחילות מהתוצר. גוזרות אחורה.</h2>
+    <p class="wow-lead">לפני שכותבות מילה ל־<span class="ltr">Claude</span>, מגדירות איך נראה התוצר הגמור, ומשם הולכות אחורה עד לפרומפט.</p>
+    <div class="bk-chain">
+      <div class="bk-node goal" style="--z:60"><span class="bn">1</span><b>התוצר הגמור</b><small>מה בדיוק יוצא בסוף? שקף, קובץ, מייל</small></div>
+      <div class="bk-arr">←</div>
+      <div class="bk-node" style="--z:48"><span class="bn">2</span><b>למי</b><small>מי קורא, ומה הוא יעשה עם זה</small></div>
+      <div class="bk-arr">←</div>
+      <div class="bk-node" style="--z:36"><span class="bn">3</span><b>פורמט</b><small>מבנה, אורך, טון, שפה</small></div>
+      <div class="bk-arr">←</div>
+      <div class="bk-node" style="--z:26"><span class="bn">4</span><b>צעדים וקלטים</b><small>מה צריך לעשות, ומאילו קבצים</small></div>
+      <div class="bk-arr">←</div>
+      <div class="bk-node last" style="--z:16"><span class="bn">5</span><b>הפרומפט</b><small>רק עכשיו כותבות</small></div>
+    </div>
+    <div class="wow-grid g21 pp-grid">
+      <article class="wow-card pp-bad"><span class="pp-lab">פחות טוב</span><div class="pp-q">״תכיני לי ניתוח של ההוצאות.״</div><p>אין תוצר, אין קורא, אין פורמט. <span class="ltr">Claude</span> ינחש, ואתן תתקנו.</p></article>
+      <article class="wow-card pp-good"><span class="pp-lab">יותר טוב · נגזר אחורה</span><div class="pp-q"><em>התוצר:</em> שקף אחד לישיבת ההנהלה: 5 סעיפי ההוצאה שחרגו הכי הרבה ברבעון 3. <em>למי:</em> מנכ״ל ובעלים, לא אנשי כספים. <em>פורמט:</em> טבלה + משפט הסבר לכל סעיף, השורה התחתונה קודם. <em>קלטים:</em> כרטסת ההוצאות ותקציב 2026 (מצורפים). <em>צעדים:</em> לסכם לפי סעיף, להשוות לתקציב, לדרג לפי החריגה בש״ח.</div></article>
+    </div>
+    <div class="wow-foot">השיטה שטל ולנשטין מלמדת ב־AI Finance. משתלבת עם הטיפ הראשון של <span class="ltr">Anthropic</span>: ברור, ישיר ומפורש. הפרומפטים לדוגמה שלנו, מותאמים לכספים.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף גזירה אחורה, השיטה האהובה על טל. המסר: לא מתחילות מ״מה לכתוב ל־Claude״, אלא מ״איך נראה הדבר הגמור שאני צריכה ביד״. חמישה צעדים אחורה: 1. התוצר הגמור. 2. למי הוא מיועד ומה הקורא יעשה איתו. 3. פורמט: מבנה, אורך, טון. 4. אילו צעדים וקלטים צריך כדי להגיע לשם. 5. רק אז כותבות את הפרומפט, שבעצם כבר כתוב. הדוגמה: ״ניתוח הוצאות״ מול פרומפט שנגזר מהשקף הסופי לישיבת ההנהלה. לקשר לטיפ 1 של Anthropic (Be clear and direct). מעבר: לאון מוסיף לזה כלי פרקטי, סוגריים מרובעים.</aside>
+</section>
+<section class="slide s-wow " data-title="יסודות · פרומפטינג: השיטה של לאון">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">יסודות · 8/8 · פרומפטינג: מתוך סדנת <span class="ltr">Cowork</span> של לאון</div>
+    <h2>סוגריים מרובעים: <span class="ltr">Claude</span> שואל לפני שהוא מנחש</h2>
+    <p class="wow-lead">כותבים פרומפט קבוע, ומשאירים <b>[בסוגריים מרובעים]</b> את מה שמשתנה. משפט קבוע בסוף מחייב את <span class="ltr">Claude</span> לשאול עליהם לפני שהוא מתחיל.</p>
+    <div class="lcredit">קרדיט: <b>לאון · <span class="ltr">leon melamud</span></b> · מתוך חומרי סדנת <span class="ltr">Cowork</span> שלו</div>
+    <div class="wow-grid g21">
+      <article class="wow-card code-card"><span class="ck">הדוגמה של לאון · מיון חשבוניות לרואה החשבון (מקוצר)</span>In this folder are all my invoices from <span class="br">[year]</span>. I need to process them so I can send them to <span class="br">[the accountant]</span>. Read each invoice and extract <span class="br">[invoice number, date, supplier, net, VAT, total, currency]</span>. Create a CSV called <span class="br">[invoices-YYYY.csv]</span> … If a file name disagrees with the date inside the invoice, trust the invoice and tell me which ones disagreed.<span class="tail">Before you start: check every [bracketed] item above. For anything still in brackets, ask me for it as a short numbered list and wait for my answers. … Do not guess, and do not run with a placeholder still in place.</span></article>
+      <article class="wow-card leon-card"><div class="wow-k">ארבעת הכללים של לאון</div><ol class="rules"><li>תוצאה אחת לכל משימה.</li><li>תמיד אומרים איפה הפלט נשמר.</li><li>מבקשים שקט כשלא השתנה כלום.</li><li>המשימה הראשונה רצה עוד לפני יום העבודה הבא.</li></ol><p>ועם גזירה אחורה: התוצר והקורא כתובים בפרומפט, וכל מה שמשתנה מחודש לחודש עובר לסוגריים.</p></article>
+    </div>
+    <div class="wow-foot">מקור: לאון (<span class="ltr">leon melamud</span>), ״00 START HERE״ ו־״01 Sort a year of invoices for the accountant״, שותפו עם טל ב־<span class="ltr">Google Drive</span>. לפי לאון, הדוגמה ״ממחקר שטח, לא הודגמה בסדנה. בדקו על מדגם קטן לפני שסומכים עליה״.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף לאון. מקור: חומרי סדנת Cowork של לאון (leon melamud ב-Google Drive), המסמכים ״00 START HERE.docx״ (התחלה, סדנת Cowork) ו״01 Sort a year of invoices for the accountant.docx״. השיטה: כל פרומפט בספרייה שלו כתוב באנגלית, מה שמשתנה מופיע [בסוגריים מרובעים], ובסוף משפט קבוע: Before you start: check every [bracketed] item above. For anything still in brackets, ask me for it as a short numbered list and wait for my answers. Where you can reasonably infer a value from my files or connected systems, propose it and mark it for my confirmation instead of asking. Do not guess, and do not run with a placeholder still in place. ארבעת הכללים שלו מתוך START HERE: תוצאה אחת לכל משימה; תמיד אומרים איפה הפלט נשמר; מבקשים שקט כשלא השתנה כלום; המשימה הראשונה שלכם רצה עוד לפני יום העבודה הבא. עוד בחומרים: מחברים (Connectors) בהרשאה מינימלית, עדיף טיוטות בלבד על שליחה; 21 מתוך 43 המשימות בספרייה שלו לא צריכות שום מחבר. לאון מציין שדוגמת החשבוניות היא ממחקר שטח ולא הודגמה בסדנה, ולכן לבדוק על מדגם קטן. החיבור לטל: גזירה אחורה קובעת מה כתוב בפרומפט, הסוגריים של לאון הופכים אותו לתבנית שאפשר להריץ שוב כל חודש.</aside>
+</section>
+
 
 
 <!-- 10 OVERVIEW (was 4; +6 foundation slides) -->
@@ -2153,6 +2406,122 @@ html.wk .mcp-beam{display:none}
   </div>
   <aside class="notes">מחירון API של Anthropic, נבדק 23.11.2026 (https://docs.claude.com/en/docs/about-claude/models/overview , https://www.anthropic.com/pricing). לכל מיליון טוקנים — Claude Fable 5.2: $8 קלט / $40 פלט, קריאה מ־cache $0.20, כתיבה ל־cache $10. Claude Opus 5.5: $4 / $20, cache קריאה $0.20, כתיבה $5. Claude Sonnet 5.5: $2 / $10, cache קריאה $0.10, כתיבה $2.50. Claude Haiku 5.5: מ־$0.10 קלט / $0.50 פלט לפרומפט עד 100K טוקנים; מעל 100K — $0.50 / $2.50; cache קריאה $0.01. Batch API: הנחה של 50%. המסר לקהל: ההבדל בין המודלים הוא פי 40 ויותר — לכן בוחרים מודל לפי המשימה. מתחילים ב־Opus; לכמויות גדולות ופשוטות (סיווג, חילוץ) — Haiku; Fable רק כש־Opus לא מספיק. הדוגמה: 100 עמודי PDF בעברית ≈ 475 אלף טוקנים (הערכה מהשקף של כלכלת הטוקנים). שורת ״בפיננסים״ היא המלצה שלנו, לא של Anthropic. מנוי Claude (Pro $20 לחודש, Max $100, Ultra $200) הוא מסלול אחר, עם מכסות שימוש ולא תשלום לטוקן.</aside>
 </section>
+<!-- v8: characters -->
+<section class="slide s-wow " data-title="דמות · עדנה · הפרומפט">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">דמות 1 · עדנה, מנהלת חשבונות בחברה X</div>
+    <h2>עדנה סוגרת את אוקטובר עם <span class="ltr">Claude</span></h2>
+    
+    <div class="ch-wrap">
+      <article class="wow-card ch-prompt"><div class="wow-k">הפרומפט של עדנה · נגזר אחורה</div>
+        <div class="pl"><span>התוצר</span><p>שקף אחד לדירקטוריון על סגירת אוקטובר בחברה X, ודשבורד סגירה לצוות.</p></div>
+        <div class="pl"><span>למי</span><p>חברי דירקטוריון, לא אנשי כספים. השורה התחתונה קודם, שפה פשוטה.</p></div>
+        <div class="pl"><span>פורמט</span><p>שקף 16:9 בצבעי החברה: 3 מספרי מפתח, גרף ביצוע מול תקציב, 3 משפטים. דשבורד: סטטוס כל שלב בסגירה.</p></div>
+        <div class="pl"><span>קלטים</span><p>מאזן בוחן, דפי בנק ותקציב אוקטובר (מצורפים).</p></div>
+        <div class="pl"><span>צעדים</span><p>לסווג את תנועות הבנק, להתאים לספרים, לסמן כל סטייה מעל 5% מהתקציב ולהסביר אותה. רק אז לבנות שקף ודשבורד.</p></div>
+        <div class="pl lv"><span>לפני שמתחילים</span><p>מה שחסר, לשאול אותי ברשימה ממוספרת. לא לנחש. <small style="color:#8BD3FF">(השיטה של לאון)</small></p></div>
+      </article>
+      <article class="wow-card"><div class="wow-k">איזה מודל, ובאיזה <span class="ltr">effort</span></div>
+        <div class="mrow"><div class="task">סיווג תנועות הבנק</div><div class="mdl">Haiku 5.5 · Medium</div><div class="why">הרבה שורות, משימה פשוטה: הכי מהיר והכי זול.</div></div>
+        <div class="mrow"><div class="task">ניתוח סטיות, שקף ודשבורד</div><div class="mdl">Opus 5.5 · Medium</div><div class="why">עבודת ידע: נקודת הפתיחה המומלצת. לא מספיק? קודם מעלים ל־<span class="ltr">Max</span>.</div></div>
+        <div class="mrow esc"><div class="task">רק אם גם <span class="ltr">Max</span> לא הספיק</div><div class="mdl">Fable 5.2</div><div class="why">החזק ביותר, וגם היקר ביותר.</div></div>
+        <div class="cost">העלות היא חלק מההחלטה. מחיר פלט ב־<span class="ltr">API</span> למיליון טוקנים: <b class="ltr">Haiku $0.50 · Opus $20 · Fable $40</b>. הכלל של <span class="ltr">Anthropic</span>: משנים הגדרה אחת בכל פעם, קודם <span class="ltr">effort</span>, אחר כך מודל.</div>
+      </article>
+    </div>
+    <div class="wow-foot">מחירים ומודלים: מהשקפים הקודמים (מחירון <span class="ltr">Anthropic</span>, נבדק 23.11.2026) · <span class="ltr">academy.claude.com</span>, ״Choosing a Claude model״ · <span class="ltr">support.claude.com</span>, רמות <span class="ltr">effort</span>. עדנה וחברה X: דמות לדוגמה.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">דמות 1: עדנה, מנהלת חשבונות בחברה X (דמות לדוגמה). המשימה: סגירת אוקטובר. להראות שהפרומפט נבנה בגזירה אחורה: קודם התוצר (שקף דירקטוריון + דשבורד), אחר כך הקורא, הפורמט, הקלטים והצעדים, ובסוף המשפט של לאון. בחירת המודל היא המטרה העיקרית של השקף: Haiku 5.5 ב-Medium לסיווג תנועות, כי זו כמות גדולה ומשימה פשוטה; Opus 5.5 ב-Medium לניתוח הסטיות והשקף, כי Academy של Claude ממליצה להתחיל ב-Opus לעבודת ידע; אם התוצאה לא מספיקה, קודם מעלים effort ל-Max ורק אחר כך עוברים ל-Fable 5.2. רמות effort לפי support.claude.com: Low, Medium, High, Extra high, Max. עלות: מחירי פלט ב-API מהשקף הקודם, Haiku $0.50, Opus $20, Fable $40 למיליון טוקנים. אותו סיווג ב-Opus היה עולה פי 40 בפלט. מעבר: מה Claude מחזיר לעדנה.</aside>
+</section>
+<section class="slide s-wow " data-title="דמות · עדנה · התוצר">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">עדנה · מה <span class="ltr">Claude</span> מחזיר</div>
+    <h2>מהפרומפט לשקף דירקטוריון ולדשבורד סגירה</h2>
+    
+    <div class="devs">
+      <div class="dev r"><span class="demo-tag">דוגמה · נתונים להמחשה</span><div class="bar"><i></i><i></i><i></i><em>שקף דירקטוריון · <span class="ltr">PowerPoint</span></em></div>
+        <div class="scr"><div class="bs-hd">חברה X · סגירת אוקטובר<small>לדירקטוריון</small></div>
+          <div class="bs-kpi"><div><span>הכנסות</span><b>₪4.2M</b><i>+3% מול תקציב</i></div><div><span>הוצאות תפעול</span><b>₪1.9M</b><i class="dn">+7% מול תקציב</i></div><div><span>תזרים חופשי</span><b>₪0.6M</b><i>בתוך התחזית</i></div></div>
+          <div class="bs-body"><div><div class="bs-cap">ביצוע מול תקציב, לפי סעיף</div><div class="bs-bars"><div><i style="--h:78%"></i><span>שכר</span></div><div><i class="o" style="--h:92%"></i><span>שיווק</span></div><div><i style="--h:55%"></i><span>שכירות</span></div><div><i class="o" style="--h:70%"></i><span>ענן</span></div><div><i style="--h:40%"></i><span>אחר</span></div></div></div>
+          <div class="bs-txt"><p>ההכנסות מעל התקציב, בזכות שני לקוחות חדשים.</p><p>החריגה בשיווק: קמפיין שהוקדם מנובמבר.</p><p>אין סטייה מהותית בתזרים.</p></div></div></div></div>
+      <div class="dev l"><span class="demo-tag">דוגמה</span><div class="bar"><i></i><i></i><i></i><em>דשבורד סגירה · <span class="ltr">Artifact</span></em></div>
+        <div class="scr dk"><div class="db"><h4>סגירת אוקטובר · חברה X</h4><div class="sub">4 מתוך 6 שלבים הושלמו</div><div class="prog"><i style="--p:66%"></i></div>
+          <div class="st ok"><span class="d">✓</span>התאמת בנק<em>הושלם</em></div>
+          <div class="st ok"><span class="d">✓</span>ספקים ולקוחות<em>הושלם</em></div>
+          <div class="st ok"><span class="d">✓</span>סיווג הוצאות<em>הושלם</em></div>
+          <div class="st ok"><span class="d">✓</span>ביצוע מול תקציב<em>הושלם</em></div>
+          <div class="st wip"><span class="d">…</span>הפרשות וזקיפות<em>ממתין לעדנה</em></div>
+          <div class="st todo"><span class="d"></span>אישור מנהלת הכספים<em>טרם</em></div></div></div></div>
+    </div>
+    <div class="teaser">רוצות שקף כזה מהנתונים שלכן? <b>בליווי אישי עם טל ולנשטין</b> בונים אותו על הקבצים האמיתיים שלכן.</div>
+    <div class="wow-foot"><span class="ltr">Claude</span> יוצר קובצי <span class="ltr">PowerPoint</span> ו־<span class="ltr">Excel</span>, וגם <span class="ltr">Artifacts</span>: דשבורד אינטראקטיבי בתוך השיחה. כל המספרים בשקף הזה הם דוגמה להמחשה, לא פלט אמיתי.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">עדנה, שלב התוצר. הסולם הוויזואלי: מטבלה לשקף דירקטוריון ולדשבורד. Claude יוצר קבצים (PowerPoint, Excel) ו-Artifacts, כלומר דשבורד אינטראקטיבי בתוך השיחה. להדגיש: כל המספרים כאן הם דוגמה להמחשה ולא פלט של מודל. עדנה בודקת, מתקנת ומאשרת לפני שזה יוצא לדירקטוריון, human in the loop. טיזר לליווי האישי: ״רוצות שקף כזה מהנתונים שלכן? בליווי אישי איתי בונים אותו על הקבצים האמיתיים שלכן״.</aside>
+</section>
+<section class="slide s-wow " data-title="דמות · חשבת השכר · הפרומפט">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">דמות 2 · חשבת השכר</div>
+    <h2>בקרת שכר לפני השידור לבנק, עם <span class="ltr">Claude</span></h2>
+    
+    <div class="ch-wrap">
+      <article class="wow-card ch-prompt"><div class="wow-k">הפרומפט של חשבת השכר · נגזר אחורה</div>
+        <div class="pl"><span>התוצר</span><p>סיכום בקרת שכר של נובמבר, מעוצב, שיוצא לסמנכ״לית הכספים לפני השידור לבנק.</p></div>
+        <div class="pl"><span>למי</span><p>סמנכ״לית כספים, שתי דקות קריאה. החריגים קודם.</p></div>
+        <div class="pl"><span>פורמט</span><p>קובץ <span class="ltr">Excel</span> עם לשונית חריגים, ומצגת של 3 שקפים: עלות השכר, החריגים לבדיקה, מה השתנה מול אוקטובר.</p></div>
+        <div class="pl"><span>קלטים</span><p>דוחות השכר של אוקטובר ונובמבר, ייצוא מתוכנת השכר (מצורפים).</p></div>
+        <div class="pl"><span>צעדים</span><p>להשוות עובד מול עובד, לסמן שינוי ברוטו מעל 10%, שעות נוספות חריגות, עובדים חדשים ועוזבים. לא לחשב שכר מחדש, רק לסמן.</p></div>
+        <div class="pl lv"><span>לפני שמתחילים</span><p>מה שחסר, לשאול אותי ברשימה ממוספרת. לא לנחש.</p></div>
+      </article>
+      <article class="wow-card"><div class="wow-k">איזה מודל, ובאיזה <span class="ltr">effort</span></div>
+        <div class="mrow"><div class="task">מיפוי סמלי שכר ועמודות</div><div class="mdl">Haiku 5.5 · Medium</div><div class="why">חילוץ ומיפוי: מהיר וזול.</div></div>
+        <div class="mrow"><div class="task">השוואה חודשית וסימון חריגים</div><div class="mdl">Sonnet 5.5 · Medium</div><div class="why">משימה מוגדרת שחוזרת כל חודש: מהירות ואינטליגנציה.</div></div>
+        <div class="mrow esc"><div class="task">חריג מסובך שצריך להסביר</div><div class="mdl">Opus 5.5 · Max</div><div class="why">רק כשצריך עומק. עולה פי 2 מ־<span class="ltr">Sonnet</span> בפלט.</div></div>
+        <div class="cost">מחיר פלט ב־<span class="ltr">API</span> למיליון טוקנים: <b class="ltr">Haiku $0.50 · Sonnet $10 · Opus $20</b>. נתוני שכר רגישים: עובדים בחשבון ארגוני, ומשמיטים מה שלא צריך, כמו מספרי זהות.</div>
+      </article>
+    </div>
+    <div class="wow-foot">מחירים: מחירון <span class="ltr">Anthropic</span>, נבדק 23.11.2026 (שקף המחירים). חשבת השכר והנתונים: דוגמה.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">דמות 2: חשבת השכר (דמות לדוגמה). המשימה: בקרה לפני שידור לבנק. אותו מבנה גזירה אחורה. כאן המודל הראשי הוא Sonnet 5.5 ב-Medium, כי זו משימה מוגדרת שחוזרת כל חודש. Haiku 5.5 למיפוי סמלי שכר ועמודות. Opus 5.5 ב-Max רק לחריג מסובך שדורש הסבר. עלות: פלט Sonnet $10, Opus $20, Haiku $0.50 למיליון טוקנים. להדגיש אבטחת מידע: נתוני שכר רגישים, חשבון ארגוני, ולהשמיט שדות מזהים שלא נחוצים. Claude לא מחשב שכר מחדש, הוא מסמן לבדיקה; האחריות נשארת אצל חשבת השכר.</aside>
+</section>
+<section class="slide s-wow " data-title="דמות · חשבת השכר · התוצר">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">חשבת השכר · מה <span class="ltr">Claude</span> מחזיר</div>
+    <h2>מקובץ שכר לסיכום מעוצב לסמנכ״לית הכספים</h2>
+    
+    <div class="devs">
+      <div class="dev r"><span class="demo-tag">דוגמה · נתונים להמחשה</span><div class="bar"><i></i><i></i><i></i><em>בקרת שכר נובמבר · <span class="ltr">Excel</span></em></div>
+        <div class="scr xl"><div class="tabs"><span class="on">חריגים לבדיקה</span><span>השוואה מלאה</span><span>סיכום</span></div>
+          <table><tr><th>עובד</th><th>מה השתנה</th><th>שינוי</th><th>סטטוס</th></tr>
+          <tr><td>עובד 017</td><td>ברוטו מול אוקטובר</td><td class="n">+18%</td><td><span class="flag hi">לבדוק</span></td></tr>
+          <tr><td>עובד 044</td><td>שעות נוספות</td><td>62 שעות</td><td><span class="flag hi">חריג</span></td></tr>
+          <tr><td>עובד 103</td><td>עובד חדש</td><td class="n">—</td><td><span class="flag">חסר טופס 101</span></td></tr>
+          <tr><td>עובד 088</td><td>עזיבה</td><td class="n">—</td><td><span class="flag">גמר חשבון</span></td></tr>
+          <tr><td>עובד 021</td><td>ברוטו מול אוקטובר</td><td class="n">+11%</td><td><span class="flag">העלאה מאושרת?</span></td></tr>
+          <tr><td>עובד 065</td><td>ניכוי חדש</td><td class="n">—</td><td><span class="flag">לאמת</span></td></tr></table></div></div>
+      <div class="dev l"><span class="demo-tag">דוגמה</span><div class="bar"><i></i><i></i><i></i><em>3 שקפים · <span class="ltr">PowerPoint</span></em></div>
+        <div class="scr dk"><div class="fan" style="height:420px">
+          <div class="sl"><div class="t">עלות השכר · נובמבר</div><div class="c"><div class="big">₪2.31M</div><span class="ltr">+2.4%</span> מול אוקטובר<div class="mini"><i style="--h:60%"></i><i style="--h:64%"></i><i style="--h:62%"></i><i style="--h:68%"></i></div></div></div>
+          <div class="sl"><div class="t">6 חריגים לבדיקה</div><div class="c">2 שינויי ברוטו מעל 10% · שעות נוספות חריגות · עובד חדש בלי טופס 101</div></div>
+          <div class="sl"><div class="t">מה השתנה מול אוקטובר</div><div class="c">עובד אחד נכנס, עובד אחד עזב. אין שינוי מהותי בהפרשות.</div></div>
+        </div></div></div>
+    </div>
+    <div class="teaser">רוצות שהבקרה הזאת תרוץ אצלכן כל חודש? <b>בליווי אישי עם טל ולנשטין</b> בונים אותה על תוכנת השכר שלכן.</div>
+    <div class="wow-foot"><span class="ltr">Claude</span> יוצר קובצי <span class="ltr">Excel</span> ו־<span class="ltr">PowerPoint</span> מעוצבים מתוך השיחה. כל המספרים והעובדים כאן הם דוגמה להמחשה, לא פלט אמיתי.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">חשבת השכר, שלב התוצר. הסולם הוויזואלי: מקובץ ייצוא גולמי לקובץ Excel עם לשונית חריגים ולמצגת מעוצבת של 3 שקפים. כל המספרים והעובדים כאן הם דוגמה להמחשה. חשבת השכר עוברת על כל חריג ומחליטה; Claude מסמן, היא חותמת. טיזר: ״רוצות שהבקרה הזאת תרוץ אצלכן כל חודש? בליווי אישי איתי בונים אותה על תוכנת השכר שלכן״.</aside>
+</section>
+
 <!-- SELF ASSESSMENT -->
 <section class="slide s-compare" data-title="כלים ואבטחה">
 <div class="head">
@@ -2395,6 +2764,40 @@ html.wk .mcp-beam{display:none}
   </div>
   <aside class="notes">שקף אייג׳נטים. החלטה 1: ״קלוד דואט״ = Claude Cowork; לא מצאנו מוצר Anthropic בשם Duet בהקשר הזה (Google Duet AI הישן הפך ל־Gemini, ואינו המוצר שעליו מדובר כאן). החלטה 2: Dots = OpenAI Dots, 29.9.2026. החלטה 3: Grok Bot לפי x.ai/bot בלבד, בלי ניחושים. הבדל לקול: Cowork הוא Claude שממשיך משימת ידע בין מכשירים; Dots הוא סוכן תמידי עם מחשב ענן של OpenAI; Grok Bot הוא צוות בוטים עם מחשב לכל אחד, משולב בצוות. כולם דורשים גדרות ואישור אדם.</aside>
 </section>
+<!-- v8: agent team -->
+<section class="slide s-wow " data-title="צוות האייג׳נטים שלי">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">שכבה ארגונית · דוגמה אמיתית מ־<span class="ltr">AI Finance</span></div>
+    <h2>צוות האייג׳נטים שלי</h2>
+    <p class="wow-lead">כל בוט עם תפקיד אחד. כל תוצר עובר ביקורת, ושום דבר לא יוצא החוצה בלי אישור שלי.</p>
+    <div class="team">
+      <div class="tm " style="--i:0;--z:30"><div class="av">ק</div><div><b>קונקטור</b><small>עיצוב: הופך טקסט מוגמר לגרסה מעוצבת במותג</small></div></div>
+      <div class="tm " style="--i:1;--z:30"><div class="av">מ</div><div><b>מוזה</b><small>ארט דיירקטור: קונספטים ויזואליים נועזים</small></div></div>
+      <div class="tm rev" style="--i:2;--z:30"><div class="av">ק</div><div><b>קורא עצמאי</b><small>רואה רק את התוצר הסופי: ״הייתי עוצרת לקרוא?״</small></div></div>
+      <div class="tm rev" style="--i:3;--z:30"><div class="av">C</div><div><b><span class="ltr">Codex</span></b><small>בודק עובדות, שפה וסלוגנים לפני כל ביקורת</small></div></div>
+      <div class="tm rev" style="--i:4;--z:24"><div class="av">ש</div><div><b>שומרת הסף · לינקדאין</b><small>עורכת ובודקת כל פוסט לפני שהוא עולה</small></div></div>
+      <div class="tm " style="--i:5;--z:24"><div class="av">י</div><div><b>היועצת האסטרטגית לתוכן</b><small>בריף קצר לפני כל פוסט</small></div></div>
+      <div class="tm " style="--i:6;--z:24"><div class="av">T</div><div><b><span class="ltr">Taltil</span></b><small>לינקדאין, מייל ויומן: קוראת, מסכמת ומנסחת טיוטות</small></div></div>
+      <div class="tm " style="--i:7;--z:24"><div class="av">▶</div><div><b><span class="ltr">Clip Director</span></b><small>חבילת וידאו מלאה: תסריט, שוטים ותזמונים</small></div></div>
+      <div class="tm " style="--i:8;--z:18"><div class="av">ו</div><div><b>וואטסאפ · <span class="ltr">AI Finance</span></b><small>תוכן לקהילה</small></div></div>
+      <div class="tm " style="--i:9;--z:18"><div class="av">ו</div><div><b>וואטסאפ · ״חשבת השכר החדשה״</b><small>תוכן AI פשוט, פעמיים בשבוע</small></div></div>
+      <div class="tm " style="--i:10;--z:18"><div class="av">ב</div><div><b>בונה וובינרים</b><small>מצגת, מדריכים, קובץ תרגול והזמנה</small></div></div>
+      <div class="tm hub" style="--i:11;--z:18"><div class="av">✓</div><div><b>מרכז האישורים</b><small>כל מה שיוצא החוצה מגיע דרכו אליי</small></div></div>
+    </div>
+    <div class="flow">
+      <div class="fs" style="--i:0">טיוטה<small>הבוט שאחראי על המשימה</small></div><span class="fa">←</span>
+      <div class="fs" style="--i:1">ביקורת<small><span class="ltr">Codex</span> · קורא עצמאי</small></div><span class="fa">←</span>
+      <div class="fs" style="--i:2">מרכז האישורים<small>תור אחד, ממוספר</small></div><span class="fa">←</span>
+      <div class="fs me" style="--i:3">טל מאשרת<small><span class="ltr">Human in the loop</span></small></div>
+    </div>
+    <div class="wow-foot">הצוות רץ על <span class="ltr">Grok Bot</span>. כשבוטים חלוקים, הם מציגים נימוקים זה לזה, ורק מה שלא הוכרע מגיע אליי דרך מרכז האישורים.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">צוות האייג׳נטים של טל ב-AI Finance, דוגמה אמיתית לשכבה ארגונית. הבוטים: קונקטור (עיצוב), מוזה (ארט דיירקטור), קורא עצמאי (קורא רק את התוצר הסופי, בלי בריף, ושואל אם זר היה עוצר לקרוא), Codex (בודק עובדות, שפה וסלוגנים לפני מוזה והקורא העצמאי), שומרת הסף ללינקדאין, היועצת האסטרטגית לתוכן (בריף לפני כל פוסט), Taltil (לינקדאין, מייל ויומן; מייל יוצא תמיד כטיוטה), Clip Director (חבילת וידאו), שני בוטים של וואטסאפ לשתי הקהילות (AI Finance, ו״חשבת השכר החדשה״ עם פוסטים בימי ראשון ורביעי), בונה וובינרים, ומרכז האישורים. הזרימה: טיוטה, ביקורת, מרכז האישורים, אישור של טל. הכללים: בוטים מחליטים לבד בצעדי ביניים ומביאים תוצר גמור; כשבוטים חלוקים הם מציגים נימוקים ומחליטים או מסלימים למרכז האישורים. המסר לקהל: כך נראית שכבה ארגונית, לא עוד כלי אישי.</aside>
+</section>
+
 
 <section class="slide s-wow s-acct" data-title="ChatGPT לחשבונאות">
   <div class="wow-stage">
