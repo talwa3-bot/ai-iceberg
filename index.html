@@ -1663,6 +1663,110 @@ html.static .s-wow .zero-ex,html.lite .s-wow .zero-ex{transform:rotateX(8deg) tr
 @media (prefers-reduced-motion:reduce){.s-wow.anim .robo.learn,.s-wow.anim .rarr,.s-wow.anim .zero-ex{animation:none!important;filter:none!important;opacity:1!important;transform:none!important}}
 
 
+
+/* ===== v9: layer 8, research bubbles, API/MCP/plugin, research callbacks ===== */
+:root{--l8:#3E1B14}
+.s-layer .depth i:nth-child(8){width:54px;background:#3E1B14}
+.s-layer.anim .depth i:nth-child(8){animation-delay:1.12s}
+.s-self .rung[data-i="7"]{--i:7}
+.s-self.anim .rung:nth-child(8){animation-delay:.78s}
+.s-self .ladder.l8{top:270px;gap:10px}
+.s-self .ladder.l8 .rung{padding:10px 26px}
+/* layer 8 */
+.s-l8 .txt{width:790px;right:150px!important}
+.s-l8 h2{font-size:64px!important;margin-top:22px!important}
+.s-l8 .phrase{font-size:31px!important;margin-top:18px!important}
+.s-l8 .prompt{margin-top:24px!important;padding:22px 30px 24px!important}
+.s-l8 .prompt .q{font-size:23.5px!important;line-height:1.5!important}
+.s-l8 .tools{margin-top:16px!important;font-size:20px!important}
+.l8-viz{position:absolute;left:90px;top:92px;width:860px;height:760px;transform:rotateY(-6deg) rotateX(3deg) translateZ(36px);transform-style:preserve-3d}
+.l8-exec{position:relative;margin:0 auto;width:560px;padding:18px 24px;border-radius:24px;background:#fff;box-shadow:0 22px 48px rgba(120,60,30,.18);border-right:10px solid var(--l7);transform:translateZ(30px)}
+.l8-exec b{display:block;font:900 27px "Heebo",sans-serif;color:var(--ink)}
+.l8-exec small{display:block;font:500 19px/1.4 "Heebo",sans-serif;color:var(--muted);margin-top:4px}
+.l8-wall{position:relative;margin:22px 0 18px;height:34px;display:flex;align-items:center;justify-content:center}
+.l8-wall::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:4px dashed var(--l8);transform-origin:center}
+.l8-wall span{position:relative;background:var(--l8);color:#fff;font:800 18px "Heebo",sans-serif;padding:6px 18px;border-radius:999px;letter-spacing:.04em}
+.l8-revs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;transform-style:preserve-3d}
+.l8-rev{position:relative;background:#fff;border-radius:20px;padding:14px 14px 12px;box-shadow:0 18px 40px rgba(80,35,15,.18);border-top:8px solid var(--l8);transform:translateZ(calc(var(--z,20) * 1px))}
+.l8-rev h4{margin:0 0 6px;font:900 21px/1.2 "Heebo",sans-serif;color:var(--ink)}
+.l8-rev .r{font:500 15.5px/1.38 "Heebo",sans-serif;color:#4a3329;margin-top:5px}
+.l8-rev .r b{color:var(--l8);font-weight:800}
+.l8-rev .r.no b{color:#7a2e1f}
+.l8-human{margin:18px auto 0;width:520px;text-align:center;padding:14px 18px;border-radius:22px;background:linear-gradient(180deg,#0b2a8a,#061038);color:#fff;box-shadow:0 20px 44px rgba(6,16,56,.35),0 0 0 3px rgba(139,211,255,.55);transform:translateZ(44px)}
+.l8-human b{display:block;font:900 25px "Heebo",sans-serif}
+.l8-human small{display:block;font:600 17px "Heebo",sans-serif;color:#8BD3FF;margin-top:2px}
+.l8-arr{text-align:center;font:900 26px "Heebo",sans-serif;color:var(--l8);margin-top:8px;line-height:1}
+.s-l8.anim .l8-exec,.s-l8.anim .l8-rev,.s-l8.anim .l8-human{opacity:0;animation:depth-in .7s cubic-bezier(.2,.75,.2,1) forwards}
+.s-l8 .l8-exec{--rest:translateZ(30px)}.s-l8 .l8-human{--rest:translateZ(44px)}.s-l8 .l8-rev{--rest:translateZ(calc(var(--z,20) * 1px))}
+.s-l8.anim .l8-exec{animation-delay:.35s}
+.s-l8.anim .l8-wall::before{animation:l8-cut .8s .7s ease both}
+.s-l8.anim .l8-wall span{opacity:0;animation:cream-in .4s 1s ease forwards}
+.s-l8.anim .l8-rev:nth-child(1){animation-delay:1.05s}.s-l8.anim .l8-rev:nth-child(2){animation-delay:1.2s}.s-l8.anim .l8-rev:nth-child(3){animation-delay:1.35s}
+.s-l8.anim .l8-human{animation-delay:1.6s}
+@keyframes l8-cut{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+html.lite .s-l8 .l8-exec,html.lite .s-l8 .l8-rev,html.lite .s-l8 .l8-human,html.lite .s-l8 .l8-wall::before,html.lite .s-l8 .l8-wall span,
+html.static .s-l8 .l8-exec,html.static .s-l8 .l8-rev,html.static .s-l8 .l8-human,html.static .s-l8 .l8-wall::before,html.static .s-l8 .l8-wall span{animation:none!important;opacity:1!important}
+@media (prefers-reduced-motion:reduce){.s-l8.anim .l8-exec,.s-l8.anim .l8-rev,.s-l8.anim .l8-human,.s-l8.anim .l8-wall::before,.s-l8.anim .l8-wall span{animation:none!important;opacity:1!important}}
+.s-compare .cmp-note{margin-top:30px!important}
+/* research note (callback) */
+.rnote{position:absolute;z-index:6;display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border-radius:16px;font:600 16.5px/1.4 "Heebo",sans-serif;max-width:620px}
+.rnote .rt{flex:none;font:800 13px "Heebo",sans-serif;letter-spacing:.08em;padding:4px 10px;border-radius:999px}
+.rnote.dk{background:rgba(6,16,56,.82);border:1px solid rgba(139,211,255,.55);color:#E6F1FF;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.rnote.dk .rt{background:#8BD3FF;color:#061038}
+.rnote.lt{background:#fff;border:1px solid rgba(11,42,138,.18);color:#1b2a55;box-shadow:0 14px 30px rgba(80,35,15,.14)}
+.rnote.lt .rt{background:#0b2a8a;color:#fff}
+.rnote small{display:block;font-weight:500;font-size:13.5px;opacity:.8;margin-top:2px}
+.rnote.in{position:relative;max-width:none;margin-top:14px}
+.anim .rnote{opacity:0;animation:rise .5s 1.4s ease forwards}
+html.lite .rnote,html.static .rnote{animation:none!important;opacity:1!important}
+@media (prefers-reduced-motion:reduce){.anim .rnote{animation:none!important;opacity:1!important}}
+/* research bubbles */
+.s-bub .bub-field{position:absolute;left:80px;right:80px;top:230px;bottom:110px;transform-style:preserve-3d;z-index:2}
+.rbub{position:absolute;width:var(--d);height:var(--d);border-radius:50%;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;color:#fff;
+ background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.34),rgba(139,211,255,.16) 32%,rgba(11,42,138,.42) 70%,rgba(6,16,56,.7));
+ border:1px solid rgba(139,211,255,.6);box-shadow:0 30px 60px rgba(0,0,0,.42),inset 0 -18px 40px rgba(6,16,56,.55),inset 0 10px 24px rgba(255,255,255,.18),0 0 40px rgba(139,211,255,.22);
+ transform:translateZ(var(--tz,40px));transition:box-shadow .3s,transform .3s}
+.rbub .bh{font:800 21px/1.25 "Heebo",sans-serif}
+.rbub .bn{font:900 60px/1 "Heebo",sans-serif;color:#8BD3FF;margin:10px 0 6px;direction:ltr;text-shadow:0 0 24px rgba(139,211,255,.5)}
+.rbub .bn.sm{font-size:38px}
+.rbub .bt{font:500 17px/1.35 "Heebo",sans-serif;color:#D4E6FF}
+.rbub .bs{font:700 13px "Heebo",sans-serif;color:#8BD3FF;margin-top:8px;letter-spacing:.04em}
+.rbub .bd{display:none;font:500 16px/1.38 "Heebo",sans-serif;color:#fff;margin-top:8px;padding-top:8px;border-top:1px dashed rgba(139,211,255,.6)}
+.rbub.open{z-index:5;transform:translateZ(120px) scale(1.12);box-shadow:0 40px 80px rgba(0,0,0,.55),0 0 60px rgba(139,211,255,.5),inset 0 -18px 40px rgba(6,16,56,.55)}
+.rbub.open .bt{display:none}.rbub.open .bd{display:block}
+.rbub .hint{position:absolute;bottom:18%;font:700 12px "Heebo",sans-serif;color:#8BD3FF;opacity:.8}
+.rbub.open .hint{display:none}
+.s-bub.anim .rbub{animation:bub-in .9s cubic-bezier(.2,.75,.2,1) both,bub-float 6s ease-in-out infinite;animation-delay:calc(.3s + var(--i) * .15s),calc(1.4s + var(--i) * .7s)}
+.s-bub.anim .rbub.open{animation:none}
+@keyframes bub-in{from{opacity:0;transform:translateZ(-300px) translateY(80px) scale(.6)}to{opacity:1;transform:translateZ(var(--tz,40px))}}
+@keyframes bub-float{0%,100%{transform:translateZ(var(--tz,40px)) translateY(0)}50%{transform:translateZ(var(--tz,40px)) translateY(-16px)}}
+html.lite .s-bub .rbub,html.static .s-bub .rbub{animation:none!important;opacity:1!important}
+@media (prefers-reduced-motion:reduce){.s-bub.anim .rbub{animation:none!important;opacity:1!important}}
+/* API / MCP / plugin */
+.s-amp .amp-ic{height:96px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;transform:translateZ(30px)}
+.s-amp .ic-pipe{width:220px;height:30px;border-radius:15px;background:linear-gradient(180deg,#8BD3FF,#3a9bd8);position:relative;box-shadow:0 0 24px rgba(139,211,255,.45)}
+.s-amp .ic-pipe::before,.s-amp .ic-pipe::after{content:"";position:absolute;top:-10px;width:22px;height:50px;border-radius:8px;background:#0b2a8a;border:2px solid #8BD3FF}
+.s-amp .ic-pipe::before{left:-6px}.s-amp .ic-pipe::after{right:-6px}
+.s-amp .ic-pipe i{position:absolute;top:9px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 10px #fff;animation:amp-flow 2.2s linear infinite}
+.s-amp .ic-pipe i:nth-child(2){animation-delay:.73s}.s-amp .ic-pipe i:nth-child(3){animation-delay:1.46s}
+@keyframes amp-flow{from{left:14px}to{left:190px}}
+.s-amp .ic-sock{width:92px;height:92px;border-radius:24px;background:linear-gradient(180deg,#e9f4ff,#b9d9f5);display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 0 30px rgba(139,211,255,.45),inset 0 -6px 12px rgba(11,42,138,.2)}
+.s-amp .ic-sock i{width:14px;height:34px;border-radius:7px;background:#0b2a8a}
+.s-amp .ic-box{width:120px;height:84px;position:relative;border-radius:10px;background:linear-gradient(180deg,#4d8dff,#0b2a8a);border:2px solid #8BD3FF;box-shadow:0 0 30px rgba(139,211,255,.4)}
+.s-amp .ic-box::before{content:"";position:absolute;left:-8px;right:-8px;top:-18px;height:20px;border-radius:6px;background:#8BD3FF;transform:rotateX(30deg)}
+.s-amp .ic-box b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:6px;font:800 13px "Heebo",sans-serif;color:#fff}
+.s-amp .ic-box b span{background:rgba(255,255,255,.2);border-radius:6px;padding:2px 5px}
+.s-amp .wow-t{font-size:34px!important;text-align:center}
+.s-amp .one{font:700 21px/1.4 "Heebo",sans-serif;color:#fff;text-align:center;margin:6px 0 10px}
+.s-amp .row{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:8px 0;border-top:1px solid rgba(139,211,255,.18);font:500 18px/1.4 "Heebo",sans-serif;color:#D4E6FF}
+.s-amp .row span{font:800 14px "Heebo",sans-serif;color:#8BD3FF;letter-spacing:.05em;padding-top:3px}
+.s-amp .row.an{color:#fff;font-weight:700}
+.s-amp .strip{position:relative;z-index:2;display:flex;justify-content:center;gap:18px;margin-top:22px;transform:rotateX(8deg) translateZ(30px)}
+.s-amp .strip div{padding:12px 26px;border-radius:999px;background:rgba(139,211,255,.14);border:1px solid #8BD3FF;font:800 24px "Heebo",sans-serif;color:#fff}
+.s-amp .strip b{color:#8BD3FF}
+html.lite .s-amp .ic-pipe i{animation:none;left:100px}
+@media (prefers-reduced-motion:reduce){.s-amp .ic-pipe i{animation:none;left:100px}}
+
 /* ===== lite mode: phones/tablets only (html.lite). Desktop unaffected. ===== */
 html.lite .slide:not(.active){display:none!important}
 html.lite .slide{transition:none!important}
@@ -1761,11 +1865,32 @@ html.wk .mcp-beam{display:none}
   <div class="wrap">
     <div class="kicker"><span class="ltr">AI Finance</span> · מדריך מעשי לאנשי כספים · <span class="ltr">ChatGPT, Claude, Copilot, Gemini</span></div>
     <h1 class="h-xl">הקרחון של<br><em>ה‑AI</em> בפיננסים</h1>
-    <p class="lead">שבע שכבות, צעד אחרי צעד.<br>מהשאלה הראשונה בצ׳אט — עד דשבורד שמתעדכן לבד.</p>
+    <p class="lead">שמונה שכבות, צעד אחרי צעד.<br>מהשאלה הראשונה בצ׳אט, עד צוות מבקרות פנימיות.</p>
   </div>
   <div class="byline"><b>טל ולנשטין</b>, רו״ח · מרצה ל‑AI בפיננסים · מייסדת שותפה של <span class="ltr">AI Finance</span></div>
-  <aside class="notes">פתיחה. הכלים משתנים כל הזמן — אבל סדר השכבות נשאר. המצגת בנויה לפי שבע השכבות של האינפוגרפיקה של Nicolas Boucher, בהתאמה לכלים השונים (ChatGPT, Claude, Copilot, Gemini).</aside>
+  <aside class="notes">פתיחה. הכלים משתנים כל הזמן — אבל סדר השכבות נשאר. המצגת בנויה לפי שבע השכבות של האינפוגרפיקה של Nicolas Boucher, ועוד שכבה 8 — תוספת של טל: מבקרות פנימיות, בהתאמה לכלים השונים (ChatGPT, Claude, Copilot, Gemini).</aside>
 </section>
+<!-- v9: research bubbles -->
+<section class="slide s-wow s-bub" data-title="מחקר · בועות פתיחה">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">מחקר · מה <span class="ltr">Anthropic</span> פרסמה בחודשיים האחרונים</div>
+    <h2>לפני שצוללות: חמש בועות מהמחקר</h2>
+    <p class="wow-lead">לחיצה על בועה פותחת עוד פרט. כל מספר כאן מקושר למקור רשמי.</p>
+    <div class="bub-field">
+      <div class="rbub" role="button" tabindex="0" style="--i:0;--d:350px;--tz:60px;right:0px;top:40px"><div class="bh">מומחים הולכים אחרי האייג׳נט</div><div class="bn">86%</div><div class="bt">50 אנליסטים הלכו אחרי הנטייה של האייג׳נט ב־86% מההחלטות</div><div class="bd">77% השתמשו בנימוקים שלו, ורק 15% ציינו שהם ממנו. הנטייה חוזקה בכוונה בניסוי.</div><div class="bs">Anthropic · 27.10.2026</div></div>
+      <div class="rbub" role="button" tabindex="0" style="--i:1;--d:350px;--tz:40px;right:370px;top:200px"><div class="bh">AI מגדיל תפוקה, לא רק חוסך</div><div class="bn">58</div><div class="bt">ראיונות עם 58 לקוחות ארגוניים: רוב הערך מתפוקה גדולה יותר, לא מקיצוץ עלויות</div><div class="bd">מעט מאוד פיטורים מקומיים בגלל AI. יותר דיווחו על פחות גיוס ופחות קבלנים, במיוחד בחו״ל.</div><div class="bs">Anthropic · 23.11.2026</div></div>
+      <div class="rbub" role="button" tabindex="0" style="--i:2;--d:350px;--tz:70px;right:740px;top:20px"><div class="bh">תשומת הלב האנושית היא צוואר הבקבוק</div><div class="bn">6:1</div><div class="bt">ב־Anthropic, שעות האייג׳נטים עקפו את מספר העובדים פי 6</div><div class="bd">האנשים כבר לא כותבים הכול; הם מכוונים, בודקים ומחליטים.</div><div class="bs">Anthropic · 16.10.2026</div></div>
+      <div class="rbub" role="button" tabindex="0" style="--i:3;--d:350px;--tz:50px;right:1100px;top:210px"><div class="bh">KPMG: לאמץ ולאבטח יחד</div><div class="bn sm">KPMG</div><div class="bt">״לאמץ ולאבטח באותו זמן. לחכות ולראות זה לא בר־קיימא.״</div><div class="bd">Todd Lohr, KPMG. KPMG Digital Gateway Powered by Claude. בתרגום חופשי.</div><div class="bs">claude.com · 23.11.2026</div></div>
+      <div class="rbub" role="button" tabindex="0" style="--i:4;--d:350px;--tz:30px;right:1460px;top:30px"><div class="bh">אדם בלולאה: זה כתוב במדיניות</div><div class="bn sm">HITL</div><div class="bt">המלצה שמשפיעה על הכספים של אדם: אדם מוסמך שיכול לבדוק ולשנות</div><div class="bd">מדיניות השימוש של Anthropic, בתוקף מ־12.11.2026. הדרישה לא חדשה, הנוסח הובהר; גם האדם המושפע צריך לדעת שנעשה שימוש ב־AI.</div><div class="bs">anthropic.com · 12.11.2026</div></div>
+    </div>
+    <div class="wow-foot">מקורות: anthropic.com/research/agents-judgment-calls · anthropic.com/research/working-with-ai · anthropic.com/research/employment-at-anthropic · claude.com/resources/articles/kpmg-todd-lohr-on-ai-when-your-data-is-also-your-clients-data · anthropic.com/news/2026-usage-policy-update</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף פתיחה עם בועות מחקר. לדבר מעל כל בועה, וללחוץ כדי לפתוח פרט. 1) Anthropic, How AI agents shape experts’ judgment calls, 27.10.2026 (https://www.anthropic.com/research/agents-judgment-calls): 50 אנליסטים מקצועיים עם ניסיון בהסקה סיבתית עשו ניתוח סטטיסטי עם Claude Code. בכל החלטה, הגרלה קבעה לאיזו מבין שתי אפשרויות סבירות האייג׳נט ״נוטה״, בלי שהם ידעו. הם הלכו אחרי הנטייה ב-86% מהבחירות, כשבלי השפעה היינו מצפים לכ-50%. 77% השתמשו בנימוקים של האייג׳נט, לפעמים מילה במילה, ורק 15% ציינו שהם ממנו. הסתייגות חשובה: הנטייה חוזקה בכוונה כדי למדוד את האפקט; כשלאייג׳נט אין העדפה מוגדרת, האפקט עשוי להיות קטן יותר. 2) Anthropic, Working with AI, 23.11.2026 (https://www.anthropic.com/research/working-with-ai): 66 ראיונות עם 58 לקוחות ארגוניים של Anthropic. רוב הערך מגיע מתפוקה גדולה יותר ולא מקיצוץ עלויות. מעט מאוד דוגמאות לפיטורים מקומיים בגלל אוטומציה; רוב החברות דיווחו על פחות גיוס בגלל AI, ורבות על פחות קבלנים, במיוחד בחו״ל. הערך הגבוה ביותר הגיע עם ארגון מחדש של העבודה. הסתייגות: המדגם הוא לקוחות של Anthropic, ראיונות ולא סקר מייצג. 3) Anthropic, How employment is changing at Anthropic, 16.10.2026 (https://www.anthropic.com/research/employment-at-anthropic): שעות האייג׳נטים עקפו את מספר העובדים ביחס של 6 ל-1, ותשומת הלב האנושית הפכה לצוואר הבקבוק. הסתייגות: חברה אחת, ומעבדת AI — לא מייצגת משרד רו״ח. 4) ראיון עם Todd Lohr מ-KPMG, 23.11.2026 (https://claude.com/resources/articles/kpmg-todd-lohr-on-ai-when-your-data-is-also-your-clients-data): לאמץ ולאבטח באותו זמן; ״לחכות ולראות״ לא בר-קיימא. KPMG Digital Gateway Powered by Claude. הציטוט בתרגום חופשי. רלוונטי במיוחד לקהל ב-KPMG. 5) Anthropic, 2026 Usage Policy update (https://www.anthropic.com/news/2026-usage-policy-update), בתוקף מ-12.11.2026: כשהשימוש משפיע על הבריאות, הזכויות, הכספים או הפרנסה של אדם, נדרש ״human in the loop״ מוסמך שיכול לבדוק ולשנות את ההמלצה, והאדם המושפע צריך לדעת שנעשה שימוש ב-AI. Anthropic מציינת שהדרישות לא השתנו; הסעיף נוסח מחדש כדי להבהיר. מעבר: מכאן לסרטון ההיכרות ולקרחון.</aside>
+</section>
+
 
 <!-- 2 INSPIRATION -->
 <section class="slide s-insp" data-title="השראה">
@@ -1785,10 +1910,10 @@ html.wk .mcp-beam{display:none}
   </div>
   <div class="credit">
     <div class="ic">🧊</div>
-    <p>מבוסס על האינפוגרפיקה של <b class="ltr">Nicolas Boucher</b><br><b class="ltr">“The Claude iceberg for finance”</b><br>אותן שבע שכבות, באותו סדר — בעברית, ובהתאמה לכלים נוספים.</p>
+    <p>מבוסס על האינפוגרפיקה של <b class="ltr">Nicolas Boucher</b><br><b class="ltr">“The Claude iceberg for finance”</b><br>אותן שבע שכבות, באותו סדר — בעברית, ובהתאמה לכלים נוספים.<br><b>שכבה 8: תוספת של טל.</b></p>
   </div>
   </div>
-  <div class="foot" style="color:#9fb6bd"><div class="src">קרדיט: Nicolas Boucher, “The Claude iceberg for finance” (אינפוגרפיקה). ההתאמה לעברית ולכלים נוספים: AI Finance.</div><div class="pg"></div></div>
+  <div class="foot" style="color:#9fb6bd"><div class="src">קרדיט: Nicolas Boucher, “The Claude iceberg for finance” (אינפוגרפיקה). ההתאמה לעברית ולכלים נוספים: AI Finance. שכבה 8 (מבקרות פנימיות): תוספת של טל ולנשטין.</div><div class="pg"></div></div>
   <aside class="notes">המשפטים על הקצה ועל העומק הם דימוי, לא נתון סטטיסטי. ההשראה: Nicolas Boucher, The Claude iceberg for finance. לא מצוטטים נתונים מהאינפוגרפיקה.</aside>
 </section>
 
@@ -1879,7 +2004,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 1/8</div>
+    <div class="wow-kicker">יסודות · 1/6</div>
     <h2>מה זה LLM, ואיך הוא עובד</h2>
     <p class="wow-lead">מודל שפה גדול (<span class="ltr">LLM</span>) לא ״יודע״ חשבונאות כמו רואה חשבון. הוא מנחש, מילה אחר מילה, מה הכי סביר שיבוא עכשיו — לפי מה שלמד ולפי מה שכתוב לפניו.</p>
     <div class="llm-demo" aria-label="המחשת חיזוי המילה הבאה">
@@ -1904,7 +2029,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 2/8</div>
+    <div class="wow-kicker">יסודות · 2/6</div>
     <h2>טוקנים: יחידת המידה של המודל</h2>
     <p class="wow-lead">המודל לא קורא ״מילים״ כמונו. הוא מפרק טקסט לחתיכות קטנות שנקראות טוקנים — וכל טוקן תופס מקום בחלון ההקשר ועולה כסף.</p>
     <div class="tok-demo" aria-label="פירוק משפט עברי לטוקנים">
@@ -1938,93 +2063,45 @@ html.wk .mcp-beam{display:none}
   <aside class="notes">שקף טוקנים. לא חייבים להיכנס לטכניקה: ״המודל משלם וזוכר לפי חתיכות, לא לפי עמודים.״ הדוגמה על המסך: ״ההכנסות ברבעון השלישי עלו ב־12%״ = 15 טוקנים, ובאנגלית (Third-quarter revenue rose 12%) = 7 טוקנים. נמדד ב־tiktoken o200k_base (הטוקנייזר של OpenAI) ב־23.11.2026 — הערכה; הטוקנייזר של Claude סופר אחרת. על טקסט פיננסי ארוך היחס היה כ־1.4 (ראו השקף הבא) — במשפט קצר הפער נראה גדול יותר. טיפ מעשי: לצרף רק את הסעיפים הרלוונטיים, לא את כל ההסכם בבת אחת, ולשמור סיכום מסודר. אם שואלים כמה טוקנים זה עמוד — התשובה: תלוי בשפה, בטבלאות ובפורמט.</aside>
 </section>
 
-<section class="slide s-wow" data-title="יסודות · כלכלת הטוקנים">
+
+
+<!-- v9: merged API/MCP/plugin -->
+<section class="slide s-wow s-amp" data-title="יסודות · API, MCP ופלאגין">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 3/8</div>
-    <h2>כלכלת הטוקנים: לחשוב עלות למשימה</h2>
-    <p class="wow-lead">המחירים משתנים בין ספקים ומודלים, ומתעדכנים. מה שנשאר יציב: פלט יקר מקלט, מודל חזק יקר יותר, והעלות האמיתית היא למשימה — לא ל״צ׳אט״.</p>
-    <div class="eco-wrap">
-    <div class="tokx" aria-label="הערכת טוקנים לפי סוג קובץ, עברית מול אנגלית">
-      <div class="tokx-h">כמה טוקנים זה? <em>הערכה</em> · טוקני קלט ליחידה</div>
-      <div class="tokx-grid"><div class="tx-card"><div class="tx-n">עמוד PDF</div><div class="tx-s">טקסט + תמונה של העמוד</div><div class="tx-row"><span>עברית</span><b class="ltr">3,700–5,800</b></div><div class="tx-row en"><span>English</span><b class="ltr">3,000–4,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.5–2.3</b> <small>(אנגלית <span class="ltr">$1.2–1.8</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד טקסט</div><div class="tx-s">כ־500 מילים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div><div class="tx-card"><div class="tx-n">גיליון Excel</div><div class="tx-s">50 שורות × 10 עמודות</div><div class="tx-row"><span>עברית</span><b class="ltr">≈4,000</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈3,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.60</b> <small>(אנגלית <span class="ltr">$1.40</span>)</small></div></div><div class="tx-card"><div class="tx-n">תמונה</div><div class="tx-s">1092×1092 פיקסלים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,600</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈1,600</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.64</b> <small>(אנגלית <span class="ltr">$0.64</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד Word</div><div class="tx-s">כ־500 מילים, נקרא כטקסט</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div></div>
+    <div class="wow-kicker">יסודות · 3/6</div>
+    <h2><span class="ltr">API</span>, <span class="ltr">MCP</span> ופלאגין: מה ההבדל</h2>
+    <p class="wow-lead">שלוש מילים ששומעות בכל שיחה על AI. כל אחת עונה על שאלה אחרת: איך מערכת מדברת עם המודל, איך המודל מתחבר לכלים, ואיך מקבלות הכול מוכן.</p>
+    <div class="wow-grid g3">
+      <article class="wow-card"><div class="amp-ic"><div class="ic-pipe"><i></i><i></i><i></i></div></div><div class="wow-t ltr" style="text-align:center">API</div><div class="one">ממשק תוכנה: המערכת שלכן שולחת בקשה למודל ומקבלת תשובה.</div>
+        <div class="row"><span>מי משתמש</span><div>מפתחים ואוטומציות</div></div>
+        <div class="row"><span>בכספים</span><div>כל לילה ה־<span class="ltr">ERP</span> שולח חשבוניות חדשות לסיווג ומקבל חזרה קוד הוצאה</div></div>
+        <div class="row an"><span>דימוי</span><div>הצינור</div></div></article>
+      <article class="wow-card"><div class="amp-ic"><div class="ic-sock"><i></i><i></i></div></div><div class="wow-t ltr" style="text-align:center">MCP</div><div class="one">תקן פתוח של <span class="ltr">Anthropic</span> (25.11.2024): ״שקע אחיד״ שמחבר את המודל לכלים ולנתונים.</div>
+        <div class="row"><span>מי משתמש</span><div>כל אחת שמחברת קונקטור; מפתחים בונים אותם</div></div>
+        <div class="row"><span>בכספים</span><div><span class="ltr">Claude</span> קורא את הכרטסת מ־<span class="ltr">Drive</span>, את ה־<span class="ltr">ERP</span> ואת המייל, בלי העתק־הדבק</div></div>
+        <div class="row an"><span>דימוי</span><div>השקע האחיד</div></div></article>
+      <article class="wow-card"><div class="amp-ic"><div class="ic-box"><b><span>skills</span><span>MCP</span><span>/</span></b></div></div><div class="wow-t" style="text-align:center">פלאגין</div><div class="one">חבילה מוכנה לתפקיד אחד, עם <span class="ltr">skills</span>, קונקטורים, פקודות ו־<span class="ltr">sub-agents</span>. מתקינים ב־<span class="ltr">Cowork</span> או ב־<span class="ltr">Claude Code</span>.</div>
+        <div class="row"><span>מי משתמש</span><div>צוותים שרוצים לעבוד באותה שיטה</div></div>
+        <div class="row"><span>בכספים</span><div>פלאגין <span class="ltr">Financial analysis</span> של <span class="ltr">Anthropic</span>: <span class="ltr">/dcf</span>, <span class="ltr">/comps</span> וקונקטורים לספקי מידע</div></div>
+        <div class="row an"><span>דימוי</span><div>הארגז המוכן</div></div></article>
     </div>
-    <div class="eco-demo" aria-label="מגדל עלות לפי מספר עמודי PDF בעברית">
-      <div class="eco-tower" id="ecoTower"></div>
-      <div class="eco-side">
-        <label for="ecoRange">כמה עמודי PDF בעברית? <b id="ecoN">200</b></label>
-        <input type="range" id="ecoRange" min="10" max="500" step="10" value="200" />
-        <div class="eco-cost" id="ecoCost"></div>
-      </div>
-    </div>
-    </div>
-    <div class="wow-grid g2 has-viz">
-  <article class="wow-card"><div class="wow-k">כלל אצבע 1</div><div class="wow-t">פלט יקר מקלט</div><p>ייצור תשובה ארוכה עולה יותר מקריאת אותו היקף. לבקש תשובה ממוקדת — לא רק ״יפה יותר״, גם זול ומדויק יותר.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 2</div><div class="wow-t">מודל לפי משימה</div><p>סיכום שגרתי לא חייב את המודל החזק ביותר. בדיקת אמות מידה, חוזה, או ניתוח רב־מסמכים — כן שווה מודל חזק / מצב חשיבה.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 3</div><div class="wow-t">הקשר ארוך עולה</div><p>כל קובץ שמצרפים וכל סיבוב בשיחה נכנסים לחיוב. כדאי: מסמך נקי, שאלה ברורה, בלי לשרשר שיחות אין־סוף על אותם קבצים.</p></article><article class="wow-card"><div class="wow-k">איך מודדים אצלנו</div><div class="wow-t">עלות למשימה</div><p>שואלים: כמה עלה ביאור סגירה / התאמת בנק / טיוטת ביאור — כולל זמן בדיקה שלנו. לא רק ״כמה עולה טוקן״.</p></article>
-</div>
-    <div class="wow-foot foot-wide">הערכה בלבד. PDF ותמונה: Anthropic docs (PDF support, Vision: טוקנים ≈ רוחב×גובה/750). יחס עברית/אנגלית ≈1.4: מדידה שלנו על אותו טקסט פיננסי בשתי השפות (<span class="ltr">tiktoken o200k</span>). מחיר: <span class="ltr">Opus 5.5</span> ‏$4 למיליון טוקני קלט, docs.claude.com · נבדק 23.11.2026.</div>
+    <div class="strip"><div><b class="ltr">API</b> = הצינור</div><div><b class="ltr">MCP</b> = השקע האחיד</div><div><b>פלאגין</b> = הארגז המוכן</div></div>
+    <div class="wow-foot">מקורות: anthropic.com/news/model-context-protocol (25.11.2024) · claude.com/resources/articles/cowork-plugins · claude.com/docs/office-agents/fsi-plugins · anthropic.com/news/finance-agents. השקפים המקוריים על <span class="ltr">API</span> ו־<span class="ltr">MCP</span> נמצאים בנספח.</div>
     <div class="pg"></div>
   </div>
-  <aside class="notes">שקף כלכלת טוקנים. טבלת סוגי הקבצים היא הערכה (נבדק 23.11.2026): PDF — לפי Anthropic, כל עמוד נקרא גם כטקסט (כ־1,500–3,000 טוקנים) וגם כתמונה (כ־1,600 טוקנים לעמוד בגודל 1092×1092; נוסחה: רוחב×גובה/750) — https://docs.claude.com/en/docs/build-with-claude/pdf-support , https://docs.claude.com/en/docs/build-with-claude/vision . עמוד טקסט/Word: 500 מילים; לפי Anthropic מיליון טוקנים ≈ 555 אלף מילים באנגלית → כ־900 טוקנים לעמוד. עברית: מדדנו את אותו טקסט פיננסי בעברית ובאנגלית עם tiktoken o200k_base — עברית צרכה פי 1.4 טוקנים (505 מול 360). זה טוקנייזר של OpenAI, לכן היחס הוא הערכה. Excel: גיליון של 50 שורות × 10 עמודות, כטקסט; עברית ≈ פי 1.14 כי רוב התאים מספרים. Word שמומר ל־PDF נספר לפי תעריף PDF. העלות: 100 יחידות במחיר הקלט של Opus 5.5 ($4 למיליון). המגדל: כל בלוק = 50 עמודי PDF בעברית (~4,750 טוקנים לעמוד); ב־Haiku מעל 100K טוקנים בפרומפט המחיר עולה ל־$0.50 למיליון. המסר לקהל: לבחור מודל לפי סיכון המשימה, ולמדוד עלות כוללת (מודל + זמן רו״ח שבודקת). אם שואלים מחיר עדכני — לפתוח את עמוד התמחור של הספק, לא מהזיכרון.</aside>
+  <aside class="notes">שקף מאוחד: API, MCP ופלאגין. API: ממשק תוכנה; מערכת שולחת בקשה למודל ומקבלת תשובה. מתאים למפתחים ולאוטומציות. דוגמה: ה-ERP שולח כל לילה חשבוניות לסיווג. דימוי: הצינור. MCP: Model Context Protocol, תקן פתוח ש-Anthropic הכריזה עליו ב-25.11.2024 (anthropic.com/news/model-context-protocol); מחבר מודל לכלים ולמקורות מידע בדרך אחידה — בתיעוד של MCP עצמו משווים אותו ליציאת USB-C. דוגמה: Claude קורא כרטסת מ-Drive, נתונים מה-ERP ומיילים, דרך קונקטורים. דימוי: השקע האחיד. פלאגין: לפי Anthropic (claude.com/resources/articles/cowork-plugins), פלאגינים ב-Cowork מאגדים skills, connectors, slash commands ו-sub-agents כדי להפוך את Claude למומחה לתפקיד, לצוות ולחברה; עובדים גם ב-Claude Code. דוגמה אמיתית: ערכת הפלאגינים הפתוחה של Anthropic לשירותים פיננסיים — Financial analysis (ליבה: comps, DCF, LBO, שלושה דוחות, וכל קונקטורי ה-MCP לספקי מידע פיננסי), ועוד Investment banking, Equity research, Private equity (claude.com/docs/office-agents/fsi-plugins). במאי 2026 Anthropic הוסיפה תבניות אייג׳נטים לפיננסים, כולל Month-end closer ו-General ledger reconciler, שמגיעות כפלאגינים (anthropic.com/news/finance-agents). אזהרת Anthropic: ניתוח פיננסי שנוצר ב-AI צריך בדיקה של איש מקצוע מוסמך. רצועת הסיכום: API = הצינור · MCP = השקע האחיד · פלאגין = הארגז המוכן. השקפים המקוריים של API ו-MCP הועברו לנספח בסוף המצגת.</aside>
 </section>
 
-<section class="slide s-wow" data-title="יסודות · API">
-  <div class="wow-stage">
-    <div class="wow-circuit" aria-hidden="true"></div>
-    <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 4/8</div>
-    <h2>מה זה API, ואיך הוא עובד</h2>
-    <p class="wow-lead">API הוא ממשק תוכנה: המערכת שלכן שולחת בקשה למודל ומקבלת תשובה — בלי להדביק נתונים ידנית בצ׳אט אישי.</p>
-    <div class="api-demo" aria-label="זרימת בקשה ותשובה דרך API">
-      <div class="api-row">
-        <div class="api-box">המערכת שלכן<small>ERP / קובץ</small></div>
-        <div class="api-track"></div>
-        <div class="api-gate">שער · מפתח API</div>
-        <div class="api-pkt">JSON</div>
-        <div class="api-box">המודל<small>תשובה</small></div>
-      </div>
-    </div>
-    <div class="wow-grid g2 has-viz">
-  <article class="wow-card"><div class="wow-k">בפשטות</div><div class="wow-t">בקשה ותשובה</div><p>התוכנה שולחת פרומפט, קבצים או נתונים, ומקבלת טקסט או קובץ בחזרה. זה אותו מודל — רק בצינור מבוקר.</p></article><article class="wow-card"><div class="wow-k">למה זה חשוב בכספים</div><div class="wow-t">פחות העתק־הדבק</div><p>אפשר לחבר ERP, סגירה או תיקייה — עם הרשאות, יומן וסביבה ארגונית. לא לשלוח קובץ לקוח מחשבון פרטי.</p></article><article class="wow-card"><div class="wow-k">מפתח גישה</div><div class="wow-t">מי נכנס, מה מותר</div><p>החיבור נעשה עם מפתח והרשאות. מי שמחזיק מפתח פתוח במחשב או בצ׳אט — פתח דלת לנתונים.</p></article><article class="wow-card"><div class="wow-k">גבול ה־API</div><div class="wow-t">עדיין צריך MCP או כלי</div><p>API מדבר עם המודל. כדי שהמודל יקרא מערכת, יריץ כלי או יעדכן קובץ — צריך חיבור כלים. זה הגשר לשקף הבא.</p></article>
-</div>
-    <div class="wow-foot">API = ממשק תכנותי לספק. המדיניות, שמירת הנתונים ורמת הארגון תלויות בחוזה ובתוכנית — לא ב״יש API״ לבד.</div>
-    <div class="pg"></div>
-  </div>
-  <aside class="notes">שקף API. דוגמה חיה: ״במקום להעלות ייצוא כל פעם בצ׳אט, הסקריפט שולח את הקובץ ומחזיר טיוטת פערים.״ להדגיש: API אינו אוטומטית מאובטח; צריך תוכנית ארגונית, איסור על מפתחות במסמכים, ורישום למי יש גישה. מעבר ל־MCP: ה־API הוא הצינור; MCP הוא תקן לחיבור הכלים וההקשר.</aside>
-</section>
 
-<section class="slide s-wow" data-title="יסודות · MCP">
-  <div class="wow-stage">
-    <div class="wow-circuit" aria-hidden="true"></div>
-    <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 5/8</div>
-    <h2>מה זה MCP, ואיך הוא עובד</h2>
-    <p class="wow-lead">MCP — Model Context Protocol — הוא תקן פתוח לחיבור מודל לכלים ולהקשר: כמו ״שקע אחיד״ בין העוזר לבין המערכות שלכן.</p>
-    <div class="mcp-stage" aria-label="טבעת כלים סביב המודל">
-      <div class="mcp-world">
-        <div class="mcp-core"><b>המודל</b><span>MCP</span></div>
-        <div class="mcp-ring">
-          <div class="mcp-tool" style="--i:0"><div class="mcp-billboard"><div class="face">Excel</div></div></div>
-          <div class="mcp-tool" style="--i:1"><div class="mcp-billboard"><div class="face">Drive</div></div></div>
-          <div class="mcp-tool" style="--i:2"><div class="mcp-billboard"><div class="face">ERP</div></div></div>
-          <div class="mcp-tool" style="--i:3"><div class="mcp-billboard"><div class="face">מייל</div></div></div>
-        </div>
-      </div>
-    </div>
-<div class="wow-grid g3 has-viz">
-  <article class="wow-card"><div class="wow-k">מתי הוכרז</div><div class="wow-t">25 בנובמבר 2024</div><p>Anthropic פרסמה את Model Context Protocol כתקן פתוח לחיבור עוזרי AI למקורות נתונים ולכלים.</p></article><article class="wow-card"><div class="wow-k">המטאפורה</div><div class="wow-t">כמו USB‑C לכלים</div><p>במקום חיבור ייעודי נפרד לכל מערכת, שרת MCP חושף יכולות (לקרוא קובץ, לשאול בסיס נתונים) בצורה אחידה.</p></article><article class="wow-card"><div class="wow-k">זהירות</div><div class="wow-t">חיבור ≠ אישור גורף</div><p>לכל חיבור יש להגדיר הרשאות. מגדירים מה מותר לקרוא ולכתוב, ומה דורש אישור אדם — במיוחד על נתוני לקוחות.</p></article>
-</div>
-    <div class="wow-foot">מקור: Anthropic, Introducing the Model Context Protocol, 25.11.2024 — anthropic.com/news/model-context-protocol · modelcontextprotocol.io</div>
-    <div class="pg"></div>
-  </div>
-  <aside class="notes">שקף MCP. להסביר במשפט: ״המודל לבד לא רואה את ה־ERP; MCP הוא השקע שמחבר אותו, באישור שלכן.״ תאריך ההכרזה: 25 בנובמבר 2024, Anthropic, תקן פתוח. לא להבטיח שכל ספק מממש אותו באותה צורה. שאלה לאולם: אילו מערכות הייתן מחברות קודם — תיקיית הסגירה, הייצוא מהנהלת חשבונות, או האימייל? סייג: חיבור רחב בלי הרשאות הוא סיכון, לא יתרון.</aside>
-</section>
+
 
 <section class="slide s-wow" data-title="יסודות · אייג'נט">
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 6/8</div>
+    <div class="wow-kicker">יסודות · 4/6</div>
     <h2>מה זה אייג׳נט, ואיך הוא עובד</h2>
     <p class="wow-lead">עוזר עונה בשיחה. אייג׳נט מקבל מטרה, מתכנן, מפעיל כלים, מסתכל על התוצאה — וחוזר על הלולאה עד שהוא מסיים או מבקש מכן אישור.</p>
     <div class="agent-stage" aria-label="לולאת סוכן בתלת-ממד">
@@ -2053,7 +2130,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 7/8 · פרומפטינג: השיטה של טל</div>
+    <div class="wow-kicker">יסודות · 5/6 · פרומפטינג: השיטה של טל</div>
     <h2>מתחילות מהתוצר. גוזרות אחורה.</h2>
     <p class="wow-lead">קודם נותנות ל־<span class="ltr">Claude</span> ללמוד את החומר. אחר כך מגדירות איך נראה התוצר הגמור, ומשם הולכות אחורה עד לפרומפט.</p>
     <div class="bk-chain">
@@ -2084,7 +2161,7 @@ html.wk .mcp-beam{display:none}
   <div class="wow-stage">
     <div class="wow-circuit" aria-hidden="true"></div>
     <div class="wow-floor" aria-hidden="true"></div>
-    <div class="wow-kicker">יסודות · 8/8 · פרומפטינג: מתוך סדנת <span class="ltr">Cowork</span> של לאון</div>
+    <div class="wow-kicker">יסודות · 6/6 · פרומפטינג: מתוך סדנת <span class="ltr">Cowork</span> של לאון</div>
     <h2>סוגריים מרובעים: <span class="ltr">Claude</span> שואל לפני שהוא מנחש</h2>
     <p class="wow-lead">כותבים פרומפט קבוע, ומשאירים <b>[בסוגריים מרובעים]</b> את מה שמשתנה. משפט קבוע בסוף מחייב את <span class="ltr">Claude</span> לשאול עליהם לפני שהוא מתחיל.</p>
     <div class="lcredit">קרדיט: <b>לאון · <span class="ltr">leon melamud</span></b> · מתוך חומרי סדנת <span class="ltr">Cowork</span> שלו</div>
@@ -2102,21 +2179,22 @@ html.wk .mcp-beam{display:none}
 
 <!-- 10 OVERVIEW (was 4; +6 foundation slides) -->
 <section class="slide s-over" data-title="מפת הקרחון">
-  <div class="head"><h2>שבע שכבות</h2><p>מלמעלה למטה — כל שכבה חוסכת יותר.</p></div>
+  <div class="head"><h2>שמונה שכבות</h2><p>מלמעלה למטה — כל שכבה חוסכת יותר.</p></div>
   <svg class="berg-big" viewBox="0 0 1920 1080" id="overBerg">
     <defs>
       <clipPath id="bc"><polygon points="760,70 800,105 840,170 880,238 1060,300 1160,440 1170,620 1110,800 1000,940 860,1010 700,1010 560,930 450,780 400,600 420,430 520,300 680,238 720,160"/></clipPath>
     </defs>
     <path d="M0 238 Q 120 226 240 238 T 480 238 T 720 238 T 960 238 T 1200 238 T 1440 238 T 1680 238 T 1920 238" stroke="#fff" stroke-width="4" fill="none" opacity=".85"/>
     <g clip-path="url(#bc)">
-      <rect class="band" data-go="10"  x="0" y="0"   width="1920" height="238" fill="#F6B26B" style="animation-delay:.05s"/>
-      <rect class="band" data-go="11"  x="0" y="238" width="1920" height="118" fill="#EE8F5A" style="animation-delay:.2s"/>
-      <rect class="band" data-go="12"  x="0" y="356" width="1920" height="118" fill="#E2703F" style="animation-delay:.35s"/>
-      <rect class="band" data-go="13"  x="0" y="474" width="1920" height="118" fill="#C95A33" style="animation-delay:.5s"/>
-      <rect class="band" data-go="14"  x="0" y="592" width="1920" height="118" fill="#A8472B" style="animation-delay:.65s"/>
-      <rect class="band" data-go="15"  x="0" y="710" width="1920" height="118" fill="#833824" style="animation-delay:.8s"/>
-      <rect class="band" data-go="16"  x="0" y="828" width="1920" height="200" fill="#5E2A1E" style="animation-delay:.95s"/>
-      <g stroke="rgba(255,255,255,.22)" stroke-width="2"><line x1="0" y1="356" x2="1920" y2="356"/><line x1="0" y1="474" x2="1920" y2="474"/><line x1="0" y1="592" x2="1920" y2="592"/><line x1="0" y1="710" x2="1920" y2="710"/><line x1="0" y1="828" x2="1920" y2="828"/></g>
+      <rect class="band" data-go="שכבה 1"  x="0" y="0"   width="1920" height="238" fill="#F6B26B" style="animation-delay:.05s"/>
+      <rect class="band" data-go="שכבה 2"  x="0" y="238" width="1920" height="118" fill="#EE8F5A" style="animation-delay:.2s"/>
+      <rect class="band" data-go="שכבה 3"  x="0" y="356" width="1920" height="118" fill="#E2703F" style="animation-delay:.35s"/>
+      <rect class="band" data-go="שכבה 4"  x="0" y="474" width="1920" height="118" fill="#C95A33" style="animation-delay:.5s"/>
+      <rect class="band" data-go="שכבה 5"  x="0" y="592" width="1920" height="118" fill="#A8472B" style="animation-delay:.65s"/>
+      <rect class="band" data-go="שכבה 6"  x="0" y="710" width="1920" height="118" fill="#833824" style="animation-delay:.8s"/>
+      <rect class="band" data-go="שכבה 7"  x="0" y="828" width="1920" height="96" fill="#5E2A1E" style="animation-delay:.95s"/>
+      <rect class="band" data-go="שכבה 8"  x="0" y="924" width="1920" height="104" fill="#3E1B14" style="animation-delay:1.1s"/>
+      <g stroke="rgba(255,255,255,.22)" stroke-width="2"><line x1="0" y1="356" x2="1920" y2="356"/><line x1="0" y1="474" x2="1920" y2="474"/><line x1="0" y1="592" x2="1920" y2="592"/><line x1="0" y1="710" x2="1920" y2="710"/><line x1="0" y1="828" x2="1920" y2="828"/><line x1="0" y1="924" x2="1920" y2="924"/></g>
     </g>
     <g font-size="34" font-weight="800" fill="#fff" text-anchor="middle">
       <text class="lbl" x="790" y="225" fill="#2B1A14" font-size="30" style="animation-delay:.1s">1 · שאלה בצ׳אט</text>
@@ -2125,7 +2203,8 @@ html.wk .mcp-beam{display:none}
       <text class="lbl" x="790" y="544" style="animation-delay:.55s">4 · משימה שלמה בבקשה אחת</text>
       <text class="lbl" x="790" y="662" style="animation-delay:.7s">5 · בתוך Excel ו‑PowerPoint</text>
       <text class="lbl" x="790" y="780" style="animation-delay:.85s">6 · קונקטורים: מייל, קבצים, Teams</text>
-      <text class="lbl" x="790" y="905" style="animation-delay:1s">7 · דשבורד חי</text>
+      <text class="lbl" x="790" y="888" style="animation-delay:1s">7 · דשבורד חי</text>
+      <text class="lbl" x="790" y="980" font-size="29" style="animation-delay:1.15s">8 · מבקרות פנימיות</text>
     </g>
     <g font-size="26" fill="#cfe3e8" font-weight="600" text-anchor="start">
       <text x="1330" y="300">↑ חוסך דקות</text>
@@ -2135,13 +2214,13 @@ html.wk .mcp-beam{display:none}
   </svg>
   <div class="bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="hint">לחיצה על שכבה — קפיצה אליה</div>
-  <aside class="notes">מפת הדרך: שבע השכבות לפי Nicolas Boucher. הסדר הוא העיקר — כל שכבה נשענת על הקודמת. "דקות / ימים" — המסר של המצגת, לא מדידה.</aside>
+  <aside class="notes">מפת הדרך: שבע השכבות לפי Nicolas Boucher, ושכבה 8 — תוספת של טל: מבקרות פנימיות שמפרידות רשויות. הסדר הוא העיקר — כל שכבה נשענת על הקודמת. "דקות / ימים" — המסר של המצגת, לא מדידה.</aside>
 </section>
 
 <!-- LAYER 1 -->
 <section class="slide s-layer" data-title="שכבה 1">
   <div class="side" style="background:var(--l1)"></div>
-  <div class="depth"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="depth"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="txt">
     <span class="chip" style="background:#E89B4C"><span class="n">1</span> מעל המים</span>
     <h2>שואלים שאלה<br>בצ׳אט</h2>
@@ -2167,7 +2246,7 @@ html.wk .mcp-beam{display:none}
 <!-- LAYER 2 -->
 <section class="slide s-layer" data-title="שכבה 2">
   <div class="side" style="background:var(--l2)"></div>
-  <div class="depth"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="depth"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="txt">
     <span class="chip" style="background:var(--l2)"><span class="n">2</span> פרויקטים</span>
     <h2>הקבצים וההקשר<br>נשארים</h2>
@@ -2200,7 +2279,7 @@ html.wk .mcp-beam{display:none}
 <!-- LAYER 3 -->
 <section class="slide s-layer" data-title="שכבה 3">
   <div class="side" style="background:var(--l3)"></div>
-  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="txt">
     <span class="chip" style="background:var(--l3)"><span class="n">3</span> סקילים והנחיות קבועות</span>
     <h2>מלמדים פעם אחת.<br>משתמשים כל חודש.</h2>
@@ -2232,7 +2311,7 @@ html.wk .mcp-beam{display:none}
 <!-- LAYER 4 -->
 <section class="slide s-layer" data-title="שכבה 4">
   <div class="side" style="background:var(--l4)"></div>
-  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
   <div class="txt">
     <span class="chip" style="background:var(--l4)"><span class="n">4</span> משימה שלמה</span>
     <h2>לא שאלה.<br>תוצר מוגמר.</h2>
@@ -2264,7 +2343,7 @@ html.wk .mcp-beam{display:none}
 <!-- LAYER 5 -->
 <section class="slide s-layer" data-title="שכבה 5">
   <div class="side" style="background:var(--l5)"></div>
-  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
   <div class="txt">
     <span class="chip" style="background:var(--l5)"><span class="n">5</span> בתוך Excel ו‑PowerPoint</span>
     <h2>ה‑AI עובד<br>בתוך הקובץ שלכן</h2>
@@ -2302,7 +2381,7 @@ html.wk .mcp-beam{display:none}
 <!-- LAYER 6 -->
 <section class="slide s-layer" data-title="שכבה 6">
   <div class="side" style="background:var(--l6)"></div>
-  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
   <div class="txt">
     <span class="chip" style="background:var(--l6)"><span class="n">6</span> קונקטורים</span>
     <h2>ה‑AI מחפש<br>בשבילכן</h2>
@@ -2332,9 +2411,9 @@ html.wk .mcp-beam{display:none}
 <!-- LAYER 7 -->
 <section class="slide s-layer" data-title="שכבה 7">
   <div class="side" style="background:var(--l7)"></div>
-  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
   <div class="txt">
-    <span class="chip" style="background:var(--l7)"><span class="n">7</span> התחתית</span>
+    <span class="chip" style="background:var(--l7)"><span class="n">7</span> דשבורד חי</span>
     <h2>דשבורד חי<br>על נתוני החברה</h2>
     <p class="phrase">שואלים בשפה רגילה — ומקבלים דשבורד<br>שמתעדכן כשהנתונים משתנים.</p>
     <div class="prompt"><div class="lab">פרומפט לדוגמה <span>· תזרים מזומנים</span></div>
@@ -2363,6 +2442,35 @@ html.wk .mcp-beam{display:none}
   <div class="foot"><div class="src">מקורות: claude.com/resources/articles/dashboards-and-motion · openai.com/index/put-data-to-work · learn.microsoft.com/en-us/power-bi/create-reports/copilot-introduction · וידאו: youtube.com/watch?v=_Ui4ZkYm4ho</div><div class="pg"></div></div>
   <aside class="notes">Claude Dashboards (כיום Claude Data): מתחברים למחסן נתונים (Amazon Redshift, BigQuery, ClickHouse, Databricks, Snowflake) או ל-CRM כמו Salesforce, שואלים בשפה רגילה, Claude כותב ומריץ SQL ובונה דשבורד שנשאר עדכני; לכל גרף אפשר לראות את השאילתה (https://claude.com/resources/articles/dashboards-and-motion, https://claude.com/resources/articles/sheets-whiteboards-data). שאילתות מאושרות (certified queries) ושיתוף חי — בבטא. Data agent ב‑ChatGPT Work מתחבר למקורות מאושרים ובונה דשבורדים (https://openai.com/index/put-data-to-work/). Copilot בתוך דוחות Power BI (נדרשת קיבולת Fabric או Premium; https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-introduction). לא אומתה מקבילה ישירה ב‑Gemini לדשבורד חי על מחסן נתונים, ולכן היא לא צוינה. וידאו רשמי: https://www.youtube.com/watch?v=_Ui4ZkYm4ho. הדשבורד בצד — המחשה עם נתוני דוגמה.</aside>
 </section>
+<!-- v9: layer 8 -->
+<section class="slide s-layer s-l8" data-title="שכבה 8">
+  <div class="side" style="background:var(--l8)"></div>
+  <div class="depth"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+  <div class="txt">
+    <span class="chip" style="background:var(--l8)"><span class="n">8</span> התחתית · תוספת של טל</span>
+    <h2>מבקרות פנימיות.<br>מפרידות רשויות.</h2>
+    <p class="phrase">פרומפט אחד מגדיר צוות מבקרות בתוך הפרויקט,<br>נפרד מהמבצעת הראשית. לא מחליפים אנשים.</p>
+    <div class="prompt" style="border-right-color:var(--l8)"><div class="lab" style="color:var(--l8)">פרומפט לדוגמה <span>· סגירה חודשית</span></div>
+      <div class="q">״התוצר: חבילת סגירת אוקטובר שעוברת שלוש בקרות לפני שהיא מגיעה אליי. בתוך הפרויקט, להגדיר שלוש מבקרות נפרדות מהמבצעת הראשית: בודקת התאמות, מבקרת מהותיות וסטיות, וקוראת הדירקטוריון. לכל אחת לכתוב: המומחיות שלה, מה בדיוק היא בודקת, מה אסור לה (לא לערוך את התוצר, רק לסמן), ופורמט הפלט, טבלת ממצאים. המבצעת לא בודקת את עצמה. האישור הסופי שלי.״</div></div>
+    <div class="tools"><span class="tb"><b class="ltr">Projects</b> + <b class="ltr">Skills</b> ב‑<span class="ltr">Claude</span></span> · <span class="tb"><b class="ltr">Subagents</b> ב‑<span class="ltr">Claude Code</span></span> · <span class="tb">פלאגינים ב‑<span class="ltr">Cowork</span> שמאגדים <span class="ltr">skills</span> ו‑<span class="ltr">sub-agents</span></span></div>
+<div class="sec"><span class="sec-badge sec-high"><span class="lab">רמת אבטחת מידע נדרשת</span> · גבוהה</span><div class="sec-why">המבקרות קוראות את נתוני הסגירה. תוכנית ארגונית, הרשאות קריאה בלבד למבקרות, ואישור אנושי לפני כל שליחה.</div></div>
+  </div>
+  <div class="l8-viz" aria-label="מבצעת ראשית, קו הפרדה, שלוש מבקרות ואישור אנושי">
+    <div class="l8-exec"><b>המבצעת הראשית</b><small>מכינה את חבילת הסגירה: התאמות, ביאור סטיות, שקף לדירקטוריון</small></div>
+    <div class="l8-wall"><span>הפרדת רשויות · המבצעת לא בודקת את עצמה</span></div>
+    <div class="l8-revs">
+      <div class="l8-rev" style="--z:26"><h4>בודקת התאמות</h4><div class="r"><b>מומחיות:</b> התאמות בנק וספקים</div><div class="r"><b>בודקת:</b> כל יתרה מותאמת למקור, פריטים פתוחים ישנים</div><div class="r no"><b>אסור:</b> לתקן רישום</div><div class="r"><b>פלט:</b> טבלת פערים</div></div>
+      <div class="l8-rev" style="--z:34"><h4>מבקרת מהותיות וסטיות</h4><div class="r"><b>מומחיות:</b> ביקורת וניתוח</div><div class="r"><b>בודקת:</b> כל סטייה מעל סף המהותיות מוסברת</div><div class="r no"><b>אסור:</b> לשנות הסבר</div><div class="r"><b>פלט:</b> סטיות בלי הסבר</div></div>
+      <div class="l8-rev" style="--z:26"><h4>קוראת הדירקטוריון</h4><div class="r"><b>מומחיות:</b> קוראת שאינה אשת כספים</div><div class="r"><b>בודקת:</b> השורה התחתונה ברורה מהשורה הראשונה</div><div class="r no"><b>אסור:</b> לשכתב</div><div class="r"><b>פלט:</b> 3 שאלות שהדירקטוריון ישאל</div></div>
+    </div>
+    <div class="l8-arr">↓</div>
+    <div class="l8-human"><b>את מאשרת</b><small>אישור אנושי סופי · <span class="ltr">Human in the loop</span></small></div>
+    <div class="rnote lt in"><span class="rt">מחקר</span><div>ב־Anthropic, 50 אנליסטים הלכו אחרי הנטייה של האייג׳נט ב־86% מההחלטות, ו־77% השתמשו בנימוקים שלו. לכן המבקרת נפרדת מהמבצעת ומהמסגור שלה.<small>Anthropic, ״How AI agents shape experts’ judgment calls״, 27.10.2026. הנטייה חוזקה בכוונה בניסוי.</small></div></div>
+  </div>
+  <div class="foot"><div class="src">מקורות: claude.com/resources/articles/cowork-plugins · code.claude.com/docs (subagents) · anthropic.com/news/finance-agents · anthropic.com/research/agents-judgment-calls · שכבה 8: תוספת של טל ולנשטין לקרחון</div><div class="pg"></div></div>
+  <aside class="notes">שכבה 8, תוספת של טל לקרחון של Nicolas Boucher: בניית עובדים מבקרים פנימיים. כותבות פרומפט שמייצר בתוך הפרויקט עובדות ספציפיות, נפרדות מהמבצעת הראשית, ומאפיינות כל אחת: מומחיות, מה בדיוק היא בודקת, מה אסור לה (לא לערוך את התוצר, רק לסמן), ופורמט פלט. הן צוות בתוך הפרויקט שלא בא להחליף אנשים, אלא לוודא מומחיות ספציפית בתוצר ולבדוק נקודות מוגדרות, כדי להפריד רשויות. כמו maker-checker / ארבע עיניים בכספים: מי שמכין לא מאשר. המבצעת לא בודקת את עצמה, והאישור הסופי אנושי. כלים: ב-Claude, פרויקט + Skills; ב-Claude Code, subagents; ב-Cowork, פלאגינים שמאגדים skills, connectors, slash commands ו-sub-agents (claude.com/resources/articles/cowork-plugins). Anthropic עצמה בנתה כך את תבניות האייג׳נטים לפיננסים (5.5.2026): skills, connectors ו-subagents לתת-משימות כמו בדיקות מתודולוגיה, ובין התבניות Valuation reviewer ו-Statement auditor (anthropic.com/news/finance-agents). מחקר: Anthropic, 27.10.2026 — 50 אנליסטים עם ניסיון בהסקה סיבתית עבדו עם Claude Code; האייג׳נט הוגדר בהגרלה לנטות לאחת משתי אפשרויות סבירות. הם הלכו אחרי הנטייה ב-86% מהבחירות (מול כ-50% צפוי), 77% השתמשו בנימוקים של האייג׳נט, רק 15% ציינו שהם ממנו. הסתייגות: הנטייה חוזקה בכוונה; ללא נטייה מוגדרת האפקט עשוי להיות קטן יותר. המסקנה לשקף: מבקרת שקוראת את המסגור של המבצעת נוטה לאמץ אותו, ולכן מפרידים. דוגמה אמיתית: צוות האייג׳נטים של טל (שקף צוות האייג׳נטים שלי) — Codex וקורא עצמאי בודקים בנפרד מהבוטים שכתבו, והקורא העצמאי מקבל רק את התוצר הסופי, בלי הבריף והנימוקים. רמת אבטחה גבוהה: תוכנית ארגונית, הרשאות קריאה בלבד למבקרות, אישור אנושי לפני שליחה.</aside>
+</section>
+
 
 <!-- TIPS -->
 <section class="slide s-layer s-tip" data-title="טיפ 1">
@@ -2417,6 +2525,7 @@ html.wk .mcp-beam{display:none}
   <div class="car-stage" id="modelCar"><button type="button" class="car-btn car-prev" aria-label="המודל הקודם">›</button><button type="button" class="car-btn car-next" aria-label="המודל הבא">‹</button><div class="mgrid c4" style="grid-template-columns:repeat(4,1fr)"><div class="mcard" style="animation-delay:0.00s"><div class="top" style="background:#5E2A1E"><b>Fable 5.2</b><small>החזק ביותר</small></div><div class="ds">לחשיבה תובענית ולמשימות ארוכות במיוחד</div><div class="fin"><span class="k">בפיננסים</span>מודל תזרים עם תרחישים — כש‑<span class="ltr">Opus</span> לא הספיק</div></div><div class="mcard front" style="animation-delay:0.12s"><div class="top" style="background:#A8472B"><b>Opus 5.5</b><small>נקודת הפתיחה המומלצת</small></div><div class="ds">לעבודת ידע ולמשימות ארוכות</div><div class="fin"><span class="k">בפיננסים</span>סגירה חודשית, ניתוח סטיות, מצגת דירקטוריון</div></div><div class="mcard" style="animation-delay:0.24s"><div class="top" style="background:#E2703F"><b>Sonnet 5.5</b><small>מהירות ואינטליגנציה</small></div><div class="ds">השילוב הטוב ביותר של מהירות ואינטליגנציה</div><div class="fin"><span class="k">בפיננסים</span>משימות מוגדרות: סיכום דוח, ניסוח מייל, טבלה מסודרת</div></div><div class="mcard" style="animation-delay:0.36s"><div class="top" style="background:#E89B4C"><b>Haiku 5.5</b><small>הכי מהיר</small></div><div class="ds">לכמויות גדולות ומהירות: סיווג, חילוץ וניתוב</div><div class="fin"><span class="k">בפיננסים</span>סיווג תנועות בנק, חילוץ נתונים מחשבוניות</div></div></div></div>
   <div class="scale"><span>יותר עומק</span><i style=""></i><span>יותר מהירות</span></div>
   <div class="rule"><span>מתחילים ב‑<span class="ltr">Opus</span>.</span><span>התוצאה חלשה? <em>קודם מעלים Effort</em> — ורק אז מחליפים מודל.</span></div>
+  <div class="rnote lt" style="left:110px;top:915px;max-width:600px;padding:9px 14px"><span class="rt">רשמי</span><div>ההנחיה של <span class="ltr">Anthropic</span> ל־<span class="ltr">Fable 5.2</span>: מתחילים ב־<span class="ltr">Opus 5.5</span>, ו־<span class="ltr">Fable</span> רק למשימות הקשות ביותר.<small>anthropic.com/claude-fable-and-mythos-5-2 · 9.11.2026</small></div></div>
   <div class="foot"><div class="src">מקורות: platform.claude.com/docs/en/models/overview · academy.claude.com/tutorials/choosing-the-right-claude-model · support.claude.com/en/articles/8664678</div><div class="pg"></div></div>
   <aside class="notes">Models overview (Anthropic, נבדק 11.11.2026): Claude Fable 5.2 — "For demanding reasoning and long-horizon agentic work"; Claude Opus 5.5 — "For long-running agentic coding and knowledge work"; Claude Sonnet 5.5 — "The best combination of speed and intelligence"; Claude Haiku 5.5 — "For high-volume, latency-sensitive tasks such as classification, extraction, and routing". https://platform.claude.com/docs/en/models/overview . Claude Academy, Choosing a Claude model for knowledge workers: start with Opus for most knowledge work; Opus is the default on Pro, Max, Ultra and Team; Free includes Haiku and Sonnet, paid plans add Opus, Fable access depends on plan; if a result falls short, change one setting at a time — effort first, then model. https://academy.claude.com/tutorials/choosing-the-right-claude-model . Effort levels (Low/Medium/High/Extra high/Max): https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings . שורת "בפיננסים" — המלצות שלנו, לא של Anthropic.</aside>
 </section>
@@ -2436,6 +2545,7 @@ html.wk .mcp-beam{display:none}
       <div class="px-chip"><b>דוגמה</b>: 100 עמודי PDF בעברית (~475K טוקנים) + סיכום של 2,000 טוקנים ≈ <span class="ltr">Fable $3.88 · Opus $1.94 · Sonnet $0.97 · Haiku $0.24</span> <small>(הערכה)</small></div>
     </div>
     <div class="wow-foot foot-wide">מקורות: docs.claude.com/en/docs/about-claude/models/overview · anthropic.com/pricing · נבדק 23.11.2026. מחירי <span class="ltr">Haiku</span> לפרומפט עד 100K טוקנים (מעל: $0.50 קלט / $2.50 פלט). ללא מע״מ. שורת ״בפיננסים״ — המלצה שלנו.</div>
+    <div class="rnote dk" style="left:68px;top:40px;max-width:600px"><span class="rt">חדש</span><div><b>תגיות פרויקט לפי קוד לקוח (בטא):</b> ב־<span class="ltr">Claude Enterprise</span> מתייגים פרויקט בקוד לקוח או מרכז עלות, ורואים הוצאה לפי תגית.<small>support.claude.com · Track spend by cost code with project tags</small></div></div>
     <div class="pg"></div>
   </div>
   <aside class="notes">מחירון API של Anthropic, נבדק 23.11.2026 (https://docs.claude.com/en/docs/about-claude/models/overview , https://www.anthropic.com/pricing). לכל מיליון טוקנים — Claude Fable 5.2: $8 קלט / $40 פלט, קריאה מ־cache $0.20, כתיבה ל־cache $10. Claude Opus 5.5: $4 / $20, cache קריאה $0.20, כתיבה $5. Claude Sonnet 5.5: $2 / $10, cache קריאה $0.10, כתיבה $2.50. Claude Haiku 5.5: מ־$0.10 קלט / $0.50 פלט לפרומפט עד 100K טוקנים; מעל 100K — $0.50 / $2.50; cache קריאה $0.01. Batch API: הנחה של 50%. המסר לקהל: ההבדל בין המודלים הוא פי 40 ויותר — לכן בוחרים מודל לפי המשימה. מתחילים ב־Opus; לכמויות גדולות ופשוטות (סיווג, חילוץ) — Haiku; Fable רק כש־Opus לא מספיק. הדוגמה: 100 עמודי PDF בעברית ≈ 475 אלף טוקנים (הערכה מהשקף של כלכלת הטוקנים). שורת ״בפיננסים״ היא המלצה שלנו, לא של Anthropic. מנוי Claude (Pro $20 לחודש, Max $100, Ultra $200) הוא מסלול אחר, עם מכסות שימוש ולא תשלום לטוקן.</aside>
@@ -2493,6 +2603,7 @@ html.wk .mcp-beam{display:none}
     </div>
     <div class="teaser">רוצות שקף כזה מהנתונים שלכן? <b>בליווי אישי עם טל ולנשטין</b> בונים אותו על הקבצים האמיתיים שלכן.</div>
     <div class="wow-foot"><span class="ltr">Claude</span> יוצר קובצי <span class="ltr">PowerPoint</span> ו־<span class="ltr">Excel</span>, וגם <span class="ltr">Artifacts</span>: דשבורד אינטראקטיבי בתוך השיחה. כל המספרים בשקף הזה הם דוגמה להמחשה, לא פלט אמיתי.</div>
+    <div class="rnote dk" style="left:68px;bottom:70px;max-width:900px"><span class="rt">עדכון</span><div><span class="ltr">Claude Data</span> (לשעבר <span class="ltr">Dashboards</span>) זמין בכל התוכניות בתשלום: מדדים מאושרים, שיתוף חי ומעקב שינויים. הדשבורד של עדנה יכול לחיות שם.<small>claude.com/resources/articles/sheets-whiteboards-data · שיתוף חי ושאילתות מאושרות בבטא</small></div></div>
     <div class="pg"></div>
   </div>
   <aside class="notes">עדנה, שלב התוצר. הסולם הוויזואלי: מטבלה לשקף דירקטוריון ולדשבורד. Claude יוצר קבצים (PowerPoint, Excel) ו-Artifacts, כלומר דשבורד אינטראקטיבי בתוך השיחה. להדגיש: כל המספרים כאן הם דוגמה להמחשה ולא פלט של מודל. עדנה בודקת, מתקנת ומאשרת לפני שזה יוצא לדירקטוריון, human in the loop. טיזר לליווי האישי: ״רוצות שקף כזה מהנתונים שלכן? בליווי אישי איתי בונים אותו על הקבצים האמיתיים שלכן״.</aside>
@@ -2551,6 +2662,7 @@ html.wk .mcp-beam{display:none}
     </div>
     <div class="teaser">רוצות שהבקרה הזאת תרוץ אצלכן כל חודש? <b>בליווי אישי עם טל ולנשטין</b> בונים אותה על תוכנת השכר שלכן.</div>
     <div class="wow-foot"><span class="ltr">Claude</span> יוצר קובצי <span class="ltr">Excel</span> ו־<span class="ltr">PowerPoint</span> מעוצבים מתוך השיחה. כל המספרים והעובדים כאן הם דוגמה להמחשה, לא פלט אמיתי.</div>
+    <div class="rnote dk" style="left:68px;bottom:70px;max-width:900px"><span class="rt">עדכון</span><div><span class="ltr">Claude Sheets</span> בבטא: לפי <span class="ltr">Anthropic</span>, בינתיים פונקציונליות פשוטה. לעבודה מלאה מייצאות ל־<span class="ltr">.xlsx</span> או עובדות עם <span class="ltr">Claude for Excel</span>.<small>claude.com/resources/articles/sheets-whiteboards-data</small></div></div>
     <div class="pg"></div>
   </div>
   <aside class="notes">חשבת השכר, שלב התוצר. הסולם הוויזואלי: מקובץ ייצוא גולמי לקובץ Excel עם לשונית חריגים ולמצגת מעוצבת של 3 שקפים. כל המספרים והעובדים כאן הם דוגמה להמחשה. חשבת השכר עוברת על כל חריג ומחליטה; Claude מסמן, היא חותמת. טיזר: ״רוצות שהבקרה הזאת תרוץ אצלכן כל חודש? בליווי אישי איתי בונים אותה על תוכנת השכר שלכן״.</aside>
@@ -2560,7 +2672,7 @@ html.wk .mcp-beam{display:none}
 <section class="slide s-compare" data-title="כלים ואבטחה">
 <div class="head">
 <h2>ארבעה כלים, רמת אבטחה לכל שכבה</h2>
-<p>אותן שבע שכבות — והמינימום הנדרש לפני שמכניסים נתוני עבודה.</p>
+<p>אותן שמונה שכבות — והמינימום הנדרש לפני שמכניסים נתוני עבודה.</p>
 </div>
 <div class="cmpwrap">
 <table class="segrid">
@@ -2631,12 +2743,20 @@ html.wk .mcp-beam{display:none}
 <td>—</td>
 <td><span class="lvl sec-high">גבוהה</span></td>
 </tr>
+<tr>
+<td class="layer">8 · מבקרות פנימיות</td>
+<td><span class="en">GPTs</span> נפרדים <small>(כללי)</small></td>
+<td><span class="en">Projects + Skills · Subagents</span></td>
+<td><span class="en">Agents</span> נפרדים <small>(כללי)</small></td>
+<td><span class="en">Gems</span> נפרדים <small>(כללי)</small></td>
+<td><span class="lvl sec-high">גבוהה</span></td>
+</tr>
 </tbody>
 </table>
 <p class="cmp-note">נמוכה: שאלות כלליות ונתוני דוגמה בלבד. בינונית ומעלה: תוכנית עסקית או ארגונית שבה הנתונים לא משמשים לאימון מודלים כברירת מחדל, ולפי הצורך הסכם עיבוד מידע (DPA), אישור מנהל מערכת והרשאות הארגון. בתוכניות אישיות הנתונים עשויים לשמש לאימון: ב‑<span class="ltr">ChatGPT</span> כברירת מחדל (אפשר לכבות), ב‑<span class="ltr">Gemini</span> כשההיסטוריה דלוקה, וב‑<span class="ltr">Claude</span> לפי הגדרת הפרטיות. ב‑<span class="ltr">Microsoft 365 Copilot</span> עם חשבון ארגוני וב‑<span class="ltr">Gemini</span> ב‑<span class="ltr">Workspace</span> מתאים — הנתונים לא משמשים לאימון כברירת מחדל. בשכבה 7 לא צוינה מקבילה ב‑<span class="ltr">Gemini</span>, כי לא אומתה מקבילה ישירה לדשבורד חי על מחסן נתונים.</p>
 </div>
 <div class="foot"><div class="src">מקורות: openai.com/enterprise-privacy · privacy.claude.com · learn.microsoft.com (Enterprise data protection) · knowledge.workspace.google.com (Privacy Hub). פירוט ב‑SOURCES.md.</div><div class="pg"></div></div>
-<aside class="notes">שקף השוואה: הכלים לפי שכבה, ורמת האבטחה הנדרשת. הרמות הן המלצת עבודה לאנשי כספים, לא תו תקן של הספק. המדיניות המחייבת היא של הארגון ושל הספק, והיא מתעדכנת. מקורות רשמיים מפורטים ב‑SOURCES.md.</aside>
+<aside class="notes">שקף השוואה: הכלים לפי שכבה, ורמת האבטחה הנדרשת. שורה 8 (מבקרות פנימיות, תוספת של טל): ב-Claude — Projects + Skills, ו-subagents ב-Claude Code / פלאגינים ב-Cowork (מתועד ב-claude.com/resources/articles/cowork-plugins). ב-ChatGPT, Copilot ו-Gemini — ״כללי״: אפשר להגדיר GPT / Agent / Gem נפרד לכל מבקרת, אבל זה לא פיצ׳ר ייעודי של ביקורת פנימית. הרמות הן המלצת עבודה לאנשי כספים, לא תו תקן של הספק. המדיניות המחייבת היא של הארגון ושל הספק, והיא מתעדכנת. מקורות רשמיים מפורטים ב‑SOURCES.md.</aside>
 </section>
 
 <!-- NEW DEPTH: security, news, timeline, tools, agents, native, demos (added before איפה אני?; existing slides kept) -->
@@ -2657,6 +2777,7 @@ html.wk .mcp-beam{display:none}
   <article class="wow-card"><div class="wow-k">סיווג</div><div class="wow-t">מה מותר לצאת מהארגון</div><p>ציבורי / פנימי / סודי / נתוני לקוח ונתוני המשרד. נתוני שכר, חשבונות בנק, חוזים ומספרים מזהים — לא נכנסים לחשבון אישי.</p></article><article class="wow-card"><div class="wow-k">סביבה</div><div class="wow-t">צרכני מול ארגוני</div><p>חשבון אישי, תוכנית חינמית או אפליקציה על הטלפון — לא סביבת העבודה של התיק. סביבה ארגונית: זהות, יומן, מדיניות שימור, ואיסור אימון על הנתונים לפי החוזה.</p></article><article class="wow-card"><div class="wow-k">כלל ברזל</div><div class="wow-t">לא להדביק תיק בצ׳אט פרטי</div><p>גם ״רק הפעם״ וגם ״בלי שם הלקוח״ עלולים להשאיר די מידע לזיהוי. אם אין כלי מאושר — לא שולחים את הקובץ.</p></article><article class="wow-card"><div class="wow-k">בקרה</div><div class="wow-t">מי רואה, כמה זמן, מה נרשם</div><p>לשאול את מערכות המידע או את הספק: האם השיחות נשמרות, האם יש SSO, האם אפשר לכבות אימון, ומה קורה באירוע דליפה.</p></article>
 </div>
     <div class="wow-foot">המלצת עבודה לאנשי כספים, לא תו תקן של ספק. המדיניות המחייבת היא של הארגון ושל הספק, והיא מתעדכנת.</div>
+    <div class="rnote dk" style="left:68px;top:40px;max-width:560px"><span class="rt">חדש</span><div><span class="ltr">Zero Data Retention</span> עם <span class="ltr">Enterprise Frontier Safeguards</span> בבטא ציבורית: הנתונים נשמרים באחסון של הארגון, ו־<span class="ltr">Anthropic</span> לא שומרת אותם ולא מאמנת עליהם.<small>claude.com · 23.11.2026 · לתוכניות ארגוניות בפלטפורמה וב־AWS / Google Cloud</small></div></div>
     <div class="pg"></div>
   </div>
   <aside class="notes">שקף אבטחת מידע. זה משלים את טבלת ״כלים ואבטחה״ שכבר קיימת במצגת — לא מחליף אותה. לתרגל עם האולם סיווג מהיר: מאמר מקצועי (אפשר), מאזן לא מזוהה (זהירות), ייצוא שכר (רק סביבה מאושרת). הפניה קדימה: Shadow AI, ואז החומר האמריקאי (NIST / CISA / AI Action Plan).</aside>
@@ -2827,6 +2948,7 @@ html.wk .mcp-beam{display:none}
       <div class="fs me" style="--i:3">טל מאשרת<small><span class="ltr">Human in the loop</span></small></div>
     </div>
     <div class="wow-foot">הצוות רץ על <span class="ltr">Grok Bot</span>. כשבוטים חלוקים, הם מציגים נימוקים זה לזה, ורק מה שלא הוכרע מגיע אליי דרך מרכז האישורים.</div>
+    <div class="rnote dk" style="left:68px;bottom:100px;max-width:820px"><span class="rt">מחקר</span><div>אנשים מאמצים את המסגור של המודל: 86% הלכו אחרי הנטייה של האייג׳נט. לכן אצלי הביקורת נפרדת מהכתיבה, והאישור אנושי.<small>Anthropic, 27.10.2026 · ומדיניות השימוש (12.11.2026): בהמלצות שמשפיעות על כספים — אדם מוסמך שיכול לבדוק ולשנות</small></div></div>
     <div class="pg"></div>
   </div>
   <aside class="notes">צוות האייג׳נטים של טל ב-AI Finance, דוגמה אמיתית לשכבה ארגונית. הבוטים: קונקטור (עיצוב), מוזה (ארט דיירקטור), קורא עצמאי (קורא רק את התוצר הסופי, בלי בריף, ושואל אם זר היה עוצר לקרוא), Codex (בודק עובדות, שפה וסלוגנים לפני מוזה והקורא העצמאי), שומרת הסף ללינקדאין, היועצת האסטרטגית לתוכן (בריף לפני כל פוסט), Taltil (לינקדאין, מייל ויומן; מייל יוצא תמיד כטיוטה), Clip Director (חבילת וידאו), שני בוטים של וואטסאפ לשתי הקהילות (AI Finance, ו״חשבת השכר החדשה״ עם פוסטים בימי ראשון ורביעי), בונה וובינרים, ומרכז האישורים. הזרימה: טיוטה, ביקורת, מרכז האישורים, אישור של טל. הכללים: בוטים מחליטים לבד בצעדי ביניים ומביאים תוצר גמור; כשבוטים חלוקים הם מציגים נימוקים ומחליטים או מסלימים למרכז האישורים. המסר לקהל: כך נראית שכבה ארגונית, לא עוד כלי אישי.</aside>
@@ -2868,6 +2990,7 @@ html.wk .mcp-beam{display:none}
   <article class="wow-card"><div class="wow-k">לפני פיילוט</div><div class="wow-t">ארבע החלטות</div><p>בעלים (מי שמחזיק את המערכות והדיווח) · חיבור IT ואבטחה · מדד פעילות אחד + מדד תוצאה אחד · תקרות הוצאה.</p></article><article class="wow-card"><div class="wow-k">שקיפות</div><div class="wow-t">מה שלנו, מה שלהם</div><p>ארבעת השלבים והמסגרת — לפי Anthropic, על ארגון מכירות. המיפוי לשורות הכספים (ביאור, סגירה, DSO) הוא התאמה של AI Finance, לא ציטוט מהמאמר.</p></article>
 </div>
     <div class="wow-foot">מקור: Anthropic, Building an AI-native revenue organization, 15.9.2026 — claude.com/resources/articles/building-an-ai-native-revenue-organization · ההתאמה לכספים: AI Finance.</div>
+    <div class="rnote dk" style="left:68px;top:40px;max-width:600px"><span class="rt">מחקר</span><div>״Working with AI״ (58 לקוחות ארגוניים): השימושים עם הערך הגבוה ביותר כללו ארגון מחדש של העבודה, לא רק חלוקת כלים.<small>Anthropic · 23.11.2026</small></div></div>
     <div class="pg"></div>
   </div>
   <aside class="notes">שקף AI-native 1/2, שוחזר מהגרסה המורחבת. המאמר הרשמי (15.9.2026) מדבר על ארגון הכנסות/מכירות. אל תציגי את המיפוי הכספי כנתון של Anthropic. לפני פיילוט: בעלים, חיבור, מדדים, תקרה. מעבר לשקף המדידה.</aside>
@@ -3042,7 +3165,7 @@ html.wk .mcp-beam{display:none}
 <section class="slide s-self" data-title="איפה אני?">
   <h2>איפה אני על הקרחון?</h2>
   <div class="sub">לבחור את השכבה שבה אני היום — ולקבל את הצעד הבא.</div>
-  <div class="ladder" id="ladder">
+  <div class="ladder l8" id="ladder">
     <div class="rung sel" data-i="0" style="background:#E89B4C"><span class="n">1</span>שאלה בצ׳אט</div>
     <div class="rung" data-i="1" style="background:var(--l2)"><span class="n">2</span>פרויקטים</div>
     <div class="rung" data-i="2" style="background:var(--l3)"><span class="n">3</span>סקילים והנחיות</div>
@@ -3050,10 +3173,11 @@ html.wk .mcp-beam{display:none}
     <div class="rung" data-i="4" style="background:var(--l5)"><span class="n">5</span>עבודה בתוך Excel</div>
     <div class="rung" data-i="5" style="background:var(--l6)"><span class="n">6</span>חיבור למייל ולקבצים</div>
     <div class="rung" data-i="6" style="background:var(--l7)"><span class="n">7</span>דשבורד חי</div>
+    <div class="rung" data-i="7" style="background:var(--l8)"><span class="n">8</span>מבקרות פנימיות</div>
   </div>
   <div class="nextbox"><div class="k" id="nk">הצעד הבא שלי · לשכבה 2</div><div class="v" id="nv">לפתוח פרויקט אחד לסגירה הבאה ולהעלות אליו את הקבצים הקבועים.</div><div class="secb" id="ns">לפני הצעד הבא · רמת אבטחה בינונית — תוכנית עסקית, בלי פרטים מזהים בלי אישור הארגון.</div><div class="topt">בכלים: <span class="ltr" id="nt-tools">Projects · Copilot Notebooks · Gems</span></div><div class="w">שכבה אחת בכל פעם. זה מספיק.</div></div>
   <div class="foot"><div class="src">לחיצה על שכבה מחליפה את הצעד הבא.</div><div class="pg"></div></div>
-  <aside class="notes">תרגיל השתתפות: כל אחת בוחרת את השכבה שלה. הצעדים הם המלצות מעשיות, לא נתונים. אחרי הבחירה מוצגים גם רמת האבטחה של השכבה שנבחרה וכלים אפשריים. שכבה 6 — בתיאום עם IT (הרשאות אדמין).</aside>
+  <aside class="notes">תרגיל השתתפות: כל אחת בוחרת את השכבה שלה. נוספה שכבה 8 (מבקרות פנימיות, תוספת של טל); הצעד הבא משכבה 7 הוא לכתוב פרומפט שמגדיר 2–3 מבקרות לסגירה. הצעדים הם המלצות מעשיות, לא נתונים. אחרי הבחירה מוצגים גם רמת האבטחה של השכבה שנבחרה וכלים אפשריים. שכבה 6 — בתיאום עם IT (הרשאות אדמין).</aside>
 </section>
 
 <!-- CLOSING QUOTE -->
@@ -3140,6 +3264,86 @@ html.wk .mcp-beam{display:none}
   <div class="foot"><div class="src"></div><div class="pg"></div></div>
   <aside class="notes">שקף סיום של AI Finance. ברקוד ימין: קבוצת הוואטסאפ. ברקוד שמאל: פרופיל הלינקדאין של טל — הסריקה פותחת את הפרופיל, בלי שליחת בקשת התחברות אוטומטית.</aside>
 </section>
+<!-- v9: appendix -->
+<section class="slide s-wow" data-title="נספח · כלכלת הטוקנים">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">נספח · כלכלת הטוקנים</div>
+    <h2>כלכלת הטוקנים: לחשוב עלות למשימה</h2>
+    <p class="wow-lead">המחירים משתנים בין ספקים ומודלים, ומתעדכנים. מה שנשאר יציב: פלט יקר מקלט, מודל חזק יקר יותר, והעלות האמיתית היא למשימה — לא ל״צ׳אט״.</p>
+    <div class="eco-wrap">
+    <div class="tokx" aria-label="הערכת טוקנים לפי סוג קובץ, עברית מול אנגלית">
+      <div class="tokx-h">כמה טוקנים זה? <em>הערכה</em> · טוקני קלט ליחידה</div>
+      <div class="tokx-grid"><div class="tx-card"><div class="tx-n">עמוד PDF</div><div class="tx-s">טקסט + תמונה של העמוד</div><div class="tx-row"><span>עברית</span><b class="ltr">3,700–5,800</b></div><div class="tx-row en"><span>English</span><b class="ltr">3,000–4,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.5–2.3</b> <small>(אנגלית <span class="ltr">$1.2–1.8</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד טקסט</div><div class="tx-s">כ־500 מילים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div><div class="tx-card"><div class="tx-n">גיליון Excel</div><div class="tx-s">50 שורות × 10 עמודות</div><div class="tx-row"><span>עברית</span><b class="ltr">≈4,000</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈3,500</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$1.60</b> <small>(אנגלית <span class="ltr">$1.40</span>)</small></div></div><div class="tx-card"><div class="tx-n">תמונה</div><div class="tx-s">1092×1092 פיקסלים</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,600</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈1,600</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.64</b> <small>(אנגלית <span class="ltr">$0.64</span>)</small></div></div><div class="tx-card"><div class="tx-n">עמוד Word</div><div class="tx-s">כ־500 מילים, נקרא כטקסט</div><div class="tx-row"><span>עברית</span><b class="ltr">≈1,250</b></div><div class="tx-row en"><span>English</span><b class="ltr">≈900</b></div><div class="tx-c">100 יח׳ ב־<span class="ltr">Opus 5.5</span>: <b class="ltr">$0.50</b> <small>(אנגלית <span class="ltr">$0.36</span>)</small></div></div></div>
+    </div>
+    <div class="eco-demo" aria-label="מגדל עלות לפי מספר עמודי PDF בעברית">
+      <div class="eco-tower" id="ecoTower"></div>
+      <div class="eco-side">
+        <label for="ecoRange">כמה עמודי PDF בעברית? <b id="ecoN">200</b></label>
+        <input type="range" id="ecoRange" min="10" max="500" step="10" value="200" />
+        <div class="eco-cost" id="ecoCost"></div>
+      </div>
+    </div>
+    </div>
+    <div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">כלל אצבע 1</div><div class="wow-t">פלט יקר מקלט</div><p>ייצור תשובה ארוכה עולה יותר מקריאת אותו היקף. לבקש תשובה ממוקדת — לא רק ״יפה יותר״, גם זול ומדויק יותר.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 2</div><div class="wow-t">מודל לפי משימה</div><p>סיכום שגרתי לא חייב את המודל החזק ביותר. בדיקת אמות מידה, חוזה, או ניתוח רב־מסמכים — כן שווה מודל חזק / מצב חשיבה.</p></article><article class="wow-card"><div class="wow-k">כלל אצבע 3</div><div class="wow-t">הקשר ארוך עולה</div><p>כל קובץ שמצרפים וכל סיבוב בשיחה נכנסים לחיוב. כדאי: מסמך נקי, שאלה ברורה, בלי לשרשר שיחות אין־סוף על אותם קבצים.</p></article><article class="wow-card"><div class="wow-k">איך מודדים אצלנו</div><div class="wow-t">עלות למשימה</div><p>שואלים: כמה עלה ביאור סגירה / התאמת בנק / טיוטת ביאור — כולל זמן בדיקה שלנו. לא רק ״כמה עולה טוקן״.</p></article>
+</div>
+    <div class="wow-foot foot-wide">הערכה בלבד. PDF ותמונה: Anthropic docs (PDF support, Vision: טוקנים ≈ רוחב×גובה/750). יחס עברית/אנגלית ≈1.4: מדידה שלנו על אותו טקסט פיננסי בשתי השפות (<span class="ltr">tiktoken o200k</span>). מחיר: <span class="ltr">Opus 5.5</span> ‏$4 למיליון טוקני קלט, docs.claude.com · נבדק 23.11.2026.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף כלכלת טוקנים. טבלת סוגי הקבצים היא הערכה (נבדק 23.11.2026): PDF — לפי Anthropic, כל עמוד נקרא גם כטקסט (כ־1,500–3,000 טוקנים) וגם כתמונה (כ־1,600 טוקנים לעמוד בגודל 1092×1092; נוסחה: רוחב×גובה/750) — https://docs.claude.com/en/docs/build-with-claude/pdf-support , https://docs.claude.com/en/docs/build-with-claude/vision . עמוד טקסט/Word: 500 מילים; לפי Anthropic מיליון טוקנים ≈ 555 אלף מילים באנגלית → כ־900 טוקנים לעמוד. עברית: מדדנו את אותו טקסט פיננסי בעברית ובאנגלית עם tiktoken o200k_base — עברית צרכה פי 1.4 טוקנים (505 מול 360). זה טוקנייזר של OpenAI, לכן היחס הוא הערכה. Excel: גיליון של 50 שורות × 10 עמודות, כטקסט; עברית ≈ פי 1.14 כי רוב התאים מספרים. Word שמומר ל־PDF נספר לפי תעריף PDF. העלות: 100 יחידות במחיר הקלט של Opus 5.5 ($4 למיליון). המגדל: כל בלוק = 50 עמודי PDF בעברית (~4,750 טוקנים לעמוד); ב־Haiku מעל 100K טוקנים בפרומפט המחיר עולה ל־$0.50 למיליון. המסר לקהל: לבחור מודל לפי סיכון המשימה, ולמדוד עלות כוללת (מודל + זמן רו״ח שבודקת). אם שואלים מחיר עדכני — לפתוח את עמוד התמחור של הספק, לא מהזיכרון.</aside>
+</section>
+<section class="slide s-wow" data-title="נספח · API">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">נספח · API</div>
+    <h2>מה זה API, ואיך הוא עובד</h2>
+    <p class="wow-lead">API הוא ממשק תוכנה: המערכת שלכן שולחת בקשה למודל ומקבלת תשובה — בלי להדביק נתונים ידנית בצ׳אט אישי.</p>
+    <div class="api-demo" aria-label="זרימת בקשה ותשובה דרך API">
+      <div class="api-row">
+        <div class="api-box">המערכת שלכן<small>ERP / קובץ</small></div>
+        <div class="api-track"></div>
+        <div class="api-gate">שער · מפתח API</div>
+        <div class="api-pkt">JSON</div>
+        <div class="api-box">המודל<small>תשובה</small></div>
+      </div>
+    </div>
+    <div class="wow-grid g2 has-viz">
+  <article class="wow-card"><div class="wow-k">בפשטות</div><div class="wow-t">בקשה ותשובה</div><p>התוכנה שולחת פרומפט, קבצים או נתונים, ומקבלת טקסט או קובץ בחזרה. זה אותו מודל — רק בצינור מבוקר.</p></article><article class="wow-card"><div class="wow-k">למה זה חשוב בכספים</div><div class="wow-t">פחות העתק־הדבק</div><p>אפשר לחבר ERP, סגירה או תיקייה — עם הרשאות, יומן וסביבה ארגונית. לא לשלוח קובץ לקוח מחשבון פרטי.</p></article><article class="wow-card"><div class="wow-k">מפתח גישה</div><div class="wow-t">מי נכנס, מה מותר</div><p>החיבור נעשה עם מפתח והרשאות. מי שמחזיק מפתח פתוח במחשב או בצ׳אט — פתח דלת לנתונים.</p></article><article class="wow-card"><div class="wow-k">גבול ה־API</div><div class="wow-t">עדיין צריך MCP או כלי</div><p>API מדבר עם המודל. כדי שהמודל יקרא מערכת, יריץ כלי או יעדכן קובץ — צריך חיבור כלים. זה הגשר לשקף הבא.</p></article>
+</div>
+    <div class="wow-foot">API = ממשק תכנותי לספק. המדיניות, שמירת הנתונים ורמת הארגון תלויות בחוזה ובתוכנית — לא ב״יש API״ לבד.</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף API. דוגמה חיה: ״במקום להעלות ייצוא כל פעם בצ׳אט, הסקריפט שולח את הקובץ ומחזיר טיוטת פערים.״ להדגיש: API אינו אוטומטית מאובטח; צריך תוכנית ארגונית, איסור על מפתחות במסמכים, ורישום למי יש גישה. מעבר ל־MCP: ה־API הוא הצינור; MCP הוא תקן לחיבור הכלים וההקשר.</aside>
+</section>
+<section class="slide s-wow" data-title="נספח · MCP">
+  <div class="wow-stage">
+    <div class="wow-circuit" aria-hidden="true"></div>
+    <div class="wow-floor" aria-hidden="true"></div>
+    <div class="wow-kicker">נספח · MCP</div>
+    <h2>מה זה MCP, ואיך הוא עובד</h2>
+    <p class="wow-lead">MCP — Model Context Protocol — הוא תקן פתוח לחיבור מודל לכלים ולהקשר: כמו ״שקע אחיד״ בין העוזר לבין המערכות שלכן.</p>
+    <div class="mcp-stage" aria-label="טבעת כלים סביב המודל">
+      <div class="mcp-world">
+        <div class="mcp-core"><b>המודל</b><span>MCP</span></div>
+        <div class="mcp-ring">
+          <div class="mcp-tool" style="--i:0"><div class="mcp-billboard"><div class="face">Excel</div></div></div>
+          <div class="mcp-tool" style="--i:1"><div class="mcp-billboard"><div class="face">Drive</div></div></div>
+          <div class="mcp-tool" style="--i:2"><div class="mcp-billboard"><div class="face">ERP</div></div></div>
+          <div class="mcp-tool" style="--i:3"><div class="mcp-billboard"><div class="face">מייל</div></div></div>
+        </div>
+      </div>
+    </div>
+<div class="wow-grid g3 has-viz">
+  <article class="wow-card"><div class="wow-k">מתי הוכרז</div><div class="wow-t">25 בנובמבר 2024</div><p>Anthropic פרסמה את Model Context Protocol כתקן פתוח לחיבור עוזרי AI למקורות נתונים ולכלים.</p></article><article class="wow-card"><div class="wow-k">המטאפורה</div><div class="wow-t">כמו USB‑C לכלים</div><p>במקום חיבור ייעודי נפרד לכל מערכת, שרת MCP חושף יכולות (לקרוא קובץ, לשאול בסיס נתונים) בצורה אחידה.</p></article><article class="wow-card"><div class="wow-k">זהירות</div><div class="wow-t">חיבור ≠ אישור גורף</div><p>לכל חיבור יש להגדיר הרשאות. מגדירים מה מותר לקרוא ולכתוב, ומה דורש אישור אדם — במיוחד על נתוני לקוחות.</p></article>
+</div>
+    <div class="wow-foot">מקור: Anthropic, Introducing the Model Context Protocol, 25.11.2024 — anthropic.com/news/model-context-protocol · modelcontextprotocol.io</div>
+    <div class="pg"></div>
+  </div>
+  <aside class="notes">שקף MCP. להסביר במשפט: ״המודל לבד לא רואה את ה־ERP; MCP הוא השקע שמחבר אותו, באישור שלכן.״ תאריך ההכרזה: 25 בנובמבר 2024, Anthropic, תקן פתוח. לא להבטיח שכל ספק מממש אותו באותה צורה. שאלה לאולם: אילו מערכות הייתן מחברות קודם — תיקיית הסגירה, הייצוא מהנהלת חשבונות, או האימייל? סייג: חיבור רחב בלי הרשאות הוא סיכון, לא יתרון.</aside>
+</section>
 
 </div></div>
 
@@ -3212,7 +3416,7 @@ html.wk .mcp-beam{display:none}
   document.getElementById('bNext').onclick=next;document.getElementById('bPrev').onclick=prev;
   document.getElementById('bNotes').onclick=()=>document.getElementById('notesPanel').classList.toggle('open');
   document.querySelectorAll('.vcard').forEach(v=>v.addEventListener('click',e=>{e.stopPropagation();openVid(v.dataset.yt);}));
-  document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();show(+b.dataset.go);}));
+  document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const g=b.dataset.go;const k=/^\d+$/.test(g)?+g:slides.findIndex(s=>s.dataset.title===g);if(k>=0)show(k);}));
   const steps=window.STEPS||[
    ['לשכבה 2','לפתוח פרויקט אחד לסגירה הבאה ולהעלות אליו את הקבצים הקבועים.','לפני הצעד הבא · רמת אבטחה בינונית — תוכנית עסקית, בלי פרטים מזהים בלי אישור הארגון.','Projects · Copilot Notebooks · Gems'],
    ['לשכבה 3','לקחת ביאור חודשי אחד ולשמור אותו כתבנית או כסקיל.','לפני הצעד הבא · רמת אבטחה בינונית — תוכנית עסקית, בלי נתוני לקוח בהנחיות.','Skills · הנחיות פרויקט · Agents · Gems'],
@@ -3220,7 +3424,8 @@ html.wk .mcp-beam{display:none}
    ['לשכבה 5','להתקין את התוסף ל‑Excel ולעבוד בתוך הקובץ האמיתי.','לפני הצעד הבא · רמת אבטחה גבוהה — תוכנית עסקית או ארגונית, לא תוסף אישי על קבצי לקוח.','Claude / Copilot ב‑Excel ו‑PowerPoint · Gemini ב‑Sheets וב‑Slides'],
    ['לשכבה 6','לחבר את המייל והקבצים של הארגון — בתיאום עם מערכות המידע.','לפני הצעד הבא · רמת אבטחה גבוהה — תוכנית ארגונית, אישור מנהל מערכת ו‑DPA.','Copilot על Graph · קונקטור Microsoft 365 · אפליקציות מחוברות · Apps'],
    ['לשכבה 7','לבחור מדד אחד, למשל תזרים, ולהפוך אותו לדשבורד חי.','לפני הצעד הבא · רמת אבטחה גבוהה — תוכנית ארגונית, חיבורים בניהול מנהל המערכת ו‑DPA.','Claude Data · Data agent ב‑ChatGPT · Copilot ב‑Power BI'],
-   ['להעמיק','לשתף את הצוות ולהגדיר מדדים אחידים לכל הצוות.','רמת אבטחה בשכבה 7 · גבוהה — תוכנית ארגונית, חיבורים בניהול מנהל המערכת ו‑DPA.','Claude Data · Data agent ב‑ChatGPT · Copilot ב‑Power BI']];
+   ['לשכבה 8','לכתוב פרומפט שמגדיר 2–3 מבקרות פנימיות לסגירה, כל אחת עם נקודות בדיקה, בלי לערוך את התוצר.','לפני הצעד הבא · רמת אבטחה גבוהה — תוכנית ארגונית, הרשאות קריאה בלבד למבקרות ואישור אנושי סופי.','Projects + Skills ב‑Claude · Subagents ב‑Claude Code · פלאגינים ב‑Cowork'],
+   ['להעמיק','להפוך את המבקרות לסקיל קבוע של הצוות, ולתעד מה הן תפסו לפני האישור.','רמת אבטחה בשכבה 8 · גבוהה — תוכנית ארגונית, הרשאות קריאה בלבד ואישור אנושי סופי.','Projects + Skills ב‑Claude · Subagents ב‑Claude Code']];
   function applyStep(s){
     document.getElementById('nk').textContent='הצעד הבא שלי · '+s[0];
     document.getElementById('nv').textContent=s[1];
@@ -3234,7 +3439,7 @@ html.wk .mcp-beam{display:none}
     const box=document.querySelector('.s-self .nextbox');
     if(box){box.classList.remove('pop');void box.offsetWidth;box.classList.add('pop');}
   }));
-  stage.addEventListener('click',e=>{if(e.target.closest('#talVidOpen,#vidBox,a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.tokx,.eco-wrap,.px-grid,.px-chips,.segrid,.car-stage,.car-btn,.mcard,.cmp .card,.insp-scene,.tip,.folder-sink,.gauge-row,.term-demo,.brick-row,.twin-trees,.plugin-frame,.nextbox'))return;
+  stage.addEventListener('click',e=>{if(e.target.closest('.rbub,#talVidOpen,#vidBox,a,button,.vcard,[data-go],.rung,#notesPanel,table,.sec-badge,.icard,#toonBox,.wow-copy,.prompt-box,input,.mcp-stage,.agent-stage,.sh-office,.eco-demo,.api-demo,.drawers,.match-demo,.bars-demo,.race,.llm-demo,.tok-demo,.tokx,.eco-wrap,.px-grid,.px-chips,.segrid,.car-stage,.car-btn,.mcard,.cmp .card,.insp-scene,.tip,.folder-sink,.gauge-row,.term-demo,.brick-row,.twin-trees,.plugin-frame,.nextbox'))return;
     const r=stage.getBoundingClientRect(); (e.clientX < r.left+r.width/2)?next():prev();});
   const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);
   addEventListener('hashchange',()=>{const k=parseInt(location.hash.slice(1));if(!isNaN(k)&&k-1!==cur)show(k-1);});
@@ -3407,5 +3612,6 @@ function copyWow(btn){
     }},{passive:true});
 })();
 </script>
+<script>(function(){document.querySelectorAll('.rbub').forEach(function(b){function t(e){e.stopPropagation();var o=b.classList.contains('open');document.querySelectorAll('.rbub.open').forEach(function(x){x.classList.remove('open')});if(!o)b.classList.add('open');}b.addEventListener('click',t);b.addEventListener('keydown',function(e){if(e.key==='Enter'){t(e);}});});})();</script>
 </body>
 </html>
